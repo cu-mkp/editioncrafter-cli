@@ -5,5 +5,14 @@
   "main": "src/index.js",
   "repository": "https://github.com/cu-mkp/editioncrafter-cli.git",
   "author": "Nick Laiacona <nick@performantsoftware.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node_modules/.bin/http-server --cors"
+  },
+  "dependencies": {
+    "jsdom": "^21.1.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }
