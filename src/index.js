@@ -7,6 +7,15 @@ const { JSDOM } = jsdom
 const testXML = "./data/FHL_007548705_ISLETA_BAPTISMS_1.xml"
 const targetDir = "./public/test_doc"
 
+function dirExists( dir ) {
+    if( !fs.existsSync(dir) ) {
+      fs.mkdirSync(dir);
+      if( !fs.existsSync(dir) ) {
+        throw `ERROR: ${dir} not found and unable to create it.`;
+      }
+    }  
+}
+
 function renderManifest( manifestLabel, baseURI, surfaces) {
     const manifestBoilerplateJSON = fs.readFileSync("./src/templates/manifest.json")
     const canvasBoilerplateJSON = fs.readFileSync("./src/templates/canvas.json")
@@ -46,6 +55,9 @@ function renderManifest( manifestLabel, baseURI, surfaces) {
     }
     
     const manifestJSON = JSON.stringify(manifest, null, '\t')
+    dirExists('public')
+    dirExists(targetDir)
+    dirExists(`${targetDir}/iiif`)
     const iiifPath = `${targetDir}/iiif/manifest.json`
     fs.writeFileSync(iiifPath,manifestJSON) 
 }
@@ -64,8 +76,8 @@ async function run() {
         const label = labelEl.textContent
         const graphicEl = surfaceEl.getElementsByTagName('graphic')[0]
         const imageURL = graphicEl.getAttribute('url')
-        const width = surfaceEl.getAttribute('lrx')
-        const height = surfaceEl.getAttribute('lry')
+        const width = parseInt(surfaceEl.getAttribute('lrx'))
+        const height = parseInt(surfaceEl.getAttribute('lry'))
         surfaces.push({ id, label, imageURL, width, height })
     }
 
