@@ -1,0 +1,1146 @@
+{
+	"@context": [
+		"http://www.w3.org/ns/anno.jsonld",
+		"http://iiif.io/api/presentation/3/context.json"
+	],
+	"id": "http://localhost:8080/test_doc/iiif/manifest.json",
+	"type": "Manifest",
+	"items": [
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_012",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_012/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_012",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463404",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2926",
+								"width": "3558",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463404",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_012"
+						}
+					]
+				}
+			],
+			"height": "2926",
+			"width": "3558",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_012_L4_L5_R1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_013",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_013/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_013",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463405",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2908",
+								"width": "3549",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463405",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_013"
+						}
+					]
+				}
+			],
+			"height": "2908",
+			"width": "3549",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_013_L2_L3"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_014",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_014/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_014",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463406",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2889",
+								"width": "3573",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463406",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_014"
+						}
+					]
+				}
+			],
+			"height": "2889",
+			"width": "3573",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_014_L2_L3_R1_R2"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_016",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_016/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_016",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463407",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2925",
+								"width": "3512",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463407",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_016"
+						}
+					]
+				}
+			],
+			"height": "2925",
+			"width": "3512",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_016_L3"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_020",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_020/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_020",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463408",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2924",
+								"width": "3546",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463408",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_020"
+						}
+					]
+				}
+			],
+			"height": "2924",
+			"width": "3546",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_020_L1_R2"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_021",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_021/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_021",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463409",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2878",
+								"width": "3556",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463409",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_021"
+						}
+					]
+				}
+			],
+			"height": "2878",
+			"width": "3556",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_021_R2_R3"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_022",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_022/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_022",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463410",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2929",
+								"width": "3603",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463410",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_022"
+						}
+					]
+				}
+			],
+			"height": "2929",
+			"width": "3603",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_022_L1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_023",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_023/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_023",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463411",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2897",
+								"width": "3519",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463411",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_023"
+						}
+					]
+				}
+			],
+			"height": "2897",
+			"width": "3519",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_023_L1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_024",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_024/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_024",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463412",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2942",
+								"width": "3609",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463412",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_024"
+						}
+					]
+				}
+			],
+			"height": "2942",
+			"width": "3609",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_024_L2_R1_R3"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_025",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_025/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_025",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463413",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "3049",
+								"width": "3663",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463413",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_025"
+						}
+					]
+				}
+			],
+			"height": "3049",
+			"width": "3663",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_025_R1_R2_R3"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_027",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_027/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_027",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463414",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2925",
+								"width": "3554",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463414",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_027"
+						}
+					]
+				}
+			],
+			"height": "2925",
+			"width": "3554",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_027_L4"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_030",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_030/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/FHL_007548705_IMG_030",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463415",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2891",
+								"width": "3585",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463415",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/FHL_007548705_IMG_030"
+						}
+					]
+				}
+			],
+			"height": "2891",
+			"width": "3585",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_030_R5"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f012",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f012/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f012",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463416",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2926",
+								"width": "3589",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463416",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f012"
+						}
+					]
+				}
+			],
+			"height": "2926",
+			"width": "3589",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_031_L10_R2_R7"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f013",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f013/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f013",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463417",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2846",
+								"width": "3569",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463417",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f013"
+						}
+					]
+				}
+			],
+			"height": "2846",
+			"width": "3569",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_032_L5_R2"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f014",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f014/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f014",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463418",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2996",
+								"width": "3605",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463418",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f014"
+						}
+					]
+				}
+			],
+			"height": "2996",
+			"width": "3605",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_034_R4"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f015",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f015/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f015",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32469778",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "3094",
+								"width": "3712",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32469778",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f015"
+						}
+					]
+				}
+			],
+			"height": "3094",
+			"width": "3712",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_035_CONT"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f016",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f016/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f016",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463419",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2926",
+								"width": "3655",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463419",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f016"
+						}
+					]
+				}
+			],
+			"height": "2926",
+			"width": "3655",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_036_L3_L4_R1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f017",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f017/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f017",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463420",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "3087",
+								"width": "3725",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463420",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f017"
+						}
+					]
+				}
+			],
+			"height": "3087",
+			"width": "3725",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_037_L1_L2_R1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f018",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f018/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f018",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463421",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2939",
+								"width": "3624",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463421",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f018"
+						}
+					]
+				}
+			],
+			"height": "2939",
+			"width": "3624",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_039_L1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f019",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f019/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f019",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463422",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2923",
+								"width": "3630",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463422",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f019"
+						}
+					]
+				}
+			],
+			"height": "2923",
+			"width": "3630",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_041_L3_R3_R4"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f020",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f020/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f020",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463423",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2898",
+								"width": "3658",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463423",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f020"
+						}
+					]
+				}
+			],
+			"height": "2898",
+			"width": "3658",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_042_CONT_L2_L4_R3_R4"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f021",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f021/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f021",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463424",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2916",
+								"width": "3632",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463424",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f021"
+						}
+					]
+				}
+			],
+			"height": "2916",
+			"width": "3632",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_044_L3_R3"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f022",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f022/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f022",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463425",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2913",
+								"width": "3618",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463425",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f022"
+						}
+					]
+				}
+			],
+			"height": "2913",
+			"width": "3618",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_045_R1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f023",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f023/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f023",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463426",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2827",
+								"width": "3636",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463426",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f023"
+						}
+					]
+				}
+			],
+			"height": "2827",
+			"width": "3636",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_046_L2_R3_R4"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f024",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f024/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f024",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32809461",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2922",
+								"width": "3618",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32809461",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f024"
+						}
+					]
+				}
+			],
+			"height": "2922",
+			"width": "3618",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_047_R1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f025",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f025/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f025",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463427",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2968",
+								"width": "3653",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463427",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f025"
+						}
+					]
+				}
+			],
+			"height": "2968",
+			"width": "3653",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_048_L2"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f026",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f026/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f026",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463428",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2885",
+								"width": "3573",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463428",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f026"
+						}
+					]
+				}
+			],
+			"height": "2885",
+			"width": "3573",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_051_R1"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f027",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f027/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f027",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463429",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2937",
+								"width": "3647",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463429",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f027"
+						}
+					]
+				}
+			],
+			"height": "2937",
+			"width": "3647",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_053_L5_R1_R3"
+				]
+			}
+		},
+		{
+			"id": "http://localhost:8080/test_doc/iiif/canvas/f028",
+			"type": "Canvas",
+			"items": [
+				{
+					"id": "http://localhost:8080/test_doc/iiif/canvas/f028/1",
+					"type": "AnnotationPage",
+					"items": [
+						{
+							"id": "http://localhost:8080/test_doc/iiif/annotation/f028",
+							"type": "Annotation",
+							"motivation": "painting",
+							"body": {
+								"id": "https://fromthepage.com/image-service/32463430",
+								"type": "Image",
+								"format": "image/jpeg",
+								"height": "2992",
+								"width": "3653",
+								"service": [
+									{
+										"@id": "https://fromthepage.com/image-service/32463430",
+										"@type": "ImageService2",
+										"profile": "http://iiif.io/api/image/2/level2.json"
+									}
+								]
+							},
+							"target": "http://localhost:8080/test_doc/iiif/canvas/f028"
+						}
+					]
+				}
+			],
+			"height": "2992",
+			"width": "3653",
+			"label": {
+				"none": [
+					"FHL_007548705_IMG_054_R1_R3"
+				]
+			}
+		}
+	],
+	"label": {
+		"en": [
+			"FHL_007548705_ISLETA_BAPTISMS_1"
+		]
+	}
+}
