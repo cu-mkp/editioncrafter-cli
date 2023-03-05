@@ -16,6 +16,36 @@ function dirExists( dir ) {
     }  
 }
 
+function generateTextPartial( surfaceID, textEl ) {
+    const pbEls = textEl.getElementsByTagName('pb')
+    let xml = ""
+    for( const pbEl of pbEls ) {
+        const pbSurfaceID = pbEl.getAttribute('facs')
+        // TODO parse facs URI
+        if ( pbSurfaceID === surfaceID ) {
+            // TODO: parse the XML from pb to pb and create a partial for this surface
+            
+        }
+    }
+    return xml
+}
+
+function generateTextPartials( surfaceID, textEls ) {
+    const xmls = {}
+    for( const textEl of textEls ) {
+        const id = surfaceEl.getAttribute('xml:id')
+        const xml = generateTextPartial( surfaceID, textEl )
+        xmls[id] = xml
+    }
+    return xmls
+}
+
+function generateWebPartials( xmls ) {
+    const htmls = {}
+    // TODO: generate the web components version of the xml partials
+    return htmls
+}
+
 function renderManifest( manifestLabel, baseURI, surfaces) {
     const manifestBoilerplateJSON = fs.readFileSync("./src/templates/manifest.json")
     const canvasBoilerplateJSON = fs.readFileSync("./src/templates/canvas.json")
@@ -64,12 +94,13 @@ function renderManifest( manifestLabel, baseURI, surfaces) {
 
 async function run() {
     const xml = fs.readFileSync(testXML, "utf8")
-    const testDOM = new JSDOM(xml, { contentType: "text/xml" }).window.document
+    const doc = new JSDOM(xml, { contentType: "text/xml" }).window.document
 
-    const facsEl = testDOM.getElementsByTagName('facsimile')[0]
+    const facsEl = doc.getElementsByTagName('facsimile')[0]
+    const textEls = doc.getElementsByTagName('text')
     const surfaceEls = facsEl.getElementsByTagName('surface')
 
-    const surfaces = []
+    const surfaces = {}
     for( const surfaceEl of surfaceEls ) {
         const id = surfaceEl.getAttribute('xml:id')
         const labelEl = surfaceEl.getElementsByTagName('label')[0]
@@ -78,7 +109,11 @@ async function run() {
         const imageURL = graphicEl.getAttribute('url')
         const width = parseInt(surfaceEl.getAttribute('lrx'))
         const height = parseInt(surfaceEl.getAttribute('lry'))
-        surfaces.push({ id, label, imageURL, width, height })
+        const surface = { id, label, imageURL, width, height }
+        surface.xmls = generateTextPartials(id, textEls)
+        // TODO: generate sourceDoc partials
+        surface.htmls = generateWebPartials(surface.xmls)
+        surfaces[id] = surface
     }
 
     const baseURI = "http://localhost:8080/test_doc/iiif"
