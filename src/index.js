@@ -24,7 +24,12 @@ function generateTextPartial( surfaceID, textEl ) {
         // TODO parse facs URI
         if ( pbSurfaceID === surfaceID ) {
             // TODO: parse the XML from pb to pb and create a partial for this surface
-            
+            // - look ahead to next pb or end of doc
+            // - if there is another pb
+                // - Find most recent common ancestor
+                // - before start pb, close tags up to common ancestor
+                // - before end pb, close tags - don't include pb
+            // - else, just enclose with pb parent
         }
     }
     return xml
