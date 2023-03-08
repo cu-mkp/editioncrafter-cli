@@ -79,15 +79,23 @@ function renderPartials( surfaces ) {
     dirExists('public')
     dirExists(targetDir)
     dirExists(`${targetDir}/tei`)
+    dirExists(`${targetDir}/html`)
 
     for( const surface of Object.values(surfaces) ) {
-        const { id: surfaceID, xmls } = surface
+        const { id: surfaceID, xmls, htmls } = surface
 
         for( const id of Object.keys(xmls) ) {
             const xml = xmls[id]
             dirExists(`${targetDir}/tei/${id}`)
             const xmlPath = `${targetDir}/tei/${id}/${surfaceID}`
             fs.writeFileSync(xmlPath,xml)
+        }
+
+        for( const id of Object.keys(htmls) ) {
+            const html = htmls[id]
+            dirExists(`${targetDir}/html/${id}`)
+            const htmlPath = `${targetDir}/html/${id}/${surfaceID}.html`
+            fs.writeFileSync(htmlPath,html)
         }
     }
 }
