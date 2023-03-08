@@ -3,6 +3,7 @@
 const fs = require('fs')
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom
+const {CETEI} = require("./CETEI")
 
 const testXML = "./data/FHL_007548705_ISLETA_BAPTISMS_1.xml"
 const targetDir = "./public/test_doc"
@@ -16,39 +17,79 @@ function dirExists( dir ) {
     }  
 }
 
+function convertToHTML( xml ) {
+    try {
+        const htmlDOM = new JSDOM()
+        const ceTEI = new CETEI(htmlDOM.window)
+        const xmlDOM = new JSDOM(xml, { contentType: "text/html" })   
+        const data = ceTEI.domToHTML5(xmlDOM.window.document)
+        return data.innerHTML
+    } catch( err ) {
+        console.error(`ERROR ${err}: ${err.stack}`)  
+    }
+    return null
+}
+
 function generateTextPartial( surfaceID, textEl ) {
     const pbEls = textEl.getElementsByTagName('pb')
-    let xml = ""
-    for( const pbEl of pbEls ) {
+    let xmlPartial = ""
+    for( let i=0; i < pbEls.length; i++ ) {
+        const pbEl = pbEls[i]
         const pbSurfaceID = pbEl.getAttribute('facs')
         // TODO parse facs URI
-        if ( pbSurfaceID === surfaceID ) {
-            // TODO: parse the XML from pb to pb and create a partial for this surface
-            // - look ahead to next pb or end of doc
-            // - if there is another pb
-                // - Find most recent common ancestor
-                // - before start pb, close tags up to common ancestor
-                // - before end pb, close tags - don't include pb
-            // - else, just enclose with pb parent
+        // TODO this will assume facs values are unique
+        if ( pbSurfaceID === `#${surfaceID}` ) {
+            const nextPbEl = pbEls[i+1] 
+            if( nextPbEl ) {
+                const pbTag = pbEl.outerHTML.replace(' xmlns="http://www.tei-c.org/ns/1.0"', '')
+                const nextPbTag = nextPbEl.outerHTML.replace(' xmlns="http://www.tei-c.org/ns/1.0"', '')
+                const xml = textEl.outerHTML
+                xmlPartial = xml.slice( xml.indexOf(pbTag), xml.indexOf(nextPbTag ) )
+            } else {
+                const pbTag = pbEl.outerHTML.replace(' xmlns="http://www.tei-c.org/ns/1.0"', '')
+                const xml = textEl.outerHTML
+                xmlPartial = xml.slice( xml.indexOf(pbTag), xml.length )
+            }
+            return xmlPartial            
         }
     }
-    return xml
+    return null
 }
 
 function generateTextPartials( surfaceID, textEls ) {
     const xmls = {}
     for( const textEl of textEls ) {
-        const id = surfaceEl.getAttribute('xml:id')
+        const id = textEl.getAttribute('xml:id')
         const xml = generateTextPartial( surfaceID, textEl )
-        xmls[id] = xml
+        if( xml ) xmls[id] = xml
     }
     return xmls
 }
 
 function generateWebPartials( xmls ) {
     const htmls = {}
-    // TODO: generate the web components version of the xml partials
+    for( const id of Object.keys(xmls) ) {
+        const xml = xmls[id]
+        htmls[id] = convertToHTML( xml )
+    }
     return htmls
+}
+
+function renderPartials( surfaces ) {
+    dirExists('public')
+    dirExists(targetDir)
+    dirExists(`${targetDir}/tei`)
+
+    for( const surface of Object.values(surfaces) ) {
+        const { id: surfaceID, xmls } = surface
+
+        for( const id of Object.keys(xmls) ) {
+            const xml = xmls[id]
+            dirExists(`${targetDir}/tei/${id}`)
+            const xmlPath = `${targetDir}/tei/${id}/${surfaceID}`
+            fs.writeFileSync(xmlPath,xml)
+        }
+    }
 }
 
 function renderManifest( manifestLabel, baseURI, surfaces) {
@@ -60,7 +101,7 @@ function renderManifest( manifestLabel, baseURI, surfaces) {
     manifest.id = `${baseURI}/manifest.json`
     manifest.label = { en: [manifestLabel] }
 
-    for( const surface of surfaces ) {
+    for( const surface of Object.values(surfaces) ) {
         const { id, label, imageURL, width, height } = surface
 
         const canvas = JSON.parse(canvasBoilerplateJSON)
@@ -123,6 +164,7 @@ async function run() {
 
     const baseURI = "http://localhost:8080/test_doc/iiif"
     renderManifest( 'FHL_007548705_ISLETA_BAPTISMS_1', baseURI, surfaces )
+    renderPartials( surfaces )
 }
 
 function main() {
