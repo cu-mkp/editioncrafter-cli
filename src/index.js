@@ -21,7 +21,7 @@ function convertToHTML( xml ) {
     try {
         const htmlDOM = new JSDOM()
         const ceTEI = new CETEI(htmlDOM.window)
-        const xmlDOM = new JSDOM(xml, { contentType: "text/html" })   
+        const xmlDOM = new JSDOM(xml, { contentType: "text/xml" })   
         const data = ceTEI.domToHTML5(xmlDOM.window.document)
         return data.innerHTML
     } catch( err ) {
@@ -183,5 +183,14 @@ function main() {
     })
 }
 
+function main2() {
+    const htmlDOM = new JSDOM()
+    const ceTEI = new CETEI(htmlDOM.window)
+    const xml = fs.readFileSync('./data/FHL_007548705_ISLETA_BAPTISMS_1.xml', "utf8")
+    const xmlDOM = new JSDOM(xml, { contentType: "text/xml" })
+    const data = ceTEI.domToHTML5(xmlDOM.window.document)
+    fs.writeFileSync('./public/test.xml',data.outerHTML)
+}
+
 ///// RUN THE SCRIPT
-main()
+main2()
