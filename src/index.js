@@ -30,9 +30,22 @@ function convertToHTML( xml ) {
     return null
 }
 
+function scrubTree( el, direction ) {
+    let nextEl = direction === 'prev' ? el.previousSibling : el.nextSibling
+    while( nextEl ) {
+        const nextNextEl = direction === 'prev' ? nextEl.previousSibling : nextEl.nextSibling
+        nextEl.parentNode.removeChild(nextEl)
+        nextEl = nextNextEl
+    }
+    if( el.parentNode ) {
+        scrubTree( el.parentNode, direction )
+    }
+}
+
 function generateTextPartial( surfaceID, textEl ) {
-    const pbEls = textEl.getElementsByTagName('pb')
-    let xmlPartial = ""
+    const partialTextEl = textEl.cloneNode(true)
+    const pbEls = partialTextEl.getElementsByTagName('pb')
+
     for( let i=0; i < pbEls.length; i++ ) {
         const pbEl = pbEls[i]
         const pbSurfaceID = pbEl.getAttribute('facs')
@@ -40,20 +53,14 @@ function generateTextPartial( surfaceID, textEl ) {
         // TODO this will assume facs values are unique
         if ( pbSurfaceID === `#${surfaceID}` ) {
             const nextPbEl = pbEls[i+1] 
+            scrubTree( pbEl, 'prev' )
             if( nextPbEl ) {
-                const pbTag = pbEl.outerHTML.replace(' xmlns="http://www.tei-c.org/ns/1.0"', '')
-                const nextPbTag = nextPbEl.outerHTML.replace(' xmlns="http://www.tei-c.org/ns/1.0"', '')
-                const xml = textEl.outerHTML
-                xmlPartial = xml.slice( xml.indexOf(pbTag), xml.indexOf(nextPbTag ) )
-            } else {
-                const pbTag = pbEl.outerHTML.replace(' xmlns="http://www.tei-c.org/ns/1.0"', '')
-                const xml = textEl.outerHTML
-                xmlPartial = xml.slice( xml.indexOf(pbTag), xml.length )
-            }
-            return xmlPartial            
+                scrubTree( nextPbEl, 'next' )
+                nextPbEl.parentNode.removeChild(nextPbEl)
+            } 
+            return partialTextEl.outerHTML
         }
     }
-    return null
 }
 
 function generateTextPartials( surfaceID, textEls ) {
@@ -193,4 +200,4 @@ function main2() {
 }
 
 ///// RUN THE SCRIPT
-main2()
+main()
