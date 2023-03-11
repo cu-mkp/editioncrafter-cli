@@ -94,7 +94,7 @@ function renderPartials( surfaces ) {
         for( const id of Object.keys(xmls) ) {
             const xml = xmls[id]
             dirExists(`${targetDir}/tei/${id}`)
-            const xmlPath = `${targetDir}/tei/${id}/${surfaceID}`
+            const xmlPath = `${targetDir}/tei/${id}/${surfaceID}.xml`
             fs.writeFileSync(xmlPath,xml)
         }
 
