@@ -124,10 +124,10 @@ function renderManifest( manifestLabel, baseURI, surfaces) {
         canvas.height = height
         canvas.width = width
         canvas.label = { "none": [ label ] }
-        canvas.items[0].id = `${canvas.id}/1`
+        canvas.items[0].id = `${canvas.id}/annotationpage/0`
 
         const annotation = JSON.parse(annotationBoilerplateJSON)
-        annotation.id = `${baseURI}/annotation/${id}`
+        annotation.id = `${canvas.items[0].id}/annotation/0`
         annotation.motivation = "painting"
         annotation.target = canvas.id
         annotation.body.id = imageURL
