@@ -107,20 +107,61 @@ function renderPartials( surfaces ) {
     }
 }
 
+function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID) {
+    const annotationBoilerplateJSON = fs.readFileSync("./src/templates/annotation.json")
+    const annotation = JSON.parse(annotationBoilerplateJSON)
+    annotation.id = `${annotationPageID}/annotation/${annoID}`
+    annotation.motivation = "supplementing"
+    annotation.target = canvasID
+    annotation.body.id = textURL
+    annotation.body.type = ""    
+    annotation.body.service = [{
+        '@id': textURL,
+        '@type': "",
+        profile: "",
+    }]
+    return annotation
+}
+
+function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
+    const { id: surfaceID, xmls, htmls } = surface
+    if( !xmls && !htmls ) return null
+    const annotationPageID = `${canvasID}/annotationPage/${apIndex}`
+    const annotationPageBoilerplateJSON = fs.readFileSync("./src/templates/annotationPage.json")
+    const annotationPage = JSON.parse(annotationPageBoilerplateJSON)
+    annotationPage.id = annotationPageID
+    let i = 0
+    if( xmls ) {
+        for( const localID of Object.keys(xmls) ) {
+            const xmlURL = `${baseURI}/tei/${localID}/${surfaceID}.xml`        
+            const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++ )
+            annotationPage.items.push(annotation)
+        }
+    }
+    if( htmls ) {
+        for( const localID of Object.keys(htmls) ) {
+            const htmlURL = `${baseURI}/html/${localID}/${surfaceID}.html`        
+            const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++ )
+            annotationPage.items.push(annotation)
+        }
+    }
+    return annotationPage
+}
+
 function renderManifest( manifestLabel, baseURI, surfaces) {
     const manifestBoilerplateJSON = fs.readFileSync("./src/templates/manifest.json")
     const canvasBoilerplateJSON = fs.readFileSync("./src/templates/canvas.json")
     const annotationBoilerplateJSON = fs.readFileSync("./src/templates/annotation.json")
 
     const manifest = JSON.parse(manifestBoilerplateJSON)
-    manifest.id = `${baseURI}/manifest.json`
+    manifest.id = `${baseURI}/iiif/manifest.json`
     manifest.label = { en: [manifestLabel] }
 
     for( const surface of Object.values(surfaces) ) {
         const { id, label, imageURL, width, height } = surface
 
         const canvas = JSON.parse(canvasBoilerplateJSON)
-        canvas.id = `${baseURI}/canvas/${id}`
+        canvas.id = `${baseURI}/iiif/canvas/${id}`
         canvas.height = height
         canvas.width = width
         canvas.label = { "none": [ label ] }
@@ -142,6 +183,8 @@ function renderManifest( manifestLabel, baseURI, surfaces) {
         }]
 
         canvas.items[0].items.push(annotation)
+        const annotationPage = renderTextAnnotationPage(baseURI, canvas.id, surface, 1)
+        if( annotationPage ) canvas.annotations = [ annotationPage ]
         manifest.items.push( canvas )      
     }
     
@@ -177,7 +220,7 @@ async function run() {
         surfaces[id] = surface
     }
 
-    const baseURI = "http://localhost:8080/test_doc/iiif"
+    const baseURI = "http://localhost:8080/test_doc"
     renderManifest( 'FHL_007548705_ISLETA_BAPTISMS_1', baseURI, surfaces )
     renderPartials( surfaces )
 }
