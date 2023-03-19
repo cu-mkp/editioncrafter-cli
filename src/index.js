@@ -125,25 +125,21 @@ function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID) {
 
 function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     const { id: surfaceID, xmls, htmls } = surface
-    if( !xmls && !htmls ) return null
+    if( Object.keys(xmls).length == 0 && Object.keys(htmls).length == 0 ) return null
     const annotationPageID = `${canvasID}/annotationPage/${apIndex}`
     const annotationPageBoilerplateJSON = fs.readFileSync("./src/templates/annotationPage.json")
     const annotationPage = JSON.parse(annotationPageBoilerplateJSON)
     annotationPage.id = annotationPageID
     let i = 0
-    if( xmls ) {
-        for( const localID of Object.keys(xmls) ) {
-            const xmlURL = `${baseURI}/tei/${localID}/${surfaceID}.xml`        
-            const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++ )
-            annotationPage.items.push(annotation)
-        }
+    for( const localID of Object.keys(xmls) ) {
+        const xmlURL = `${baseURI}/tei/${localID}/${surfaceID}.xml`        
+        const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++ )
+        annotationPage.items.push(annotation)
     }
-    if( htmls ) {
-        for( const localID of Object.keys(htmls) ) {
-            const htmlURL = `${baseURI}/html/${localID}/${surfaceID}.html`        
-            const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++ )
-            annotationPage.items.push(annotation)
-        }
+    for( const localID of Object.keys(htmls) ) {
+        const htmlURL = `${baseURI}/html/${localID}/${surfaceID}.html`        
+        const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++ )
+        annotationPage.items.push(annotation)
     }
     return annotationPage
 }
