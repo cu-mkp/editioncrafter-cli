@@ -107,19 +107,15 @@ function renderPartials( surfaces ) {
     }
 }
 
-function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID) {
+function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, language, format) {
     const annotationBoilerplateJSON = fs.readFileSync("./src/templates/annotation.json")
     const annotation = JSON.parse(annotationBoilerplateJSON)
     annotation.id = `${annotationPageID}/annotation/${annoID}`
     annotation.motivation = "supplementing"
     annotation.target = canvasID
     annotation.body.id = textURL
-    annotation.body.type = ""    
-    annotation.body.service = [{
-        '@id': textURL,
-        '@type': "",
-        profile: "",
-    }]
+    annotation.body.type = "TextualBody"    
+    annotation.body.format = format    
     return annotation
 }
 
@@ -133,12 +129,12 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     let i = 0
     for( const localID of Object.keys(xmls) ) {
         const xmlURL = `${baseURI}/tei/${localID}/${surfaceID}.xml`        
-        const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++ )
+        const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++, "", "text/xml" )
         annotationPage.items.push(annotation)
     }
     for( const localID of Object.keys(htmls) ) {
         const htmlURL = `${baseURI}/html/${localID}/${surfaceID}.html`        
-        const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++ )
+        const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++, "", "html" )
         annotationPage.items.push(annotation)
     }
     return annotationPage
