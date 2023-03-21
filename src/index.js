@@ -5,9 +5,6 @@ const jsdom = require("jsdom")
 const { JSDOM } = jsdom
 const {CETEI} = require("./CETEI")
 
-const testXML = "./data/FHL_007548705_ISLETA_BAPTISMS_1.xml"
-const targetDir = "./public/test_doc"
-
 function dirExists( dir ) {
     if( !fs.existsSync(dir) ) {
       fs.mkdirSync(dir);
@@ -23,7 +20,7 @@ function convertToHTML( xml ) {
         const ceTEI = new CETEI(htmlDOM.window)
         const xmlDOM = new JSDOM(xml, { contentType: "text/xml" })   
         const data = ceTEI.domToHTML5(xmlDOM.window.document)
-        return data.innerHTML
+        return data.outerHTML
     } catch( err ) {
         console.error(`ERROR ${err}: ${err.stack}`)  
     }
@@ -82,26 +79,21 @@ function generateWebPartials( xmls ) {
     return htmls
 }
 
-function renderPartials( surfaces ) {
-    dirExists('public')
-    dirExists(targetDir)
-    dirExists(`${targetDir}/tei`)
-    dirExists(`${targetDir}/html`)
-
+function renderPartials( surfaces, teiDocPath ) {
     for( const surface of Object.values(surfaces) ) {
         const { id: surfaceID, xmls, htmls } = surface
 
         for( const id of Object.keys(xmls) ) {
             const xml = xmls[id]
-            dirExists(`${targetDir}/tei/${id}`)
-            const xmlPath = `${targetDir}/tei/${id}/${surfaceID}.xml`
+            dirExists(`${teiDocPath}/tei/${id}`)
+            const xmlPath = `${teiDocPath}/tei/${id}/${surfaceID}.xml`
             fs.writeFileSync(xmlPath,xml)
         }
 
         for( const id of Object.keys(htmls) ) {
             const html = htmls[id]
-            dirExists(`${targetDir}/html/${id}`)
-            const htmlPath = `${targetDir}/html/${id}/${surfaceID}.html`
+            dirExists(`${teiDocPath}/html/${id}`)
+            const htmlPath = `${teiDocPath}/html/${id}/${surfaceID}.html`
             fs.writeFileSync(htmlPath,html)
         }
     }
@@ -140,7 +132,7 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     return annotationPage
 }
 
-function renderManifest( manifestLabel, baseURI, surfaces) {
+function renderManifest( manifestLabel, baseURI, surfaces, teiDocPath) {
     const manifestBoilerplateJSON = fs.readFileSync("./src/templates/manifest.json")
     const canvasBoilerplateJSON = fs.readFileSync("./src/templates/canvas.json")
     const annotationBoilerplateJSON = fs.readFileSync("./src/templates/annotation.json")
@@ -181,58 +173,134 @@ function renderManifest( manifestLabel, baseURI, surfaces) {
     }
     
     const manifestJSON = JSON.stringify(manifest, null, '\t')
-    dirExists('public')
-    dirExists(targetDir)
-    dirExists(`${targetDir}/iiif`)
-    const iiifPath = `${targetDir}/iiif/manifest.json`
+    const iiifPath = `${teiDocPath}/iiif/manifest.json`
     fs.writeFileSync(iiifPath,manifestJSON) 
 }
 
-async function run() {
-    const xml = fs.readFileSync(testXML, "utf8")
-    const doc = new JSDOM(xml, { contentType: "text/xml" }).window.document
+function parseSurfaces(doc) {
+     // gather resource elements
+     const facsEl = doc.getElementsByTagName('facsimile')[0]
+     const textEls = doc.getElementsByTagName('text')
+     const surfaceEls = facsEl.getElementsByTagName('surface')
+     
+     // parse invididual surfaces and partials
+     const surfaces = {}
+     for( const surfaceEl of surfaceEls ) {
+         const id = surfaceEl.getAttribute('xml:id')
+         const labelEl = surfaceEl.getElementsByTagName('label')[0]
+         const label = labelEl.textContent
+         const graphicEl = surfaceEl.getElementsByTagName('graphic')[0]
+         const imageURL = graphicEl.getAttribute('url')
+         const width = parseInt(surfaceEl.getAttribute('lrx'))
+         const height = parseInt(surfaceEl.getAttribute('lry'))
+         const surface = { id, label, imageURL, width, height }
+         surface.xmls = generateTextPartials(id, textEls)
+         // TODO: generate sourceDoc partials
+         surface.htmls = generateWebPartials(surface.xmls)
+         surfaces[id] = surface
+     }
 
-    const facsEl = doc.getElementsByTagName('facsimile')[0]
-    const textEls = doc.getElementsByTagName('text')
-    const surfaceEls = facsEl.getElementsByTagName('surface')
+     return surfaces
+}
 
-    const surfaces = {}
-    for( const surfaceEl of surfaceEls ) {
-        const id = surfaceEl.getAttribute('xml:id')
-        const labelEl = surfaceEl.getElementsByTagName('label')[0]
-        const label = labelEl.textContent
-        const graphicEl = surfaceEl.getElementsByTagName('graphic')[0]
-        const imageURL = graphicEl.getAttribute('url')
-        const width = parseInt(surfaceEl.getAttribute('lrx'))
-        const height = parseInt(surfaceEl.getAttribute('lry'))
-        const surface = { id, label, imageURL, width, height }
-        surface.xmls = generateTextPartials(id, textEls)
-        // TODO: generate sourceDoc partials
-        surface.htmls = generateWebPartials(surface.xmls)
-        surfaces[id] = surface
+function renderResources( doc, htmlDoc, teiDocPath ) {
+    const resourceEls = doc.getElementsByTagName('text')
+    const resourceHTMLEls = htmlDoc.getElementsByTagName('tei-text')
+
+    for( const resourceEl of resourceEls ) {
+        const resourceID = resourceEl.getAttribute('xml:id')
+        fs.writeFileSync(`${teiDocPath}/tei/${resourceID}/index.xml`,resourceEl.outerHTML)
     }
 
-    const baseURI = "http://localhost:8080/test_doc"
-    renderManifest( 'FHL_007548705_ISLETA_BAPTISMS_1', baseURI, surfaces )
-    renderPartials( surfaces )
+    for( const resourceHTMLEl of resourceHTMLEls ) {
+        const resourceID = resourceHTMLEl.getAttribute('xml:id')
+        fs.writeFileSync(`${teiDocPath}/html/${resourceID}/index.html`,resourceHTMLEl.outerHTML)
+    }
+} 
+
+function validateDoc(doc) {
+    // TODO needs to have exactly 1 facs. needs to be a valid xml doc
+    return { status: 'ok' }
+}
+
+function renderTEIDocument(options) {
+    const { targetPath, outputPath, baseURL, teiDocumentID } = options
+    const teiDocPath = `${outputPath}/${teiDocumentID}`
+    const xml = fs.readFileSync(targetPath, "utf8")
+    const doc = new JSDOM(xml, { contentType: "text/xml" }).window.document
+    const status = validateDoc(doc)
+    if( status.error ) return status
+
+    // create top level dirs
+    dirExists(outputPath)
+    dirExists(teiDocPath)
+    dirExists(`${teiDocPath}/tei`)
+    dirExists(`${teiDocPath}/iiif`)
+    dirExists(`${teiDocPath}/html`)
+
+    // render complete TEI  
+    fs.writeFileSync(`${teiDocPath}/tei/index.xml`,xml)
+
+    // render complete HTML
+    const htmlDOM = new JSDOM()
+    const ceTEI = new CETEI(htmlDOM.window)
+    const htmlDoc = ceTEI.domToHTML5(doc)
+    fs.writeFileSync(`${teiDocPath}/html/index.html`,htmlDoc.outerHTML)
+
+    // render resources
+    renderResources( doc, htmlDoc, teiDocPath )
+
+    // render manifest and partials 
+    const surfaces = parseSurfaces(doc)
+    const documentURL = `${baseURL}/${teiDocumentID}`
+    renderManifest( teiDocumentID, documentURL, surfaces, teiDocPath )
+    renderPartials( surfaces, teiDocPath )   
+}
+
+async function run(options) {
+    if( options.mode === 'process' ) {
+        renderTEIDocument(options)
+    }
+}
+
+function processArguments() {
+    const args = process.argv
+    const optForHelp = { mode: 'help' }
+
+    if( args.length < 4 ) return optForHelp
+
+    const mode = args[2]
+
+    if( mode === 'process' ) {
+        const targetPath = args[3]
+        const outputPath = args[4] ? args[4] : './public'
+        const baseURL = 'http://localhost:8080'
+        const teiDocumentID = 'fr640_3r-3v-example'
+        return { mode, targetPath, outputPath, baseURL, teiDocumentID }
+    }
+
+    return optForHelp
+}
+
+function displayHelp() {
+    console.log(`Usage: edition_crafter <command> <tei_path> <output_path>` );
+    console.log("Edition Crafter responds to the following <command>s:")
+    console.log("\process: Process the TEI Document into a manifest, partials, and annotations.")
+    console.log("\thelp: Displays this help. ");
 }
 
 function main() {
-    run().then(() => {
-        console.log('Done!')
-    }, (err) => {
-        console.log(`${err}: ${err.stack}`)  
-    })
+    const options = processArguments()
+    if( options.mode === 'help' ) {
+        displayHelp()
+    } else {
+        run(options).then(() => {
+            console.log('Edition Crafter finished.')
+        }, (err) => {
+            console.log(`${err}: ${err.stack}`)  
+        })    
+    }    
 }
 
-function main2() {
-    const htmlDOM = new JSDOM()
-    const ceTEI = new CETEI(htmlDOM.window)
-    const xml = fs.readFileSync('./data/FHL_007548705_ISLETA_BAPTISMS_1.xml', "utf8")
-    const xmlDOM = new JSDOM(xml, { contentType: "text/xml" })
-    const data = ceTEI.domToHTML5(xmlDOM.window.document)
-    fs.writeFileSync('./public/test.xml',data.outerHTML)
-}
-
-///// RUN THE SCRIPT
+///// RUN
 main()
