@@ -114,6 +114,7 @@ function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, form
     annotation.motivation = "supplementing"
     annotation.target = canvasID
     annotation.body.id = textURL
+    annotation.body.type = "Transcription"
     annotation.body.format = format
     return annotation
 }
@@ -163,6 +164,7 @@ function renderManifest( manifestLabel, baseURI, surfaces) {
         annotation.motivation = "painting"
         annotation.target = canvas.id
         annotation.body.id = imageURL
+        annotation.body.type = "Image"
         annotation.body.format = "image/jpeg"
         annotation.body.height = height
         annotation.body.width = width
