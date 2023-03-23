@@ -274,8 +274,8 @@ function processArguments() {
     if( mode === 'process' ) {
         const targetPath = args[3]
         const outputPath = args[4] ? args[4] : './public'
-        const baseURL = 'http://localhost:8080'
-        const teiDocumentID = 'fr640_3r-3v-example'
+        const baseURL = args[5] ? args[5] : 'http://localhost:8080'
+        const teiDocumentID = args[6] ? args[6] : 'fr640_3r-3v-example'
         return { mode, targetPath, outputPath, baseURL, teiDocumentID }
     }
 
