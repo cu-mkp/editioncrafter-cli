@@ -111,7 +111,7 @@ function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, loca
     annotation.body.id = textURL
     annotation.body.type = "TextPartial"
     annotation.body.profile = textPartialResourceProfileID
-    annotation.body.label = localID
+    annotation.body.label = { "none": [ localID ] }
     annotation.body.format = format
     return annotation
 }
@@ -137,7 +137,7 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     return annotationPage
 }
 
-function renderManifest( manifestLabel, baseURI, surfaces, teiDocPath) {
+function renderManifest( manifestLabel, baseURI, surfaces, teiDocPath, thumbnailWidth, thumbnailHeight) {
     const manifestBoilerplateJSON = fs.readFileSync("./src/templates/manifest.json")
     const canvasBoilerplateJSON = fs.readFileSync("./src/templates/canvas.json")
     const annotationBoilerplateJSON = fs.readFileSync("./src/templates/annotation.json")
@@ -166,8 +166,14 @@ function renderManifest( manifestLabel, baseURI, surfaces, teiDocPath) {
         annotation.body.height = height
         annotation.body.width = width
         annotation.body.service = [{
-            '@id': imageURL,
-            '@type': "ImageService2",
+            id: imageURL,
+            type: "ImageService2",
+            profile: "http://iiif.io/api/image/2/level2.json",
+        }]
+        annotation.body.thumbnail = [{
+            id: `${imageURL}/full/${thumbnailWidth},${thumbnailHeight}/0/default.jpg`,
+            format: "image/jpeg",
+            type: "ImageService2",
             profile: "http://iiif.io/api/image/2/level2.json",
         }]
 
@@ -229,7 +235,7 @@ function validateTEIDoc(doc) {
 }
 
 function renderTEIDocument(options) {
-    const { targetPath, outputPath, baseURL, teiDocumentID } = options
+    const { targetPath, outputPath, baseURL, teiDocumentID, thumbnailWidth, thumbnailHeight } = options
     const teiDocPath = `${outputPath}/${teiDocumentID}`
     const xml = fs.readFileSync(targetPath, "utf8")
     const doc = new JSDOM(xml, { contentType: "text/xml" }).window.document
@@ -258,7 +264,7 @@ function renderTEIDocument(options) {
     // render manifest and partials 
     const surfaces = parseSurfaces(doc)
     const documentURL = `${baseURL}/${teiDocumentID}`
-    renderManifest( teiDocumentID, documentURL, surfaces, teiDocPath )
+    renderManifest( teiDocumentID, documentURL, surfaces, teiDocPath, thumbnailWidth, thumbnailHeight )
     renderPartials( surfaces, teiDocPath )   
 }
 
@@ -281,7 +287,9 @@ function processArguments() {
         const outputPath = args[4] ? args[4] : './public'
         const baseURL = args[5] ? args[5] : 'http://localhost:8080'
         const teiDocumentID = args[6] ? args[6] : 'fr640_3r-3v-example'
-        return { mode, targetPath, outputPath, baseURL, teiDocumentID }
+        const thumbnailWidth = 100
+        const thumbnailHeight = 100
+        return { mode, targetPath, outputPath, baseURL, teiDocumentID, thumbnailWidth, thumbnailHeight }
     }
 
     return optForHelp
