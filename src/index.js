@@ -5,6 +5,9 @@ const jsdom = require("jsdom")
 const { JSDOM } = jsdom
 const {CETEI} = require("./CETEI")
 
+// Profile ID for EditionCrafter text partials
+const textPartialResourceProfileID = 'https://github.com/cu-mkp/editioncrafter-project/text-partial-resource.md'
+
 function dirExists( dir ) {
     if( !fs.existsSync(dir) ) {
       fs.mkdirSync(dir);
@@ -99,14 +102,16 @@ function renderPartials( surfaces, teiDocPath ) {
     }
 }
 
-function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, format) {
+function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, localID, format) {
     const annotationBoilerplateJSON = fs.readFileSync("./src/templates/annotation.json")
     const annotation = JSON.parse(annotationBoilerplateJSON)
     annotation.id = `${annotationPageID}/annotation/${annoID}`
     annotation.motivation = "supplementing"
     annotation.target = canvasID
     annotation.body.id = textURL
-    annotation.body.type = "Transcription"
+    annotation.body.type = "TextPartial"
+    annotation.body.profile = textPartialResourceProfileID
+    annotation.body.label = localID
     annotation.body.format = format
     return annotation
 }
@@ -121,12 +126,12 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     let i = 0
     for( const localID of Object.keys(xmls) ) {
         const xmlURL = `${baseURI}/tei/${localID}/${surfaceID}.xml`        
-        const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++, "text/xml" )
+        const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++, localID, "text/xml" )
         annotationPage.items.push(annotation)
     }
     for( const localID of Object.keys(htmls) ) {
         const htmlURL = `${baseURI}/html/${localID}/${surfaceID}.html`        
-        const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++, "text/html" )
+        const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++, localID, "text/html" )
         annotationPage.items.push(annotation)
     }
     return annotationPage
@@ -218,7 +223,7 @@ function renderResources( doc, htmlDoc, teiDocPath ) {
     }
 } 
 
-function validateDoc(doc) {
+function validateTEIDoc(doc) {
     // TODO needs to have exactly 1 facs. needs to be a valid xml doc
     return { status: 'ok' }
 }
@@ -228,7 +233,7 @@ function renderTEIDocument(options) {
     const teiDocPath = `${outputPath}/${teiDocumentID}`
     const xml = fs.readFileSync(targetPath, "utf8")
     const doc = new JSDOM(xml, { contentType: "text/xml" }).window.document
-    const status = validateDoc(doc)
+    const status = validateTEIDoc(doc)
     if( status.error ) return status
 
     // create top level dirs
