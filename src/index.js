@@ -220,12 +220,16 @@ function renderResources( doc, htmlDoc, teiDocPath ) {
 
     for( const resourceEl of resourceEls ) {
         const resourceID = resourceEl.getAttribute('xml:id')
-        fs.writeFileSync(`${teiDocPath}/tei/${resourceID}/index.xml`,resourceEl.outerHTML)
+        const resourceDir = `${teiDocPath}/tei/${resourceID}`
+        dirExists(resourceDir)
+        fs.writeFileSync(`${resourceDir}/index.xml`,resourceEl.outerHTML)
     }
 
     for( const resourceHTMLEl of resourceHTMLEls ) {
         const resourceID = resourceHTMLEl.getAttribute('xml:id')
-        fs.writeFileSync(`${teiDocPath}/html/${resourceID}/index.html`,resourceHTMLEl.outerHTML)
+        const resourceDir = `${teiDocPath}/html/${resourceID}`
+        dirExists(resourceDir)
+        fs.writeFileSync(`${resourceDir}/index.xml`,resourceHTMLEl.outerHTML)
     }
 } 
 
