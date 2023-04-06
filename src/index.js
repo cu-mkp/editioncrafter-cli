@@ -102,7 +102,7 @@ function renderPartials( surfaces, teiDocPath ) {
     }
 }
 
-function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, localID, format) {
+function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, format) {
     const annotationBoilerplateJSON = fs.readFileSync("./src/templates/annotation.json")
     const annotation = JSON.parse(annotationBoilerplateJSON)
     annotation.id = `${annotationPageID}/annotation/${annoID}`
@@ -111,7 +111,6 @@ function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, loca
     annotation.body.id = textURL
     annotation.body.type = "TextPartial"
     annotation.body.profile = textPartialResourceProfileID
-    annotation.body.label = { "none": [ localID ] }
     annotation.body.format = format
     return annotation
 }
@@ -126,12 +125,12 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     let i = 0
     for( const localID of Object.keys(xmls) ) {
         const xmlURL = `${baseURI}/tei/${localID}/${surfaceID}.xml`        
-        const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++, localID, "text/xml" )
+        const annotation = renderTextAnnotation( annotationPageID, canvasID, xmlURL, i++, "text/xml" )
         annotationPage.items.push(annotation)
     }
     for( const localID of Object.keys(htmls) ) {
         const htmlURL = `${baseURI}/html/${localID}/${surfaceID}.html`        
-        const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++, localID, "text/html" )
+        const annotation = renderTextAnnotation( annotationPageID, canvasID, htmlURL, i++, "text/html" )
         annotationPage.items.push(annotation)
     }
     return annotationPage
