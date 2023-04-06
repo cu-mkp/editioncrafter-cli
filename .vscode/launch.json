@@ -27,12 +27,12 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Generate for EC Project Testing",
+            "name": "EditionCrafter Test Website",
             "skipFiles": [
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/src/index.js",
-            "args": ["process", "data/fr640_3r-3v-example.xml", "public", "http://localhost:1313"]
+            "args": ["process", "data/fr640_3r-3v-example.xml", "public", "https://cu-mkp.github.io/editioncrafter-project"]
         }
     ]
 }
