@@ -290,8 +290,8 @@ function processArguments() {
         const outputPath = args[4] ? args[4] : './public'
         const baseURL = args[5] ? args[5] : 'http://localhost:8080'
         const teiDocumentID = args[6] ? args[6] : 'fr640_3r-3v-example'
-        const thumbnailWidth = 100
-        const thumbnailHeight = 100
+        const thumbnailWidth = 124
+        const thumbnailHeight = 192
         return { mode, targetPath, outputPath, baseURL, teiDocumentID, thumbnailWidth, thumbnailHeight }
     }
 
