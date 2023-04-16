@@ -228,7 +228,7 @@ function renderResources( doc, htmlDoc, teiDocPath ) {
         const resourceID = resourceHTMLEl.getAttribute('xml:id')
         const resourceDir = `${teiDocPath}/html/${resourceID}`
         dirExists(resourceDir)
-        fs.writeFileSync(`${resourceDir}/index.xml`,resourceHTMLEl.outerHTML)
+        fs.writeFileSync(`${resourceDir}/index.html`,resourceHTMLEl.outerHTML)
     }
 } 
 
