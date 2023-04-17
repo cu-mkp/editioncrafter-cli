@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Test Locally",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/index.js",
+            "args": ["process", "data/fr640_3r-3v-example.xml", "public"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Generate for EC Testing",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/index.js",
+            "args": ["process", "data/fr640_3r-3v-example.xml", "public", "http://localhost:5000"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "EditionCrafter Test Website",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/index.js",
+            "args": ["process", "data/fr640_3r-3v-example.xml", "public", "https://cu-mkp.github.io/editioncrafter-project"]
+        }
+    ]
+}
