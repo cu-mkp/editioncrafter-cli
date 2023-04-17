@@ -17,6 +17,16 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Test NBU Locally",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/src/index.js",
+            "args": ["process", "data/FHL_007548705_ISLETA_BAPTISMS_1.xml", "public"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Generate for EC Testing",
             "skipFiles": [
                 "<node_internals>/**"
