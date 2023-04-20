@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const fs = require('fs')
 const path = require('path');
 const jsdom = require("jsdom")
@@ -314,7 +312,7 @@ function displayHelp() {
     console.log("\thelp: Displays this help. ");
 }
 
-function main() {
+function editionCrafterCLI() {
     const options = processArguments()
     if( options.mode === 'help' ) {
         displayHelp()
@@ -327,5 +325,4 @@ function main() {
     }    
 }
 
-///// RUN
-main()
+module.exports.editionCrafterCLI = editionCrafterCLI;
