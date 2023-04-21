@@ -1,6 +1,5 @@
-#!/usr/bin/env node
-
 const fs = require('fs')
+const path = require('path');
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom
 const {CETEI} = require("./CETEI")
@@ -277,6 +276,14 @@ async function run(options) {
     }
 }
 
+function getResourceIDFromPath(targetPath) {
+    if( targetPath.toLowerCase().endsWith('.xml') ) {
+        return path.basename(targetPath,'.xml').trim()
+    } else {
+        return null
+    }
+}
+
 function processArguments() {
     const args = process.argv
     const optForHelp = { mode: 'help' }
@@ -289,7 +296,7 @@ function processArguments() {
         const targetPath = args[3]
         const outputPath = args[4] ? args[4] : './public'
         const baseURL = args[5] ? args[5] : 'http://localhost:8080'
-        const teiDocumentID = args[6] ? args[6] : 'fr640_3r-3v-example'
+        const teiDocumentID = getResourceIDFromPath(targetPath)
         const thumbnailWidth = 124
         const thumbnailHeight = 192
         return { mode, targetPath, outputPath, baseURL, teiDocumentID, thumbnailWidth, thumbnailHeight }
@@ -305,7 +312,7 @@ function displayHelp() {
     console.log("\thelp: Displays this help. ");
 }
 
-function main() {
+function editionCrafterCLI() {
     const options = processArguments()
     if( options.mode === 'help' ) {
         displayHelp()
@@ -318,5 +325,4 @@ function main() {
     }    
 }
 
-///// RUN
-main()
+module.exports.editionCrafterCLI = editionCrafterCLI;
