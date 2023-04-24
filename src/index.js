@@ -21,6 +21,11 @@ function dirExists( dir ) {
     }
 }
 
+// For paths within the editioncrafter directory
+function processRelativePath(input_path) {
+    return path.resolve(__dirname, '..', input_path)
+}
+
 // For paths provided by the user
 function processUserPath(input_path) {
     return path.resolve(process.cwd(), input_path)
