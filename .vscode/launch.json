@@ -12,7 +12,7 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/editioncrafter",
-            "args": ["process", "data/fr640_3r-3v-example.xml", "public", "https://localhost:8081"]
+            "args": ["process", "data/fr640_3r-3v-example.xml", "public"]
         },
         {
             "type": "node",
