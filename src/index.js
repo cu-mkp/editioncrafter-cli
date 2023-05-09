@@ -1,8 +1,9 @@
 const fs = require('fs')
-const path = require('path');
+const path = require('path')
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom
 const {CETEI} = require("./CETEI")
+const { runServer } = require("./server.js")
 
 const manifest = require("./templates/manifest.json")
 const canvas = require("./templates/canvas.json")
@@ -277,6 +278,8 @@ function renderTEIDocument(options) {
 async function run(options) {
     if( options.mode === 'process' ) {
         renderTEIDocument(options)
+    } else if( options.mode === 'server' ) {
+        runServer(options)
     }
 }
 
@@ -292,11 +295,12 @@ function processArguments() {
     const args = process.argv
     const optForHelp = { mode: 'help' }
 
-    if( args.length < 4 ) return optForHelp
+    if( args.length < 2 ) return optForHelp
 
     const mode = args[2]
 
     if( mode === 'process' ) {
+        if( args.length < 4 ) return optForHelp
         const targetPath = processUserPath(args[3])
         const outputPath = args[4] ? processUserPath(args[4]) : processRelativePath('./public')
         const baseURL = args[5] ? args[5] : 'http://localhost:8080'
@@ -304,14 +308,18 @@ function processArguments() {
         const thumbnailWidth = 124
         const thumbnailHeight = 192
         return { mode, targetPath, outputPath, baseURL, teiDocumentID, thumbnailWidth, thumbnailHeight }
+    } else if( mode === 'server' ) {
+        // TODO load config from config path 
+        return { mode }
     }
 
     return optForHelp
 }
 
 function displayHelp() {
-    console.log(`Usage: edition_crafter <command> <tei_path> <output_path>` );
+    console.log(`Usage: editioncrafter <command> (<tei_path> <output_path>|<config_path>)` );
     console.log("Edition Crafter responds to the following <command>s:")
+    console.log("\server: Run as a server, requires config_path.")
     console.log("\process: Process the TEI Document into a manifest, partials, and annotations.")
     console.log("\thelp: Displays this help. ");
 }
@@ -322,7 +330,11 @@ function editionCrafterCLI() {
         displayHelp()
     } else {
         run(options).then(() => {
-            console.log('Edition Crafter finished.')
+            if( options.mode === 'server' ) {
+                console.log('Edition Crafter started.')
+            } else {
+                console.log('Edition Crafter finished.')
+            }
         }, (err) => {
             console.log(`${err}: ${err.stack}`)
         })
