@@ -4,10 +4,10 @@ const jsdom = require("jsdom")
 const { JSDOM } = jsdom
 const {CETEI} = require("./CETEI")
 
-const manifest = require("./templates/manifest.json")
-const canvas = require("./templates/canvas.json")
-const annotation = require("./templates/annotation.json")
-const annotationPage = require("./templates/annotationPage.json")
+const manifestTemplate = require("./templates/manifest.json")
+const canvasTemplate = require("./templates/canvas.json")
+const annotationTemplate = require("./templates/annotation.json")
+const annotationPageTemplate = require("./templates/annotationPage.json")
 
 // Profile ID for EditionCrafter text partials
 const textPartialResourceProfileID = 'https://github.com/cu-mkp/editioncrafter-project/text-partial-resource.md'
@@ -117,6 +117,7 @@ function renderPartials( surfaces, teiDocPath ) {
 }
 
 function renderTextAnnotation( annotationPageID, canvasID, textURL, annoID, format) {
+    const annotation = structuredClone(annotationTemplate)
     annotation.id = `${annotationPageID}/annotation/${annoID}`
     annotation.motivation = "supplementing"
     annotation.target = canvasID
@@ -131,6 +132,7 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     const { id: surfaceID, xmls, htmls } = surface
     if( Object.keys(xmls).length == 0 && Object.keys(htmls).length == 0 ) return null
     const annotationPageID = `${canvasID}/annotationPage/${apIndex}`
+    const annotationPage = structuredClone(annotationPageTemplate)
     annotationPage.id = annotationPageID
     let i = 0
     for( const localID of Object.keys(xmls) ) {
@@ -147,18 +149,21 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
 }
 
 function renderManifest( manifestLabel, baseURI, surfaces, teiDocPath, thumbnailWidth, thumbnailHeight) {
+    const manifest = structuredClone(manifestTemplate)
     manifest.id = `${baseURI}/iiif/manifest.json`
     manifest.label = { en: [manifestLabel] }
 
     for( const surface of Object.values(surfaces) ) {
         const { id, label, imageURL, width, height } = surface
 
+        const canvas = structuredClone(canvasTemplate)
         canvas.id = `${baseURI}/iiif/canvas/${id}`
         canvas.height = height
         canvas.width = width
         canvas.label = { "none": [ label ] }
         canvas.items[0].id = `${canvas.id}/annotationpage/0`
 
+        const annotation = structuredClone(annotationTemplate)
         annotation.id = `${canvas.items[0].id}/annotation/0`
         annotation.motivation = "painting"
         annotation.target = canvas.id

@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/edition_crafter",
+            "program": "${workspaceFolder}/editioncrafter",
             "args": ["process", "data/fr640_3r-3v-example.xml", "public"]
         },
         {
@@ -21,7 +21,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/edition_crafter",
+            "program": "${workspaceFolder}/editioncrafter",
             "args": ["process", "data/FHL_007548705_ISLETA_BAPTISMS_1.xml", "public"]
         },
         {
@@ -31,7 +31,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/edition_crafter",
+            "program": "${workspaceFolder}/editioncrafter",
             "args": ["process", "data/fr640_3r-3v-example.xml", "public", "http://localhost:5000"]
         },
         {
@@ -41,7 +41,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/edition_crafter",
+            "program": "${workspaceFolder}/editioncrafter",
             "args": ["process", "data/fr640_3r-3v-example.xml", "public", "https://cu-mkp.github.io/editioncrafter-project"]
         }
     ]
