@@ -66,7 +66,7 @@ function getSurface( teiDocumentID, resourceType, resourceID, surfaceID ) {
 
 function initRoutes(app,port) {
     app.use(cors())
-    
+
     app.get('/', (req, res) => {
         res.send(welcomeMessageHTML)
     })
@@ -95,7 +95,8 @@ function initRoutes(app,port) {
 
     app.get('/:teiDocumentID/:resourceType/:resourceID/:surfaceID', (req, res) => {
         const { teiDocumentID, resourceType, resourceID, surfaceID } = req.params
-        const resp = getSurface( teiDocumentID, resourceType, resourceID, surfaceID )
+        const surfaceIDParts = surfaceID.split('.')
+        const resp = getSurface( teiDocumentID, resourceType, resourceID, surfaceIDParts[0] )
         if( resp ) res.send(resp)
     })
       
