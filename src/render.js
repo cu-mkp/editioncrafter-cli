@@ -149,7 +149,8 @@ function renderManifest( manifestLabel, baseURI, surfaces, thumbnailWidth, thumb
         manifest.items.push( canvas )
     }
 
-    return manifest
+    const manifestJSON = JSON.stringify(manifest, null, '\t')
+    return manifestJSON
 }
 
 function parseSurfaces(doc) {

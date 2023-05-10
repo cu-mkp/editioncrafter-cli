@@ -17,9 +17,8 @@ function writeResources( resources, teiDocPath ) {
 }
 
 function writeManifest( manifest, teiDocPath ) {
-    const manifestJSON = JSON.stringify(manifest, null, '\t')
     const iiifPath = `${teiDocPath}/iiif/manifest.json`
-    fs.writeFileSync(iiifPath,manifestJSON)
+    fs.writeFileSync(iiifPath,manifest)
 }
 
 function writePartials( surfaces, teiDocPath ) {
