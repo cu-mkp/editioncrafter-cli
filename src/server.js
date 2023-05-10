@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const fs = require('fs')
 
 const { renderTEIDocument } = require("./render")
@@ -64,7 +65,8 @@ function getSurface( teiDocumentID, resourceType, resourceID, surfaceID ) {
 }
 
 function initRoutes(app,port) {
-
+    app.use(cors())
+    
     app.get('/', (req, res) => {
         res.send(welcomeMessageHTML)
     })
