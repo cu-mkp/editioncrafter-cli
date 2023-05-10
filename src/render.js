@@ -213,6 +213,7 @@ function renderTEIDocument(xml, options) {
     const htmlDOM = new JSDOM()
     const ceTEI = new CETEI(htmlDOM.window)
     const htmlDoc = ceTEI.domToHTML5(doc)
+    const html = htmlDoc.outerHTML
 
     // render resources
     const resources = renderResources( doc, htmlDoc )
@@ -223,11 +224,11 @@ function renderTEIDocument(xml, options) {
     const manifest = renderManifest( teiDocumentID, documentURL, surfaces, thumbnailWidth, thumbnailHeight )
 
     return {
-        teiDocumentID,
+        id: teiDocumentID,
         xml,
-        htmlDoc,
-        resources,
+        html,
         manifest,
+        resources,
         surfaces
     }
 }

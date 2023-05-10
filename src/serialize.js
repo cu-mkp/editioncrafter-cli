@@ -52,7 +52,7 @@ function dirExists( dir ) {
 }
 
 function serializeTEIDocument(teiDoc, outputPath) {
-    const teiDocPath = `${outputPath}/${teiDoc.teiDocumentID}`
+    const teiDocPath = `${outputPath}/${teiDoc.id}`
 
     // create top level dirs
     dirExists(outputPath)
@@ -61,13 +61,13 @@ function serializeTEIDocument(teiDoc, outputPath) {
     dirExists(`${teiDocPath}/iiif`)
     dirExists(`${teiDocPath}/html`)
 
-    const { htmlDoc, xml, resources, manifest, surfaces } = teiDoc
+    const { html, xml, resources, manifest, surfaces } = teiDoc
 
     // render complete TEI
     fs.writeFileSync(`${teiDocPath}/tei/index.xml`,xml)
 
     // render complete HTML
-    fs.writeFileSync(`${teiDocPath}/html/index.html`,htmlDoc.outerHTML)
+    fs.writeFileSync(`${teiDocPath}/html/index.html`,html)
 
     writeResources( resources, teiDocPath )
     writeManifest( manifest, teiDocPath )
