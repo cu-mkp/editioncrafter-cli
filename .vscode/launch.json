@@ -52,7 +52,7 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/editioncrafter",
-            "args": ["server"]
+            "args": ["server","-c","data/config.json"]
         }
     ]
 }

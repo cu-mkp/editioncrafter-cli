@@ -61,15 +61,21 @@ function processArguments() {
         const thumbnailHeight = 192
         return { mode, targetPath, outputPath, baseURL, teiDocumentID, thumbnailWidth, thumbnailHeight }
     } else if( mode === 'server' ) {
-        // TODO load config from config path 
-        return { mode }
+        if( args[3] === '-c' && args[4] ) {
+            const configPath = processUserPath(args[4])
+            const config = JSON.parse( fs.readFileSync(configPath) )
+            config.teiDocuments = {
+                'fr640_3r-3v-example': processUserPath('./data/fr640_3r-3v-example.xml')
+            }
+            return { mode, ...config }
+        } 
     }
 
     return optForHelp
 }
 
 function displayHelp() {
-    console.log(`Usage: editioncrafter <command> (<tei_path> <output_path>|<config_path>)` );
+    console.log(`Usage: editioncrafter <command> [-c config_path]|[<tei_path> <output_path>]` );
     console.log("Edition Crafter responds to the following <command>s:")
     console.log("\server: Run as a server, requires config_path.")
     console.log("\process: Process the TEI Document into a manifest, partials, and annotations.")
