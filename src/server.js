@@ -71,6 +71,12 @@ function initRoutes(app,port) {
         res.send(welcomeMessageHTML)
     })
 
+    app.get('/:teiDocumentID', (req, res) => {
+        const { teiDocumentID } = req.params
+        const resp = getTEIDocument( teiDocumentID, 'tei' )
+        if( resp ) res.send(resp)
+    })
+
     app.get('/:teiDocumentID/:resourceType', (req, res) => {
         const { teiDocumentID, resourceType } = req.params
         const resp = getTEIDocument( teiDocumentID, resourceType )
