@@ -51,6 +51,14 @@ async function getSurface( teiDocumentID, resourceType, resourceID, surfaceID, d
     return null
 }
 
+function standardResponse(res, resp) {
+    if( resp ) {
+        res.send(resp)
+    } else {
+        res.status(404).send("Not found.");
+    }
+}
+
 function initRoutes(documentStore,app,port) {
     app.use(cors())
 
@@ -60,14 +68,14 @@ function initRoutes(documentStore,app,port) {
 
     app.get('/:teiDocumentID', async (req, res) => {
         const { teiDocumentID } = req.params
-        const resp = getTEIDocument( teiDocumentID, 'tei', documentStore )
-        if( resp ) res.send(resp)
+        const resp = await getTEIDocument( teiDocumentID, 'tei', documentStore )
+        standardResponse(res, resp) 
     })
 
     app.get('/:teiDocumentID/:resourceType', async (req, res) => {
         const { teiDocumentID, resourceType } = req.params
-        const resp = getTEIDocument( teiDocumentID, resourceType, documentStore )
-        if( resp ) res.send(resp)
+        const resp = await getTEIDocument( teiDocumentID, resourceType, documentStore )
+        standardResponse(res, resp) 
     })
 
     app.get('/:teiDocumentID/:resourceType/:resourceID', async (req, res) => {
@@ -75,22 +83,22 @@ function initRoutes(documentStore,app,port) {
 
         let resp = null
         if( resourceType === 'iiif' && resourceID === 'manifest.json' ) {
-            resp = getTEIDocument(teiDocumentID,'iiif',documentStore)
+            resp = await getTEIDocument(teiDocumentID,'iiif',documentStore)
         } else if( resourceType === 'tei' && resourceID === 'index.xml') {
-            resp = getTEIDocument(teiDocumentID,'tei',documentStore)
+            resp = await getTEIDocument(teiDocumentID,'tei',documentStore)
         } else if( resourceType === 'html' && resourceID === 'index.html') {
-            resp = getTEIDocument(teiDocumentID,'html',documentStore)
+            resp = await getTEIDocument(teiDocumentID,'html',documentStore)
         } else {
-            resp = getResource( teiDocumentID, resourceType, resourceID, documentStore )
+            resp = await getResource( teiDocumentID, resourceType, resourceID, documentStore )
         }
-        if( resp ) res.send(resp)
+        standardResponse(res, resp) 
     })
 
     app.get('/:teiDocumentID/:resourceType/:resourceID/:surfaceID', async (req, res) => {
         const { teiDocumentID, resourceType, resourceID, surfaceID } = req.params
         const surfaceIDParts = surfaceID.split('.')
-        const resp = getSurface( teiDocumentID, resourceType, resourceID, surfaceIDParts[0], documentStore )
-        if( resp ) res.send(resp)
+        const resp = await getSurface( teiDocumentID, resourceType, resourceID, surfaceIDParts[0], documentStore )
+        standardResponse(res, resp) 
     })
       
     app.listen(port, () => {

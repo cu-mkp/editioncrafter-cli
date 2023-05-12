@@ -31,23 +31,21 @@ async function loadTEIDocument(teiDocumentID, documentStore) {
         const { archivEngineURL, authToken, projectID } = documentStore
         const { resourceID } = teiDocument
         const { resourceEntries } = await getResources(archivEngineURL, authToken, projectID, resourceID)
-        const renderOptions = { teiDocumentID, baseURL, teiDocumentID, thumbnailWidth, thumbnailHeight } = documentStore
-        teiDocument = processResources( resourceEntries, renderOptions )
+        const { baseURL, thumbnailWidth, thumbnailHeight } = documentStore
+        const renderOptions = { teiDocumentID, baseURL, thumbnailWidth, thumbnailHeight } 
+        teiDocument = processResources( resourceEntries, resourceID, renderOptions )
         teiDocuments[teiDocumentID] = teiDocument
         return teiDocument
     }
 }
 
-function processResources( resourceEntries, renderOptions ) {
-    // first, take the entries and combine them into a single xml
-    // then process that xml into the teidocument obj, retaining the resourceID and loaded set to true
-    // id, name, localID, parentResource, type, content
+function processResources( resourceEntries, resourceID, renderOptions ) {
     const documentParts = { header: 'teiHeader', text:'text', sourceDoc: 'sourceDoc', facs:'facsimile', standOff: 'standOff' }
 
     let teiHeaderEl;
     const childResourceEls = []
     for( const resourceEntry of resourceEntries ) {
-        const { resourceType, content } = resourceEntry
+        const { localID, resourceType, content } = resourceEntry
         const doc = new JSDOM(content, { contentType: "text/xml" }).window.document
         const partName = documentParts[resourceType]
         const els = doc.getElementsByTagName(partName)
@@ -56,6 +54,7 @@ function processResources( resourceEntries, renderOptions ) {
             teiHeaderEl = els[0]
         } else {
             for( const el of els ) {
+                el.setAttribute('id',localID)
                 childResourceEls.push(el)
             }
         }   
@@ -64,7 +63,11 @@ function processResources( resourceEntries, renderOptions ) {
     const childResourcesXML = childResourceEls.map( (childResourceEl) => childResourceEl.outerHTML ).join('\n')
     const xml = `<TEI xmlns="http://www.tei-c.org/ns/1.0">${teiHeaderEl.outerHTML}${childResourcesXML}</TEI>`
     const teiDoc = renderTEIDocument(xml, renderOptions)
-    return teiDoc
+    if( teiDoc.error ) { 
+        return { resourceID, loaded: false, error }
+    } else {
+        return { resourceID, loaded: true, ...teiDoc }
+    }
 }
 
 function processIDMap(idMap) {
