@@ -64,7 +64,7 @@ function processResources( resourceEntries, resourceID, renderOptions ) {
     const xml = `<TEI xmlns="http://www.tei-c.org/ns/1.0">${teiHeaderEl.outerHTML}${childResourcesXML}</TEI>`
     const teiDoc = renderTEIDocument(xml, renderOptions)
     if( teiDoc.error ) { 
-        return { resourceID, loaded: false, error }
+        return { resourceID, loaded: false, error: teiDoc.error }
     } else {
         return { resourceID, loaded: true, ...teiDoc }
     }
