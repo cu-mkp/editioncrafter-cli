@@ -1,21 +1,8 @@
 const express = require('express')
 const cors = require('cors')
-const fs = require('fs')
-
-const { renderTEIDocument } = require("./render")
-
-const teiDocuments = {}
+const { initStore } = require('./store')
 
 const welcomeMessageHTML = "<h1>Welcome to EditionCrafter!</h1>"
-
-function loadTEIDocuments(teiDocumentPaths, options) {
-    for( const teiDocumentID of Object.keys(teiDocumentPaths) ) {
-        const teiDocumentPath = teiDocumentPaths[teiDocumentID]
-        const xml = fs.readFileSync(teiDocumentPath, "utf8")
-        const teiDoc = renderTEIDocument(xml, { teiDocumentID, ...options })
-        teiDocuments[teiDoc.id] = teiDoc
-    }
-}
 
 function getTEIDocument( teiDocumentID, resourceType ) {
     const teiDocument = teiDocuments[teiDocumentID]
@@ -64,7 +51,7 @@ function getSurface( teiDocumentID, resourceType, resourceID, surfaceID ) {
     return null
 }
 
-function initRoutes(app,port) {
+function initRoutes(documentStore,app,port) {
     app.use(cors())
 
     app.get('/', (req, res) => {
@@ -111,13 +98,10 @@ function initRoutes(app,port) {
     })   
 }
 
-function runServer(options) {
-    const { teiDocuments: teiDocumentPaths } = options
-    
-    loadTEIDocuments(teiDocumentPaths, options)
-
+async function runServer(options) {
+    const documentStore = await initStore(options)
     const app = express()
-    initRoutes(app,8080)
+    initRoutes(documentStore,app,8080)
 }
 
 module.exports.runServer = runServer
