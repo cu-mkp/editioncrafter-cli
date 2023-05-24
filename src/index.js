@@ -148,10 +148,31 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     return annotationPage
 }
 
-function renderManifest( manifestLabel, baseURI, surfaces, teiDocPath, thumbnailWidth, thumbnailHeight) {
+function renderManifest(
+    manifestLabel,
+    baseURI,
+    surfaces,
+    teiDocPath,
+    thumbnailWidth,
+    thumbnailHeight,
+    glossaryURL
+) {
     const manifest = structuredClone(manifestTemplate)
     manifest.id = `${baseURI}/iiif/manifest.json`
     manifest.label = { en: [manifestLabel] }
+    
+    if (glossaryURL) {
+        manifest.seeAlso = [
+            {
+                id: glossaryURL,
+                type: "Dataset",
+                label: "Glossary",
+                format: "text/json",
+                // the spec says we "SHOULD" include a profile field
+                // but I don't know what the URL would be in this case
+            }
+        ]
+    }
 
     for( const surface of Object.values(surfaces) ) {
         const { id, label, imageURL, width, height } = surface
@@ -245,6 +266,17 @@ function validateTEIDoc(doc) {
     return { status: 'ok' }
 }
 
+function getGlossaryURL(doc) {
+    const links = doc.getElementsByTagName('link')
+    for (const linkEl of links) {
+        if (linkEl.getAttribute('type') === 'glossary') {
+            return linkEl.getAttribute('target')
+        }
+    }
+
+    return null;
+}
+
 function renderTEIDocument(options) {
     const { targetPath, outputPath, baseURL, teiDocumentID, thumbnailWidth, thumbnailHeight } = options
     const teiDocPath = `${outputPath}/${teiDocumentID}`
@@ -275,7 +307,8 @@ function renderTEIDocument(options) {
     // render manifest and partials
     const surfaces = parseSurfaces(doc)
     const documentURL = `${baseURL}/${teiDocumentID}`
-    renderManifest( teiDocumentID, documentURL, surfaces, teiDocPath, thumbnailWidth, thumbnailHeight )
+    const glossaryURL = getGlossaryURL(doc)
+    renderManifest( teiDocumentID, documentURL, surfaces, teiDocPath, thumbnailWidth, thumbnailHeight, glossaryURL )
     renderPartials( surfaces, teiDocPath )
 }
 
