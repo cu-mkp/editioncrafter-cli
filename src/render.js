@@ -35,16 +35,16 @@ function scrubTree( el, direction ) {
     }
 }
 
-function generateTextPartial( surfaceID, textEl ) {
+function generateTextPartial( surfaceID, teiDocumentID, textEl ) {
     const partialTextEl = textEl.cloneNode(true)
     const pbEls = partialTextEl.getElementsByTagName('pb')
 
     for( let i=0; i < pbEls.length; i++ ) {
         const pbEl = pbEls[i]
         const pbSurfaceID = pbEl.getAttribute('facs')
-        // TODO parse facs URI
-        // TODO this will assume facs values are unique
-        if ( pbSurfaceID === `#${surfaceID}` ) {
+        const idParts = pbSurfaceID.split('#')
+
+        if ( idParts.length > 1 && idParts[1] === surfaceID && (idParts[0] === '' || idParts[0] === teiDocumentID) ) {
             const nextPbEl = pbEls[i+1]
             scrubTree( pbEl, 'prev' )
             if( nextPbEl ) {
@@ -56,12 +56,12 @@ function generateTextPartial( surfaceID, textEl ) {
     }
 }
 
-function generateTextPartials( surfaceID, textEls ) {
+function generateTextPartials( surfaceID, teiDocumentID, textEls ) {
     const xmls = {}
     for( const textEl of textEls ) {
-        const id = textEl.getAttribute('xml:id')
-        const xml = generateTextPartial( surfaceID, textEl )
-        if( xml ) xmls[id] = xml
+        const localID = textEl.getAttribute('xml:id')
+        const xml = generateTextPartial( surfaceID, teiDocumentID, textEl )
+        if( xml ) xmls[localID] = xml
     }
     return xmls
 }
@@ -166,7 +166,7 @@ function renderManifest( manifestLabel, baseURI, surfaces, thumbnailWidth, thumb
     return manifestJSON
 }
 
-function parseSurfaces(doc) {
+function parseSurfaces(doc, teiDocumentID) {
     // gather resource elements
     const facsEl = doc.getElementsByTagName('facsimile')[0]
     const textEls = doc.getElementsByTagName('text')
@@ -183,7 +183,7 @@ function parseSurfaces(doc) {
         const width = parseInt(surfaceEl.getAttribute('lrx'))
         const height = parseInt(surfaceEl.getAttribute('lry'))
         const surface = { id, label, imageURL, width, height }
-        surface.xmls = generateTextPartials(id, textEls)
+        surface.xmls = generateTextPartials(id, teiDocumentID, textEls)
         // TODO: generate sourceDoc partials
         surface.htmls = generateWebPartials(surface.xmls)
         surfaces[id] = surface
@@ -233,7 +233,7 @@ function renderTEIDocument(xml, options) {
     const resources = renderResources( doc, htmlDoc )
 
     // render manifest and partials
-    const surfaces = parseSurfaces(doc)
+    const surfaces = parseSurfaces(doc, teiDocumentID)
     const documentURL = `${baseURL}/${teiDocumentID}`
     // TODO temporary hardcode
     const glossaryURL = 'http://localhost:6006/fr640_3r-3v-example/glossary.json'
