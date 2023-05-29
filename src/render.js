@@ -215,7 +215,6 @@ function parseSurfaces(doc, teiDocumentID) {
         const textXMLs = generateTextPartials(id, teiDocumentID, textEls, 'text')
         const sourceDocXMLs = generateTextPartials(id, teiDocumentID, sourceDocEls, 'sourceDoc')
         surface.xmls = { ...textXMLs, ...sourceDocXMLs }
-        // TODO: generate sourceDoc partials
         surface.htmls = generateWebPartials(surface.xmls)
         surfaces[id] = surface
     }
