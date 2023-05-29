@@ -3,6 +3,7 @@ const { getResources } = require("./archivengine/resource")
 const fs = require('fs')
 const jsdom = require("jsdom")
 const { JSDOM } = jsdom
+const prettier = require("prettier")
 
 const { renderTEIDocument } = require("./render")
 
@@ -43,7 +44,7 @@ function processResources( resourceEntries, resourceID, renderOptions ) {
     const documentParts = { header: 'teiHeader', text:'text', sourceDoc: 'sourceDoc', facs:'facsimile', standOff: 'standOff' }
 
     let teiHeaderEl;
-    const childResourceEls = []
+    const childResourceXMLs = []
     for( const resourceEntry of resourceEntries ) {
         const { localID, resourceType, content } = resourceEntry
         const doc = new JSDOM(content, { contentType: "text/xml" }).window.document
@@ -54,20 +55,23 @@ function processResources( resourceEntries, resourceID, renderOptions ) {
             teiHeaderEl = els[0]
         } else {
             for( const el of els ) {
-                el.setAttribute('id',localID)
-                childResourceEls.push(el)
+                childResourceXMLs.push(`<${partName} xml:id="${localID}">${el.innerHTML}</${partName}>`)
             }
-        }   
+        }
     }
 
-    const childResourcesXML = childResourceEls.map( (childResourceEl) => childResourceEl.outerHTML ).join('\n')
-    const xml = `<TEI xmlns="http://www.tei-c.org/ns/1.0">${teiHeaderEl.outerHTML}${childResourcesXML}</TEI>`
+    const childResourcesXML = childResourceXMLs.join('\n')
+    const xml = prettyXML(`<TEI xmlns="http://www.tei-c.org/ns/1.0"><teiHeader>${teiHeaderEl.innerHTML}</teiHeader>${childResourcesXML}</TEI>`)
     const teiDoc = renderTEIDocument(xml, renderOptions)
     if( teiDoc.error ) { 
         return { resourceID, loaded: false, error: teiDoc.error }
     } else {
         return { resourceID, loaded: true, ...teiDoc }
     }
+}
+
+function prettyXML(xml) {
+    return prettier.format(xml, { parser: "html" });
 }
 
 function processIDMap(idMap) {
