@@ -35,16 +35,26 @@ function scrubTree( el, direction ) {
     }
 }
 
-function generateTextPartial( surfaceID, teiDocumentID, textEl ) {
+function generateTextPartial( surfaceID, teiDocumentID, textEl, resourceType ) {
     const partialTextEl = textEl.cloneNode(true)
-    const pbEls = partialTextEl.getElementsByTagName('pb')
+    const facsElement = resourceType === 'sourceDoc' ? 'surface' : 'pb'
+    const facsEls = partialTextEl.getElementsByTagName(facsElement)
 
+    if( facsElement === 'pb' ) {
+        return extractPb( facsEls, partialTextEl, surfaceID, teiDocumentID )
+    } else if( facsElement === 'surface' ) {
+        return extractSurface( facsEls, surfaceID, teiDocumentID )
+    } 
+    
+    return null
+}
+
+function extractPb(pbEls, partialTextEl, surfaceID, teiDocumentID) {
     for( let i=0; i < pbEls.length; i++ ) {
         const pbEl = pbEls[i]
         const pbSurfaceID = pbEl.getAttribute('facs')
-        const idParts = pbSurfaceID.split('#')
 
-        if ( idParts.length > 1 && idParts[1] === surfaceID && (idParts[0] === '' || idParts[0] === teiDocumentID) ) {
+        if ( matchID( pbSurfaceID, surfaceID, teiDocumentID ) ) {
             const nextPbEl = pbEls[i+1]
             scrubTree( pbEl, 'prev' )
             if( nextPbEl ) {
@@ -54,13 +64,31 @@ function generateTextPartial( surfaceID, teiDocumentID, textEl ) {
             return partialTextEl.outerHTML
         }
     }
+    return null
 }
 
-function generateTextPartials( surfaceID, teiDocumentID, textEls ) {
+function extractSurface(surfaceEls, surfaceID, teiDocumentID) {
+    for( let i=0; i < surfaceEls.length; i++ ) {
+        const surfaceEl = surfaceEls[i]
+        const surfaceElID = surfaceEl.getAttribute('facs')
+
+        if ( matchID( surfaceElID, surfaceID, teiDocumentID ) ) {
+            return surfaceEl.outerHTML
+        }
+    }
+    return null
+}
+
+function matchID( facsURL, surfaceID, teiDocumentID ) {
+    const idParts = facsURL.split('#')
+    return ( idParts.length > 1 && idParts[1] === surfaceID && (idParts[0] === '' || idParts[0] === teiDocumentID) )
+}
+
+function generateTextPartials( surfaceID, teiDocumentID, textEls, resourceType ) {
     const xmls = {}
     for( const textEl of textEls ) {
         const localID = textEl.getAttribute('xml:id')
-        const xml = generateTextPartial( surfaceID, teiDocumentID, textEl )
+        const xml = generateTextPartial( surfaceID, teiDocumentID, textEl, resourceType )
         if( xml ) xmls[localID] = xml
     }
     return xmls
@@ -170,6 +198,7 @@ function parseSurfaces(doc, teiDocumentID) {
     // gather resource elements
     const facsEl = doc.getElementsByTagName('facsimile')[0]
     const textEls = doc.getElementsByTagName('text')
+    const sourceDocEls = doc.getElementsByTagName('sourceDoc')
     const surfaceEls = facsEl.getElementsByTagName('surface')
 
     // parse invididual surfaces and partials
@@ -183,7 +212,9 @@ function parseSurfaces(doc, teiDocumentID) {
         const width = parseInt(surfaceEl.getAttribute('lrx'))
         const height = parseInt(surfaceEl.getAttribute('lry'))
         const surface = { id, label, imageURL, width, height }
-        surface.xmls = generateTextPartials(id, teiDocumentID, textEls)
+        const textXMLs = generateTextPartials(id, teiDocumentID, textEls, 'text')
+        const sourceDocXMLs = generateTextPartials(id, teiDocumentID, sourceDocEls, 'sourceDoc')
+        surface.xmls = { ...textXMLs, ...sourceDocXMLs }
         // TODO: generate sourceDoc partials
         surface.htmls = generateWebPartials(surface.xmls)
         surfaces[id] = surface
@@ -198,20 +229,24 @@ function validateTEIDoc(doc) {
 }
 
 function renderResources( doc, htmlDoc ) {
-    const resourceEls = doc.getElementsByTagName('text')
-    const resourceHTMLEls = htmlDoc.getElementsByTagName('tei-text')
+    const resourceTypes = [ 'text', 'sourceDoc' ]
     const resources = {}
 
-    for( const resourceEl of resourceEls ) {
-        const resourceID = resourceEl.getAttribute('xml:id')
-        if( !resources[resourceID] ) resources[resourceID] = {}
-        resources[resourceID].xml = resourceEl.outerHTML
-    }
-
-    for( const resourceHTMLEl of resourceHTMLEls ) {
-        const resourceID = resourceHTMLEl.getAttribute('xml:id')
-        if( !resources[resourceID] ) resources[resourceID] = {}
-        resources[resourceID].html = resourceHTMLEl.outerHTML
+    for( const resourceType of resourceTypes ) {
+        const resourceEls = doc.getElementsByTagName(resourceType)
+        const resourceHTMLEls = htmlDoc.getElementsByTagName(`tei-${resourceType}`)
+    
+        for( const resourceEl of resourceEls ) {
+            const resourceID = resourceEl.getAttribute('xml:id')
+            if( !resources[resourceID] ) resources[resourceID] = {}
+            resources[resourceID].xml = resourceEl.outerHTML
+        }
+    
+        for( const resourceHTMLEl of resourceHTMLEls ) {
+            const resourceID = resourceHTMLEl.getAttribute('xml:id')
+            if( !resources[resourceID] ) resources[resourceID] = {}
+            resources[resourceID].html = resourceHTMLEl.outerHTML
+        }    
     }
 
     return resources
