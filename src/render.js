@@ -270,7 +270,7 @@ function renderTEIDocument(xml, options) {
     const surfaces = parseSurfaces(doc, teiDocumentID)
     const documentURL = `${baseURL}/${teiDocumentID}`
     // TODO temporary hardcode
-    const glossaryURL = 'http://localhost:6006/fr640_3r-3v-example/glossary.json'
+    const glossaryURL = 'https://cu-mkp.github.io/editioncrafter-data/fr640_3r-3v-example/glossary.json'
     const manifest = renderManifest( teiDocumentID, documentURL, surfaces, thumbnailWidth, thumbnailHeight, glossaryURL )
 
     return {
