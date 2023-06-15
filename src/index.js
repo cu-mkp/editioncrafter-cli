@@ -57,7 +57,7 @@ function processArguments() {
         // default settings
         let config = {
             mode: mode,
-            outputPath: processRelativePath('./public'),
+            outputPath: '.',
             baseURL: 'http://localhost:8080',
             thumbnailWidth: 124,
             thumbnailHeight: 192
@@ -72,6 +72,7 @@ function processArguments() {
                 config = { ...config, ...JSON.parse( fs.readFileSync(configPath) ) } 
             } catch(e) {
                 console.log(`Unable to parse config file: ${configPath}.`)
+                return optForHelp
             }
         }
 
