@@ -1,0 +1,9 @@
+{
+    "archivEngineURL": "",
+    "projectID": "",
+    "username": "",
+    "password": "",
+    "baseURL": "http://localhost:8080",
+    "thumbnailWidth": 124,
+    "thumbnailHeight": 192
+}

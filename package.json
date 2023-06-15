@@ -1,6 +1,6 @@
 {
   "name": "@cu-mkp/editioncrafter-cli",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "This is the command line tool to take a TEI XML file and turn it into a IIIF Manifest and the necessary Web Annotations to display the text in EditionCrafter.",
   "main": "src/index.js",
   "bin": {
@@ -13,7 +13,11 @@
     "start": "node_modules/.bin/http-server --cors"
   },
   "dependencies": {
-    "jsdom": "^21.1.0"
+    "axios": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsdom": "^21.1.0",
+    "prettier": "^2.8.8"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
