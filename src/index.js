@@ -96,8 +96,8 @@ function processArguments() {
 function displayHelp() {
     console.log(`Usage: editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]` );
     console.log("Edition Crafter responds to the following <command>s:")
-    console.log("\server: Run as a server, requires config_path.")
-    console.log("\process: Process the TEI Document into a manifest, partials, and annotations.")
+    console.log("\tserver: Run as a server, requires config_path.")
+    console.log("\tprocess: Process the TEI Document into a manifest, partials, and annotations.")
     console.log("\thelp: Displays this help. ");
 }
 

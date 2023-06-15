@@ -2,11 +2,24 @@
 
 This is the command line tool to take a TEI XML file and turn it into a IIIF Manifest and the necessary Web Annotations to display the text in EditionCrafter.
 
-Usage: `edition_crafter <command> <tei_path> <output_path>`
+Usage: `editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]`
 
 Edition Crafter responds to the following `<command>`s:
 * process: Process the TEI Document into a manifest, partials, and annotations.
+* server: Run in server mode (WIP)
 * help: Displays this help.
+
+The optional configuration file is a JSON file with the following options:
+
+```
+{
+    "targetPath": "myfile.xml",
+    "outputPath": ".",
+    "baseURL": "http://localhost:8080",
+    "thumbnailWidth": 124,
+    "thumbnailHeight": 192
+}
+```
 
 ## Generates the following files:
 
