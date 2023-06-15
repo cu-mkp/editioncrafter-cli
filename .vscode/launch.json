@@ -42,7 +42,17 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}/editioncrafter",
-            "args": ["process", "data/fr640_3r-3v-example.xml", "public", "https://cu-mkp.github.io/editioncrafter-project"]
+            "args": ["process", "data/fr640_3r-3v-example.xml", "public", "https://cu-mkp.github.io/editioncrafter-data"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "EditionCrafter Server Mode",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/editioncrafter",
+            "args": ["server","-c","data/config.json"]
         }
     ]
 }
