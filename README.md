@@ -35,6 +35,8 @@ tei_document_id/html/resource_id/surface_id/index.html
 
 ## Running Locally
 
+The first time you run this program, you'll need to install its dependencies with `npm install`.
+
 Within the root folder, run `npm link` to make the repo available as a global command. The entry point is configured by the `bin` property in `package.json`.
 
 Open a new terminal session and type `which editioncrafter` to verify that it linked correctly.
