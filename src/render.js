@@ -7,6 +7,8 @@ const canvasTemplate = require("./templates/canvas.json")
 const annotationTemplate = require("./templates/annotation.json")
 const annotationPageTemplate = require("./templates/annotationPage.json")
 
+const structuredClone = require('@ungap/structured-clone').default
+
 // Profile ID for EditionCrafter text partials
 const textPartialResourceProfileID = 'https://github.com/cu-mkp/editioncrafter-project/text-partial-resource.md'
 
