@@ -57,7 +57,7 @@ tei_document_id/html/index.html
 tei_document_id/html/resource_id/index.html
 tei_document_id/html/resource_id/surface_id/index.html
 
-## Running Locally
+## Running a development build
 
 The first time you run this program, you'll need to install its dependencies with `npm install`.
 
