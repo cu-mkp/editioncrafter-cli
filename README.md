@@ -4,11 +4,25 @@ This is the command line tool to take a TEI XML file and turn it into a IIIF Man
 
 ## Installing
 
-This package is available on NPM. To install the latest version, run:
+### Node
+
+EditionCrafter CLI requires Node. To check if Node is installed, open your terminal or command line and type:
+
+```bash
+node --version
+```
+
+If the output is a number, you already have Node installed. If the output is an error like "Command not found", you need to install Node.
+
+To install Node, visit https://nodejs.org/en/download and follow the instructions for your operating system.
+
+### Installing EditionCrafter
+
+To install the latest version, run:
 
 `npm install -g @cu-mkp/editioncrafter-cli`
 
-The `editioncrafter` command will now be available. If it doesn't work right away, restart your terminal program.
+The `editioncrafter` command will now be available. If it doesn't work right away, try restarting your terminal program.
 
 ## Usage
 
