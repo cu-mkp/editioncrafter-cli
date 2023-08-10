@@ -14,7 +14,9 @@ node --version
 
 If the output is a number, you already have Node installed. If the output is an error like "Command not found", you need to install Node.
 
-To install Node, visit https://nodejs.org/en/download and follow the instructions for your operating system.
+Please note that EditionCrafter CLI supports Node 14 and higher. If your version of Node is below 14, you'll need to upgrade.
+
+To install or upgrade Node, visit https://nodejs.org/en/download and follow the instructions for your operating system. Alternatively, if you're using the Windows Subsystem for Linux, you should upgrade the version of Linux you're running to one that comes with a newer version of Node.
 
 ### Installing EditionCrafter
 
