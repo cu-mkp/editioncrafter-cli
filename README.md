@@ -2,6 +2,16 @@
 
 This is the command line tool to take a TEI XML file and turn it into a IIIF Manifest and the necessary Web Annotations to display the text in EditionCrafter.
 
+## Installing
+
+This package is available on NPM. To install the latest version, run:
+
+`npm install -g @cu-mkp/editioncrafter-cli`
+
+The `editioncrafter` command will now be available. If it doesn't work right away, restart your terminal program.
+
+## Usage
+
 Usage: `editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]`
 
 Edition Crafter responds to the following `<command>`s:
