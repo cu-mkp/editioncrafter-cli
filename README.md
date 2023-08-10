@@ -2,6 +2,32 @@
 
 This is the command line tool to take a TEI XML file and turn it into a IIIF Manifest and the necessary Web Annotations to display the text in EditionCrafter.
 
+## Installing
+
+### Node
+
+EditionCrafter CLI requires Node. To check if Node is installed, open your terminal or command line and type:
+
+```bash
+node --version
+```
+
+If the output is a number, you already have Node installed. If the output is an error like "Command not found", you need to install Node.
+
+Please note that EditionCrafter CLI supports Node 14 and higher. If your version of Node is below 14, you'll need to upgrade.
+
+To install or upgrade Node, visit https://nodejs.org/en/download and follow the instructions for your operating system. Alternatively, if you're using the Windows Subsystem for Linux, you should upgrade the version of Linux you're running to one that comes with a newer version of Node.
+
+### Installing EditionCrafter
+
+To install the latest version, run:
+
+`npm install -g @cu-mkp/editioncrafter-cli`
+
+The `editioncrafter` command will now be available. If it doesn't work right away, try restarting your terminal program.
+
+## Usage
+
 Usage: `editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]`
 
 Edition Crafter responds to the following `<command>`s:
@@ -33,7 +59,9 @@ tei_document_id/html/index.html
 tei_document_id/html/resource_id/index.html
 tei_document_id/html/resource_id/surface_id/index.html
 
-## Running Locally
+## Running a development build
+
+The first time you run this program, you'll need to install its dependencies with `npm install`.
 
 Within the root folder, run `npm link` to make the repo available as a global command. The entry point is configured by the `bin` property in `package.json`.
 
