@@ -178,6 +178,7 @@ function buildTagAnnotations (surface) {
         annotation.body = [{
             type: 'TextualBody',
             purpose: 'tagging',
+            format: 'text/html',
             // Fill value with the first HTML string in the surface
             value: surface.htmls[Object.keys(surface.htmls)[0]]
         }]
