@@ -6,6 +6,7 @@ const manifestTemplate = require("./templates/manifest.json")
 const canvasTemplate = require("./templates/canvas.json")
 const annotationTemplate = require("./templates/annotation.json")
 const annotationPageTemplate = require("./templates/annotationPage.json")
+const { buildSquareSvg, buildPolygonSvg } = require("./svg")
 
 const structuredClone = require('@ungap/structured-clone').default
 
@@ -46,8 +47,8 @@ function generateTextPartial( surfaceID, teiDocumentID, textEl, resourceType ) {
         return extractPb( facsEls, partialTextEl, surfaceID, teiDocumentID )
     } else if( facsElement === 'surface' ) {
         return extractSurface( facsEls, surfaceID, teiDocumentID )
-    } 
-    
+    }
+
     return null
 }
 
@@ -137,13 +138,78 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     return annotationPage
 }
 
+function buildAnnotation (canvas, surface, thumbnailWidth, thumbnailHeight) {
+    const { imageURL, width, height } = surface
+
+    const annotation = structuredClone(annotationTemplate)
+    annotation['@id'] = `${canvas.items[0].id}/annotation/0`
+
+    annotation.body.id = imageURL
+    annotation.body.type = "Image"
+    annotation.body.format = "image/jpeg"
+    annotation.body.height = height
+    annotation.body.width = width
+    annotation.body.service = [{
+        id: imageURL,
+        type: "ImageService2",
+        profile: "http://iiif.io/api/image/2/level2.json",
+    }]
+    annotation.body.thumbnail = [{
+        id: `${imageURL}/full/${thumbnailWidth},${thumbnailHeight}/0/default.jpg`,
+        format: "image/jpeg",
+        type: "ImageService2",
+        profile: "http://iiif.io/api/image/2/level2.json",
+    }]
+
+    return annotation
+}
+
+// Builds a painting annotation for the `items` array
+function buildItemAnnotation (canvas, surface, thumbnailWidth, thumbnailHeight) {
+    const annotation = buildAnnotation(canvas, surface, thumbnailWidth, thumbnailHeight)
+
+    annotation.motivation = 'painting'
+    annotation.target = canvas.id
+
+    return annotation
+}
+
+// Builds a tagging annotation for the `annotations` array
+function buildTagAnnotations (canvas, surface, thumbnailWidth, thumbnailHeight) {
+    const zones = surface.zones;
+
+    return zones.map(zone => {
+        const annotation = buildAnnotation(canvas, surface, thumbnailWidth, thumbnailHeight)
+
+        annotation.motivation = 'tagging'
+
+        let svg = ""
+        if (zone.points) {
+            svg = buildPolygonSvg(zone.points)
+        } else if (zone.ulx && zone.uly && zone.lrx && zone.lry) {
+            svg = buildSquareSvg(zone.ulx, zone.uly, zone.lrx, zone.lry)
+        } else {
+            console.log('Missing one or more position properties for ', annotation['@id'])
+        }
+
+        annotation.target = {
+            selector: [{
+                type: 'SvgSelector',
+                value: svg
+            }]
+        }
+
+        return annotation
+    })
+}
+
 function renderManifest( manifestLabel, baseURI, surfaces, thumbnailWidth, thumbnailHeight, glossaryURL) {
     const manifest = structuredClone(manifestTemplate)
     manifest.id = `${baseURI}/iiif/manifest.json`
     manifest.label = { en: [manifestLabel] }
 
     for( const surface of Object.values(surfaces) ) {
-        const { id, label, imageURL, width, height } = surface
+        const { id, label, width, height } = surface
 
         const canvas = structuredClone(canvasTemplate)
         canvas.id = `${baseURI}/iiif/canvas/${id}`
@@ -152,30 +218,13 @@ function renderManifest( manifestLabel, baseURI, surfaces, thumbnailWidth, thumb
         canvas.label = { "none": [ label ] }
         canvas.items[0].id = `${canvas.id}/annotationpage/0`
 
-        const annotation = structuredClone(annotationTemplate)
-        annotation.id = `${canvas.items[0].id}/annotation/0`
-        annotation.motivation = "painting"
-        annotation.target = canvas.id
-        annotation.body.id = imageURL
-        annotation.body.type = "Image"
-        annotation.body.format = "image/jpeg"
-        annotation.body.height = height
-        annotation.body.width = width
-        annotation.body.service = [{
-            id: imageURL,
-            type: "ImageService2",
-            profile: "http://iiif.io/api/image/2/level2.json",
-        }]
-        annotation.body.thumbnail = [{
-            id: `${imageURL}/full/${thumbnailWidth},${thumbnailHeight}/0/default.jpg`,
-            format: "image/jpeg",
-            type: "ImageService2",
-            profile: "http://iiif.io/api/image/2/level2.json",
-        }]
+        const itemAnnotation = buildItemAnnotation(canvas, surface, thumbnailWidth, thumbnailHeight)
 
-        canvas.items[0].items.push(annotation)
+        canvas.items[0].items.push(itemAnnotation)
+
+        canvas.annotations = buildTagAnnotations(canvas, surface, thumbnailWidth, thumbnailHeight)
         const annotationPage = renderTextAnnotationPage(baseURI, canvas.id, surface, 1)
-        if( annotationPage ) canvas.annotations = [ annotationPage ]
+        if( annotationPage ) canvas.annotations.push(annotationPage)
         manifest.items.push( canvas )
     }
 
@@ -218,6 +267,25 @@ function parseSurfaces(doc, teiDocumentID) {
         const sourceDocXMLs = generateTextPartials(id, teiDocumentID, sourceDocEls, 'sourceDoc')
         surface.xmls = { ...textXMLs, ...sourceDocXMLs }
         surface.htmls = generateWebPartials(surface.xmls)
+
+        const zoneEls = surfaceEl.getElementsByTagName('zone')
+        if (zoneEls.length > 0) {
+            surface.zones = []
+
+            for (const zoneEl of zoneEls) {
+                surface.zones.push({
+                    id: zoneEl.getAttribute('xml:id'),
+                    ulx: zoneEl.getAttribute('ulx'),
+                    uly: zoneEl.getAttribute('uly'),
+                    lrx: zoneEl.getAttribute('lrx'),
+                    lry: zoneEl.getAttribute('lry'),
+                    points: zoneEl.getAttribute('points')
+                })
+            }
+        } else {
+            surface.zones = []
+        }
+
         surfaces[id] = surface
     }
 
@@ -226,7 +294,7 @@ function parseSurfaces(doc, teiDocumentID) {
 
 function validateTEIDoc(doc) {
     // TODO needs to have exactly 1 facs. needs to be a valid xml doc
-    return 'ok' 
+    return 'ok'
 }
 
 function renderResources( doc, htmlDoc ) {
@@ -236,18 +304,18 @@ function renderResources( doc, htmlDoc ) {
     for( const resourceType of resourceTypes ) {
         const resourceEls = doc.getElementsByTagName(resourceType)
         const resourceHTMLEls = htmlDoc.getElementsByTagName(`tei-${resourceType}`)
-    
+
         for( const resourceEl of resourceEls ) {
             const resourceID = resourceEl.getAttribute('xml:id')
             if( !resources[resourceID] ) resources[resourceID] = {}
             resources[resourceID].xml = resourceEl.outerHTML
         }
-    
+
         for( const resourceHTMLEl of resourceHTMLEls ) {
             const resourceID = resourceHTMLEl.getAttribute('xml:id')
             if( !resources[resourceID] ) resources[resourceID] = {}
             resources[resourceID].html = resourceHTMLEl.outerHTML
-        }    
+        }
     }
 
     return resources
