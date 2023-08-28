@@ -138,12 +138,14 @@ function renderTextAnnotationPage( baseURI, canvasID, surface, apIndex ) {
     return annotationPage
 }
 
-function buildAnnotation (canvas, surface, thumbnailWidth, thumbnailHeight) {
+// Builds a painting annotation for the `items` array
+function buildItemAnnotation (canvas, surface, thumbnailWidth, thumbnailHeight) {
+    const annotation = structuredClone(annotationTemplate)
     const { imageURL, width, height } = surface
 
-    const annotation = structuredClone(annotationTemplate)
-    annotation['@id'] = `${canvas.items[0].id}/annotation/0`
-
+    annotation.id = `${canvas.items[0].id}/annotation/0`
+    annotation.motivation = 'painting'
+    annotation.target = canvas.id
     annotation.body.id = imageURL
     annotation.body.type = "Image"
     annotation.body.format = "image/jpeg"
@@ -164,24 +166,21 @@ function buildAnnotation (canvas, surface, thumbnailWidth, thumbnailHeight) {
     return annotation
 }
 
-// Builds a painting annotation for the `items` array
-function buildItemAnnotation (canvas, surface, thumbnailWidth, thumbnailHeight) {
-    const annotation = buildAnnotation(canvas, surface, thumbnailWidth, thumbnailHeight)
-
-    annotation.motivation = 'painting'
-    annotation.target = canvas.id
-
-    return annotation
-}
-
 // Builds a tagging annotation for the `annotations` array
-function buildTagAnnotations (canvas, surface, thumbnailWidth, thumbnailHeight) {
+function buildTagAnnotations (surface) {
     const zones = surface.zones;
 
     return zones.map(zone => {
-        const annotation = buildAnnotation(canvas, surface, thumbnailWidth, thumbnailHeight)
+        const annotation = structuredClone(annotationTemplate)
 
+        annotation['@id'] = `#${surface.id}`
         annotation.motivation = 'tagging'
+        annotation.body = [{
+            type: 'TextualBody',
+            purpose: 'tagging',
+            // Fill value with the first HTML string in the surface
+            value: surface.htmls[Object.keys(surface.htmls)[0]]
+        }]
 
         let svg = ""
         if (zone.points) {
@@ -222,7 +221,7 @@ function renderManifest( manifestLabel, baseURI, surfaces, thumbnailWidth, thumb
 
         canvas.items[0].items.push(itemAnnotation)
 
-        canvas.annotations = buildTagAnnotations(canvas, surface, thumbnailWidth, thumbnailHeight)
+        canvas.annotations = buildTagAnnotations(surface)
         const annotationPage = renderTextAnnotationPage(baseURI, canvas.id, surface, 1)
         if( annotationPage ) canvas.annotations.push(annotationPage)
         manifest.items.push( canvas )
