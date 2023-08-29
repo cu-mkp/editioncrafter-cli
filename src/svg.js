@@ -1,15 +1,6 @@
 const style = "'stroke:#fff;stroke-dasharray:5;stroke-opacity:0.3;stroke-width:1;fill:transparent;'"
 
-const buildSquareSvg = (ulx, uly, lrx, lry) => {
-  const points = [
-    `${ulx},${uly}`,
-    `${ulx},${lry}`,
-    `${lrx},${lry}`,
-    `${lrx},${uly}`
-  ]
-
-  return buildPolygonSvg(points)
-}
+const buildSquareFragment = (ulx, uly, lrx, lry) => `xywh=pixel:${ulx},${uly},${lrx - ulx},${lry - uly}`
 
 const buildPolygonSvg = (points) => `
 <svg>
@@ -18,6 +9,6 @@ const buildPolygonSvg = (points) => `
 </svg>`.replaceAll('\n', '');
 
 module.exports = {
-  buildSquareSvg,
+  buildSquareFragment,
   buildPolygonSvg
 }

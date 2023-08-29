@@ -6,7 +6,7 @@ const manifestTemplate = require("./templates/manifest.json")
 const canvasTemplate = require("./templates/canvas.json")
 const annotationTemplate = require("./templates/annotation.json")
 const annotationPageTemplate = require("./templates/annotationPage.json")
-const { buildSquareSvg, buildPolygonSvg } = require("./svg")
+const { buildSquareFragment, buildPolygonSvg } = require("./svg")
 
 const structuredClone = require('@ungap/structured-clone').default
 
@@ -183,20 +183,25 @@ function buildTagAnnotations (surface) {
             value: surface.htmls[Object.keys(surface.htmls)[0]]
         }]
 
-        let svg = ""
         if (zone.points) {
-            svg = buildPolygonSvg(zone.points)
+            const svg = buildPolygonSvg(zone.points)
+            annotation.target = {
+                selector: [{
+                    type: 'SvgSelector',
+                    value: svg
+                }]
+            }
         } else if (zone.ulx && zone.uly && zone.lrx && zone.lry) {
-            svg = buildSquareSvg(zone.ulx, zone.uly, zone.lrx, zone.lry)
+            const fragment = buildSquareFragment(zone.ulx, zone.uly, zone.lrx, zone.lry)
+            annotation.target = {
+                selector: [{
+                    conformsTo: 'http://www.w3.org/TR/media-frags/',
+                    type: 'FragmentSelector',
+                    value: fragment
+                }]
+            }
         } else {
             console.log('Missing one or more position properties for ', annotation.id)
-        }
-
-        annotation.target = {
-            selector: [{
-                type: 'SvgSelector',
-                value: svg
-            }]
         }
 
         return annotation
