@@ -1,6 +1,6 @@
 {
     "@context": "https://www.w3.org/ns/anno.jsonld",
-    "@id": "",
+    "id": "",
     "type": "Annotation",
     "motivation": "",
     "body": {

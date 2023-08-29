@@ -168,12 +168,12 @@ function buildItemAnnotation (canvas, surface, thumbnailWidth, thumbnailHeight) 
 
 // Builds a tagging annotation for the `annotations` array
 function buildTagAnnotations (surface) {
-    const zones = surface.zones;
+    const { zones } = surface;
 
     return zones.map(zone => {
         const annotation = structuredClone(annotationTemplate)
 
-        annotation['@id'] = `#${surface.id}`
+        annotation.id = `#${surface.id}`
         annotation.motivation = 'tagging'
         annotation.body = [{
             type: 'TextualBody',
@@ -189,7 +189,7 @@ function buildTagAnnotations (surface) {
         } else if (zone.ulx && zone.uly && zone.lrx && zone.lry) {
             svg = buildSquareSvg(zone.ulx, zone.uly, zone.lrx, zone.lry)
         } else {
-            console.log('Missing one or more position properties for ', annotation['@id'])
+            console.log('Missing one or more position properties for ', annotation.id)
         }
 
         annotation.target = {
