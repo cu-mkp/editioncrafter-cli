@@ -173,7 +173,7 @@ function buildTagAnnotations (surface) {
     return zones.map(zone => {
         const annotation = structuredClone(annotationTemplate)
 
-        annotation.id = `#${surface.id}`
+        annotation.id = `#${zone.id}`
         annotation.motivation = 'tagging'
         annotation.body = [{
             type: 'TextualBody',
