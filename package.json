@@ -10,7 +10,7 @@
   "author": "Nick Laiacona <nick@performantsoftware.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node_modules/.bin/http-server --cors"
+    "start": "node_modules/.bin/http-server -c-1 -p 8080 --cors"
   },
   "dependencies": {
     "@ungap/structured-clone": "^1.2.0",
