@@ -57,7 +57,7 @@ function extractPb(pbEls, partialTextEl, surfaceID, teiDocumentID) {
         const pbEl = pbEls[i]
         const pbSurfaceID = pbEl.getAttribute('facs')
 
-        if ( matchID( pbSurfaceID, surfaceID, teiDocumentID ) ) {
+        if ( pbSurfaceID && matchID( pbSurfaceID, surfaceID, teiDocumentID ) ) {
             const nextPbEl = pbEls[i+1]
             scrubTree( pbEl, 'prev' )
             if( nextPbEl ) {
@@ -75,7 +75,7 @@ function extractSurface(surfaceEls, surfaceID, teiDocumentID) {
         const surfaceEl = surfaceEls[i]
         const surfaceElID = surfaceEl.getAttribute('facs')
 
-        if ( matchID( surfaceElID, surfaceID, teiDocumentID ) ) {
+        if ( surfaceElID && matchID( surfaceElID, surfaceID, teiDocumentID ) ) {
             return surfaceEl.outerHTML
         }
     }
