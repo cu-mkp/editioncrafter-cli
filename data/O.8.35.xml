@@ -1,0 +1,1272 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+	<teiHeader xml:id="header">
+		<fileDesc>
+			<titleStmt>
+				<title>O.8.35</title>
+			</titleStmt>
+			<publicationStmt>
+				<p/>
+			</publicationStmt>
+			<sourceDesc>
+				<p/>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<classDecl>
+				<taxonomy>
+					<category xml:id="rs-pl">
+						<catDesc>refers to a plant </catDesc>
+					</category>
+					<category xml:id="rs-al">
+						<catDesc>refers to an animal </catDesc>
+					</category>
+					<category xml:id="rs-ing">
+						<catDesc>refers to an ingredient in a medical recipe</catDesc>
+					</category>
+					<category xml:id="rs-proc">
+						<catDesc>refers to the physical process for preparing a medical recipe</catDesc>
+					</category>
+					<category xml:id="rs-app">
+						<catDesc>refers to the act of applying a medicament</catDesc>
+					</category>
+					<category xml:id="rs-anat">
+						<catDesc>refers to the anatomical part of the body on which a medicine or procedure will act</catDesc>
+					</category>
+					<category xml:id="rs-ail">
+						<catDesc>refers to the ailment for which a medicine is created</catDesc>
+					</category>
+					<category xml:id="rs-tl">
+						<catDesc>refers to an tool</catDesc>
+					</category>
+				</taxonomy>
+			</classDecl>
+		</encodingDesc>
+	</teiHeader>
+	<facsimile sameAs="https://mss-cat.trin.cam.ac.uk/Manuscript/O.8.35/manifest.json" xml:id="facs-1">
+		<surface xml:id="f000" ulx="0" uly="0" lrx="3013" lry="4125" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F001_O.8.35_front cover.jp2">
+			<label>front cover</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F001_O.8.35_front cover.jp2"/>
+		</surface>
+		<surface xml:id="f001" ulx="0" uly="0" lrx="3013" lry="4125" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F002_O.8.35_inside front.jp2">
+			<label>inside front</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F002_O.8.35_inside front.jp2"/>
+		</surface>
+		<surface xml:id="f002" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F003_O.8.35_front flyleaf 1r.jp2">
+			<label>front flyleaf 1r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F003_O.8.35_front flyleaf 1r.jp2"/>
+		</surface>
+		<surface xml:id="f003" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F004_O.8.35_front flyleaf 1v.jp2">
+			<label>front flyleaf 1v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F004_O.8.35_front flyleaf 1v.jp2"/>
+		</surface>
+		<surface xml:id="f004" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F005_O.8.35_front flyleaf 2r.jp2">
+			<label>front flyleaf 2r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F005_O.8.35_front flyleaf 2r.jp2"/>
+		</surface>
+		<surface xml:id="f005" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F006_O.8.35_front flyleaf 2v.jp2">
+			<label>front flyleaf 2v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F006_O.8.35_front flyleaf 2v.jp2"/>
+		</surface>
+		<surface xml:id="f006" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F007_O.8.35_front flyleaf 3r.jp2">
+			<label>front flyleaf 3r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F007_O.8.35_front flyleaf 3r.jp2"/>
+		</surface>
+		<surface xml:id="f007" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F008_O.8.35_front flyleaf 3v.jp2">
+			<label>front flyleaf 3v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F008_O.8.35_front flyleaf 3v.jp2"/>
+		</surface>
+		<surface xml:id="f008" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F009_O.8.35_front flyleaf 4r.jp2">
+			<label>front flyleaf 4r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F009_O.8.35_front flyleaf 4r.jp2"/>
+		</surface>
+		<surface xml:id="f009" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F010_O.8.35_front flyleaf 4v.jp2">
+			<label>front flyleaf 4v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F010_O.8.35_front flyleaf 4v.jp2"/>
+		</surface>
+		<surface xml:id="f010" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F011_O.8.35_front flyleaf 5r.jp2">
+			<label>front flyleaf 5r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F011_O.8.35_front flyleaf 5r.jp2"/>
+		</surface>
+		<surface xml:id="f011" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F012_O.8.35_front flyleaf 5v.jp2">
+			<label>front flyleaf 5v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F012_O.8.35_front flyleaf 5v.jp2"/>
+		</surface>
+		<surface xml:id="f012" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F013_O.8.35_front flyleaf 6r.jp2">
+			<label>front flyleaf 6r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F013_O.8.35_front flyleaf 6r.jp2"/>
+		</surface>
+		<surface xml:id="f013" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F014_O.8.35_front flyleaf 6v.jp2">
+			<label>front flyleaf 6v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F014_O.8.35_front flyleaf 6v.jp2"/>
+		</surface>
+		<surface xml:id="f014" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F015_O.8.35_front flyleaf 7r.jp2">
+			<label>front flyleaf 7r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F015_O.8.35_front flyleaf 7r.jp2"/>
+		</surface>
+		<surface xml:id="f015" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F016_O.8.35_front flyleaf 7v.jp2">
+			<label>front flyleaf 7v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F016_O.8.35_front flyleaf 7v.jp2"/>
+		</surface>
+		<surface xml:id="f016" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F017_O.8.35_f001r.jp2">
+			<label>f001r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F017_O.8.35_f001r.jp2"/>
+		</surface>
+		<surface xml:id="f017" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F018_O.8.35_f001v.jp2">
+			<label>f001v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F018_O.8.35_f001v.jp2"/>
+		</surface>
+		<surface xml:id="f018" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F019_O.8.35_f002r.jp2">
+			<label>f002r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F019_O.8.35_f002r.jp2"/>
+		</surface>
+		<surface xml:id="f019" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F020_O.8.35_f002v.jp2">
+			<label>f002v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F020_O.8.35_f002v.jp2"/>
+		</surface>
+		<surface xml:id="f020" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F021_O.8.35_f003r.jp2">
+			<label>f003r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F021_O.8.35_f003r.jp2"/>
+		</surface>
+		<surface xml:id="f021" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F022_O.8.35_f003v.jp2">
+			<label>f003v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F022_O.8.35_f003v.jp2"/>
+		</surface>
+		<surface xml:id="f022" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F023_O.8.35_f004r.jp2">
+			<label>f004r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F023_O.8.35_f004r.jp2"/>
+		</surface>
+		<surface xml:id="f023" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F024_O.8.35_f004v.jp2">
+			<label>f004v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F024_O.8.35_f004v.jp2"/>
+		</surface>
+		<surface xml:id="f024" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F025_O.8.35_f005r.jp2">
+			<label>f005r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F025_O.8.35_f005r.jp2"/>
+		</surface>
+		<surface xml:id="f025" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F026_O.8.35_f005v.jp2">
+			<label>f005v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F026_O.8.35_f005v.jp2"/>
+		</surface>
+		<surface xml:id="f026" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F027_O.8.35_f006r.jp2">
+			<label>f006r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F027_O.8.35_f006r.jp2"/>
+		</surface>
+		<surface xml:id="f027" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F028_O.8.35_f006v.jp2">
+			<label>f006v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F028_O.8.35_f006v.jp2"/>
+		</surface>
+		<surface xml:id="f028" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F029_O.8.35_f007r.jp2">
+			<label>f007r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F029_O.8.35_f007r.jp2"/>
+		</surface>
+		<surface xml:id="f029" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F030_O.8.35_f007v.jp2">
+			<label>f007v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F030_O.8.35_f007v.jp2"/>
+		</surface>
+		<surface xml:id="f030" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F031_O.8.35_f008r.jp2">
+			<label>f008r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F031_O.8.35_f008r.jp2"/>
+		</surface>
+		<surface xml:id="f031" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F032_O.8.35_f008v.jp2">
+			<label>f008v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F032_O.8.35_f008v.jp2"/>
+		</surface>
+		<surface xml:id="f032" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F033_O.8.35_f009r.jp2">
+			<label>f009r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F033_O.8.35_f009r.jp2"/>
+		</surface>
+		<surface xml:id="f033" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F034_O.8.35_f009v.jp2">
+			<label>f009v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F034_O.8.35_f009v.jp2"/>
+		</surface>
+		<surface xml:id="f034" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F035_O.8.35_f010r.jp2">
+			<label>f010r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F035_O.8.35_f010r.jp2"/>
+		</surface>
+		<surface xml:id="f035" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F036_O.8.35_f010v.jp2">
+			<label>f010v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F036_O.8.35_f010v.jp2"/>
+		</surface>
+		<surface xml:id="f036" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F037_O.8.35_f011r.jp2">
+			<label>f011r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F037_O.8.35_f011r.jp2"/>
+		</surface>
+		<surface xml:id="f037" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F038_O.8.35_f011v.jp2">
+			<label>f011v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F038_O.8.35_f011v.jp2"/>
+		</surface>
+		<surface xml:id="f038" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F039_O.8.35_f012r.jp2">
+			<label>f012r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F039_O.8.35_f012r.jp2"/>
+		</surface>
+		<surface xml:id="f039" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F040_O.8.35_f012v.jp2">
+			<label>f012v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F040_O.8.35_f012v.jp2"/>
+		</surface>
+		<surface xml:id="f040" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F041_O.8.35_f013r.jp2">
+			<label>f013r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F041_O.8.35_f013r.jp2"/>
+		</surface>
+		<surface xml:id="f041" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F042_O.8.35_f013v.jp2">
+			<label>f013v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F042_O.8.35_f013v.jp2"/>
+		</surface>
+		<surface xml:id="f042" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F043_O.8.35_f014r.jp2">
+			<label>f014r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F043_O.8.35_f014r.jp2"/>
+		</surface>
+		<surface xml:id="f043" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F044_O.8.35_f014v.jp2">
+			<label>f014v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F044_O.8.35_f014v.jp2"/>
+		</surface>
+		<surface xml:id="f044" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F045_O.8.35_f015r.jp2">
+			<label>f015r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F045_O.8.35_f015r.jp2"/>
+		</surface>
+		<surface xml:id="f045" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F046_O.8.35_f015v.jp2">
+			<label>f015v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F046_O.8.35_f015v.jp2"/>
+		</surface>
+		<surface xml:id="f046" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F047_O.8.35_f016r.jp2">
+			<label>f016r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F047_O.8.35_f016r.jp2"/>
+		</surface>
+		<surface xml:id="f047" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F048_O.8.35_f016v.jp2">
+			<label>f016v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F048_O.8.35_f016v.jp2"/>
+		</surface>
+		<surface xml:id="f048" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F049_O.8.35_f017r.jp2">
+			<label>f017r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F049_O.8.35_f017r.jp2"/>
+		</surface>
+		<surface xml:id="f049" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F050_O.8.35_f017v.jp2">
+			<label>f017v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F050_O.8.35_f017v.jp2"/>
+		</surface>
+		<surface xml:id="f050" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F051_O.8.35_f018r.jp2">
+			<label>f018r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F051_O.8.35_f018r.jp2"/>
+		</surface>
+		<surface xml:id="f051" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F052_O.8.35_f018v.jp2">
+			<label>f018v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F052_O.8.35_f018v.jp2"/>
+		</surface>
+		<surface xml:id="f052" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F053_O.8.35_f019r.jp2">
+			<label>f019r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F053_O.8.35_f019r.jp2"/>
+		</surface>
+		<surface xml:id="f053" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F054_O.8.35_f019v.jp2">
+			<label>f019v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F054_O.8.35_f019v.jp2"/>
+		</surface>
+		<surface xml:id="f054" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F055_O.8.35_f020r.jp2">
+			<label>f020r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F055_O.8.35_f020r.jp2"/>
+		</surface>
+		<surface xml:id="f055" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F056_O.8.35_f020v.jp2">
+			<label>f020v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F056_O.8.35_f020v.jp2"/>
+		</surface>
+		<surface xml:id="f056" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F057_O.8.35_f021r.jp2">
+			<label>f021r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F057_O.8.35_f021r.jp2"/>
+		</surface>
+		<surface xml:id="f057" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F058_O.8.35_f021v.jp2">
+			<label>f021v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F058_O.8.35_f021v.jp2"/>
+		</surface>
+		<surface xml:id="f058" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F059_O.8.35_f022r.jp2">
+			<label>f022r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F059_O.8.35_f022r.jp2"/>
+		</surface>
+		<surface xml:id="f059" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F060_O.8.35_f022v.jp2">
+			<label>f022v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F060_O.8.35_f022v.jp2"/>
+		</surface>
+		<surface xml:id="f060" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F061_O.8.35_f023r.jp2">
+			<label>f023r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F061_O.8.35_f023r.jp2"/>
+		</surface>
+		<surface xml:id="f061" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F062_O.8.35_f023v.jp2">
+			<label>f023v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F062_O.8.35_f023v.jp2"/>
+		</surface>
+		<surface xml:id="f062" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F063_O.8.35_f024r.jp2">
+			<label>f024r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F063_O.8.35_f024r.jp2"/>
+		</surface>
+		<surface xml:id="f063" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F064_O.8.35_f024v.jp2">
+			<label>f024v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F064_O.8.35_f024v.jp2"/>
+		</surface>
+		<surface xml:id="f064" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F065_O.8.35_f025r.jp2">
+			<label>f025r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F065_O.8.35_f025r.jp2"/>
+		</surface>
+		<surface xml:id="f065" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F066_O.8.35_f025v.jp2">
+			<label>f025v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F066_O.8.35_f025v.jp2"/>
+		</surface>
+		<surface xml:id="f066" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F067_O.8.35_f026r.jp2">
+			<label>f026r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F067_O.8.35_f026r.jp2"/>
+		</surface>
+		<surface xml:id="f067" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F068_O.8.35_f026v.jp2">
+			<label>f026v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F068_O.8.35_f026v.jp2"/>
+		</surface>
+		<surface xml:id="f068" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F069_O.8.35_f027r.jp2">
+			<label>f027r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F069_O.8.35_f027r.jp2"/>
+		</surface>
+		<surface xml:id="f069" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F070_O.8.35_f027v.jp2">
+			<label>f027v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F070_O.8.35_f027v.jp2"/>
+		</surface>
+		<surface xml:id="f070" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F071_O.8.35_f028r.jp2">
+			<label>f028r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F071_O.8.35_f028r.jp2"/>
+		</surface>
+		<surface xml:id="f071" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F072_O.8.35_f028v.jp2">
+			<label>f028v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F072_O.8.35_f028v.jp2"/>
+		</surface>
+		<surface xml:id="f072" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F073_O.8.35_f029r.jp2">
+			<label>f029r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F073_O.8.35_f029r.jp2"/>
+		</surface>
+		<surface xml:id="f073" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F074_O.8.35_f029v.jp2">
+			<label>f029v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F074_O.8.35_f029v.jp2"/>
+		</surface>
+		<surface xml:id="f074" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F075_O.8.35_f030r.jp2">
+			<label>f030r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F075_O.8.35_f030r.jp2"/>
+		</surface>
+		<surface xml:id="f075" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F076_O.8.35_f030v.jp2">
+			<label>f030v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F076_O.8.35_f030v.jp2"/>
+		</surface>
+		<surface xml:id="f076" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F077_O.8.35_f031r.jp2">
+			<label>f031r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F077_O.8.35_f031r.jp2"/>
+		</surface>
+		<surface xml:id="f077" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F078_O.8.35_f031v.jp2">
+			<label>f031v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F078_O.8.35_f031v.jp2"/>
+		</surface>
+		<surface xml:id="f078" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F079_O.8.35_f032r.jp2">
+			<label>f032r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F079_O.8.35_f032r.jp2"/>
+		</surface>
+		<surface xml:id="f079" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F080_O.8.35_f032v.jp2">
+			<label>f032v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F080_O.8.35_f032v.jp2"/>
+		</surface>
+		<surface xml:id="f080" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F081_O.8.35_f033r.jp2">
+			<label>f033r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F081_O.8.35_f033r.jp2"/>
+		</surface>
+		<surface xml:id="f081" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F082_O.8.35_f033v.jp2">
+			<label>f033v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F082_O.8.35_f033v.jp2"/>
+		</surface>
+		<surface xml:id="f082" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F083_O.8.35_f034r.jp2">
+			<label>f034r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F083_O.8.35_f034r.jp2"/>
+		</surface>
+		<surface xml:id="f083" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F084_O.8.35_f034v.jp2">
+			<label>f034v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F084_O.8.35_f034v.jp2"/>
+		</surface>
+		<surface xml:id="f084" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F085_O.8.35_f035r.jp2">
+			<label>f035r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F085_O.8.35_f035r.jp2"/>
+		</surface>
+		<surface xml:id="f085" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F086_O.8.35_f035v.jp2">
+			<label>f035v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F086_O.8.35_f035v.jp2"/>
+		</surface>
+		<surface xml:id="f086" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F087_O.8.35_f036r.jp2">
+			<label>f036r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F087_O.8.35_f036r.jp2"/>
+		</surface>
+		<surface xml:id="f087" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F088_O.8.35_f036v.jp2">
+			<label>f036v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F088_O.8.35_f036v.jp2"/>
+		</surface>
+		<surface xml:id="f088" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F089_O.8.35_f037r.jp2">
+			<label>f037r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F089_O.8.35_f037r.jp2"/>
+		</surface>
+		<surface xml:id="f089" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F090_O.8.35_f037v.jp2">
+			<label>f037v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F090_O.8.35_f037v.jp2"/>
+		</surface>
+		<surface xml:id="f090" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F091_O.8.35_f038r.jp2">
+			<label>f038r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F091_O.8.35_f038r.jp2"/>
+		</surface>
+		<surface xml:id="f091" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F092_O.8.35_f038v.jp2">
+			<label>f038v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F092_O.8.35_f038v.jp2"/>
+		</surface>
+		<surface xml:id="f092" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F093_O.8.35_f039r.jp2">
+			<label>f039r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F093_O.8.35_f039r.jp2"/>
+		</surface>
+		<surface xml:id="f093" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F094_O.8.35_f039v.jp2">
+			<label>f039v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F094_O.8.35_f039v.jp2"/>
+		</surface>
+		<surface xml:id="f094" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F095_O.8.35_f040r.jp2">
+			<label>f040r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F095_O.8.35_f040r.jp2"/>
+		</surface>
+		<surface xml:id="f095" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F096_O.8.35_f040v.jp2">
+			<label>f040v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F096_O.8.35_f040v.jp2"/>
+		</surface>
+		<surface xml:id="f096" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F097_O.8.35_f041r.jp2">
+			<label>f041r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F097_O.8.35_f041r.jp2"/>
+		</surface>
+		<surface xml:id="f097" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F098_O.8.35_f041v.jp2">
+			<label>f041v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F098_O.8.35_f041v.jp2"/>
+		</surface>
+		<surface xml:id="f098" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F099_O.8.35_f042r.jp2">
+			<label>f042r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F099_O.8.35_f042r.jp2"/>
+		</surface>
+		<surface xml:id="f099" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F100_O.8.35_f042v.jp2">
+			<label>f042v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F100_O.8.35_f042v.jp2"/>
+		</surface>
+		<surface xml:id="f100" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F101_O.8.35_f043r.jp2">
+			<label>f043r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F101_O.8.35_f043r.jp2"/>
+		</surface>
+		<surface xml:id="f101" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F102_O.8.35_f043v.jp2">
+			<label>f043v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F102_O.8.35_f043v.jp2"/>
+		</surface>
+		<surface xml:id="f102" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F103_O.8.35_f044r.jp2">
+			<label>f044r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F103_O.8.35_f044r.jp2"/>
+		</surface>
+		<surface xml:id="f103" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F104_O.8.35_f044v.jp2">
+			<label>f044v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F104_O.8.35_f044v.jp2"/>
+		</surface>
+		<surface xml:id="f104" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F105_O.8.35_f045r.jp2">
+			<label>f045r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F105_O.8.35_f045r.jp2"/>
+		</surface>
+		<surface xml:id="f105" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F106_O.8.35_f045v.jp2">
+			<label>f045v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F106_O.8.35_f045v.jp2"/>
+		</surface>
+		<surface xml:id="f106" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F107_O.8.35_f046r.jp2">
+			<label>f046r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F107_O.8.35_f046r.jp2"/>
+		</surface>
+		<surface xml:id="f107" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F108_O.8.35_f046v.jp2">
+			<label>f046v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F108_O.8.35_f046v.jp2"/>
+		</surface>
+		<surface xml:id="f108" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F109_O.8.35_f047r.jp2">
+			<label>f047r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F109_O.8.35_f047r.jp2"/>
+		</surface>
+		<surface xml:id="f109" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F110_O.8.35_f047v.jp2">
+			<label>f047v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F110_O.8.35_f047v.jp2"/>
+		</surface>
+		<surface xml:id="f110" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F111_O.8.35_f048r.jp2">
+			<label>f048r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F111_O.8.35_f048r.jp2"/>
+		</surface>
+		<surface xml:id="f111" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F112_O.8.35_f048v.jp2">
+			<label>f048v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F112_O.8.35_f048v.jp2"/>
+		</surface>
+		<surface xml:id="f112" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F113_O.8.35_f049r.jp2">
+			<label>f049r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F113_O.8.35_f049r.jp2"/>
+		</surface>
+		<surface xml:id="f113" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F114_O.8.35_f049v.jp2">
+			<label>f049v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F114_O.8.35_f049v.jp2"/>
+		</surface>
+		<surface xml:id="f114" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F115_O.8.35_f050r.jp2">
+			<label>f050r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F115_O.8.35_f050r.jp2"/>
+		</surface>
+		<surface xml:id="f115" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F116_O.8.35_f050v.jp2">
+			<label>f050v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F116_O.8.35_f050v.jp2"/>
+		</surface>
+		<surface xml:id="f116" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F117_O.8.35_f051r.jp2">
+			<label>f051r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F117_O.8.35_f051r.jp2"/>
+		</surface>
+		<surface xml:id="f117" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F118_O.8.35_f051v.jp2">
+			<label>f051v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F118_O.8.35_f051v.jp2"/>
+		</surface>
+		<surface xml:id="f118" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F119_O.8.35_f052r.jp2">
+			<label>f052r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F119_O.8.35_f052r.jp2"/>
+		</surface>
+		<surface xml:id="f119" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F120_O.8.35_f052v.jp2">
+			<label>f052v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F120_O.8.35_f052v.jp2"/>
+		</surface>
+		<surface xml:id="f120" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F121_O.8.35_f053r.jp2">
+			<label>f053r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F121_O.8.35_f053r.jp2"/>
+		</surface>
+		<surface xml:id="f121" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F122_O.8.35_f053v.jp2">
+			<label>f053v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F122_O.8.35_f053v.jp2"/>
+		</surface>
+		<surface xml:id="f122" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F123_O.8.35_f054r.jp2">
+			<label>f054r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F123_O.8.35_f054r.jp2"/>
+		</surface>
+		<surface xml:id="f123" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F124_O.8.35_f054v.jp2">
+			<label>f054v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F124_O.8.35_f054v.jp2"/>
+		</surface>
+		<surface xml:id="f124" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F125_O.8.35_f055r.jp2">
+			<label>f055r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F125_O.8.35_f055r.jp2"/>
+		</surface>
+		<surface xml:id="f125" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F126_O.8.35_f055v.jp2">
+			<label>f055v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F126_O.8.35_f055v.jp2"/>
+		</surface>
+		<surface xml:id="f126" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F127_O.8.35_f056r.jp2">
+			<label>f056r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F127_O.8.35_f056r.jp2"/>
+		</surface>
+		<surface xml:id="f127" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F128_O.8.35_f056v.jp2">
+			<label>f056v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F128_O.8.35_f056v.jp2"/>
+		</surface>
+		<surface xml:id="f128" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F129_O.8.35_f057r.jp2">
+			<label>f057r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F129_O.8.35_f057r.jp2"/>
+		</surface>
+		<surface xml:id="f129" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F130_O.8.35_f057v.jp2">
+			<label>f057v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F130_O.8.35_f057v.jp2"/>
+		</surface>
+		<surface xml:id="f130" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F131_O.8.35_f058r.jp2">
+			<label>f058r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F131_O.8.35_f058r.jp2"/>
+		</surface>
+		<surface xml:id="f131" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F132_O.8.35_f058v.jp2">
+			<label>f058v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F132_O.8.35_f058v.jp2"/>
+		</surface>
+		<surface xml:id="f132" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F133_O.8.35_f059r.jp2">
+			<label>f059r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F133_O.8.35_f059r.jp2"/>
+		</surface>
+		<surface xml:id="f133" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F134_O.8.35_f059v.jp2">
+			<label>f059v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F134_O.8.35_f059v.jp2"/>
+		</surface>
+		<surface xml:id="f134" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F135_O.8.35_f060r.jp2">
+			<label>f060r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F135_O.8.35_f060r.jp2"/>
+		</surface>
+		<surface xml:id="f135" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F136_O.8.35_f060v.jp2">
+			<label>f060v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F136_O.8.35_f060v.jp2"/>
+		</surface>
+		<surface xml:id="f136" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F137_O.8.35_f061r.jp2">
+			<label>f061r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F137_O.8.35_f061r.jp2"/>
+		</surface>
+		<surface xml:id="f137" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F138_O.8.35_f061v.jp2">
+			<label>f061v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F138_O.8.35_f061v.jp2"/>
+		</surface>
+		<surface xml:id="f138" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F139_O.8.35_f062r.jp2">
+			<label>f062r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F139_O.8.35_f062r.jp2"/>
+		</surface>
+		<surface xml:id="f139" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F140_O.8.35_f062v.jp2">
+			<label>f062v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F140_O.8.35_f062v.jp2"/>
+		</surface>
+		<surface xml:id="f140" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F141_O.8.35_f063r.jp2">
+			<label>f063r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F141_O.8.35_f063r.jp2"/>
+		</surface>
+		<surface xml:id="f141" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F142_O.8.35_f063v.jp2">
+			<label>f063v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F142_O.8.35_f063v.jp2"/>
+		</surface>
+		<surface xml:id="f142" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F143_O.8.35_f064r.jp2">
+			<label>f064r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F143_O.8.35_f064r.jp2"/>
+		</surface>
+		<surface xml:id="f143" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F144_O.8.35_f064v.jp2">
+			<label>f064v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F144_O.8.35_f064v.jp2"/>
+		</surface>
+		<surface xml:id="f144" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F145_O.8.35_f065r.jp2">
+			<label>f065r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F145_O.8.35_f065r.jp2"/>
+		</surface>
+		<surface xml:id="f145" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F146_O.8.35_f065v.jp2">
+			<label>f065v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F146_O.8.35_f065v.jp2"/>
+		</surface>
+		<surface xml:id="f146" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F147_O.8.35_f066r.jp2">
+			<label>f066r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F147_O.8.35_f066r.jp2"/>
+		</surface>
+		<surface xml:id="f147" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F148_O.8.35_f066v.jp2">
+			<label>f066v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F148_O.8.35_f066v.jp2"/>
+		</surface>
+		<surface xml:id="f148" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F149_O.8.35_f067r.jp2">
+			<label>f067r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F149_O.8.35_f067r.jp2"/>
+		</surface>
+		<surface xml:id="f149" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F150_O.8.35_f067v.jp2">
+			<label>f067v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F150_O.8.35_f067v.jp2"/>
+		</surface>
+		<surface xml:id="f150" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F151_O.8.35_f068r.jp2">
+			<label>f068r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F151_O.8.35_f068r.jp2"/>
+		</surface>
+		<surface xml:id="f151" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F152_O.8.35_f068v.jp2">
+			<label>f068v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F152_O.8.35_f068v.jp2"/>
+		</surface>
+		<surface xml:id="f152" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F153_O.8.35_f069r.jp2">
+			<label>f069r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F153_O.8.35_f069r.jp2"/>
+		</surface>
+		<surface xml:id="f153" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F154_O.8.35_f069v.jp2">
+			<label>f069v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F154_O.8.35_f069v.jp2"/>
+		</surface>
+		<surface xml:id="f154" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F155_O.8.35_f070r.jp2">
+			<label>f070r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F155_O.8.35_f070r.jp2"/>
+		</surface>
+		<surface xml:id="f155" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F156_O.8.35_f070v.jp2">
+			<label>f070v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F156_O.8.35_f070v.jp2"/>
+		</surface>
+		<surface xml:id="f156" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F157_O.8.35_f071r.jp2">
+			<label>f071r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F157_O.8.35_f071r.jp2"/>
+		</surface>
+		<surface xml:id="f157" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F158_O.8.35_f071v.jp2">
+			<label>f071v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F158_O.8.35_f071v.jp2"/>
+		</surface>
+		<surface xml:id="f158" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F159_O.8.35_f072r.jp2">
+			<label>f072r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F159_O.8.35_f072r.jp2"/>
+		</surface>
+		<surface xml:id="f159" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F160_O.8.35_f072v.jp2">
+			<label>f072v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F160_O.8.35_f072v.jp2"/>
+		</surface>
+		<surface xml:id="f160" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F161_O.8.35_f073r.jp2">
+			<label>f073r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F161_O.8.35_f073r.jp2"/>
+		</surface>
+		<surface xml:id="f161" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F162_O.8.35_f073v.jp2">
+			<label>f073v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F162_O.8.35_f073v.jp2"/>
+		</surface>
+		<surface xml:id="f162" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F163_O.8.35_f074r.jp2">
+			<label>f074r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F163_O.8.35_f074r.jp2"/>
+		</surface>
+		<surface xml:id="f163" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F164_O.8.35_f074v.jp2">
+			<label>f074v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F164_O.8.35_f074v.jp2"/>
+		</surface>
+		<surface xml:id="f164" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F165_O.8.35_f075r.jp2">
+			<label>f075r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F165_O.8.35_f075r.jp2"/>
+		</surface>
+		<surface xml:id="f165" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F166_O.8.35_f075v.jp2">
+			<label>f075v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F166_O.8.35_f075v.jp2"/>
+		</surface>
+		<surface xml:id="f166" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F167_O.8.35_f076r.jp2">
+			<label>f076r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F167_O.8.35_f076r.jp2"/>
+		</surface>
+		<surface xml:id="f167" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F168_O.8.35_f076v.jp2">
+			<label>f076v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F168_O.8.35_f076v.jp2"/>
+		</surface>
+		<surface xml:id="f168" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F169_O.8.35_f077r.jp2">
+			<label>f077r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F169_O.8.35_f077r.jp2"/>
+		</surface>
+		<surface xml:id="f169" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F170_O.8.35_f077v.jp2">
+			<label>f077v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F170_O.8.35_f077v.jp2"/>
+		</surface>
+		<surface xml:id="f170" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F171_O.8.35_f078r.jp2">
+			<label>f078r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F171_O.8.35_f078r.jp2"/>
+		</surface>
+		<surface xml:id="f171" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F172_O.8.35_f078v.jp2">
+			<label>f078v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F172_O.8.35_f078v.jp2"/>
+		</surface>
+		<surface xml:id="f172" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F173_O.8.35_f079r.jp2">
+			<label>f079r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F173_O.8.35_f079r.jp2"/>
+		</surface>
+		<surface xml:id="f173" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F174_O.8.35_f079v.jp2">
+			<label>f079v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F174_O.8.35_f079v.jp2"/>
+		</surface>
+		<surface xml:id="f174" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F175_O.8.35_f080r.jp2">
+			<label>f080r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F175_O.8.35_f080r.jp2"/>
+		</surface>
+		<surface xml:id="f175" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F176_O.8.35_f080v.jp2">
+			<label>f080v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F176_O.8.35_f080v.jp2"/>
+		</surface>
+		<surface xml:id="f176" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F177_O.8.35_f081r.jp2">
+			<label>f081r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F177_O.8.35_f081r.jp2"/>
+		</surface>
+		<surface xml:id="f177" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F178_O.8.35_f081v.jp2">
+			<label>f081v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F178_O.8.35_f081v.jp2"/>
+		</surface>
+		<surface xml:id="f178" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F179_O.8.35_f082r.jp2">
+			<label>f082r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F179_O.8.35_f082r.jp2"/>
+		</surface>
+		<surface xml:id="f179" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F180_O.8.35_f082v.jp2">
+			<label>f082v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F180_O.8.35_f082v.jp2"/>
+		</surface>
+		<surface xml:id="f180" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F181_O.8.35_f083r.jp2">
+			<label>f083r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F181_O.8.35_f083r.jp2"/>
+		</surface>
+		<surface xml:id="f181" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F182_O.8.35_f083v.jp2">
+			<label>f083v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F182_O.8.35_f083v.jp2"/>
+		</surface>
+		<surface xml:id="f182" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F183_O.8.35_f084r.jp2">
+			<label>f084r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F183_O.8.35_f084r.jp2"/>
+		</surface>
+		<surface xml:id="f183" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F184_O.8.35_f084v.jp2">
+			<label>f084v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F184_O.8.35_f084v.jp2"/>
+		</surface>
+		<surface xml:id="f184" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F185_O.8.35_f085r.jp2">
+			<label>f085r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F185_O.8.35_f085r.jp2"/>
+		</surface>
+		<surface xml:id="f185" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F186_O.8.35_f085v.jp2">
+			<label>f085v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F186_O.8.35_f085v.jp2"/>
+		</surface>
+		<surface xml:id="f186" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F187_O.8.35_f086r.jp2">
+			<label>f086r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F187_O.8.35_f086r.jp2"/>
+		</surface>
+		<surface xml:id="f187" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F188_O.8.35_f086v.jp2">
+			<label>f086v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F188_O.8.35_f086v.jp2"/>
+		</surface>
+		<surface xml:id="f188" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F189_O.8.35_f087r.jp2">
+			<label>f087r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F189_O.8.35_f087r.jp2"/>
+		</surface>
+		<surface xml:id="f189" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F190_O.8.35_f087v.jp2">
+			<label>f087v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F190_O.8.35_f087v.jp2"/>
+		</surface>
+		<surface xml:id="f190" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F191_O.8.35_f088r.jp2">
+			<label>f088r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F191_O.8.35_f088r.jp2"/>
+		</surface>
+		<surface xml:id="f191" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F192_O.8.35_f088v.jp2">
+			<label>f088v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F192_O.8.35_f088v.jp2"/>
+		</surface>
+		<surface xml:id="f192" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F193_O.8.35_f089r.jp2">
+			<label>f089r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F193_O.8.35_f089r.jp2"/>
+		</surface>
+		<surface xml:id="f193" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F194_O.8.35_f089v.jp2">
+			<label>f089v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F194_O.8.35_f089v.jp2"/>
+		</surface>
+		<surface xml:id="f194" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F195_O.8.35_f090r.jp2">
+			<label>f090r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F195_O.8.35_f090r.jp2"/>
+		</surface>
+		<surface xml:id="f195" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F196_O.8.35_f090v.jp2">
+			<label>f090v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F196_O.8.35_f090v.jp2"/>
+		</surface>
+		<surface xml:id="f196" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F197_O.8.35_f091r.jp2">
+			<label>f091r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F197_O.8.35_f091r.jp2"/>
+		</surface>
+		<surface xml:id="f197" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F198_O.8.35_f091v.jp2">
+			<label>f091v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F198_O.8.35_f091v.jp2"/>
+		</surface>
+		<surface xml:id="f198" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F199_O.8.35_f092r.jp2">
+			<label>f092r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F199_O.8.35_f092r.jp2"/>
+		</surface>
+		<surface xml:id="f199" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F200_O.8.35_f092v.jp2">
+			<label>f092v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F200_O.8.35_f092v.jp2"/>
+		</surface>
+		<surface xml:id="f200" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F201_O.8.35_f093r.jp2">
+			<label>f093r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F201_O.8.35_f093r.jp2"/>
+		</surface>
+		<surface xml:id="f201" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F202_O.8.35_f093v.jp2">
+			<label>f093v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F202_O.8.35_f093v.jp2"/>
+		</surface>
+		<surface xml:id="f202" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F203_O.8.35_f094r.jp2">
+			<label>f094r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F203_O.8.35_f094r.jp2"/>
+		</surface>
+		<surface xml:id="f203" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F204_O.8.35_f094v.jp2">
+			<label>f094v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F204_O.8.35_f094v.jp2"/>
+		</surface>
+		<surface xml:id="f204" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F205_O.8.35_f095r.jp2">
+			<label>f095r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F205_O.8.35_f095r.jp2"/>
+		</surface>
+		<surface xml:id="f205" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F206_O.8.35_f095v.jp2">
+			<label>f095v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F206_O.8.35_f095v.jp2"/>
+		</surface>
+		<surface xml:id="f206" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F207_O.8.35_f096r.jp2">
+			<label>f096r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F207_O.8.35_f096r.jp2"/>
+		</surface>
+		<surface xml:id="f207" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F208_O.8.35_f096v.jp2">
+			<label>f096v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F208_O.8.35_f096v.jp2"/>
+		</surface>
+		<surface xml:id="f208" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F209_O.8.35_f097r.jp2">
+			<label>f097r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F209_O.8.35_f097r.jp2"/>
+		</surface>
+		<surface xml:id="f209" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F210_O.8.35_f097v.jp2">
+			<label>f097v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F210_O.8.35_f097v.jp2"/>
+		</surface>
+		<surface xml:id="f210" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F211_O.8.35_f098r.jp2">
+			<label>f098r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F211_O.8.35_f098r.jp2"/>
+		</surface>
+		<surface xml:id="f211" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F212_O.8.35_f098v.jp2">
+			<label>f098v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F212_O.8.35_f098v.jp2"/>
+		</surface>
+		<surface xml:id="f212" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F213_O.8.35_f099r.jp2">
+			<label>f099r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F213_O.8.35_f099r.jp2"/>
+		</surface>
+		<surface xml:id="f213" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F214_O.8.35_f099v.jp2">
+			<label>f099v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F214_O.8.35_f099v.jp2"/>
+		</surface>
+		<surface xml:id="f214" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F215_O.8.35_f100r.jp2">
+			<label>f100r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F215_O.8.35_f100r.jp2"/>
+		</surface>
+		<surface xml:id="f215" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F216_O.8.35_f100v.jp2">
+			<label>f100v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F216_O.8.35_f100v.jp2"/>
+		</surface>
+		<surface xml:id="f216" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F217_O.8.35_f101r.jp2">
+			<label>f101r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F217_O.8.35_f101r.jp2"/>
+		</surface>
+		<surface xml:id="f217" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F218_O.8.35_f101v.jp2">
+			<label>f101v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F218_O.8.35_f101v.jp2"/>
+		</surface>
+		<surface xml:id="f218" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F219_O.8.35_f102r.jp2">
+			<label>f102r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F219_O.8.35_f102r.jp2"/>
+		</surface>
+		<surface xml:id="f219" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F220_O.8.35_f102v.jp2">
+			<label>f102v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F220_O.8.35_f102v.jp2"/>
+		</surface>
+		<surface xml:id="f220" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F221_O.8.35_f103r.jp2">
+			<label>f103r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F221_O.8.35_f103r.jp2"/>
+		</surface>
+		<surface xml:id="f221" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F222_O.8.35_f103v.jp2">
+			<label>f103v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F222_O.8.35_f103v.jp2"/>
+		</surface>
+		<surface xml:id="f222" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F223_O.8.35_f104r.jp2">
+			<label>f104r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F223_O.8.35_f104r.jp2"/>
+		</surface>
+		<surface xml:id="f223" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F224_O.8.35_f104v.jp2">
+			<label>f104v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F224_O.8.35_f104v.jp2"/>
+		</surface>
+		<surface xml:id="f224" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F225_O.8.35_f105r.jp2">
+			<label>f105r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F225_O.8.35_f105r.jp2"/>
+		</surface>
+		<surface xml:id="f225" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F226_O.8.35_f105v.jp2">
+			<label>f105v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F226_O.8.35_f105v.jp2"/>
+		</surface>
+		<surface xml:id="f226" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F227_O.8.35_f106r.jp2">
+			<label>f106r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F227_O.8.35_f106r.jp2"/>
+		</surface>
+		<surface xml:id="f227" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F228_O.8.35_f106v.jp2">
+			<label>f106v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F228_O.8.35_f106v.jp2"/>
+		</surface>
+		<surface xml:id="f228" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F229_O.8.35_f107r.jp2">
+			<label>f107r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F229_O.8.35_f107r.jp2"/>
+		</surface>
+		<surface xml:id="f229" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F230_O.8.35_f107v.jp2">
+			<label>f107v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F230_O.8.35_f107v.jp2"/>
+		</surface>
+		<surface xml:id="f230" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F231_O.8.35_f108r.jp2">
+			<label>f108r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F231_O.8.35_f108r.jp2"/>
+		</surface>
+		<surface xml:id="f231" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F232_O.8.35_f108v.jp2">
+			<label>f108v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F232_O.8.35_f108v.jp2"/>
+		</surface>
+		<surface xml:id="f232" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F233_O.8.35_f109r.jp2">
+			<label>f109r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F233_O.8.35_f109r.jp2"/>
+		</surface>
+		<surface xml:id="f233" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F234_O.8.35_f109v.jp2">
+			<label>f109v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F234_O.8.35_f109v.jp2"/>
+		</surface>
+		<surface xml:id="f234" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F235_O.8.35_f110r.jp2">
+			<label>f110r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F235_O.8.35_f110r.jp2"/>
+		</surface>
+		<surface xml:id="f235" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F236_O.8.35_f110v.jp2">
+			<label>f110v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F236_O.8.35_f110v.jp2"/>
+		</surface>
+		<surface xml:id="f236" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F237_O.8.35_f111r.jp2">
+			<label>f111r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F237_O.8.35_f111r.jp2"/>
+		</surface>
+		<surface xml:id="f237" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F238_O.8.35_f111v.jp2">
+			<label>f111v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F238_O.8.35_f111v.jp2"/>
+		</surface>
+		<surface xml:id="f238" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F239_O.8.35_f112r.jp2">
+			<label>f112r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F239_O.8.35_f112r.jp2"/>
+		</surface>
+		<surface xml:id="f239" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F240_O.8.35_f112v.jp2">
+			<label>f112v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F240_O.8.35_f112v.jp2"/>
+		</surface>
+		<surface xml:id="f240" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F241_O.8.35_f113r.jp2">
+			<label>f113r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F241_O.8.35_f113r.jp2"/>
+		</surface>
+		<surface xml:id="f241" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F242_O.8.35_f113v.jp2">
+			<label>f113v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F242_O.8.35_f113v.jp2"/>
+		</surface>
+		<surface xml:id="f242" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F243_O.8.35_f114r.jp2">
+			<label>f114r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F243_O.8.35_f114r.jp2"/>
+		</surface>
+		<surface xml:id="f243" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F244_O.8.35_f114v.jp2">
+			<label>f114v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F244_O.8.35_f114v.jp2"/>
+		</surface>
+		<surface xml:id="f244" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F245_O.8.35_f115r.jp2">
+			<label>f115r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F245_O.8.35_f115r.jp2"/>
+		</surface>
+		<surface xml:id="f245" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F246_O.8.35_f115v.jp2">
+			<label>f115v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F246_O.8.35_f115v.jp2"/>
+		</surface>
+		<surface xml:id="f246" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F247_O.8.35_f116r.jp2">
+			<label>f116r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F247_O.8.35_f116r.jp2"/>
+		</surface>
+		<surface xml:id="f247" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F248_O.8.35_f116v.jp2">
+			<label>f116v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F248_O.8.35_f116v.jp2"/>
+		</surface>
+		<surface xml:id="f248" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F249_O.8.35_f117r.jp2">
+			<label>f117r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F249_O.8.35_f117r.jp2"/>
+		</surface>
+		<surface xml:id="f249" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F250_O.8.35_f117v.jp2">
+			<label>f117v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F250_O.8.35_f117v.jp2"/>
+		</surface>
+		<surface xml:id="f250" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F251_O.8.35_f118r.jp2">
+			<label>f118r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F251_O.8.35_f118r.jp2"/>
+		</surface>
+		<surface xml:id="f251" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F252_O.8.35_f118v.jp2">
+			<label>f118v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F252_O.8.35_f118v.jp2"/>
+		</surface>
+		<surface xml:id="f252" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F253_O.8.35_f119r.jp2">
+			<label>f119r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F253_O.8.35_f119r.jp2"/>
+		</surface>
+		<surface xml:id="f253" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F254_O.8.35_f119v.jp2">
+			<label>f119v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F254_O.8.35_f119v.jp2"/>
+		</surface>
+		<surface xml:id="f254" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F255_O.8.35_f120r.jp2">
+			<label>f120r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F255_O.8.35_f120r.jp2"/>
+		</surface>
+		<surface xml:id="f255" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F256_O.8.35_f120v.jp2">
+			<label>f120v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F256_O.8.35_f120v.jp2"/>
+		</surface>
+		<surface xml:id="f256" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F257_O.8.35_f121r.jp2">
+			<label>f121r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F257_O.8.35_f121r.jp2"/>
+		</surface>
+		<surface xml:id="f257" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F258_O.8.35_f121v.jp2">
+			<label>f121v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F258_O.8.35_f121v.jp2"/>
+		</surface>
+		<surface xml:id="f258" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F259_O.8.35_f122r.jp2">
+			<label>f122r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F259_O.8.35_f122r.jp2"/>
+		</surface>
+		<surface xml:id="f259" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F260_O.8.35_f122v.jp2">
+			<label>f122v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F260_O.8.35_f122v.jp2"/>
+		</surface>
+		<surface xml:id="f260" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F261_O.8.35_f123r.jp2">
+			<label>f123r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F261_O.8.35_f123r.jp2"/>
+		</surface>
+		<surface xml:id="f261" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F262_O.8.35_f123v.jp2">
+			<label>f123v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F262_O.8.35_f123v.jp2"/>
+		</surface>
+		<surface xml:id="f262" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F263_O.8.35_f124r.jp2">
+			<label>f124r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F263_O.8.35_f124r.jp2"/>
+		</surface>
+		<surface xml:id="f263" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F264_O.8.35_f124v.jp2">
+			<label>f124v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F264_O.8.35_f124v.jp2"/>
+		</surface>
+		<surface xml:id="f264" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F265_O.8.35_f125r.jp2">
+			<label>f125r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F265_O.8.35_f125r.jp2"/>
+		</surface>
+		<surface xml:id="f265" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F266_O.8.35_f125v.jp2">
+			<label>f125v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F266_O.8.35_f125v.jp2"/>
+		</surface>
+		<surface xml:id="f266" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F267_O.8.35_f126r.jp2">
+			<label>f126r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F267_O.8.35_f126r.jp2"/>
+		</surface>
+		<surface xml:id="f267" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F268_O.8.35_f126v.jp2">
+			<label>f126v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F268_O.8.35_f126v.jp2"/>
+		</surface>
+		<surface xml:id="f268" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F269_O.8.35_f127r.jp2">
+			<label>f127r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F269_O.8.35_f127r.jp2"/>
+		</surface>
+		<surface xml:id="f269" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F270_O.8.35_f127v.jp2">
+			<label>f127v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F270_O.8.35_f127v.jp2"/>
+		</surface>
+		<surface xml:id="f270" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F271_O.8.35_back flyleaf r.jp2">
+			<label>back flyleaf r</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F271_O.8.35_back flyleaf r.jp2"/>
+		</surface>
+		<surface xml:id="f271" ulx="0" uly="0" lrx="2967" lry="4062" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F272_O.8.35_back flyleaf v.jp2">
+			<label>back flyleaf v</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F272_O.8.35_back flyleaf v.jp2"/>
+		</surface>
+		<surface xml:id="f272" ulx="0" uly="0" lrx="3013" lry="4125" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F273_O.8.35_inside back.jp2">
+			<label>inside back</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F273_O.8.35_inside back.jp2"/>
+		</surface>
+		<surface xml:id="f273" ulx="0" uly="0" lrx="3013" lry="4125" sameAs="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F274_O.8.35_back cover.jp2">
+			<label>back cover</label>
+			<graphic mimeType="application/json" url="https://mss-cat.trin.cam.ac.uk:8183/iiif/2/O.8.35%2F274_O.8.35_back cover.jp2"/>
+		</surface>
+	</facsimile>
+	<text xml:id="transcription">
+		<body>
+			<pb facs="#f009"/>
+			<div>
+				<p>Enforce your wyll su?yng as for to learen</p>
+				<lb/>
+				<p>Acanns? your with coning for that ys sevre?</p>
+				<lb/>
+				<p>yf fortenne chanc &amp; poverte? apere</p>
+				<lb/>
+				<p>he that ys coning ys lyke to recover</p>
+				<pb/>
+				<lb/>
+				<figure>
+					<figDesc>
+						<desc>Line separating the verse above from the notes below</desc>
+					</figDesc>
+				</figure>
+				<p>a pownde ys wryte thys ƚi:i:</p>
+				<p>halfe a pownde thys: ƚi:d: or thys: ƚi:β:</p>
+				<p>an unce ys thys: ℥:i: or thys ℥:i:</p>
+				<p>halfe an unce thys: ℥:d: or this ℥:β:</p>
+				<p>a drame is thys: Ʒ:i:</p>
+				<p>halfe a drame this: Ʒ:d: or this :Ʒ:β:</p>
+				<p>a quart : qrt:</p>
+				<p>a scrypul ys thys: Ȝ:i:</p>
+				<p>halfe a scrypul: Ȝ:d: or thys :Ȝ:β:</p>
+				<p>a handeful thys: m:i:</p>
+				<p>halfe a handeful: m:d: or m:β:</p>
+				<p>of every <add>one</add> yche myche this: an: or thys: ana</p>
+				<p>a grayne ys thys: gra: or grana:</p>
+				<p><persName>Henry Dyngley</persName>:ano xpo:<date>1554</date>: et ano philippi et marie primo et secundo <date>vicessimo secundo die marcii</date></p>
+				<p>xii: unce make a pownde: and viij: drames make one unce and .iij. scripuls one drame: and xx: barly cornis ys a scripul</p>
+			</div>
+			<pb facs="#f010"/>
+			<div>
+				<head>
+					<title>Divers receits.</title>
+				</head>
+				<head>
+					<title>De urinis</title>
+				</head>
+				<head>
+					<title>De signis zodiaci &amp;c</title>
+				</head>
+				<head><title>Anatomy</title>. all perhaps by <persName>Henry Dingley</persName>.</head>
+			</div>
+			<pb facs="#f011"/>
+			<div>
+				<figure>
+					<figDesc>
+						<desc>Black-and-white drawing of <persName>King Henry VI</persName> carrying a sword with a banderole captioning the figure.</desc>
+					</figDesc>
+				</figure>
+				<p><persName>Henricus vi</persName> Rex <placeName>anglie</placeName></p>
+			</div>
+			<pb facs="#f012"/>
+			<div>
+				<desc>Three lines of cancelled notes. Illegible.</desc>
+			</div>
+			<pb facs="#f013"/>
+			<div>
+				<desc>Blank flyleaf</desc>
+			</div>
+			<pb facs="#f014"/>
+			<div>
+				<head>
+					<title select="#rs-ail">for the ache of <rs>disease in the raynes</rs> of the bakke</title>
+				</head>
+				<p>Take a <measure>quarter of yard</measure> of <rs select="#rs-ing">redde scarlett</rs> &amp; <rs select="#rs-proc">stycche</rs> therto the <rs select="#rs-ing">woll</rs> of a <rs select="#rs-al">blakke shepe</rs> thatt growyth apon the brest and then take pouder of [?]aunders &amp; <rs select="#rs-proc">strew</rs> over the sayd <rs select="#rs-ing">woll</rs> &amp; also <rs select="#rs-ing">pouder of </rs><rs select="#rs-pl">lycoras</rs> and after that don to over <rs select="#rs-proc">spryngyll</rs> the same with <rs select="#rs-ing">oyle of oylyff</rs> and that plastur shall restore nature. And ease the pacient of his disease so it be <rs select="#rs-app">layed</rs> to his <rs select="#rs-anat">raynes</rs> &amp; <measure>every wyke</measure> the same plastre to be renewed with same pouder &amp; oyle. And so to use it till he be hoole &amp;c.</p>
+			</div>
+			<pb facs="#f015"/>
+			<div>
+				<figure>
+					<figDesc>Ex libris stamp of Trinity College Cambridge Library</figDesc>
+				</figure>
+				<p>Collegium S.S. et individuae Trinitatis in Academia <placeName>Cantabrigiensi</placeName></p>
+			</div>
+			<pb facs="#f016"/>
+			<div>
+				<head>
+					<handShift/>
+					<title>of all maner of Infyrmytes</title>
+					<handShift/>
+				</head>
+				<p>Here begynneth a tretys of al manere of infirmitees of mannys body. bothe withinne as touchyng to phisyke and withoute as touching to surgerie from the <rs select="#rs-anat">croune of the heed</rs> to the <rs select="#rs-anat">sool of the foot</rs>. And the remedies therwith if god wol. And furst we wol at <rs select="#rs-anat">heer of the hed</rs> how it shulde be norisshede &amp; kepte &amp;c.</p>
+			</div>
+			<div>
+				<head>
+					<title select="#rs-ail">For to <rs>make heer to growe</rs>.</title>
+				</head>
+				<p>Take <rs select="#rs-pl">withien leves</rs> and <rs select="#rs-proc">sethe</rs> hem in <rs select="#rs-ing">oyle</rs> and <rs select="#rs-ing">hony</rs> and <rs select="#rs-proc">anoynte</rs> the <rs select="#rs-anat">heede</rs> therwith. and it shal <rs select="#rs-ail">make the heer to growe</rs> and waxe. <title>Another.</title> Take <rs select="#rs-ing">beer</rs> &amp; <rs select="#rs-proc">drie</rs> hem in a <rs select="#rs-tl">furneys</rs> or in a <rs select="#rs-tl">panne</rs> and make therof a pouder. and <rs select="#rs-proc">sethe</rs> it in <rs select="#rs-ing">hony</rs> and <rs select="#rs-proc">anoynt</rs> the pacient therwith and it schal <rs select="#rs-ail">make the heer to growe</rs>. <title>Another. </title>forto <rs select="#rs-ail">make heer to growe after scalles</rs>. There is an oynement that is cleped <rs select="#rs-ing"><term>unguentum </term></rs><persName><rs select="#rs-ing"><term>aristotilis</term></rs></persName>. thus it must be made. Take the <rs select="#rs-ing">sewet</rs> of a <rs select="#rs-al">dere</rs> either fresshe <rs select="#rs-al">shepys</rs> <rs select="#rs-ing">talu</rs> and <rs select="#rs-ing">pich</rs> that is fletyng. <rs select="#rs-ing">oyle olyf</rs> and <rs select="#rs-ing">gret salt</rs>. of iche of these <measure>iii. unces</measure> or <measure>half a quartron</measure> of <rs select="#rs-ing">white waxe</rs> <measure>half an unce</measure>. than first take the <rs select="#rs-ing">sewt</rs>. or <pb facs="#f017"/> <rs select="#rs-ing">talu</rs> of a wether &amp; <rs select="#rs-ing">salt</rs>. and <rs select="#rs-proc">stampe</rs> wel these to gider. than take the <rs select="#rs-ing">piche</rs> &amp; the <rs select="#rs-ing">oyle</rs> &amp; the <rs select="#rs-ing">white waxe</rs>. and <rs select="#rs-proc">do it over the fire</rs> in a <rs select="#rs-tl">panne</rs> &amp; <time>whan al is molten</time> and skymed do in thy <rs select="#rs-ing">sewet</rs> &amp; thy <rs select="#rs-ing">salt</rs> &amp; <rs select="#rs-proc">stire</rs> it with a <rs select="#rs-tl">selice</rs>. and <time>whan it is wel boyled</time> sette it a doun and <rs select="#rs-proc">streyneit</rs> thorugh a <rs select="#rs-tl">canevas</rs>. and than putte this oynement in a <rs select="#rs-tl">sered boxe</rs>. And when thow wolt <rs select="#rs-app">anoynte</rs> the <rs select="#rs-anat">scalled heed</rs> therwit lete <rs select="#rs-proc">shave</rs> it or thou <rs select="#rs-proc">anoynte</rs> it Take than the pouder of brent <rs select="#rs-al">bees</rs> and <rs select="#rs-proc">strawe</rs> it above on the oynement and <time>whanne the heed scal be wasshe</time> make <rs select="#rs-ing #rs-pl">lye of hay asshes</rs> that was mowe <date>before midsomer</date>. and than <rs select="#rs-proc">wasshe</rs> it with the <rs select="#rs-ing">white of eyren</rs>. &amp; <rs select="#rs-ing">hony</rs>. and with that <rs select="#rs-ing">lye</rs> twies awoke and if it thus be governed. than shal the <rs select="#rs-ail">heede faire hele</rs> &amp; make the heer wel to growe.</p>
+			</div>
+			<div>
+				<head>
+					<title>To <rs select="#rs-ail">destroie the growyng of heer</rs></title>
+				</head>
+				<p>Take &amp; make <rs select="#rs-ing">lye</rs> of hoot asshes of <rs select="#rs-pl">strawe</rs> &amp; wasshe <pb facs="#f018"/> it therwith ofte. <title>Another.</title> Take the <rs select="#rs-ing #rs-pl">juys of Ivy leves</rs> and whan the heer is polled away anoynte the place therwith. <title>A nother.</title> Take the <rs select="#rs-ing #rs-pl">asshes of elme barkes</rs> and <rs select="#rs-ing">unslekid lyme</rs>. &amp; <rs select="#rs-ing">orpyment</rs> &amp; <rs select="#rs-ing">welle water</rs> &amp; anoynte welle <rs select="#rs-anat">þe place that thou wolt the heer be destroied</rs> &amp; it shal vanysshe a way.</p>
+			</div>
+			<div>
+				<head>
+					<title>For to <rs select="#rs-ail">make heer coloured as gold</rs>.</title>
+				</head>
+				<p>Take the <rs select="#rs-ing #rs-pl">huskes of walnotes</rs> whan they ben grene &amp; the <rs select="#rs-ing #rs-pl">rynde of the tre</rs> &amp; <rs select="#rs-proc">sethe</rs> hem wel &amp; make <rs select="#rs-ing">lye</rs> of that water. or <rs select="#rs-proc">stampe</rs> hem wel and do with the <rs select="#rs-ing">uskes</rs> &amp; ley ther on. and <rs select="#rs-proc">wasshe</rs> the <rs select="#rs-anat">heed</rs> therwith. <title>For to <rs select="#rs-pl">make rede heer</rs></title> <rs select="#rs-proc">Washe</rs> thyn <rs select="#rs-anat">heed</rs> ofte with water that <rs select="#rs-pl">lupines</rs> hath be soden in. <title>A nother.</title> Take <rs select="#rs-ing #rs-pl">sauge</rs> &amp; <rs select="#rs-proc">menge</rs> it with the <rs select="#rs-ing">asshes</rs> when thow makyst thy lye. and make <rs select="#rs-ing #rs-pl">pouder of sauge</rs> &amp; <rs select="#rs-proc">menge</rs> it with <rs select="#rs-ing">may boter</rs> or <rs select="#rs-al">hennes grece</rs> &amp; <rs select="#rs-proc">anoynte</rs> the therwith often.</p>
+			</div>
+			<div>
+				<head><title>Forto <rs select="#rs-ail">make the heer blak</rs></title>.</head>
+				<p><rs select="#rs-proc">Wasshe</rs> ofte thyn <rs select="#rs-anat">heed</rs> with the <rs select="#rs-ing #rs-pl">juys of sauge</rs> in the sonne and it wol be blake. <pb facs="#f019"/> <title>Another.</title> <rs select="#rs-proc">Tampre</rs> thou <rs select="#rs-ing">alkenet</rs> with <rs select="#rs-ing">oyle</rs> &amp; <rs select="#rs-proc">anoynte</rs> ofte thyn <rs select="#rs-anat">heed</rs> therwith and it wol waxe blak.</p>
+			</div>
+			<div>
+				<head><title select="#rs-ail">For <rs select="#rs-al">lyse</rs> &amp; <rs select="#rs-al">nytes</rs> in the heed and for to destroie <rs select="#rs-al">flees</rs></title>.</head>
+				<p>Take <rs select="#rs-ing">see water</rs> or <rs select="#rs-ing">bryne</rs> and <rs select="#rs-proc">wasshe</rs> therwith thyn <rs select="#rs-anat">heed</rs>. &amp; it shal destroie hem. <title>Another.</title> Make <rs select="#rs-ing">lye</rs> with <rs select="#rs-pl">wilde nepe</rs>. &amp; therwith <rs select="#rs-proc">wasshe</rs> the <rs select="#rs-anat">heed</rs> ofte. &amp; it shal destroie bothe <rs select="#rs-al">lyse</rs> &amp; <rs select="#rs-al">nytes</rs>. <title>A nother.</title> Take <rs select="#rs-ing">quyk lyme</rs> &amp; <rs select="#rs-ing">orpyment</rs> of <measure>eche iliche muche</measure> &amp; <rs select="#rs-proc">grynde</rs> hem unto pouder and <rs select="#rs-proc">tempre</rs> this pouder with good <rs select="#rs-ing">vinegre</rs> &amp; <rs select="#rs-app">anoynte</rs> therwith the <rs select="#rs-anat">heed</rs> &amp; this wyl destroie hem withoute fallyng of heres. <title>A noþer.</title> <rs select="#rs-proc">Stampe</rs> <rs select="#rs-ing #rs-pl">rewe</rs> and <rs select="#rs-proc">wrynge oute</rs> therof the <rs select="#rs-ing">juys</rs> <rs select="#rs-app">anoynte</rs> thy body for <rs select="#rs-al">lyse</rs> &amp; <rs select="#rs-al">nytes</rs> on thy body. <title>A nother</title> Take <rs select="#rs-ing">quyk selver</rs> &amp; the <rs select="#rs-ing">white of an eg</rs> &amp; <rs select="#rs-proc">spotel</rs> &amp; <rs select="#rs-proc">menge</rs> hem wel togidre than take a <measure>lyste</measure> of newe clothe &amp; anoynte that o side of the list with this oynement wel fro that o ende to that other. &amp; than bynde that oynement with the list aboute thi myddel. &amp; lete it be so there <measure>ix days</measure> &amp; <measure>ix nyghtes.</measure> <pb facs="#f020"/> <title>Another for the flees.</title> Take the horne of a bole &amp; brenne therof in the fyre so þat it smoke and the flees wol fle oute of the house <title>Another.</title> Take ruchous? grece &amp; grese wel a yerde therwith. and stike that yerde in þe chambir flore there as the flees ben. and all the flees that ben in the chamber wol lepe upon that yerde.</p>
+			</div>
+			<div>
+				<head>
+					<title>For scalled hedes.</title>
+				</head>
+				<p>Take boles pissynge. &amp; do therto verdegrece and coperose &amp; sayme or bacon grece. &amp; menge hem all togidir and anoynte the heed þer with every morwe. and every evene. &amp; Wasshe the heed with rennyng water &amp; he shal be hool. <title>A nother.</title> Take and shave the pilled hede. than take virgyn waxe &amp; picche of eche iliche muche &amp; boyle hem togidre and sprede a lynnen clothe upon a borde &amp; do this plastir upon that clothe With a sclice thynne &amp; lay it hoot on the heed that it hele the scalles &amp; do it not a way in <measure>ix days</measure>. &amp; afterwarde anoynte the heed eche day with hony &amp; it shal hele faire &amp; wol <pb facs="#f021"/>sikerly. <title>A nother.</title> Take faire picche mede waxe &amp; roson of iche liche muche &amp; melte hem til they be wel medled. than poure hem in a boxe but lete the boxe stonde in water for chynyng til that it be colde. than lete wasshe first the scalled heed in stronge pisse &amp; hoot &amp; schave it of al clene. &amp; lette not for no bledyng. &amp; than tale a lynnen clothe &amp; ley it on the bledyng hed than take faireherdes of flaxe or of hempe &amp; tose hem and ley hem a brood on the cloute that heth on the heed til that the cloute be heled than take oute some of that in the boxe &amp; make therof pouder in a brasyn morter &amp; strawe that pouder above on the heed til þat the herdes be covered. &amp; than take a nother clene cloute &amp; ley it above &amp; aboute. &amp; take a lyst or a bonde &amp; bynde bothe cloutes togidir aboute the heed. &amp; htan the pouder may not shede. &amp; so lette it be vii. days or viij. and use this medicyne til al the forked herys be pulled up and at every tyme that the cappe is removed wasshe the heed in warme pisse &amp; after shave it clene and lete not for <pb facs="#f022"/> no bledyng and make a newe cappe as thou didst before and whan thou seest that it nedith not to use moor this medicyne. than take the water that rotherres feet be soden in. &amp; blowe of the fatte in to a vessel &amp; poure it oute clene. &amp; do that in to boxes &amp; anoynt wel the heed therewith til it be hool this medicyne hath be ofte proved sothe.</p>
+			</div>
+			<div>
+				<head>For a felon þat makith an hed to swelle.</head>
+				<p>Take the greese of an hert. hony. barlymele hayhone. and dockes &amp; pounde hem al togidir &amp; shave the heed &amp; ley the plastir in an howne al hoot upon the heed &amp; lete it lie to til it be hool</p>
+			</div>
+			<div>
+				<head>For bones broken in the heed.</head>
+				<p>Take pigle. bugle. sanygle herbe robert. anence. red cole. tansey. hempe croppes of eche of these iliche muche. &amp; take of mader as moche as of al the tother herbes. and do therto ambrose. burnet. crispe. hocke. of iche of these iliche muche. &amp; stampe hem wel togidir &amp; make therof a plaster and if ther be a boon broke &amp; thou darst serche it ȝit ȝeve him this drynke &amp; take the reed cole tanseye. hempe croppes. hors mynte. reed nettil croppe. brere croppe. <pb facs="#f023"/> and as muche of mader as of all these other herbes. &amp; sethe hem wel in white wyne and ȝev that wyne to the pacient to drynke and if it come oute at wounde. than it is a token of dethe apert preved. And if it come not oute but castith t oute than it is a token of lif. than do sarche the wounde. &amp; shave esily and slightly the broken bones so that thou tame not the teþe of the brayne. And if he blede faste. Wipe hym softely with softe lynene &amp; sithen take softe lynene &amp; lappe it wel togidir &amp; ley it over the wounde. than take whete floure and bulte it. &amp; strawe that bulted bulted flour on the cloute that lieth upon the wounde ful softely. And sith lete a womman that fedith a man childe. if it be a man that is wounded. mylke hir pappes softely on the floure þat is strowed on the cloute &amp; sithen ley another clothe theron and strowe also on that flour as thou didist on that other tofore &amp; of the mylke til it be even with the flesshe &amp; hele the heed &amp; lete it be still til on the morwe<pb facs="#f024"/> than on the morowe unhele the heed softely and if the se there a burbal as stondith on the water whan it reyneth than it ser a signe of dethe. and if thou se tofere</p>
+			</div>
+		</body>
+	</text>
+</TEI>
