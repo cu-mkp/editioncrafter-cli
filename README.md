@@ -28,14 +28,7 @@ The `editioncrafter` command will now be available. If it doesn't work right awa
 
 ## Usage
 
-Usage: `editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]`
-
-Edition Crafter responds to the following `<command>`s:
-* process: Process the TEI Document into a manifest, partials, and annotations.
-* server: Run in server mode (WIP)
-* help: Displays this help.
-
-The optional configuration file is a JSON file with the following options:
+The following commands are available to the EditionCrafter CLI. Note that you may optionally pass the path of a configuration file as `-c config_path` rather than passing individual parameters. The optional configuration file is a JSON file with the following options:
 
 ```
 {
@@ -46,6 +39,31 @@ The optional configuration file is a JSON file with the following options:
     "thumbnailHeight": 192
 }
 ```
+
+### help
+
+Usage:
+```
+editioncrafter help
+```
+This will display information on the syntax for passing commands to the CLI as well as a list of available commands.
+
+### iiif 
+
+Usage:
+```
+editioncrafter iiif <iiif_url> <output_path>
+```
+This will create an XML file at the location of the provided `<output_path>` based on the information in the IIIF manifest supplied. Note that in this case the `<output_path>` should be a single XML File, e.g. `/MyFiles/TEI/index.xml`.
+
+### process
+
+Usage:
+```
+editioncrafter process <tei_file> <output_path> <base_url>
+```
+This will create all of the artifacts that EditionCrafter needs in order to display your document on the web, and place them in the specified `<output_path>` folder. The `<base_url>` parameter should be the URL at which you intend to host these artifacts.
+
 
 ## Generates the following files:
 

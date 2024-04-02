@@ -1,9 +1,10 @@
 const path = require('path')
 const fs = require('fs')
+const version = require('../version');
 
 const { renderTEIDocument } = require("./render")
 const { serializeTEIDocument } = require("./serialize")
-const { runServer } = require("./server.js")
+const { processIIIF } = require("./iiif")
 
 // For paths provided by the user
 function processUserPath(input_path) {
@@ -25,8 +26,8 @@ function processTEIDocument(options) {
 async function run(options) {
     if( options.mode === 'process' ) {
         processTEIDocument(options)
-    } else if( options.mode === 'server' ) {
-        runServer(options)
+    } else if( options.mode === 'iiif' ) {
+        processIIIF(options)
     }
 }
 
@@ -77,26 +78,27 @@ function processArguments() {
         if( args[5+argumentOffset] ) config.baseURL = args[5+argumentOffset] 
         config.teiDocumentID = getResourceIDFromPath(config.targetPath)
         return config
-    } else if( mode === 'server' ) {
-        console.log('Server mode is still under development.')
-        return optForHelp
-        // if( args[3] === '-c' && args[4] ) {
-        //     const configPath = processUserPath(args[4])
-        //     const config = JSON.parse( fs.readFileSync(configPath) )
-        //     config.teiDocuments = {
-        //         'fr640_3r-3v-example': processUserPath('./data/fr640_3r-3v-example.xml')
-        //     }
-        //     return { mode, ...config }
-        // } 
+    } else if( mode === 'iiif' ) {
+        if( args.length < 4 ) return optForHelp
+        let config = {
+            mode: mode,
+            targetPath: '.',
+        }
+
+        config.iiifURL = args[3]
+        if( args[4] ) config.targetPath = processUserPath(args[4])
+
+        return config
     }
 
     return optForHelp
 }
 
 function displayHelp() {
+    console.log(`EditionCrafter v${version}`)
     console.log(`Usage: editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]` );
     console.log("Edition Crafter responds to the following <command>s:")
-    console.log("\tserver: Run as a server, requires config_path.")
+    console.log("\tiiif: Process the IIIF Manifest into a TEIDocument.")
     console.log("\tprocess: Process the TEI Document into a manifest, partials, and annotations.")
     console.log("\thelp: Displays this help. ");
 }
