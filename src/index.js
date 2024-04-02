@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const version = require('../version');
 
 const { renderTEIDocument } = require("./render")
 const { serializeTEIDocument } = require("./serialize")
@@ -94,6 +95,7 @@ function processArguments() {
 }
 
 function displayHelp() {
+    console.log(`EditionCrafter v${version}`)
     console.log(`Usage: editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]` );
     console.log("Edition Crafter responds to the following <command>s:")
     console.log("\tiiif: Process the IIIF Manifest into a TEIDocument.")
