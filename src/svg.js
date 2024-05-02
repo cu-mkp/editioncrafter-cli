@@ -4,7 +4,7 @@ const buildSquareFragment = (ulx, uly, lrx, lry) => `xywh=pixel:${ulx},${uly},${
 
 const buildPolygonSvg = (points) => `
 <svg>
-<polygon points='${points.join(' ')}' style=${style}>
+<polygon points='${points}' style=${style}>
 </polygon>
 </svg>`.replaceAll('\n', '');
 
