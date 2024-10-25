@@ -4,7 +4,8 @@ const version = require('../version');
 
 const { renderTEIDocument } = require("./render")
 const { serializeTEIDocument } = require("./serialize")
-const { processIIIF } = require("./iiif")
+const { processIIIF } = require("./iiif");
+const { processImagesCsv } = require('./images');
 
 // For paths provided by the user
 function processUserPath(input_path) {
@@ -28,6 +29,8 @@ async function run(options) {
         processTEIDocument(options)
     } else if( options.mode === 'iiif' ) {
         processIIIF(options)
+    } else if ( options.mode === 'images') {
+        processImagesCsv(options)
     }
 }
 
@@ -89,6 +92,19 @@ function processArguments() {
         if( args[4] ) config.targetPath = processUserPath(args[4])
 
         return config
+    } else if (mode === 'images') {
+        if (args.length < 4) return optForHelp
+
+        let config = {
+            mode,
+            targetPath: '.'
+        }
+
+        config.filePath = args[3]
+
+        if (args[4]) config.targetPath = processUserPath(args[4])
+
+        return config
     }
 
     return optForHelp
@@ -99,6 +115,7 @@ function displayHelp() {
     console.log(`Usage: editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]` );
     console.log("Edition Crafter responds to the following <command>s:")
     console.log("\tiiif: Process the IIIF Manifest into a TEIDocument.")
+    console.log("\timages: Process a list of images from a CSV file into a TEIDocument.")
     console.log("\tprocess: Process the TEI Document into a manifest, partials, and annotations.")
     console.log("\thelp: Displays this help. ");
 }

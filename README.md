@@ -56,6 +56,22 @@ editioncrafter iiif <iiif_url> <output_path>
 ```
 This will create an XML file at the location of the provided `<output_path>` based on the information in the IIIF manifest supplied. Note that in this case the `<output_path>` should be a single XML File, e.g. `/MyFiles/TEI/index.xml`.
 
+### images 
+
+Usage:
+```
+editioncrafter images <csv_path> <output_path>
+```
+This will create an XML file at the location of the provided `<output_path>` based on the image data in the CSV file supplied. Note that in this case the `<output_path>` should be a single XML File, e.g. `/MyFiles/TEI/index.xml`.
+
+The CSV file should be in the following format:
+
+```csv
+url,label,xml_id
+"https://mywebsite/foo.jpg,""My first page","f000"
+"https://mywebsite/foo2.jpg","My second page","f001"
+```
+
 ### process
 
 Usage:

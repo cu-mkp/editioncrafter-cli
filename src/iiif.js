@@ -1,6 +1,6 @@
 const fs = require('fs');
 const axios = require('axios');
-
+const { getExtensionForMIMEType } = require('./lib/images')
 
 //THIS IS WHERE WE CREATE THE ACTUAL TEI DOCUMENT STRING FROM THE FACSIMILE JSON DATA
 
@@ -293,21 +293,6 @@ function val( key, obj ) {
     } else {
         return obj[key]
     }
-}
-
-
-
-function getExtensionForMIMEType( mimeType ) {
-    switch(mimeType) {
-        case 'image/png':
-            return 'png'
-        case 'image/jpeg':
-            return 'jpg'
-        case 'image/gif':
-            return 'gif' 
-        default:
-            throw new Error(`Unknown MIMEType: ${mimeType}`)
-    }        
 }
 
 function generateOrdinalID( prefix, ordinalID ) {
