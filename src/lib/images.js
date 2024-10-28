@@ -1,16 +1,3 @@
-function getExtensionForMIMEType( mimeType ) {
-  switch(mimeType) {
-      case 'image/png':
-          return 'png'
-      case 'image/jpeg':
-          return 'jpg'
-      case 'image/gif':
-          return 'gif'
-      default:
-          throw new Error(`Unknown MIMEType: ${mimeType}`)
-  }
-}
-
 function getFacsString (sameAs, surfaceEls) {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <TEI xmlns="http://www.tei-c.org/ns/1.0">
@@ -43,6 +30,5 @@ function getFacsString (sameAs, surfaceEls) {
 }
 
 module.exports = {
-  getExtensionForMIMEType,
   getFacsString
 }

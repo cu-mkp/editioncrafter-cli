@@ -1,6 +1,6 @@
 const fs = require('fs');
 const axios = require('axios');
-const { getExtensionForMIMEType, getFacsString } = require('./lib/images')
+const { getFacsString } = require('./lib/images')
 
 //THIS IS WHERE WE CREATE THE ACTUAL TEI DOCUMENT STRING FROM THE FACSIMILE JSON DATA
 
@@ -33,20 +33,19 @@ function facsTemplate(facsData) {
 
 //FUNCTION TO GET THE IIIF DATA FROM THE PROVIDED URL AND PASS IT TO THE APPROPRIATE PARSERS
 
-function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID = 0) {
-    axios.get(manifestURL).then(
-        (resp) => {
-            try {
-                const iiifTree = parseIIIFPresentation(resp.data, nextSurfaceID)
-                onSuccess(iiifTree)
-            } catch(error) {
-                throw new Error(`Unable to parse IIIF manifest: '${error}`)
-            }
-        },
-        (error) => {
-            throw new Error(`Unable to load IIIF manifest.`)
+async function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID = 0) {
+    try {
+        const resp = await axios.get(manifestURL)
+        try {
+            const iiifTree = parseIIIFPresentation(resp.data, nextSurfaceID)
+            onSuccess(iiifTree)
+        } catch(error) {
+            throw new Error(`Unable to parse IIIF manifest: '${error}`)
         }
-    );
+    } catch(err) {
+        throw new Error(`Unable to load IIIF manifest.`)
+
+    }
 };
 
 //THESE FIVE FUNCTIONS TAKE IN THE MANIFEST DATA AND RETURN A JSON OBJECT WITH THE FACSIMILE DATA
@@ -76,6 +75,19 @@ function parsePresentation3( presentation, nextSurfaceID ) {
         throw new Error("Only Manifests are supported for Presentation API v3")
     }
 };
+
+function getExtensionForMIMEType( mimeType ) {
+    switch(mimeType) {
+        case 'image/png':
+            return 'png'
+        case 'image/jpeg':
+            return 'jpg'
+        case 'image/gif':
+            return 'gif'
+        default:
+            throw new Error(`Unknown MIMEType: ${mimeType}`)
+    }
+  }
 
 function manifestToFacsimile3( manifestData, nextSurfaceID ) {
     if( manifestData.type !== "Manifest" ) throw new Error("Expected a manifest as the root object.")
@@ -199,13 +211,13 @@ function manifestToFacsimile2( manifestData, nextSurfaceID ) {
 
 //MAIN FUNCTION -- GETS DATA FROM URL, PASSES IT TO THE PARSER FUNCTIONS, THEN CONVERTS TO A TEI STRING AND WRITES TO THE TARGET PATH
 
-function processIIIF(options) {
+async function processIIIF(options) {
     const { iiifURL, targetPath } = options
     const onSuccess = (data) => {
          const teiString = facsTemplate(data);
          fs.writeFileSync(targetPath, teiString);
     }
-    importPresentationEndpoint(iiifURL, onSuccess);
+    await importPresentationEndpoint(iiifURL, onSuccess);
 };
 
 
