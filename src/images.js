@@ -1,17 +1,16 @@
 const csv = require('csv')
 const fs = require('fs')
 const probe = require('probe-image-size');
+const { getFacsString } = require('./lib/images');
 
 async function processImagesCsv(options) {
   const { filePath, targetPath } = options
 
-  const onSuccess = (data) => {
-    const teiString = facsTemplate(data);
-    fs.writeFileSync(targetPath, teiString);
-  }
-
   const rows = await readRows(filePath)
-  await generateSurfaces(rows)
+  const surfaceEls = await generateSurfaces(rows)
+
+  const teiString = getFacsString('', surfaceEls)
+  fs.writeFileSync(targetPath, teiString);
 }
 
 const readRows = (path) => {
@@ -40,16 +39,14 @@ const generateSurfaces = async (rows) => {
   let surfaceEls = []
 
   for await (const row of rows.slice(1)) {
-    const filename = row[URL_IDX].split('/')[row[URL_IDX.length]]
+    const { height, mime, width } = await probe(row[URL_IDX])
 
-    const res = await probe(row[URL_IDX])
-    console.log(res)
-
-    return (
-    `<surface xml:id="${row[ID_IDX]}" ulx="0" uly="0" lrx="${width}" lry="${height}">${labelEls}<graphic sameAs="${resourceEntryID}" mimeType="${mimeType}" url="${filename}"/>${zoneEls}</surface>`
+    surfaceEls.push(
+    `<surface xml:id="${row[ID_IDX]}" ulx="0" uly="0" lrx="${width}" lry="${height}"><label>${row[LABEL_IDX]}</label><graphic mimeType="${mime}" url="${row[URL_IDX]}"/></surface>`
     )
   }
 
+  return surfaceEls
 }
 
 
