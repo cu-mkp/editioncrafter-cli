@@ -1,5 +1,6 @@
 const csv = require('csv')
 const fs = require('fs')
+const probe = require('probe-image-size');
 
 async function processImagesCsv(options) {
   const { filePath, targetPath } = options
@@ -10,6 +11,7 @@ async function processImagesCsv(options) {
   }
 
   const rows = await readRows(filePath)
+  await generateSurfaces(rows)
 }
 
 const readRows = (path) => {
@@ -34,15 +36,19 @@ const URL_IDX = 0
 const LABEL_IDX = 1
 const ID_IDX = 2
 
-const generateSurfaces = (rows) => {
+const generateSurfaces = async (rows) => {
+  let surfaceEls = []
 
-
-  const surfaceEls = rows.slice(1).map(row => {
+  for await (const row of rows.slice(1)) {
     const filename = row[URL_IDX].split('/')[row[URL_IDX.length]]
+
+    const res = await probe(row[URL_IDX])
+    console.log(res)
 
     return (
     `<surface xml:id="${row[ID_IDX]}" ulx="0" uly="0" lrx="${width}" lry="${height}">${labelEls}<graphic sameAs="${resourceEntryID}" mimeType="${mimeType}" url="${filename}"/>${zoneEls}</surface>`
-  )})
+    )
+  }
 
 }
 
