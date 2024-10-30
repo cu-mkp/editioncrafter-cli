@@ -68,7 +68,7 @@ The CSV file should be in the following format:
 
 ```csv
 url,label,xml_id
-"https://mywebsite/foo.jpg,""My first page","f000"
+"https://mywebsite/foo.jpg","My first page","f000"
 "https://mywebsite/foo2.jpg","My second page","f001"
 ```
 
