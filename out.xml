@@ -66,7 +66,116 @@
 
       <text xml:id="transcription">
           <body>
-              <p>Modify xml:id as desired and replace this with your text.</p>
+              <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f000">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f001">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f002">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f003">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f004">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f005">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f006">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f007">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f008">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f009">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
+                  <surface xmlns="http://www.tei-c.org/ns/1.0" facs="#f010">
+			<line>{left margin} Maria Gabriela</line>
+			<line>En este curato de Taos a los trese dias del mes de agosto de mil ocho-</line>
+			<line>cientos cuarenta yo el cura don Antonio Jose Martinez bautize solemnemente a</line>
+			<line>una parvula de dos años [^a quien puse por nombre Maria Gabriela] rescatada en la nacion palluche y famula de</line>
+			<line>Jose Gabriel Gallegos fueron padrinos Jose Nasario Gallegos y Maria</line>
+			<line>Antonia Gallegos vecinos del Arroyo Seco a quienes adberti su obli-</line>
+			<line>gacion y parentesco espiritual y para que conste firme.</line>
+			<line>Antonio Jose Martinez {rubric}</line>
+		</surface>
           </body>
       </text>
   </TEI>

@@ -180,7 +180,7 @@ function manifestToFacsimile2( manifestData, nextSurfaceID ) {
         const { resource } = image
         const imageAPIURL = resource.service ? val('id', resource.service) : val('id', resource)
         const localLabels = str( canvas.label )
-        let id = generateOrdinalID('f',n)
+        const id = generateOrdinalID('f',n)
         const texts = canvas.seeAlso ? parseSeeAlso2(canvas.seeAlso) : []
         surfaceIDs.push(id)
         n++ // page count
