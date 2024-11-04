@@ -46,7 +46,7 @@ function getResourceIDFromPath(targetPath) {
 function parseOptions(args) {
     const options = {
         config: null,
-        text: null
+        textPath: null
     }
 
     let currentIdx = args.findIndex(arg => arg[0] === '-')
@@ -57,12 +57,29 @@ function parseOptions(args) {
             if (args[i] === '-c') {
                 options.config = value
             } else if (args[i] === '-t') {
-                options.text = value
+                options.textPath = value
             }
         }
     }
 
     return options
+}
+
+// get a list of the args that are not named arguments
+function getPathArgs(args) {
+    const pathArgs = []
+
+    // skip the first three args
+    // (Node, EC itself, and the name of the script)
+    for (let i = 3; i < args.length; i++) {
+        if (args[i][0] === '-' || args[i - 1] && args[i - 1][0] === '-') {
+            continue
+        } else {
+            pathArgs.push(args[i])
+        }
+    }
+
+    return pathArgs
 }
 
 function processArguments() {
@@ -86,9 +103,7 @@ function processArguments() {
             thumbnailWidth: 124,
             thumbnailHeight: 192
         }
-
-        const lastThreeArgs = args.slice(args.length - 3)
-
+        
         // load from config file if supplied
         if( options.config ) {
             const configPath = processUserPath(options.config)
@@ -101,14 +116,12 @@ function processArguments() {
             }
         }
 
-        if (options.text) {
-            config.textPath = options.text
-        }
+        const pathArgs = getPathArgs(args)
 
         // parse command line params
-        if( lastThreeArgs[0] ) config.targetPath = processUserPath(lastThreeArgs[0])
-        if( lastThreeArgs[1]  ) config.outputPath = processUserPath(lastThreeArgs[1])
-        if( lastThreeArgs[2] ) config.baseURL = lastThreeArgs[2]
+        if( pathArgs[0] ) config.targetPath = processUserPath(pathArgs[0])
+        if( pathArgs[1]  ) config.outputPath = processUserPath(pathArgs[1])
+        if( pathArgs[2] ) config.baseURL = pathArgs[2]
         config.teiDocumentID = getResourceIDFromPath(config.targetPath)
         return config
     } else if( mode === 'iiif' ) {
@@ -118,8 +131,14 @@ function processArguments() {
             targetPath: '.',
         }
 
-        config.iiifURL = args[3]
-        if( args[4] ) config.targetPath = processUserPath(args[4])
+        if (options.textPath) {
+            config.textPath = options.textPath
+        }
+
+        const pathArgs = getPathArgs(args)
+
+        config.iiifURL = pathArgs[0]
+        if( pathArgs[1] ) config.targetPath = processUserPath(pathArgs[1])
 
         return config
     } else if (mode === 'images') {
@@ -130,12 +149,14 @@ function processArguments() {
             targetPath: '.'
         }
 
-        config.filePath = args[3]
+        const pathArgs = getPathArgs(args)
 
-        if (args[4]) config.targetPath = processUserPath(args[4])
+        config.filePath = pathArgs[0]
 
-        if (options.text) {
-            config.textPath = options.text
+        if (pathArgs[1]) config.targetPath = processUserPath(pathArgs[1])
+
+        if (options.textPath) {
+            config.textPath = options.textPath
         }
   
         return config

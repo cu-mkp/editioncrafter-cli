@@ -2,10 +2,18 @@ const { parse } = require('csv-parse')
 const fs = require('fs')
 const probe = require('probe-image-size');
 const { getFacsString } = require('./lib/images');
+const { processTextFiles } = require('./text')
 
 async function processImagesCsv(options) {
   const surfaceEls = await readRows(options.filePath)
-  const teiString = getFacsString('', surfaceEls)
+
+  let bodyTei
+
+  if (options.textPath) {
+    bodyTei = processTextFiles(options.textPath)
+  }
+
+  const teiString = getFacsString('', surfaceEls, bodyTei)
 
   fs.writeFileSync(options.targetPath, teiString)
 }

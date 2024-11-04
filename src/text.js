@@ -1,29 +1,28 @@
 const fs = require('fs')
 const path = require('path')
-const { getSurfaceString } = require('./lib/surfaces')
 
-function processTextFiles(options) {
-  if (!fs.existsSync(options.targetPath)) {
-    fs.mkdirSync(options.targetPath)
-  }
-
-  for (const filename of fs.readdirSync(options.dirPath)) {
+function processTextFiles(dirPath) {
+  const xmls = []
+  for (const filename of fs.readdirSync(dirPath)) {
     if (!filename.endsWith('.txt')) {
       continue
     }
 
     const fileId = filename.split('.')[0]
 
-    const xml = processFile(`${path.join(options.dirPath, filename)}`, fileId)
-
-    fs.writeFileSync(`${options.targetPath}/${fileId}.xml`, xml)
+    xmls.push(processFile(`${path.join(dirPath, filename)}`, fileId))
   }
+
+  return `<body>
+    ${xmls.join('\n')}
+  </body>`
 }
 
 function processFile(filename, id) {
   const contents = fs.readFileSync(filename).toString()
 
-  return getSurfaceString(id, contents)
+  return `<pb facs="#${id}" />
+  ${contents.split('\n').map(line => `<p>${line}</p>`).join('\n')}`
 }
 
 module.exports.processTextFiles = processTextFiles

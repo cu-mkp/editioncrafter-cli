@@ -1,10 +1,11 @@
 const fs = require('fs');
 const axios = require('axios');
 const { getFacsString } = require('./lib/images')
+const { processTextFiles } = require('./text')
 
 //THIS IS WHERE WE CREATE THE ACTUAL TEI DOCUMENT STRING FROM THE FACSIMILE JSON DATA
 
-function facsTemplate(facsData) {
+function facsTemplate(facsData, textPath) {
     const { manifestID, surfaces } = facsData
 
     const surfaceEls = []
@@ -28,7 +29,11 @@ function facsTemplate(facsData) {
 
     const sameAs = (manifestID) ? `sameAs="${manifestID}"` : ''
 
-    return getFacsString(sameAs, surfaceEls)
+    const bodyTei = textPath
+        ? processTextFiles(textPath)
+        : undefined
+
+    return getFacsString(sameAs, surfaceEls, bodyTei)
 };
 
 //FUNCTION TO GET THE IIIF DATA FROM THE PROVIDED URL AND PASS IT TO THE APPROPRIATE PARSERS
@@ -212,9 +217,10 @@ function manifestToFacsimile2( manifestData, nextSurfaceID ) {
 //MAIN FUNCTION -- GETS DATA FROM URL, PASSES IT TO THE PARSER FUNCTIONS, THEN CONVERTS TO A TEI STRING AND WRITES TO THE TARGET PATH
 
 async function processIIIF(options) {
-    const { iiifURL, targetPath } = options
+    const { iiifURL, targetPath, textPath } = options
     const onSuccess = (data) => {
-         const teiString = facsTemplate(data);
+
+         const teiString = facsTemplate(data, options.textPath);
          fs.writeFileSync(targetPath, teiString);
     }
     await importPresentationEndpoint(iiifURL, onSuccess);
