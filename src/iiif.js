@@ -1,10 +1,10 @@
 const fs = require('fs');
 const axios = require('axios');
-
+const { getFacsString } = require('./lib/images')
 
 //THIS IS WHERE WE CREATE THE ACTUAL TEI DOCUMENT STRING FROM THE FACSIMILE JSON DATA
 
-function facsTemplate(facsData) { 
+function facsTemplate(facsData) {
     const { manifestID, surfaces } = facsData
 
     const surfaceEls = []
@@ -12,68 +12,40 @@ function facsTemplate(facsData) {
         const { id, type, width, height, imageAPIURL, canvasURI, localLabels, mimeType, resourceEntryID, zones  } = surface
         const labelEls = renderLocalLabels(localLabels)
         const zoneEls = zones ? renderZones(zones) : ""
-        
+
         if( type === 'iiif' ) {
             surfaceEls.push(
                 `<surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}" sameAs="${canvasURI}" >${labelEls}<graphic mimeType="application/json" url="${imageAPIURL}"/>${zoneEls}</surface>`
-            )    
+            )
         } else {
             const ext = getExtensionForMIMEType(mimeType)
             const filename = `${id}.${ext}`
             surfaceEls.push(
                 `<surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}">${labelEls}<graphic sameAs="${resourceEntryID}" mimeType="${mimeType}" url="${filename}"/>${zoneEls}</surface>`
-            )    
+            )
         }
     }
 
     const sameAs = (manifestID) ? `sameAs="${manifestID}"` : ''
 
-    return `<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
-    <teiHeader>
-        <fileDesc>
-            <titleStmt>
-                <title>
-                    <!-- Your Title Here -->
-                </title>
-            </titleStmt>
-            <publicationStmt>
-                <p></p>
-            </publicationStmt>
-            <sourceDesc>
-                <p></p>
-            </sourceDesc>
-        </fileDesc>
-    </teiHeader>
-            
-    <facsimile ${sameAs}>
-        ${surfaceEls.join('')}
-    </facsimile>
-    
-    <text xml:id="transcription">
-        <body>
-            <p>Modify xml:id as desired and replace this with your text.</p>
-        </body>
-    </text>
-</TEI>`
+    return getFacsString(sameAs, surfaceEls)
 };
 
 //FUNCTION TO GET THE IIIF DATA FROM THE PROVIDED URL AND PASS IT TO THE APPROPRIATE PARSERS
 
-function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID = 0) {
-    axios.get(manifestURL).then(
-        (resp) => {
-            try {
-                const iiifTree = parseIIIFPresentation(resp.data, nextSurfaceID)
-                onSuccess(iiifTree)
-            } catch(error) {
-                throw new Error(`Unable to parse IIIF manifest: '${error}`)      
-            }
-        },
-        (error) => {
-            throw new Error(`Unable to load IIIF manifest.`)
+async function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID = 0) {
+    try {
+        const resp = await axios.get(manifestURL)
+        try {
+            const iiifTree = parseIIIFPresentation(resp.data, nextSurfaceID)
+            onSuccess(iiifTree)
+        } catch(error) {
+            throw new Error(`Unable to parse IIIF manifest: '${error}`)
         }
-    );
+    } catch(err) {
+        throw new Error(`Unable to load IIIF manifest.`)
+
+    }
 };
 
 //THESE FIVE FUNCTIONS TAKE IN THE MANIFEST DATA AND RETURN A JSON OBJECT WITH THE FACSIMILE DATA
@@ -93,7 +65,7 @@ function parsePresentation2( presentation, nextSurfaceID ) {
         return manifestToFacsimile2(presentation,nextSurfaceID)
     } else {
         throw new Error("Only Manifests are supported.")
-    }    
+    }
 };
 
 function parsePresentation3( presentation, nextSurfaceID ) {
@@ -101,16 +73,29 @@ function parsePresentation3( presentation, nextSurfaceID ) {
         return manifestToFacsimile3(presentation,nextSurfaceID)
     } else {
         throw new Error("Only Manifests are supported for Presentation API v3")
-    }    
+    }
 };
+
+function getExtensionForMIMEType( mimeType ) {
+    switch(mimeType) {
+        case 'image/png':
+            return 'png'
+        case 'image/jpeg':
+            return 'jpg'
+        case 'image/gif':
+            return 'gif'
+        default:
+            throw new Error(`Unknown MIMEType: ${mimeType}`)
+    }
+  }
 
 function manifestToFacsimile3( manifestData, nextSurfaceID ) {
     if( manifestData.type !== "Manifest" ) throw new Error("Expected a manifest as the root object.")
-    
+
     const canvases = manifestData.items
     const manifestID = val('id', manifestData)
     const manifestLabel = str( manifestData.label )
-    
+
     const surfaceIDs = []
     const surfaces = []
     let n=nextSurfaceID
@@ -128,7 +113,7 @@ for( const annotation of annotations ) {
                 // width and height might be on Annotation or the Canvas
                 const width = isNaN(body.width) ? canvasWidth : body.width
                 const height = isNaN(body.height) ? canvasHeight : body.height
-                
+
                 let imageAPIURL
                 if( body.service ) {
                     for( const serving of body.service ) {
@@ -146,7 +131,7 @@ for( const annotation of annotations ) {
                 localLabels = !localLabels ? { 'none': [ id ] } : localLabels
                 surfaceIDs.push(id)
                 n++ // page count
-                
+
                 surfaces.push({
                     id,
                     type: 'iiif',
@@ -157,15 +142,15 @@ for( const annotation of annotations ) {
                     zones: [],
                     texts: [],
                     canvasURI
-                })  
-                break // one surface per canvas      
+                })
+                break // one surface per canvas
             }
-        } 
+        }
     }
 
     const { name, requestedID } = parseMetadata(manifestID,manifestLabel)
 
-    return { 
+    return {
         id: requestedID,
         name,
         type: 'facs',
@@ -179,12 +164,12 @@ function manifestToFacsimile2( manifestData, nextSurfaceID ) {
     const { sequences } = manifestData
     const manifestID = val('id', manifestData)
     const manifestLabel = str( manifestData.label )
-    
+
     const sequence = sequences[0]
     const { canvases } = sequence
-    
+
     const texts = sequence.rendering ? gatherRenderings2( sequence.rendering ) : []
-    
+
     const surfaceIDs = []
     const surfaces = []
     let n=nextSurfaceID
@@ -195,11 +180,11 @@ function manifestToFacsimile2( manifestData, nextSurfaceID ) {
         const { resource } = image
         const imageAPIURL = resource.service ? val('id', resource.service) : val('id', resource)
         const localLabels = str( canvas.label )
-        let id = generateOrdinalID('f',n)
+        const id = generateOrdinalID('f',n)
         const texts = canvas.seeAlso ? parseSeeAlso2(canvas.seeAlso) : []
         surfaceIDs.push(id)
         n++ // page count
-        
+
         surfaces.push({
             id,
             type: 'iiif',
@@ -213,26 +198,26 @@ function manifestToFacsimile2( manifestData, nextSurfaceID ) {
         })
     }
     const { name, requestedID } = parseMetadata(manifestID,manifestLabel)
-    
-    return { 
+
+    return {
         id: requestedID,
         name,
         type: 'facs',
         manifestID,
         texts,
-        surfaces    
+        surfaces
     }
 };
 
 //MAIN FUNCTION -- GETS DATA FROM URL, PASSES IT TO THE PARSER FUNCTIONS, THEN CONVERTS TO A TEI STRING AND WRITES TO THE TARGET PATH
 
-function processIIIF(options) {
+async function processIIIF(options) {
     const { iiifURL, targetPath } = options
     const onSuccess = (data) => {
          const teiString = facsTemplate(data);
          fs.writeFileSync(targetPath, teiString);
     }
-    importPresentationEndpoint(iiifURL, onSuccess);
+    await importPresentationEndpoint(iiifURL, onSuccess);
 };
 
 
@@ -254,7 +239,7 @@ function renderLocalLabels(localLabels) {
             }
         }
     }
-    
+
     return labelEls.join('')
 }
 
@@ -289,25 +274,10 @@ function val( key, obj ) {
             return obj[key]
         } else {
             return undefined
-        }    
+        }
     } else {
         return obj[key]
     }
-}
-
-
-
-function getExtensionForMIMEType( mimeType ) {
-    switch(mimeType) {
-        case 'image/png':
-            return 'png'
-        case 'image/jpeg':
-            return 'jpg'
-        case 'image/gif':
-            return 'gif' 
-        default:
-            throw new Error(`Unknown MIMEType: ${mimeType}`)
-    }        
 }
 
 function generateOrdinalID( prefix, ordinalID ) {
@@ -336,19 +306,19 @@ function gatherRenderings2( rendering ) {
                     manifestID: rend['@id'],
                     name: rend['label'],
                     format
-                })    
+                })
             }
         }
     }
 
-    // gather up any tei or plain text renderings and return an array of text refs 
+    // gather up any tei or plain text renderings and return an array of text refs
     if( Array.isArray(rendering) ) {
         for( const rend of rendering ) {
             parseRendering(rend)
         }
     } else {
         parseRendering(rendering)
-    }   
+    }
 
     return texts
 }
@@ -360,13 +330,13 @@ function parseSeeAlso2(seeAlso) {
     for( const rend of seeAlso ) {
         if( rend['@id'] && rend['label'] ) {
             const format = parseFormat(rend)
-            if( format ) {    
+            if( format ) {
                 texts.push({
                     manifestID: rend['@id'],
                     name: rend['label'],
                     format
                 })
-            }    
+            }
         }
     }
 
@@ -395,7 +365,7 @@ function getLocalString( values, lang ) {
     // If any of the values have a language associated with them, the client must display all of the values associated with the language that best matches the language preference.
     if( values[lang] ) {
         return values[lang]
-    } 
+    }
     if( !langKeys.includes('none') ) {
         // If all of the values have a language associated with them, and none match the language preference, the client must select a language and display all of the values associated with that language.
         return values['en'] ? values['en'] : values[langKeys[0]]

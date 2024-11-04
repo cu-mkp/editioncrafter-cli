@@ -151,17 +151,21 @@ function buildItemAnnotation (canvas, surface, thumbnailWidth, thumbnailHeight) 
     annotation.body.format = "image/jpeg"
     annotation.body.height = height
     annotation.body.width = width
-    annotation.body.service = [{
-        id: imageURL,
-        type: "ImageService2",
-        profile: "http://iiif.io/api/image/2/level2.json",
-    }]
-    annotation.body.thumbnail = [{
-        id: `${imageURL}/full/${thumbnailWidth},${thumbnailHeight}/0/default.jpg`,
-        format: "image/jpeg",
-        type: "ImageService2",
-        profile: "http://iiif.io/api/image/2/level2.json",
-    }]
+
+    // only add the below fields to IIIF surfaces, not to static images
+    if (surface.mimeType === 'application/json') {
+        annotation.body.service = [{
+            id: imageURL,
+            type: "ImageService2",
+            profile: "http://iiif.io/api/image/2/level2.json",
+        }]
+        annotation.body.thumbnail = [{
+            id: `${imageURL}/full/${thumbnailWidth},${thumbnailHeight}/0/default.jpg`,
+            format: "image/jpeg",
+            type: "ImageService2",
+            profile: "http://iiif.io/api/image/2/level2.json",
+        }]
+    }
 
     return annotation
 }
@@ -214,7 +218,7 @@ function renderManifest( manifestLabel, baseURI, surfaces, thumbnailWidth, thumb
     manifest.label = { en: [manifestLabel] }
 
     for( const surface of Object.values(surfaces) ) {
-        const { id, label, width, height } = surface
+        const { id, label, width, height, mimeType } = surface
 
         const canvas = structuredClone(canvasTemplate)
         canvas.id = `${baseURI}/iiif/canvas/${id}`
@@ -267,7 +271,8 @@ function parseSurfaces(doc, teiDocumentID) {
         const imageURL = graphicEl.getAttribute('url')
         const width = parseInt(surfaceEl.getAttribute('lrx'))
         const height = parseInt(surfaceEl.getAttribute('lry'))
-        const surface = { id, label, imageURL, width, height }
+        const mimeType = graphicEl.getAttribute('mimeType')
+        const surface = { id, label, imageURL, width, height, mimeType }
         const textXMLs = generateTextPartials(id, teiDocumentID, textEls, 'text')
         const sourceDocXMLs = generateTextPartials(id, teiDocumentID, sourceDocEls, 'sourceDoc')
         surface.xmls = { ...textXMLs, ...sourceDocXMLs }

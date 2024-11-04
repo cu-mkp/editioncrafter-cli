@@ -4,7 +4,8 @@ const version = require('../version');
 
 const { renderTEIDocument } = require("./render")
 const { serializeTEIDocument } = require("./serialize")
-const { processIIIF } = require("./iiif")
+const { processIIIF } = require("./iiif");
+const { processImagesCsv } = require('./images');
 
 // For paths provided by the user
 function processUserPath(input_path) {
@@ -14,7 +15,7 @@ function processUserPath(input_path) {
 function processTEIDocument(options) {
     const { targetPath, outputPath } = options
     const xml = fs.readFileSync(targetPath, "utf8")
-    
+
     const teiDoc = renderTEIDocument(xml, options)
     if( teiDoc.error ) {
         console.log(teiDoc.error)
@@ -27,7 +28,9 @@ async function run(options) {
     if( options.mode === 'process' ) {
         processTEIDocument(options)
     } else if( options.mode === 'iiif' ) {
-        processIIIF(options)
+        await processIIIF(options)
+    } else if ( options.mode === 'images') {
+        await processImagesCsv(options)
     }
 }
 
@@ -62,10 +65,10 @@ function processArguments() {
         // load from config file if supplied
         if( args[3] === '-c' && args[4] ) {
             const configPath = processUserPath(args[4])
-            argumentOffset = 2 
+            argumentOffset = 2
             try {
                 fs.readFileSync(configPath)
-                config = { ...config, ...JSON.parse( fs.readFileSync(configPath) ) } 
+                config = { ...config, ...JSON.parse( fs.readFileSync(configPath) ) }
             } catch(e) {
                 console.log(`Unable to parse config file: ${configPath}.`)
                 return optForHelp
@@ -75,7 +78,7 @@ function processArguments() {
         // parse command line params
         if( args[3+argumentOffset] ) config.targetPath = processUserPath(args[3+argumentOffset])
         if( args[4+argumentOffset]  ) config.outputPath = processUserPath(args[4+argumentOffset])
-        if( args[5+argumentOffset] ) config.baseURL = args[5+argumentOffset] 
+        if( args[5+argumentOffset] ) config.baseURL = args[5+argumentOffset]
         config.teiDocumentID = getResourceIDFromPath(config.targetPath)
         return config
     } else if( mode === 'iiif' ) {
@@ -89,6 +92,19 @@ function processArguments() {
         if( args[4] ) config.targetPath = processUserPath(args[4])
 
         return config
+    } else if (mode === 'images') {
+        if (args.length < 4) return optForHelp
+
+        let config = {
+            mode,
+            targetPath: '.'
+        }
+
+        config.filePath = args[3]
+
+        if (args[4]) config.targetPath = processUserPath(args[4])
+
+        return config
     }
 
     return optForHelp
@@ -99,24 +115,26 @@ function displayHelp() {
     console.log(`Usage: editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]` );
     console.log("Edition Crafter responds to the following <command>s:")
     console.log("\tiiif: Process the IIIF Manifest into a TEIDocument.")
+    console.log("\timages: Process a list of images from a CSV file into a TEIDocument.")
     console.log("\tprocess: Process the TEI Document into a manifest, partials, and annotations.")
     console.log("\thelp: Displays this help. ");
 }
 
-function editionCrafterCLI() {
+async function editionCrafterCLI() {
     const options = processArguments()
     if( options.mode === 'help' ) {
         displayHelp()
     } else {
-        run(options).then(() => {
+        try {
+            await run(options)
             if( options.mode === 'server' ) {
                 console.log('Edition Crafter started.')
             } else {
                 console.log('Edition Crafter finished.')
             }
-        }, (err) => {
+        } catch(err) {
             console.log(`${err}: ${err.stack}`)
-        })
+        }
     }
 }
 
