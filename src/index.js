@@ -7,7 +7,6 @@ const { serializeTEIDocument } = require("./serialize")
 const { processIIIF } = require("./iiif");
 const { processImagesCsv } = require('./images');
 const { processTextFiles } = require('./text');
-const cliArgs = require('command-line-args')
 
 // For paths provided by the user
 function processUserPath(input_path) {
@@ -93,7 +92,6 @@ function processArguments() {
         // load from config file if supplied
         if( options.config ) {
             const configPath = processUserPath(options.config)
-            argumentOffset = 2
             try {
                 fs.readFileSync(configPath)
                 config = { ...config, ...JSON.parse( fs.readFileSync(configPath) ) }
@@ -139,7 +137,7 @@ function processArguments() {
         if (options.text) {
             config.textPath = options.text
         }
-
+  
         return config
     }
 
