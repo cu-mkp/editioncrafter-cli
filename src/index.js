@@ -6,6 +6,8 @@ const { renderTEIDocument } = require("./render")
 const { serializeTEIDocument } = require("./serialize")
 const { processIIIF } = require("./iiif");
 const { processImagesCsv } = require('./images');
+const { processTextFiles } = require('./text');
+const cliArgs = require('command-line-args')
 
 // For paths provided by the user
 function processUserPath(input_path) {
@@ -42,6 +44,28 @@ function getResourceIDFromPath(targetPath) {
     }
 }
 
+function parseOptions(args) {
+    const options = {
+        config: null,
+        text: null
+    }
+
+    let currentIdx = args.findIndex(arg => arg[0] === '-')
+
+    if (currentIdx !== -1) {
+        for (let i = currentIdx; i < args.length - 1; i = i + 2) {
+            const value = args[i + 1]
+            if (args[i] === '-c') {
+                options.config = value
+            } else if (args[i] === '-t') {
+                options.text = value
+            }
+        }
+    }
+
+    return options
+}
+
 function processArguments() {
     const args = process.argv
     const optForHelp = { mode: 'help' }
@@ -49,6 +73,8 @@ function processArguments() {
     if( args.length < 2 ) return optForHelp
 
     const mode = args[2]
+
+    const options = parseOptions(args)
 
     if( mode === 'process' ) {
         if( args.length < 4 ) return optForHelp
@@ -61,10 +87,12 @@ function processArguments() {
             thumbnailWidth: 124,
             thumbnailHeight: 192
         }
-        let argumentOffset = 0
+
+        const lastThreeArgs = args.slice(args.length - 3)
+
         // load from config file if supplied
-        if( args[3] === '-c' && args[4] ) {
-            const configPath = processUserPath(args[4])
+        if( options.config ) {
+            const configPath = processUserPath(options.config)
             argumentOffset = 2
             try {
                 fs.readFileSync(configPath)
@@ -75,10 +103,14 @@ function processArguments() {
             }
         }
 
+        if (options.text) {
+            config.textPath = options.text
+        }
+
         // parse command line params
-        if( args[3+argumentOffset] ) config.targetPath = processUserPath(args[3+argumentOffset])
-        if( args[4+argumentOffset]  ) config.outputPath = processUserPath(args[4+argumentOffset])
-        if( args[5+argumentOffset] ) config.baseURL = args[5+argumentOffset]
+        if( lastThreeArgs[0] ) config.targetPath = processUserPath(lastThreeArgs[0])
+        if( lastThreeArgs[1]  ) config.outputPath = processUserPath(lastThreeArgs[1])
+        if( lastThreeArgs[2] ) config.baseURL = lastThreeArgs[2]
         config.teiDocumentID = getResourceIDFromPath(config.targetPath)
         return config
     } else if( mode === 'iiif' ) {
@@ -103,6 +135,10 @@ function processArguments() {
         config.filePath = args[3]
 
         if (args[4]) config.targetPath = processUserPath(args[4])
+
+        if (options.text) {
+            config.textPath = options.text
+        }
 
         return config
     }
