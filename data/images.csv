@@ -1,12 +1,73 @@
-image url,label,xml_id
-https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Kot_Leon.JPG/2560px-Kot_Leon.JPG,Page 0,f000
-https://upload.wikimedia.org/wikipedia/commons/c/ca/Black_white_cat_on_fence.jpg,Page 1,f001
-https://upload.wikimedia.org/wikipedia/commons/8/82/Cat_Eyes.jpg,Page 2,f002
-https://upload.wikimedia.org/wikipedia/commons/2/2f/Cat_domestic_%28undated_photo%3B_2013_upload%3B_cropped_2022%29.jpg,Page 3,f003
-https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Gr%C3%BCne_Augen_einer_Katze.JPG/1280px-Gr%C3%BCne_Augen_einer_Katze.JPG,Page 4,f004
-https://upload.wikimedia.org/wikipedia/commons/e/ef/Female-cat-named-Liebe.jpg,Page 5,f005
-https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Abessijn_kijkt_uit_het_raam..jpg/1024px-Abessijn_kijkt_uit_het_raam..jpg,Page 6,f006
-https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Animals_%2816969925571%29.jpg/2560px-Animals_%2816969925571%29.jpg,Page 7,f007
-https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Attentive_grey_stray_cat.jpg/2560px-Attentive_grey_stray_cat.jpg,Page 8,f008
-https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Barbeque_cat_%289382542117%29.jpg/1280px-Barbeque_cat_%289382542117%29.jpg,Page 9,f009
-https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Black_Cat_%288030060974%29.jpg/1920px-Black_Cat_%288030060974%29.jpg,Page 10,f010
+url,label,xml_id
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f1/full/full/0/native.jpg,""NP"",f000
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f2/full/full/0/native.jpg,""NP"",f001
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f3/full/full/0/native.jpg,""NP"",f002
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f4/full/full/0/native.jpg,""NP"",f003
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f5/full/full/0/native.jpg,""NP"",f004
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f6/full/full/0/native.jpg,""NP"",f005
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f7/full/full/0/native.jpg,""1r"",f006
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f8/full/full/0/native.jpg,""1v"",f007
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f9/full/full/0/native.jpg,""2r"",f008
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f10/full/full/0/native.jpg,""2v"",f009
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f11/full/full/0/native.jpg,""3r"",f010
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f12/full/full/0/native.jpg,""3v"",f011
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f13/full/full/0/native.jpg,""4r"",f012
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f14/full/full/0/native.jpg,""4v"",f013
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f15/full/full/0/native.jpg,""5r"",f014
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f16/full/full/0/native.jpg,""5v"",f015
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f17/full/full/0/native.jpg,""6r"",f016
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f18/full/full/0/native.jpg,""6v"",f017
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f19/full/full/0/native.jpg,""7r"",f018
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f20/full/full/0/native.jpg,""7v"",f019
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f21/full/full/0/native.jpg,""8r"",f020
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f22/full/full/0/native.jpg,""8v"",f021
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f23/full/full/0/native.jpg,""9r"",f022
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f24/full/full/0/native.jpg,""9v"",f023
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f25/full/full/0/native.jpg,""10r"",f024
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f26/full/full/0/native.jpg,""10v"",f025
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f27/full/full/0/native.jpg,""11r"",f026
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f28/full/full/0/native.jpg,""11v"",f027
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f29/full/full/0/native.jpg,""12r"",f028
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f30/full/full/0/native.jpg,""12v"",f029
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f31/full/full/0/native.jpg,""13r"",f030
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f32/full/full/0/native.jpg,""13v"",f031
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f33/full/full/0/native.jpg,""14r"",f032
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f34/full/full/0/native.jpg,""14v"",f033
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f35/full/full/0/native.jpg,""15r"",f034
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f36/full/full/0/native.jpg,""15v"",f035
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f37/full/full/0/native.jpg,""16r"",f036
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f38/full/full/0/native.jpg,""16v"",f037
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f39/full/full/0/native.jpg,""17r"",f038
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f40/full/full/0/native.jpg,""17v"",f039
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f41/full/full/0/native.jpg,""18r"",f040
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f42/full/full/0/native.jpg,""18v"",f041
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f43/full/full/0/native.jpg,""19r"",f042
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f44/full/full/0/native.jpg,""19v"",f043
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f45/full/full/0/native.jpg,""20r"",f044
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f46/full/full/0/native.jpg,""20v"",f045
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f47/full/full/0/native.jpg,""21r"",f046
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f48/full/full/0/native.jpg,""21v"",f047
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f49/full/full/0/native.jpg,""22r"",f048
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f50/full/full/0/native.jpg,""22v"",f049
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f51/full/full/0/native.jpg,""23r"",f050
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f52/full/full/0/native.jpg,""23v"",f051
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f53/full/full/0/native.jpg,""24r"",f052
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f54/full/full/0/native.jpg,""24v"",f053
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f55/full/full/0/native.jpg,""25r"",f054
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f56/full/full/0/native.jpg,""25v"",f055
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f57/full/full/0/native.jpg,""26r"",f056
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f58/full/full/0/native.jpg,""26v"",f057
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f59/full/full/0/native.jpg,""27r"",f058
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f60/full/full/0/native.jpg,""27v"",f059
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f61/full/full/0/native.jpg,""28r"",f060
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f62/full/full/0/native.jpg,""28v"",f061
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f63/full/full/0/native.jpg,""29r"",f062
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f64/full/full/0/native.jpg,""29v"",f063
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f65/full/full/0/native.jpg,""NP"",f064
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f66/full/full/0/native.jpg,""NP"",f065
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f67/full/full/0/native.jpg,""NP"",f066
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f68/full/full/0/native.jpg,""NP"",f067
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f69/full/full/0/native.jpg,""NP"",f068
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f70/full/full/0/native.jpg,""NP"",f069
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f71/full/full/0/native.jpg,""NP"",f070
+https://gallica.bnf.fr/iiif/ark:/12148/btv1b7200356s/f72/full/full/0/native.jpg,""NP"",f071
