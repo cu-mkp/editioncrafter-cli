@@ -48,7 +48,7 @@ editioncrafter help
 ```
 This will display information on the syntax for passing commands to the CLI as well as a list of available commands.
 
-### iiif 
+### iiif
 
 Usage:
 ```
@@ -56,7 +56,7 @@ editioncrafter iiif <iiif_url> <output_path>
 ```
 This will create an XML file at the location of the provided `<output_path>` based on the information in the IIIF manifest supplied. Note that in this case the `<output_path>` should be a single XML File, e.g. `/MyFiles/TEI/index.xml`.
 
-### images 
+### images
 
 Usage:
 ```
@@ -79,7 +79,6 @@ Usage:
 editioncrafter process <tei_file> <output_path> <base_url>
 ```
 This will create all of the artifacts that EditionCrafter needs in order to display your document on the web, and place them in the specified `<output_path>` folder. The `<base_url>` parameter should be the URL at which you intend to host these artifacts.
-
 
 ## Generates the following files:
 

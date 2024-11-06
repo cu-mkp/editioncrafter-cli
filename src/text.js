@@ -1,5 +1,5 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require('node:fs')
+const path = require('node:path')
 
 function processTextFiles(dirPath) {
   const xmls = []
@@ -20,13 +20,13 @@ function processTextFiles(dirPath) {
 
 function processFile(filename, id) {
   const contents = fs.readFileSync(filename).toString()
-  const splitContents = contents.split(/\n\n+/)
+  const splitContents = contents.split(/\n{2,}/)
   let xmlStr = `<pb facs="#${id}" />\n`
 
-  splitContents.forEach(section => {
+  splitContents.forEach((section) => {
     let sectionStr = '<ab>\n'
 
-    section.split('\n').forEach(str => {
+    section.split('\n').forEach((str) => {
       sectionStr += `<lb />${str}\n`
     })
 
