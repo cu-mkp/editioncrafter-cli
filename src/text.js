@@ -20,9 +20,22 @@ function processTextFiles(dirPath) {
 
 function processFile(filename, id) {
   const contents = fs.readFileSync(filename).toString()
+  const splitContents = contents.split(/\n\n+/)
+  let xmlStr = `<pb facs="#${id}" />\n`
 
-  return `<pb facs="#${id}" />
-  ${contents.split('\n').map(line => `<p>${line}</p>`).join('\n')}`
+  splitContents.forEach(section => {
+    let sectionStr = '<ab>\n'
+
+    section.split('\n').forEach(str => {
+      sectionStr += `<lb />${str}\n`
+    })
+
+    sectionStr += '</ab>\n'
+
+    xmlStr += sectionStr
+  })
+
+  return xmlStr
 }
 
 module.exports.processTextFiles = processTextFiles
