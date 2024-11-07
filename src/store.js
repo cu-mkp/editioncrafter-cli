@@ -35,8 +35,8 @@ async function loadTEIDocument(teiDocumentID, documentStore) {
     const { archivEngineURL, authToken, projectID } = documentStore
     const { resourceID } = teiDocument
     const { resourceEntries } = await getResources(archivEngineURL, authToken, projectID, resourceID)
-    const { baseURL, thumbnailWidth, thumbnailHeight } = documentStore
-    const renderOptions = { teiDocumentID, baseURL, thumbnailWidth, thumbnailHeight }
+    const { baseUrl, thumbnailWidth, thumbnailHeight } = documentStore
+    const renderOptions = { teiDocumentID, baseUrl, thumbnailWidth, thumbnailHeight }
     teiDocument = processResources(resourceEntries, resourceID, renderOptions)
     teiDocuments[teiDocumentID] = teiDocument
     return teiDocument

@@ -50,7 +50,7 @@ async function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID 
       throw new Error(`Unable to parse IIIF manifest: '${error}`)
     }
   }
-  catch (err) {
+  catch {
     throw new Error(`Unable to load IIIF manifest.`)
   }
 };
@@ -227,12 +227,11 @@ function manifestToFacsimile2(manifestData, nextSurfaceID) {
 // MAIN FUNCTION -- GETS DATA FROM URL, PASSES IT TO THE PARSER FUNCTIONS, THEN CONVERTS TO A TEI STRING AND WRITES TO THE TARGET PATH
 
 async function processIIIF(options) {
-  const { iiifURL, targetPath } = options
   const onSuccess = (data) => {
     const teiString = facsTemplate(data, options.textPath)
-    fs.writeFileSync(targetPath, teiString)
+    fs.writeFileSync(options.outputPath, teiString)
   }
-  await importPresentationEndpoint(iiifURL, onSuccess)
+  await importPresentationEndpoint(options.inputPath, onSuccess)
 };
 
 // VARIOUS HELPER FUNCTIONS

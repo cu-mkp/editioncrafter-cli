@@ -18,6 +18,15 @@ function processTextFiles(dirPath) {
   </body>`
 }
 
+function sanitize(str) {
+  return str
+    .replaceAll('&', `&amp;`)
+    .replaceAll('\"', `&quot;`)
+    .replaceAll('\'', `&apos;`)
+    .replaceAll('<', `&lt;`)
+    .replaceAll('>', `&gt;`)
+}
+
 function processFile(filename, id) {
   const contents = fs.readFileSync(filename).toString()
   const splitContents = contents.split(/\n{2,}/)
@@ -27,7 +36,7 @@ function processFile(filename, id) {
     let sectionStr = '<ab>\n'
 
     section.split('\n').forEach((str) => {
-      sectionStr += `<lb />${str}\n`
+      sectionStr += `<lb />${sanitize(str)}\n`
     })
 
     sectionStr += '</ab>\n'

@@ -14,8 +14,8 @@ function processUserPath(input_path) {
 }
 
 function processTEIDocument(options) {
-  const { targetPath, outputPath } = options
-  const xml = fs.readFileSync(targetPath, 'utf8')
+  const { inputPath, outputPath } = options
+  const xml = fs.readFileSync(inputPath, 'utf8')
 
   const teiDoc = renderTEIDocument(xml, options)
   if (teiDoc.error) {
@@ -38,9 +38,9 @@ async function run(options) {
   }
 }
 
-function getResourceIDFromPath(targetPath) {
-  if (targetPath.toLowerCase().endsWith('.xml')) {
-    return path.basename(targetPath, '.xml').trim()
+function getResourceIDFromPath(inputPath) {
+  if (inputPath.toLowerCase().endsWith('.xml')) {
+    return path.basename(inputPath, '.xml').trim()
   }
   else {
     return null
@@ -49,11 +49,12 @@ function getResourceIDFromPath(targetPath) {
 
 function parseOptions(args) {
   const options = {
-    config: null,
+    configPath: null,
     textPath: null,
     outputPath: null,
-    input: null,
+    inputPath: null,
     baseUrl: null,
+    mode: args[2],
   }
 
   // skip the first three args
@@ -61,7 +62,7 @@ function parseOptions(args) {
   for (let i = 3; i < args.length - 1; i = i + 2) {
     const value = args[i + 1]
     if (args[i] === '-c' || args[i] === '--config') {
-      options.config = value
+      options.configPath = value
     }
     else if (args[i] === '-t' || args[i] === '--text') {
       options.textPath = value
@@ -70,10 +71,10 @@ function parseOptions(args) {
       options.outputPath = value
     }
     else if (args[i] === '-i' || args[i] === '--input') {
-      options.input = value
+      options.inputPath = value
     }
     else if (args[i] === '-u' || args[i] === '--base-url') {
-      options.baseURL = value
+      options.baseUrl = value
     }
   }
 
@@ -84,88 +85,60 @@ function processArguments() {
   const args = process.argv
   const optForHelp = { mode: 'help' }
 
-  if (args.length < 2)
+  // Make sure the user has passed in at least one argument
+  // (the first two are Node and EC)
+  if (args.length < 3)
     return optForHelp
 
-  const mode = args[2]
+  let options = parseOptions(args)
 
-  const options = parseOptions(args)
+  if (options.mode === 'process') {
+    options.thumbnailHeight = 192
+    options.thumbnailWidth = 124
 
-  if (mode === 'process') {
-    if (args.length < 4)
-      return optForHelp
+    if (!options.outputPath) {
+      options.outputPath = '.'
+    }
 
-    // default settings
-    let config = {
-      mode,
-      outputPath: '.',
-      baseURL: 'http://localhost:8080',
-      thumbnailWidth: 124,
-      thumbnailHeight: 192,
+    if (!options.baseUrl) {
+      options.baseUrl = 'http://localhost:8080'
     }
 
     // load from config file if supplied
-    if (options.config) {
-      const configPath = processUserPath(options.config)
+    if (options.configPath) {
+      const configPath = processUserPath(options.configPath)
       try {
         fs.readFileSync(configPath)
-        config = { ...config, ...JSON.parse(fs.readFileSync(configPath)) }
+        options = { ...options, ...JSON.parse(fs.readFileSync(configPath)) }
       }
-      catch (e) {
+      catch {
         console.log(`Unable to parse config file: ${configPath}.`)
         return optForHelp
       }
     }
 
     // parse command line params
-    if (options.inputPath)
-      config.targetPath = processUserPath(options.inputPath)
-    if (options.outputPath)
-      config.outputPath = processUserPath(options.outputPath)
-    if (options.baseURL)
-      config.baseURL = options.baseURL
-    config.teiDocumentID = getResourceIDFromPath(config.targetPath)
-    return config
+    options.inputPath = processUserPath(options.inputPath)
+    options.outputPath = processUserPath(options.outputPath)
+
+    options.teiDocumentID = getResourceIDFromPath(options.inputPath)
+    return options
   }
-  else if (mode === 'iiif') {
-    if (args.length < 4)
+  else if (options.mode === 'iiif') {
+    if (!options.inputPath || !options.outputPath) {
       return optForHelp
-    const config = {
-      mode,
-      targetPath: '.',
     }
 
-    if (options.textPath) {
-      config.textPath = options.textPath
-    }
+    options.outputPath = processUserPath(options.outputPath)
 
-    config.iiifURL = options.input
-    if (pathArgs[1])
-      config.targetPath = processUserPath(pathArgs[1])
-
-    return config
+    return options
   }
-  else if (mode === 'images') {
-    if (args.length < 4)
+  else if (options.mode === 'images') {
+    if (!options.inputPath || !options.outputPath) {
       return optForHelp
-
-    const config = {
-      mode,
-      targetPath: '.',
     }
 
-    const pathArgs = getPathArgs(args)
-
-    config.filePath = pathArgs[0]
-
-    if (pathArgs[1])
-      config.targetPath = processUserPath(pathArgs[1])
-
-    if (options.textPath) {
-      config.textPath = options.textPath
-    }
-
-    return config
+    return options
   }
 
   return optForHelp

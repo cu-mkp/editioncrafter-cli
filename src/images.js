@@ -5,17 +5,15 @@ const { getFacsString } = require('./lib/images')
 const { processTextFiles } = require('./text')
 
 async function processImagesCsv(options) {
-  const surfaceEls = await readRows(options.filePath)
+  const surfaceEls = await readRows(options.inputPath)
 
-  let bodyTei
-
-  if (options.textPath) {
-    bodyTei = processTextFiles(options.textPath)
-  }
+  const bodyTei = options.textPath
+    ? processTextFiles(options.textPath)
+    : undefined
 
   const teiString = getFacsString('', surfaceEls, bodyTei)
 
-  fs.writeFileSync(options.targetPath, teiString)
+  fs.writeFileSync(options.outputPath, teiString)
 }
 
 // positions in the rows enumerated here for clarity

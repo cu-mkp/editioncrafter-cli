@@ -34,7 +34,7 @@ The following commands are available to the EditionCrafter CLI. Note that you ma
 {
     "targetPath": "myfile.xml",
     "outputPath": ".",
-    "baseURL": "http://localhost:8080",
+    "baseUrl": "http://localhost:8080",
     "thumbnailWidth": 124,
     "thumbnailHeight": 192
 }
@@ -52,7 +52,7 @@ This will display information on the syntax for passing commands to the CLI as w
 
 Usage:
 ```
-editioncrafter iiif <iiif_url> <output_path>
+editioncrafter iiif -i <iiif_url> -o <output_path>
 ```
 This will create an XML file at the location of the provided `<output_path>` based on the information in the IIIF manifest supplied. Note that in this case the `<output_path>` should be a single XML File, e.g. `/MyFiles/TEI/index.xml`.
 
@@ -60,7 +60,7 @@ This will create an XML file at the location of the provided `<output_path>` bas
 
 Usage:
 ```
-editioncrafter images <csv_path> <output_path>
+editioncrafter images -i <csv path> -o <output file>
 ```
 This will create an XML file at the location of the provided `<output_path>` based on the image data in the CSV file supplied. Note that in this case the `<output_path>` should be a single XML File, e.g. `/MyFiles/TEI/index.xml`.
 
@@ -76,7 +76,7 @@ url,label,xml_id
 
 Usage:
 ```
-editioncrafter process <tei_file> <output_path> <base_url>
+editioncrafter process -i <tei_file> -o <output_path> -u <base_url>
 ```
 This will create all of the artifacts that EditionCrafter needs in order to display your document on the web, and place them in the specified `<output_path>` folder. The `<base_url>` parameter should be the URL at which you intend to host these artifacts.
 
