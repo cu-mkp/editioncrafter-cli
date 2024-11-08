@@ -145,13 +145,16 @@ function processArguments() {
 }
 
 function displayHelp() {
-  console.log(`EditionCrafter v${version}`)
-  console.log(`Usage: editioncrafter <command> [-c config_path]|[<tei_path> <output_path> <base_url>]`)
-  console.log('Edition Crafter responds to the following <command>s:')
-  console.log('\tiiif: Process the IIIF Manifest into a TEIDocument.')
-  console.log('\timages: Process a list of images from a CSV file into a TEIDocument.')
-  console.log('\tprocess: Process the TEI Document into a manifest, partials, and annotations.')
-  console.log('\thelp: Displays this help. ')
+  console.log(`EditionCrafter v${version}\n`)
+  console.log(`Usage: editioncrafter <command> [parameters]\n`)
+  console.log('EditionCrafter responds to the following commands:')
+  console.log('\tiiif:\tProcess the IIIF Manifest into a TEIDocument.')
+  console.log('\t\tUsage: editioncrafter iiif [-i iiif_url] [-o output_path]\n')
+  console.log('\timages:\tProcess a list of images from a CSV file into a TEIDocument.')
+  console.log('\t\tUsage: editioncrafter images [-i csv_path] [-o output_file]\n')
+  console.log('\tprocess:Process the TEI Document into a manifest, partials, and annotations.')
+  console.log('\t\tUsage: editioncrafter process [-i tei_file] [-o output_path] [-u base_url]\n')
+  console.log('\thelp:\tDisplays this help. ')
 }
 
 async function editionCrafterCLI() {
