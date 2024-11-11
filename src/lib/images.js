@@ -27,7 +27,7 @@ function getFacsString(sameAs, surfaceEls, body = defaultBody) {
           ${surfaceEls.join('')}
       </facsimile>
 
-      <text xml:id="transcription">
+      <text xml:id="text">
 ${body}
       </text>
   </TEI>`
