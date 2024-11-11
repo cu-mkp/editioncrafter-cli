@@ -19,35 +19,35 @@
       <facsimile >
                     <surface xml:id="f004" ulx="0" uly="0" lrx="3384" lry="5408">
             <label>1r</label>
-            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f004.jpg" />
+            <graphic mimeType="image/jpeg" url="https://raw.githubusercontent.com/cu-mkp/editioncrafter/refs/heads/dev/editioncrafter/static/images-example/img/f004.jpg" />
           </surface>
           <surface xml:id="f005" ulx="0" uly="0" lrx="3429" lry="5432">
             <label>1v</label>
-            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f005.jpg" />
+            <graphic mimeType="image/jpeg" url="https://raw.githubusercontent.com/cu-mkp/editioncrafter/refs/heads/dev/editioncrafter/static/images-example/img/f005.jpg" />
           </surface>
           <surface xml:id="f006" ulx="0" uly="0" lrx="3372" lry="5420">
             <label>2r</label>
-            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f006.jpg" />
+            <graphic mimeType="image/jpeg" url="https://raw.githubusercontent.com/cu-mkp/editioncrafter/refs/heads/dev/editioncrafter/static/images-example/img/f006.jpg" />
           </surface>
           <surface xml:id="f007" ulx="0" uly="0" lrx="3408" lry="5420">
             <label>2v</label>
-            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f007.jpg" />
+            <graphic mimeType="image/jpeg" url="https://raw.githubusercontent.com/cu-mkp/editioncrafter/refs/heads/dev/editioncrafter/static/images-example/img/f007.jpg" />
           </surface>
           <surface xml:id="f008" ulx="0" uly="0" lrx="3369" lry="5417">
             <label>3r</label>
-            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f008.jpg" />
+            <graphic mimeType="image/jpeg" url="https://raw.githubusercontent.com/cu-mkp/editioncrafter/refs/heads/dev/editioncrafter/static/images-example/img/f008.jpg" />
           </surface>
           <surface xml:id="f009" ulx="0" uly="0" lrx="3393" lry="5426">
             <label>3v</label>
-            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f009.jpg" />
+            <graphic mimeType="image/jpeg" url="https://raw.githubusercontent.com/cu-mkp/editioncrafter/refs/heads/dev/editioncrafter/static/images-example/img/f009.jpg" />
           </surface>
           <surface xml:id="f010" ulx="0" uly="0" lrx="3372" lry="5390">
             <label>4r</label>
-            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f010.jpg" />
+            <graphic mimeType="image/jpeg" url="https://raw.githubusercontent.com/cu-mkp/editioncrafter/refs/heads/dev/editioncrafter/static/images-example/img/f010.jpg" />
           </surface>
           <surface xml:id="f011" ulx="0" uly="0" lrx="3402" lry="5390">
             <label>4v</label>
-            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f011.jpg" />
+            <graphic mimeType="image/jpeg" url="https://raw.githubusercontent.com/cu-mkp/editioncrafter/refs/heads/dev/editioncrafter/static/images-example/img/f011.jpg" />
           </surface>
 
       </facsimile>
