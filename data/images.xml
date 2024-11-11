@@ -17,1438 +17,844 @@
       </teiHeader>
 
       <facsimile >
-                    <surface xml:id="f000" ulx="0" uly="0" lrx="3543" lry="5501">
-            <label>plat sup.</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f1/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f001" ulx="0" uly="0" lrx="3525" lry="5507">
-            <label>contreplat sup.</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f2/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f002" ulx="0" uly="0" lrx="3375" lry="5387">
-            <label>page de garde recto</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f3/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f003" ulx="0" uly="0" lrx="3438" lry="5381">
-            <label>page de garde verso</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f4/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f004" ulx="0" uly="0" lrx="3372" lry="5396">
+                    <surface xml:id="f004" ulx="0" uly="0" lrx="3372" lry="5396">
             <label>NP</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f5/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f000.jpg" />
           </surface>
           <surface xml:id="f005" ulx="0" uly="0" lrx="3426" lry="5420">
             <label>NP</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f6/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f001.jpg" />
           </surface>
           <surface xml:id="f006" ulx="0" uly="0" lrx="3384" lry="5408">
             <label>1r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f7/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f002.jpg" />
           </surface>
           <surface xml:id="f007" ulx="0" uly="0" lrx="3429" lry="5432">
             <label>1v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f8/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f003.jpg" />
           </surface>
           <surface xml:id="f008" ulx="0" uly="0" lrx="3372" lry="5420">
             <label>2r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f9/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f004.jpg" />
           </surface>
           <surface xml:id="f009" ulx="0" uly="0" lrx="3408" lry="5420">
             <label>2v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f10/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f005.jpg" />
           </surface>
           <surface xml:id="f010" ulx="0" uly="0" lrx="3369" lry="5417">
             <label>3r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f11/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f006.jpg" />
           </surface>
           <surface xml:id="f011" ulx="0" uly="0" lrx="3393" lry="5426">
             <label>3v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f12/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f007.jpg" />
           </surface>
           <surface xml:id="f012" ulx="0" uly="0" lrx="3372" lry="5390">
             <label>4r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f13/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f008.jpg" />
           </surface>
           <surface xml:id="f013" ulx="0" uly="0" lrx="3402" lry="5390">
             <label>4v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f14/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f014" ulx="0" uly="0" lrx="3345" lry="5390">
-            <label>5r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f15/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f015" ulx="0" uly="0" lrx="3432" lry="5393">
-            <label>5v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f16/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f016" ulx="0" uly="0" lrx="3345" lry="5375">
-            <label>6r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f17/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f017" ulx="0" uly="0" lrx="3390" lry="5378">
-            <label>6v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f18/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f018" ulx="0" uly="0" lrx="3342" lry="5390">
-            <label>7r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f19/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f019" ulx="0" uly="0" lrx="3390" lry="5387">
-            <label>7v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f20/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f020" ulx="0" uly="0" lrx="3333" lry="5393">
-            <label>8r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f21/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f021" ulx="0" uly="0" lrx="3366" lry="5375">
-            <label>8v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f22/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f022" ulx="0" uly="0" lrx="3342" lry="5363">
-            <label>9r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f23/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f023" ulx="0" uly="0" lrx="3375" lry="5357">
-            <label>9v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f24/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f024" ulx="0" uly="0" lrx="3327" lry="5363">
-            <label>10r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f25/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f025" ulx="0" uly="0" lrx="3387" lry="5369">
-            <label>10v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f26/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f026" ulx="0" uly="0" lrx="3315" lry="5366">
-            <label>11r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f27/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f027" ulx="0" uly="0" lrx="3363" lry="5375">
-            <label>11v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f28/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f028" ulx="0" uly="0" lrx="3312" lry="5351">
-            <label>12r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f29/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f029" ulx="0" uly="0" lrx="3324" lry="5363">
-            <label>12v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f30/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f030" ulx="0" uly="0" lrx="3297" lry="5351">
-            <label>13r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f31/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f031" ulx="0" uly="0" lrx="3324" lry="5360">
-            <label>13v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f32/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f032" ulx="0" uly="0" lrx="3315" lry="5375">
-            <label>14r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f33/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f033" ulx="0" uly="0" lrx="3324" lry="5366">
-            <label>NP</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f34/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f034" ulx="0" uly="0" lrx="3339" lry="5372">
-            <label>15r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f35/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f035" ulx="0" uly="0" lrx="3360" lry="5354">
-            <label>15v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f36/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f036" ulx="0" uly="0" lrx="3297" lry="5363">
-            <label>16r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f37/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f037" ulx="0" uly="0" lrx="3351" lry="5366">
-            <label>16v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f38/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f038" ulx="0" uly="0" lrx="3309" lry="5360">
-            <label>17r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f39/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f039" ulx="0" uly="0" lrx="3357" lry="5363">
-            <label>17v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f40/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f040" ulx="0" uly="0" lrx="3297" lry="5384">
-            <label>18r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f41/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f041" ulx="0" uly="0" lrx="3309" lry="5357">
-            <label>18v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f42/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f042" ulx="0" uly="0" lrx="3285" lry="5354">
-            <label>19r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f43/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f043" ulx="0" uly="0" lrx="3306" lry="5363">
-            <label>19v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f44/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f044" ulx="0" uly="0" lrx="3291" lry="5348">
-            <label>20r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f45/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f045" ulx="0" uly="0" lrx="3303" lry="5348">
-            <label>20v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f46/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f046" ulx="0" uly="0" lrx="3306" lry="5384">
-            <label>21r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f47/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f047" ulx="0" uly="0" lrx="3306" lry="5357">
-            <label>21v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f48/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f048" ulx="0" uly="0" lrx="3294" lry="5366">
-            <label>22r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f49/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f049" ulx="0" uly="0" lrx="3330" lry="5360">
-            <label>22v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f50/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f050" ulx="0" uly="0" lrx="3279" lry="5372">
-            <label>23r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f51/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f051" ulx="0" uly="0" lrx="3300" lry="5375">
-            <label>23v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f52/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f052" ulx="0" uly="0" lrx="3279" lry="5375">
-            <label>24r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f53/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f053" ulx="0" uly="0" lrx="3309" lry="5354">
-            <label>24v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f54/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f054" ulx="0" uly="0" lrx="3282" lry="5363">
-            <label>25r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f55/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f055" ulx="0" uly="0" lrx="3294" lry="5348">
-            <label>25v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f56/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f056" ulx="0" uly="0" lrx="3288" lry="5372">
-            <label>26r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f57/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f057" ulx="0" uly="0" lrx="3303" lry="5378">
-            <label>26v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f58/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f058" ulx="0" uly="0" lrx="3270" lry="5363">
-            <label>27r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f59/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f059" ulx="0" uly="0" lrx="3330" lry="5351">
-            <label>27v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f60/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f060" ulx="0" uly="0" lrx="3267" lry="5357">
-            <label>28r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f61/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f061" ulx="0" uly="0" lrx="3255" lry="5351">
-            <label>28v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f62/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f062" ulx="0" uly="0" lrx="3261" lry="5357">
-            <label>29r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f63/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f063" ulx="0" uly="0" lrx="3288" lry="5351">
-            <label>29v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f64/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f064" ulx="0" uly="0" lrx="3246" lry="5372">
-            <label>30r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f65/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f065" ulx="0" uly="0" lrx="3264" lry="5363">
-            <label>30v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f66/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f066" ulx="0" uly="0" lrx="3255" lry="5357">
-            <label>31r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f67/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f067" ulx="0" uly="0" lrx="3267" lry="5360">
-            <label>31v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f68/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f068" ulx="0" uly="0" lrx="3258" lry="5366">
-            <label>32r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f69/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f069" ulx="0" uly="0" lrx="3291" lry="5363">
-            <label>32v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f70/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f070" ulx="0" uly="0" lrx="3249" lry="5354">
-            <label>33r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f71/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f071" ulx="0" uly="0" lrx="3312" lry="5363">
-            <label>33v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f72/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f072" ulx="0" uly="0" lrx="3255" lry="5366">
-            <label>34r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f73/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f073" ulx="0" uly="0" lrx="3309" lry="5354">
-            <label>34v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f74/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f074" ulx="0" uly="0" lrx="3252" lry="5375">
-            <label>35r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f75/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f075" ulx="0" uly="0" lrx="3291" lry="5351">
-            <label>35v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f76/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f076" ulx="0" uly="0" lrx="3240" lry="5351">
-            <label>36r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f77/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f077" ulx="0" uly="0" lrx="3300" lry="5360">
-            <label>36v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f78/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f078" ulx="0" uly="0" lrx="3243" lry="5366">
-            <label>37r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f79/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f079" ulx="0" uly="0" lrx="3315" lry="5360">
-            <label>37v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f80/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f080" ulx="0" uly="0" lrx="3240" lry="5369">
-            <label>38r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f81/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f081" ulx="0" uly="0" lrx="3336" lry="5357">
-            <label>38v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f82/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f082" ulx="0" uly="0" lrx="3285" lry="5381">
-            <label>39r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f83/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f083" ulx="0" uly="0" lrx="3300" lry="5366">
-            <label>39v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f84/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f084" ulx="0" uly="0" lrx="3249" lry="5363">
-            <label>40r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f85/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f085" ulx="0" uly="0" lrx="3318" lry="5357">
-            <label>40v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f86/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f086" ulx="0" uly="0" lrx="3249" lry="5396">
-            <label>41r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f87/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f087" ulx="0" uly="0" lrx="3270" lry="5372">
-            <label>41v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f88/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f088" ulx="0" uly="0" lrx="3237" lry="5366">
-            <label>42r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f89/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f089" ulx="0" uly="0" lrx="3270" lry="5378">
-            <label>42v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f90/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f090" ulx="0" uly="0" lrx="3222" lry="5387">
-            <label>43r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f91/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f091" ulx="0" uly="0" lrx="3255" lry="5363">
-            <label>43v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f92/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f092" ulx="0" uly="0" lrx="3225" lry="5381">
-            <label>44r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f93/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f093" ulx="0" uly="0" lrx="3294" lry="5360">
-            <label>44v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f94/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f094" ulx="0" uly="0" lrx="3231" lry="5375">
-            <label>45r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f95/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f095" ulx="0" uly="0" lrx="3300" lry="5360">
-            <label>45v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f96/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f096" ulx="0" uly="0" lrx="3225" lry="5375">
-            <label>46r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f97/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f097" ulx="0" uly="0" lrx="3303" lry="5360">
-            <label>46v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f98/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f098" ulx="0" uly="0" lrx="3237" lry="5384">
-            <label>47r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f99/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f099" ulx="0" uly="0" lrx="3276" lry="5369">
-            <label>47v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f100/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f100" ulx="0" uly="0" lrx="3213" lry="5369">
-            <label>48r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f101/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f101" ulx="0" uly="0" lrx="3258" lry="5366">
-            <label>48v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f102/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f102" ulx="0" uly="0" lrx="3225" lry="5399">
-            <label>49r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f103/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f103" ulx="0" uly="0" lrx="3261" lry="5390">
-            <label>49v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f104/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f104" ulx="0" uly="0" lrx="3204" lry="5375">
-            <label>50r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f105/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f105" ulx="0" uly="0" lrx="3252" lry="5348">
-            <label>50v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f106/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f106" ulx="0" uly="0" lrx="3198" lry="5369">
-            <label>51r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f107/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f107" ulx="0" uly="0" lrx="3261" lry="5357">
-            <label>51v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f108/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f108" ulx="0" uly="0" lrx="3201" lry="5378">
-            <label>52r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f109/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f109" ulx="0" uly="0" lrx="3267" lry="5363">
-            <label>52v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f110/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f110" ulx="0" uly="0" lrx="3219" lry="5363">
-            <label>53r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f111/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f111" ulx="0" uly="0" lrx="3261" lry="5357">
-            <label>53v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f112/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f112" ulx="0" uly="0" lrx="3189" lry="5336">
-            <label>54r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f113/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f113" ulx="0" uly="0" lrx="3240" lry="5381">
-            <label>54v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f114/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f114" ulx="0" uly="0" lrx="3210" lry="5396">
-            <label>55r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f115/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f115" ulx="0" uly="0" lrx="3285" lry="5381">
-            <label>55v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f116/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f116" ulx="0" uly="0" lrx="3228" lry="5381">
-            <label>56r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f117/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f117" ulx="0" uly="0" lrx="3252" lry="5378">
-            <label>56v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f118/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f118" ulx="0" uly="0" lrx="3207" lry="5399">
-            <label>57r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f119/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f119" ulx="0" uly="0" lrx="3246" lry="5378">
-            <label>57v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f120/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f120" ulx="0" uly="0" lrx="3186" lry="5360">
-            <label>58r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f121/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f121" ulx="0" uly="0" lrx="3252" lry="5369">
-            <label>58v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f122/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f122" ulx="0" uly="0" lrx="3162" lry="5366">
-            <label>59r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f123/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f123" ulx="0" uly="0" lrx="3240" lry="5393">
-            <label>59v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f124/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f124" ulx="0" uly="0" lrx="3237" lry="5357">
-            <label>60r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f125/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f125" ulx="0" uly="0" lrx="3255" lry="5339">
-            <label>60v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f126/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f126" ulx="0" uly="0" lrx="3237" lry="5348">
-            <label>61r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f127/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f127" ulx="0" uly="0" lrx="3258" lry="5348">
-            <label>61v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f128/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f128" ulx="0" uly="0" lrx="3198" lry="5357">
-            <label>62r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f129/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f129" ulx="0" uly="0" lrx="3273" lry="5342">
-            <label>62v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f130/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f130" ulx="0" uly="0" lrx="3228" lry="5369">
-            <label>63r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f131/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f131" ulx="0" uly="0" lrx="3249" lry="5351">
-            <label>63v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f132/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f132" ulx="0" uly="0" lrx="3186" lry="5351">
-            <label>64r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f133/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f133" ulx="0" uly="0" lrx="3234" lry="5333">
-            <label>64v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f134/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f134" ulx="0" uly="0" lrx="3198" lry="5339">
-            <label>65r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f135/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f135" ulx="0" uly="0" lrx="3231" lry="5342">
-            <label>65v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f136/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f136" ulx="0" uly="0" lrx="3198" lry="5306">
-            <label>66r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f137/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f137" ulx="0" uly="0" lrx="3246" lry="5336">
-            <label>66v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f138/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f138" ulx="0" uly="0" lrx="3183" lry="5315">
-            <label>67r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f139/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f139" ulx="0" uly="0" lrx="3243" lry="5336">
-            <label>67v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f140/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f140" ulx="0" uly="0" lrx="3174" lry="5333">
-            <label>68r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f141/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f141" ulx="0" uly="0" lrx="3252" lry="5342">
-            <label>68v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f142/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f142" ulx="0" uly="0" lrx="3168" lry="5312">
-            <label>69r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f143/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f143" ulx="0" uly="0" lrx="3216" lry="5348">
-            <label>69v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f144/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f144" ulx="0" uly="0" lrx="3156" lry="5309">
-            <label>70r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f145/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f145" ulx="0" uly="0" lrx="3246" lry="5351">
-            <label>70v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f146/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f146" ulx="0" uly="0" lrx="3201" lry="5345">
-            <label>71r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f147/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f147" ulx="0" uly="0" lrx="3270" lry="5381">
-            <label>71v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f148/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f148" ulx="0" uly="0" lrx="3183" lry="5387">
-            <label>72r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f149/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f149" ulx="0" uly="0" lrx="3246" lry="5357">
-            <label>72v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f150/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f150" ulx="0" uly="0" lrx="3192" lry="5384">
-            <label>73r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f151/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f151" ulx="0" uly="0" lrx="3264" lry="5363">
-            <label>73v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f152/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f152" ulx="0" uly="0" lrx="3156" lry="5369">
-            <label>74r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f153/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f153" ulx="0" uly="0" lrx="3270" lry="5369">
-            <label>74v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f154/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f154" ulx="0" uly="0" lrx="3189" lry="5363">
-            <label>75r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f155/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f155" ulx="0" uly="0" lrx="3342" lry="5450">
-            <label>75v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f156/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f156" ulx="0" uly="0" lrx="3285" lry="5444">
-            <label>76r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f157/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f157" ulx="0" uly="0" lrx="3324" lry="5462">
-            <label>76v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f158/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f158" ulx="0" uly="0" lrx="3228" lry="5480">
-            <label>77r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f159/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f159" ulx="0" uly="0" lrx="3291" lry="5462">
-            <label>77v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f160/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f160" ulx="0" uly="0" lrx="3228" lry="5471">
-            <label>78r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f161/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f161" ulx="0" uly="0" lrx="3291" lry="5462">
-            <label>78v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f162/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f162" ulx="0" uly="0" lrx="3210" lry="5471">
-            <label>79r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f163/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f163" ulx="0" uly="0" lrx="3270" lry="5456">
-            <label>79v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f164/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f164" ulx="0" uly="0" lrx="3195" lry="5468">
-            <label>80r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f165/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f165" ulx="0" uly="0" lrx="3249" lry="5456">
-            <label>80v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f166/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f166" ulx="0" uly="0" lrx="3234" lry="5474">
-            <label>81r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f167/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f167" ulx="0" uly="0" lrx="3279" lry="5453">
-            <label>81v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f168/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f168" ulx="0" uly="0" lrx="3189" lry="5453">
-            <label>82r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f169/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f169" ulx="0" uly="0" lrx="3264" lry="5459">
-            <label>82v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f170/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f170" ulx="0" uly="0" lrx="3279" lry="5498">
-            <label>83r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f171/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f171" ulx="0" uly="0" lrx="3288" lry="5456">
-            <label>83v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f172/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f172" ulx="0" uly="0" lrx="3282" lry="5483">
-            <label>84r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f173/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f173" ulx="0" uly="0" lrx="3318" lry="5456">
-            <label>84v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f174/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f174" ulx="0" uly="0" lrx="3270" lry="5477">
-            <label>85r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f175/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f175" ulx="0" uly="0" lrx="3348" lry="5444">
-            <label>85v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f176/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f176" ulx="0" uly="0" lrx="3273" lry="5468">
-            <label>86r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f177/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f177" ulx="0" uly="0" lrx="3297" lry="5444">
-            <label>86v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f178/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f178" ulx="0" uly="0" lrx="3267" lry="5459">
-            <label>87r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f179/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f179" ulx="0" uly="0" lrx="3303" lry="5456">
-            <label>87v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f180/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f180" ulx="0" uly="0" lrx="3234" lry="5459">
-            <label>88r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f181/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f181" ulx="0" uly="0" lrx="3228" lry="5441">
-            <label>88v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f182/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f182" ulx="0" uly="0" lrx="3189" lry="5399">
-            <label>89r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f183/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f183" ulx="0" uly="0" lrx="3252" lry="5348">
-            <label>89v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f184/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f184" ulx="0" uly="0" lrx="3174" lry="5360">
-            <label>90r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f185/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f185" ulx="0" uly="0" lrx="3243" lry="5342">
-            <label>90v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f186/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f186" ulx="0" uly="0" lrx="3183" lry="5351">
-            <label>91r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f187/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f187" ulx="0" uly="0" lrx="3258" lry="5354">
-            <label>91v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f188/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f188" ulx="0" uly="0" lrx="3177" lry="5351">
-            <label>92r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f189/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f189" ulx="0" uly="0" lrx="3237" lry="5348">
-            <label>92v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f190/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f190" ulx="0" uly="0" lrx="3183" lry="5360">
-            <label>93r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f191/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f191" ulx="0" uly="0" lrx="3264" lry="5372">
-            <label>93v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f192/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f192" ulx="0" uly="0" lrx="3180" lry="5381">
-            <label>94r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f193/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f193" ulx="0" uly="0" lrx="3279" lry="5369">
-            <label>94v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f194/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f194" ulx="0" uly="0" lrx="3168" lry="5351">
-            <label>95r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f195/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f195" ulx="0" uly="0" lrx="3237" lry="5381">
-            <label>95v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f196/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f196" ulx="0" uly="0" lrx="3246" lry="5369">
-            <label>96r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f197/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f197" ulx="0" uly="0" lrx="3258" lry="5360">
-            <label>96v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f198/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f198" ulx="0" uly="0" lrx="3231" lry="5378">
-            <label>97r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f199/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f199" ulx="0" uly="0" lrx="3249" lry="5360">
-            <label>97v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f200/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f200" ulx="0" uly="0" lrx="3213" lry="5375">
-            <label>98r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f201/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f201" ulx="0" uly="0" lrx="3267" lry="5354">
-            <label>98v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f202/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f202" ulx="0" uly="0" lrx="3183" lry="5378">
-            <label>99r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f203/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f203" ulx="0" uly="0" lrx="3234" lry="5354">
-            <label>99v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f204/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f204" ulx="0" uly="0" lrx="3192" lry="5390">
-            <label>100r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f205/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f205" ulx="0" uly="0" lrx="3240" lry="5336">
-            <label>100v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f206/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f206" ulx="0" uly="0" lrx="3198" lry="5354">
-            <label>101r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f207/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f207" ulx="0" uly="0" lrx="3219" lry="5348">
-            <label>101v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f208/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f208" ulx="0" uly="0" lrx="3195" lry="5360">
-            <label>102r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f209/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f209" ulx="0" uly="0" lrx="3237" lry="5351">
-            <label>102v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f210/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f210" ulx="0" uly="0" lrx="3189" lry="5372">
-            <label>103r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f211/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f211" ulx="0" uly="0" lrx="3249" lry="5357">
-            <label>130v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f212/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f212" ulx="0" uly="0" lrx="3198" lry="5375">
-            <label>104r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f213/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f213" ulx="0" uly="0" lrx="3246" lry="5363">
-            <label>104v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f214/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f214" ulx="0" uly="0" lrx="3189" lry="5369">
-            <label>105r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f215/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f215" ulx="0" uly="0" lrx="3234" lry="5360">
-            <label>105v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f216/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f216" ulx="0" uly="0" lrx="3180" lry="5366">
-            <label>106r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f217/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f217" ulx="0" uly="0" lrx="3231" lry="5366">
-            <label>106v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f218/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f218" ulx="0" uly="0" lrx="3165" lry="5369">
-            <label>107r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f219/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f219" ulx="0" uly="0" lrx="3228" lry="5348">
-            <label>107v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f220/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f220" ulx="0" uly="0" lrx="3177" lry="5366">
-            <label>108r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f221/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f221" ulx="0" uly="0" lrx="3234" lry="5384">
-            <label>108v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f222/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f222" ulx="0" uly="0" lrx="3201" lry="5381">
-            <label>109r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f223/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f223" ulx="0" uly="0" lrx="3264" lry="5381">
-            <label>109v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f224/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f224" ulx="0" uly="0" lrx="3207" lry="5381">
-            <label>110r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f225/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f225" ulx="0" uly="0" lrx="3279" lry="5378">
-            <label>110v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f226/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f226" ulx="0" uly="0" lrx="3210" lry="5393">
-            <label>111r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f227/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f227" ulx="0" uly="0" lrx="3240" lry="5360">
-            <label>111v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f228/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f228" ulx="0" uly="0" lrx="3195" lry="5405">
-            <label>112r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f229/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f229" ulx="0" uly="0" lrx="3276" lry="5351">
-            <label>112v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f230/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f230" ulx="0" uly="0" lrx="3213" lry="5381">
-            <label>113r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f231/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f231" ulx="0" uly="0" lrx="3243" lry="5357">
-            <label>113v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f232/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f232" ulx="0" uly="0" lrx="3255" lry="5375">
-            <label>114r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f233/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f233" ulx="0" uly="0" lrx="3243" lry="5351">
-            <label>114v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f234/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f234" ulx="0" uly="0" lrx="3240" lry="5369">
-            <label>115r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f235/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f235" ulx="0" uly="0" lrx="3264" lry="5357">
-            <label>115v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f236/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f236" ulx="0" uly="0" lrx="3240" lry="5372">
-            <label>116r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f237/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f237" ulx="0" uly="0" lrx="3252" lry="5345">
-            <label>116v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f238/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f238" ulx="0" uly="0" lrx="3246" lry="5387">
-            <label>117r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f239/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f239" ulx="0" uly="0" lrx="3252" lry="5345">
-            <label>117v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f240/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f240" ulx="0" uly="0" lrx="3258" lry="5381">
-            <label>118r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f241/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f241" ulx="0" uly="0" lrx="3258" lry="5357">
-            <label>118v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f242/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f242" ulx="0" uly="0" lrx="3240" lry="5369">
-            <label>119r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f243/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f243" ulx="0" uly="0" lrx="3237" lry="5354">
-            <label>119v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f244/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f244" ulx="0" uly="0" lrx="3222" lry="5372">
-            <label>120r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f245/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f245" ulx="0" uly="0" lrx="3249" lry="5360">
-            <label>120v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f246/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f246" ulx="0" uly="0" lrx="3228" lry="5354">
-            <label>121r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f247/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f247" ulx="0" uly="0" lrx="3240" lry="5351">
-            <label>121v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f248/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f248" ulx="0" uly="0" lrx="3243" lry="5357">
-            <label>122r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f249/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f249" ulx="0" uly="0" lrx="3255" lry="5375">
-            <label>122v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f250/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f250" ulx="0" uly="0" lrx="3258" lry="5378">
-            <label>123r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f251/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f251" ulx="0" uly="0" lrx="3258" lry="5363">
-            <label>123v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f252/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f252" ulx="0" uly="0" lrx="3261" lry="5372">
-            <label>124r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f253/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f253" ulx="0" uly="0" lrx="3252" lry="5357">
-            <label>124v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f254/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f254" ulx="0" uly="0" lrx="3237" lry="5378">
-            <label>125r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f255/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f255" ulx="0" uly="0" lrx="3234" lry="5348">
-            <label>125v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f256/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f256" ulx="0" uly="0" lrx="3240" lry="5366">
-            <label>126r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f257/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f257" ulx="0" uly="0" lrx="3246" lry="5363">
-            <label>126v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f258/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f258" ulx="0" uly="0" lrx="3273" lry="5360">
-            <label>127r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f259/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f259" ulx="0" uly="0" lrx="3252" lry="5345">
-            <label>127v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f260/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f260" ulx="0" uly="0" lrx="3267" lry="5369">
-            <label>128r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f261/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f261" ulx="0" uly="0" lrx="3264" lry="5348">
-            <label>128v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f262/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f262" ulx="0" uly="0" lrx="3258" lry="5369">
-            <label>129r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f263/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f263" ulx="0" uly="0" lrx="3264" lry="5342">
-            <label>129v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f264/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f264" ulx="0" uly="0" lrx="3264" lry="5360">
-            <label>130r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f265/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f265" ulx="0" uly="0" lrx="3267" lry="5339">
-            <label>130v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f266/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f266" ulx="0" uly="0" lrx="3294" lry="5357">
-            <label>131r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f267/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f267" ulx="0" uly="0" lrx="3267" lry="5339">
-            <label>131v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f268/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f268" ulx="0" uly="0" lrx="3264" lry="5354">
-            <label>132r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f269/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f269" ulx="0" uly="0" lrx="3258" lry="5318">
-            <label>132v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f270/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f270" ulx="0" uly="0" lrx="3264" lry="5354">
-            <label>133r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f271/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f271" ulx="0" uly="0" lrx="3279" lry="5342">
-            <label>133v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f272/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f272" ulx="0" uly="0" lrx="3300" lry="5342">
-            <label>134r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f273/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f273" ulx="0" uly="0" lrx="3261" lry="5345">
-            <label>134v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f274/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f274" ulx="0" uly="0" lrx="3288" lry="5336">
-            <label>135r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f275/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f275" ulx="0" uly="0" lrx="3270" lry="5333">
-            <label>135v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f276/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f276" ulx="0" uly="0" lrx="3312" lry="5330">
-            <label>136r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f277/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f277" ulx="0" uly="0" lrx="3276" lry="5327">
-            <label>136v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f278/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f278" ulx="0" uly="0" lrx="3282" lry="5330">
-            <label>137r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f279/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f279" ulx="0" uly="0" lrx="3252" lry="5330">
-            <label>137v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f280/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f280" ulx="0" uly="0" lrx="3276" lry="5336">
-            <label>138r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f281/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f281" ulx="0" uly="0" lrx="3252" lry="5324">
-            <label>138v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f282/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f282" ulx="0" uly="0" lrx="3252" lry="5327">
-            <label>139r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f283/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f283" ulx="0" uly="0" lrx="3255" lry="5360">
-            <label>139v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f284/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f284" ulx="0" uly="0" lrx="3243" lry="5360">
-            <label>140r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f285/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f285" ulx="0" uly="0" lrx="3255" lry="5336">
-            <label>140v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f286/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f286" ulx="0" uly="0" lrx="3312" lry="5333">
-            <label>141r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f287/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f287" ulx="0" uly="0" lrx="3264" lry="5333">
-            <label>141v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f288/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f288" ulx="0" uly="0" lrx="3318" lry="5384">
-            <label>142r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f289/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f289" ulx="0" uly="0" lrx="3294" lry="5390">
-            <label>142v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f290/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f290" ulx="0" uly="0" lrx="3324" lry="5390">
-            <label>143r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f291/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f291" ulx="0" uly="0" lrx="3288" lry="5363">
-            <label>143v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f292/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f292" ulx="0" uly="0" lrx="3312" lry="5381">
-            <label>144r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f293/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f293" ulx="0" uly="0" lrx="3294" lry="5369">
-            <label>144v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f294/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f294" ulx="0" uly="0" lrx="3318" lry="5360">
-            <label>145r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f295/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f295" ulx="0" uly="0" lrx="3279" lry="5378">
-            <label>145v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f296/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f296" ulx="0" uly="0" lrx="3294" lry="5357">
-            <label>146r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f297/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f297" ulx="0" uly="0" lrx="3291" lry="5363">
-            <label>146v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f298/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f298" ulx="0" uly="0" lrx="3345" lry="5369">
-            <label>147r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f299/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f299" ulx="0" uly="0" lrx="3279" lry="5369">
-            <label>147v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f300/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f300" ulx="0" uly="0" lrx="3315" lry="5363">
-            <label>148r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f301/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f301" ulx="0" uly="0" lrx="3276" lry="5378">
-            <label>148v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f302/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f302" ulx="0" uly="0" lrx="3321" lry="5372">
-            <label>149r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f303/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f303" ulx="0" uly="0" lrx="3285" lry="5354">
-            <label>149v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f304/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f304" ulx="0" uly="0" lrx="3321" lry="5357">
-            <label>150r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f305/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f305" ulx="0" uly="0" lrx="3297" lry="5360">
-            <label>150v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f306/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f306" ulx="0" uly="0" lrx="3303" lry="5345">
-            <label>151r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f307/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f307" ulx="0" uly="0" lrx="3297" lry="5357">
-            <label>151v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f308/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f308" ulx="0" uly="0" lrx="3297" lry="5351">
-            <label>152r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f309/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f309" ulx="0" uly="0" lrx="3294" lry="5348">
-            <label>152v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f310/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f310" ulx="0" uly="0" lrx="3336" lry="5357">
-            <label>153r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f311/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f311" ulx="0" uly="0" lrx="3291" lry="5363">
-            <label>153v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f312/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f312" ulx="0" uly="0" lrx="3306" lry="5351">
-            <label>154r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f313/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f313" ulx="0" uly="0" lrx="3300" lry="5351">
-            <label>154v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f314/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f314" ulx="0" uly="0" lrx="3324" lry="5369">
-            <label>155r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f315/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f315" ulx="0" uly="0" lrx="3282" lry="5354">
-            <label>155v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f316/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f316" ulx="0" uly="0" lrx="3309" lry="5345">
-            <label>156r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f317/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f317" ulx="0" uly="0" lrx="3315" lry="5339">
-            <label>156v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f318/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f318" ulx="0" uly="0" lrx="3327" lry="5336">
-            <label>157r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f319/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f319" ulx="0" uly="0" lrx="3288" lry="5342">
-            <label>157v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f320/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f320" ulx="0" uly="0" lrx="3333" lry="5366">
-            <label>158r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f321/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f321" ulx="0" uly="0" lrx="3312" lry="5354">
-            <label>158v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f322/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f322" ulx="0" uly="0" lrx="3336" lry="5357">
-            <label>159r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f323/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f323" ulx="0" uly="0" lrx="3306" lry="5351">
-            <label>159v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f324/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f324" ulx="0" uly="0" lrx="3336" lry="5351">
-            <label>160r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f325/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f325" ulx="0" uly="0" lrx="3315" lry="5342">
-            <label>160v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f326/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f326" ulx="0" uly="0" lrx="3324" lry="5348">
-            <label>161r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f327/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f327" ulx="0" uly="0" lrx="3324" lry="5342">
-            <label>161v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f328/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f328" ulx="0" uly="0" lrx="3324" lry="5354">
-            <label>162r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f329/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f329" ulx="0" uly="0" lrx="3309" lry="5348">
-            <label>162v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f330/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f330" ulx="0" uly="0" lrx="3294" lry="5354">
-            <label>163r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f331/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f331" ulx="0" uly="0" lrx="3318" lry="5354">
-            <label>163v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f332/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f332" ulx="0" uly="0" lrx="3348" lry="5342">
-            <label>164r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f333/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f333" ulx="0" uly="0" lrx="3315" lry="5333">
-            <label>164v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f334/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f334" ulx="0" uly="0" lrx="3375" lry="5351">
-            <label>165r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f335/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f335" ulx="0" uly="0" lrx="3324" lry="5345">
-            <label>165v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f336/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f336" ulx="0" uly="0" lrx="3381" lry="5348">
-            <label>166r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f337/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f337" ulx="0" uly="0" lrx="3339" lry="5351">
-            <label>166v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f338/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f338" ulx="0" uly="0" lrx="3363" lry="5351">
-            <label>167r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f339/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f339" ulx="0" uly="0" lrx="3339" lry="5360">
-            <label>167v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f340/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f340" ulx="0" uly="0" lrx="3357" lry="5345">
-            <label>168r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f341/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f341" ulx="0" uly="0" lrx="3321" lry="5345">
-            <label>168v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f342/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f342" ulx="0" uly="0" lrx="3360" lry="5336">
-            <label>169r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f343/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f343" ulx="0" uly="0" lrx="3333" lry="5348">
-            <label>169v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f344/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f344" ulx="0" uly="0" lrx="3417" lry="5348">
-            <label>170r</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f345/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f345" ulx="0" uly="0" lrx="3333" lry="5348">
-            <label>170v</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f346/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f346" ulx="0" uly="0" lrx="3408" lry="5351">
-            <label>NP</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f347/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f347" ulx="0" uly="0" lrx="3354" lry="5339">
-            <label>NP</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f348/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f348" ulx="0" uly="0" lrx="3414" lry="5327">
-            <label>page de garde recto</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f349/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f349" ulx="0" uly="0" lrx="3375" lry="5339">
-            <label>page de garde verso</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f350/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f350" ulx="0" uly="0" lrx="3483" lry="5465">
-            <label>contreplat inf.</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f351/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f351" ulx="0" uly="0" lrx="3612" lry="5543">
-            <label>plat inf.</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f352/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f352" ulx="0" uly="0" lrx="780" lry="5392">
-            <label>dos</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f353/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f353" ulx="0" uly="0" lrx="785" lry="3504">
-            <label>tranche sup.</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f354/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f354" ulx="0" uly="0" lrx="906" lry="5422">
-            <label>gouttière</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f355/full/full/0/native.jpg" />
-          </surface>
-          <surface xml:id="f355" ulx="0" uly="0" lrx="818" lry="3483">
-            <label>tranche inf.</label>
-            <graphic mimeType="image/jpeg" url="https://gallica.bnf.fr/iiif/ark:/12148/btv1b10500001g/f356/full/full/0/native.jpg" />
+            <graphic mimeType="image/jpeg" url="http://localhost:6006/images-example/img/f009.jpg" />
           </surface>
 
       </facsimile>
 
       <text xml:id="transcription">
+<body>
+    <pb facs="#f004" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />[List of names]
+</ab>
+<ab>
+<lb />Mestre Nico[illegible] Costé, in the
+<lb />Rue de la Heaumerie, at the
+<lb />sign of St Claude / Mirrors.
+</ab>
+<ab>
+<lb />Mestre Jehan Cousin, who resides in
+<lb />the Faubourg Saint-Germain, knows of the
+<lb />master.
+</ab>
+<ab>
+<lb />Mestre Jehan Garnier, in the Rue des
+<lb />Escrivains by St Jacques de la Boucherie,
+<lb />currier. Try pastel woad flowers.
+</ab>
+<ab>
+<lb />[List]
+</ab>
+<ab>
+<lb />The harvester that leaves some ears is not
+<lb />blamed.
+</ab>
+<ab>
+<lb />Sacra Eleusinæ deæ propalare
+<lb />nefas.
+</ab>
+<ab>
+<lb />Trumpets, see the book of funerals.
+</ab>
+<ab>
+<lb />[List of books and authors]
+</ab>
+<ab>
+<lb />Vuolfangus Lazius
+</ab>
+<ab>
+<lb />Petrus Appianus, mathematicus
+<lb />Ingolstadiensis, Comment. urb.
+<lb />rom.
+</ab>
+<ab>
+<lb />Hieronimo Ruscelli
+</ab>
+<ab>
+<lb />Hermolaus Barbarus
+</ab>
+<ab>
+<lb />Angelius Bargæus, De aucupio et
+<lb />venatione
+</ab>
+<ab>
+<lb />Nicolaus Damascenus
+</ab>
+<ab>
+<lb />Caresariensis, De rebus
+<lb />Persarum
+</ab>
+<ab>
+<lb />Isidorus
+</ab>
+<ab>
+<lb />Osorius
+</ab>
+<ab>
+<lb />Eupolemus, historicus gentilis
+<lb />qui de rebus Davidis &amp; Salomonis
+<lb />scripsit
+<lb />          
+<lb />          
+<lb />          
+<lb />          
+<lb />          
+<lb />mons{ieur}
+</ab>
+<ab>
+<lb />- Cathalogue des
+<lb />villes
+</ab>
+<ab>
+<lb />Calendrier des bergiers
+</ab>
+<ab>
+<lb />Grammaire italiene
+</ab>
+<ab>
+<lb />Arithmetique of Savonne
+</ab>
+<ab>
+<lb />Instruction pour le faict des finances
+</ab>
+<ab>
+<lb />Questions aeigmatiques
+</ab>
+<ab>
+<lb />Des præceptes d’agriculture
+</ab>
+<ab>
+<lb />+ Le secret des finances à
+<lb />Lyon
+</ab>
+<ab>
+<lb />Synesius
+</ab>
+<ab>
+<lb />Olaus Magnus
+</ab>
+<ab>
+<lb />+ Mestre Bernard Palissi, inventor of rustic
+<lb />figulines to the
+</ab>
+<ab>
+<lb />king and the queen mother
+</ab>
+<ab>
+<lb />Alexander Aphrodisæus
+</ab>
+<ab>
+<lb />Polydorus Vergilius
+</ab>
+<ab>
+<lb />Appianus
+</ab>
+<ab>
+<lb />Athenæus
+</ab>
+<ab>
+<lb />Pausanias
+</ab>
+<ab>
+<lb />Statius Thebaidos
+</ab>
+<ab>
+<lb />Servius, in Aeneidem
+</ab>
+<ab>
+<lb />Macrobius
+</ab>
+<ab>
+<lb />Aulus Gellius
+</ab>
+<ab>
+<lb />Alexander ab Alexandria
+</ab>
+<ab>
+<lb />Festus
+</ab>
+<ab>
+<lb />Nonius
+</ab>
+<ab>
+<lb />Magius, Miscellanea
+</ab>
+<ab>
+<lb />Pollux, Onomasticon
+</ab>
+<ab>
+<lb />Higinus
+</ab>
+<ab>
+<lb />Berosus
+</ab>
+<ab>
+<lb />Suetonius
+</ab>
+<ab>
+<lb />Valerius Maximus
+</ab>
+<ab>
+<lb />Cornelius Tacitus
+</ab>
+<ab>
+<lb />Xenophon
+</ab>
+<ab>
+<lb />Seneca
+</ab>
+<ab>
+<lb />Dionisius Halicarnassensis
+</ab>
+<ab>
+<lb />Sabellicus
+</ab>
+<ab>
+<lb />cum permultis
+</ab>
+<ab>
+<lb />aliis Julius Capitolinus
+</ab>
+<ab>
+<lb />Budæus
+</ab>
+<ab>
+<lb />Spartianus
+</ab>
+<ab>
+<lb />Blondus
+</ab>
+<ab>
+<lb />Volaterranus
+</ab>
+<ab>
+<lb />Herodotus
+</ab>
+<ab>
+<lb />Paulus Manutius
+</ab>
+<ab>
+<lb />Strabo
+</ab>
+<ab>
+<lb />Julius Firmicus
+</ab>
+<ab>
+<lb />Quintus Curtius
+</ab>
+<ab>
+<lb />Dion
+</ab>
+<ab>
+<lb />Cornelius Nepos
+</ab>
+<ab>
+<lb />Flavius Vopiscus
+</ab>
+<ab>
+<lb />   
+<lb />   
+</ab>
+<ab>
+<lb />          
+<lb />[List of books]
+</ab>
+<ab>
+<lb />Aquatilium animalium historiæ, Hypolito
+<lb />Salviano Typhernate authore, Romæ 1554
+<lb />        
+</ab>
+<ab>
+<lb />  
+<lb />  
+</ab>
+<ab>
+<lb />        
+<lb />Les Annales de
+<lb />Normandie
+</ab>
+<ab>
+<lb />
+</ab>
 
-          <body>
-              <p>Modify xml:id as desired and replace this with your text.</p>
-          </body>
+<pb facs="#f005" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />For loosening the belly
+</ab>
+<ab>
+<lb />Prunes of Saint Antonin, &amp;, if you like,
+<lb />you want put among them leaves of mallow &amp;
+<lb />gilliflower, adding in sugar &amp;, if one wants, a
+<lb />little cinnamon for the stomach.
+</ab>
+<ab>
+<lb />Or else, marshmallow root in a chicken
+<lb />broth. The fresh kind is more mollifying.
+</ab>
+<ab>
+<lb />Beating syrup of sweet jujubes with water &amp;
+<lb />taking it in the morning loosens the belly.
+</ab>
+<ab>
+<lb />
+</ab>
 
+<pb facs="#f006" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />Books to recover
+</ab>
+<ab>
+<lb />The chronicles of Sigebert
+</ab>
+<ab>
+<lb />Ruffinus
+</ab>
+<ab>
+<lb />Ireniusin
+<lb />Exegesi
+</ab>
+<ab>
+<lb />Paule Emile
+</ab>
+<ab>
+<lb />Paule Jove
+</ab>
+<ab>
+<lb />Polydorus
+</ab>
+<ab>
+<lb />Bergomensis
+</ab>
+<ab>
+<lb />Philippe de Commines
+</ab>
+<ab>
+<lb />Against pains
+</ab>
+<ab>
+<lb />Turpentine oil, oil of Jacob, and salt extracted
+<lb />from cabbage ash.
+</ab>
+<ab>
+<lb />
+</ab>
+
+<pb facs="#f007" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />[List of books]
+<lb />Practica, cioè nova inventione di contegiare, stampata in
+<lb />Brescia per Vincenzo Sabio.
+</ab>
+<ab>
+<lb />Emeralds of Brissac
+</ab>
+<ab>
+<lb />I have taken minium 26 ℥,
+<lb />crystal [illegible] and ground on marble 12
+<lb />℥, verdet 3
+<lb />|ʒ|. Incorporate all together, put in a
+<lb />crucible covered with another, well luted, that has a hole in the
+<lb />top. Fusion 7 hours without blowing. The mass
+<lb />was of a beautiful green.
+</ab>
+<ab>
+<lb />I have taken minium 12 ℥,
+<lb />crystal 6 ℥, verdet 2
+<lb />grains. Soft fusion vi hours, refired
+<lb />24 hours. The mass was green, yellow &amp;
+<lb />red.
+</ab>
+<ab>
+<lb />| Sapphire
+</ab>
+<ab>
+<lb />Pebbles or crystal 8 ℥,
+<lb />minium 16 ℥, blacksmith’s
+<lb />salt 4 ℥, sparkling
+<lb />coryal 4
+<lb />grains. Fusion 6 hours.
+</ab>
+<ab>
+<lb />
+</ab>
+
+<pb facs="#f008" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />Counterfeit coral
+</ab>
+<ab>
+<lb />    
+<lb />                  
+<lb />                  
+<lb />        +
+<lb />    
+</ab>
+<ab>
+<lb />One needs to first make the branches of wood or take a
+<lb />bizarre thorn branch, then melt a lb of the most
+<lb />beautiful clear pitch resin and put in one ounce of
+<lb />subtly ground vermilion with walnut oil, and if
+<lb />you add in a little Venice laque platte, the
+<lb />color will be more vivid, and stir everything in the resin melted
+<lb />over a charcoal fire and not of flame, for fear that it catches fire. 
+<lb />Next dip in your branches while turning, &amp; if any filaments
+<lb />should remain on it, turn the branch over the heat of the
+<lb />charcoal.
+</ab>
+<ab>
+<lb />Colophony is nothing other than recooked resin. To do
+<lb />it well, take a leaded pot &amp; melt the resin,
+<lb />&amp; boil it over the brazier a good hour,
+<lb />&amp; until it appears not to be thick, but clear &amp; liquid like
+<lb />water, &amp; easily runs &amp; flows from the tip of a
+<lb />stick with which you grind it, &amp; test it. Then pour it
+<lb />through a coarse canvas or a very light tammy
+<lb />cloth, such that when pouring it falls into the
+<lb />strongest vinegar that you can find, for the vinegar gives
+<lb />it strength &amp; prevents it from being so fragile. Reiterate this two
+<lb />or three times &amp; it will be beautiful &amp; well purified. For
+<lb />counterfeiting your coral, you can mix a quarter part of
+<lb />mastic into your purified resin to render it more firm
+<lb />and more beautiful, &amp; if you were to take a single tear of
+<lb />mastic, it would be all the better, but it would be too long.
+</ab>
+<ab>
+<lb />Sulfur &amp; vermilion makes the same effect.
+</ab>
+<ab>
+<lb />The coral made of gules red enamel endures the
+<lb />file and polishing.
+</ab>
+<ab>
+<lb />It is made like cement that is stronger mixed with pestled
+<lb />&lt;-than of-&gt; glass rather than with brick. Thus, here one
+<lb />mixes well pestled gules red enamel, which
+<lb />is red in body, with the vermilion. Thus with all colors of
+<lb />enamels.
+</ab>
+<ab>
+<lb />Varnish for panels
+</ab>
+<ab>
+<lb />Take a lb of Venice turpentine &amp; heat
+<lb />it in a pot until it simmers, and put in half a lb of
+<lb />the turpentine oil of the whitest you can find, and stir it
+<lb />together well on a charcoal fire and take it off immediately. And
+<lb />&lt;-elle-&gt; it is done. But if it seems too thick to you,
+<lb />add in a little more oil. Similarly if it is too clear, you can
+<lb />thicken it by putting in a little turpentine. Thus you will give it
+<lb />whatever body you want. It could be made well without fire, but, when
+<lb />heated, it is more desiccative. It is appropriate for panel paintings
+<lb />and other painted things without corrupting the colors or yellowing. And
+<lb />it dries both in the shade and in the sun, and
+<lb />overnight, and during the winter as well as
+<lb />in the summer. It is commonly sold 15 sous a
+<lb />lb.
+</ab>
+<ab>
+<lb />A little more turpentine than turpentine oil is needed in
+<lb />order to give body to the varnish, which needs to be applied with
+<lb />the finger in order to spread it thinner and less thick,
+<lb />for when it is thick, it turns yellow and sticks. One does not
+<lb />varnish to make paintings shine, for it just takes the light out
+<lb />of them.
+</ab>
+<ab>
+<lb />Thick varnish for planks
+</ab>
+<ab>
+<lb />There is a varnish that takes a long time to dry &amp;
+<lb />drips more than two months after it has been applied to the
+<lb />planks. But this one does not drip like that of times
+<lb />past, which was made of linseed oil, garlic boiled in it
+<lb />to extinguish it &amp; rid it of grease, 
+<lb />&amp; with wheat. And this one yellowed &amp;
+<lb />rendered greenish the blue color of paintings. This one is made like the
+<lb />other one except that one puts coarse common turpentine
+</ab>
+<ab>
+<lb />        
+<lb />    
+<lb />But it is used to heighten colors which have soaked in and to keep them
+<lb />from dust. Mastic varnish does not resist rain,
+<lb />whereas that of oil and rosin does.  
+</ab>
+<ab>
+<lb />    
+<lb />
+</ab>
+
+<pb facs="#f009" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />instead of fine turpentine. And you can put into two
+<lb />lb of &lt;-tou-&gt; common turpentine one lb
+<lb />of fine turpentine oil &amp; do everything as with the other one. This one
+<lb />will cost you no more than five or six sous per
+<lb />lb &amp; is sold for 40 sous per
+<lb />lb.
+</ab>
+<ab>
+<lb />This vessel is for making large quantities of
+<lb />turpentine oil, that is to say a bucket an
+<lb />hour, and no matter which turpentine it may be,
+<lb />whether fine or crude. One needs to give, as you know, a little
+<lb />fire at the beginning and always keep cold water in the cooler
+<lb />on the top. The lb is sold at xii sous, &amp;
+<lb />at the bottom of the vessel remains the colophony, or
+<lb />pix græca. In this vessel, eau-de-vie is also made well,
+<lb />and there is no need to distill it again. You
+<lb />do not need a oven for this copper vessel, but
+<lb />only charcoal around it if it has a flat bottom, but if it is
+<lb />round, you will place it on a trivet.
+</ab>
+<ab>
+<lb /> It is better to heat the varnish a little bit, rather than to
+<lb />put it out in the sun, because this makes the panel
+<lb />warp.
+</ab>
+<ab>
+<lb /> Some say it is not good to distil in this copper
+<lb />vessel because it makes things green. However, when tinned, it is
+<lb />good.
+</ab>
+<ab>
+<lb />For varnishing
+</ab>
+<ab>
+<lb />Turpentine varnish does not need any glue because it
+<lb />is fatty &amp; viscous &amp; it is not absorbed in the wood like that
+<lb />of spike lavender &amp; sandarac. Also, that of spike
+<lb />lavender does not require any glue on iron &amp;
+<lb />similar things that do not absorb. But on wood &amp; on colors
+<lb />which &lt;-have-&gt; do not have gum or 
+<lb />distemper glue, it is necessary to lay one coat of the said
+<lb />hide glue &amp; to let it dry &amp; to
+<lb />varnish.
+</ab>
+<ab>
+<lb />
+</ab>
+
+<pb facs="#f010" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />Varnish of spike lavender oil
+</ab>
+<ab>
+<lb />One needs to heat spike lavender oil &amp; as it begins to
+<lb />simmer, put in powdered sandarac gum so that it soon melts. And
+<lb />over a charcoal fire stir continuously until the sandarac
+<lb />is well melted, which you will know by taking a little of the said
+<lb />varnish on a plate, and if it is fatty when you handle
+<lb />it with a finger, it is ready. And for one lb
+<lb />of spike lavender oil, you will put five ounces of
+<lb />pulverized sandarac, although some only put in four
+<lb />ounces, but this is neither so good nor so fatty. This one is
+<lb />promptly dry. Frame makers, to avoid the trouble of polishing
+<lb />their ebony, varnish it with this, as do guitar makers.
+<lb />This is not as appropriate for panels as that of fine turpentine,
+<lb />though it is good for the moldings of panels. One did not use to
+<lb />varnish the landscape of a panel when linseed varnish was in use,
+<lb />because it yellowed the landscape. But with that of
+<lb />turpentine, one varnishes everywhere. You can put in
+<lb />pulverized mastic extracted in tears or otherwise, &amp; it will be
+<lb />more desiccative, in place of sandarac.
+</ab>
+<ab>
+<lb />If you want to varnish on plaster or a wall, first put on
+<lb />your very hot hide glue, because if were cold it
+<lb />would not penetrate the wall, &amp; when you would put your
+<lb />varnish on, it would come off.
+</ab>
+<ab>
+<lb />Varnish of spike lavender oil is not as appropriate for colors as
+<lb />that of turpentine, for spike lavender oil &lt;-makes them
+<lb />die-&gt; eats the colors since it is too
+<lb />penetrating.
+</ab>
+<ab>
+<lb />For removing varnish from an old panel that is yellowish &amp;
+<lb />varnishing it anew
+</ab>
+<ab>
+<lb />Take white soap &amp; sieved ashes&lt;-e-&gt;, &amp;
+<lb />soak both in water. And with a sponge, take the said
+<lb />ashes &amp; soap &amp; rub the panel with them. And as you
+<lb />see that the old varnish is removed, throw a
+<lb />bucket of water against the panel to clean it.
+<lb />Next put it for a quarter of an hour in the
+<lb />sun to make it dry and to revive the colors. Next, once the panel
+<lb />is dry, you can spread your turpentine varnish on it.
+</ab>
+<ab>
+<lb />Make sure the colors do not come off.
+</ab>
+<ab>
+<lb />
+</ab>
+
+<pb facs="#f011" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />Black varnish for sword guard, bands for trunks,
+<lb />&amp;c
+</ab>
+<ab>
+<lb />Take linseed oil or more cheaply, walnut
+<lb />oil, and rid it of grease with garlic &amp;
+<lb />&lt;-onions-&gt; +hog’s
+<lb />fennel, some also add bread crusts, which you will
+<lb />boil in it for a good quarter of an hour. Next, put
+<lb />in one lb of the oil thus boiled the size of a walnut of black
+<lb />pitch &amp; a double handful of grains of wheat, without
+<lb />removing the garlic &amp; onions, and let
+<lb />it boil together for a good quarter of an hour. And
+<lb />when the pitch is well melted &amp; when the oil has body,
+<lb />you can remove it from the fire. Then, to varnish, place your
+<lb />iron over a low charcoal fire &amp; apply your
+<lb />varnish with a feather or a brush.
+<lb />And when you see that it no longer smokes, it is done and your
+<lb />varnish is dry.
+</ab>
+<ab>
+<lb />For excellent black varnish, add two or three paternoster
+<lb />beads of jet among the rest.
+</ab>
+<ab>
+<lb />Some consider walnut oil better.
+</ab>
+<ab>
+<lb />If there is a lot of varnish, it needs to boil for at least
+<lb />half a day, for it is better the more it boils. It
+<lb />is dangerous if it catches fire, if it goes over the top, and is
+<lb />hard to extinguish. Make this therefore in a courtyard or an
+<lb />open space.
+</ab>
+<ab>
+<lb /> 
+</ab>
+<ab>
+<lb />In five or six lb of oil, one must put one lb
+<lb />of galipot, which costs 4 sous, &amp; some
+<lb />peeled garlic cloves. This varnish in and of
+<lb />itself is not black, but it blackens over the fire.
+</ab>
+<ab>
+<lb />See below, around the 3rd part of this book,
+<lb />after sands, in the chapter on furbishers.
+</ab>
+<ab>
+<lb />Black varnish without fire, without disassembling the
+<lb />harnesses or removing the bands from
+<lb />trunks
+</ab>
+<ab>
+<lb />Take varnish of spike lavender oil &amp; mix in
+<lb />soot black or lampblack, &amp; without fire it will mix in
+<lb />by itself. Varnish with a brush &amp; it will soon be
+<lb />dry. Turpentine varnish will be quite good, but it does not dry
+<lb />as soon.
+</ab>
+<ab>
+<lb />Varnish of iron engravers
+</ab>
+<ab>
+<lb />Take linseed oil or walnut oil
+<lb />&amp;, in place of black pitch, you will put in a little
+<lb />pitch resin, &amp; it needs to be cooked in the fashion of black
+<lb />varnish on fire. And for applying it, heat your iron &amp;
+<lb />give it only one layer of varnish, &amp; when it no longer
+<lb />smokes, it is dry. Next engrave with a steel point
+<lb />whatever you want. Next take salt &amp;
+<lb />verdigris &amp; mix as much of one as of the other in quite
+<lb />strong vinegar &amp; leave it for xx4 hours
+<lb />before using it, &amp; all will be tempered. Next spread some of this
+<lb />liquor or sauce on the engraved object with a sponge
+</ab>
+<ab>
+<lb />
+</ab>
+
+<pb facs="#f012" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />or linen &amp; leave it thus for xx4
+<lb />hours &amp; it will be engraved. But if you should
+<lb />want to engrave promptly, varnish all your work &amp; boil it in the
+<lb />said liquor, &amp; it will promptly engrave.
+</ab>
+<ab>
+<lb />Steel mirrors
+</ab>
+<ab>
+<lb />X They are called of steel because in times
+<lb />past they were commonly made of steel polished with
+<lb />emery putty. But more easily, various kinds are made
+<lb />with cuivre franc, which is rosette &amp;
+<lb />tin, because it is cast in a mold &amp; made
+<lb />round, concave, convex &amp; however one likes, to represent various
+<lb />forms.
+<lb />    
+</ab>
+<ab>
+<lb />So take half rosette copper &amp; half
+<lb />soft tin, that is to say fine, which has not yet been used.
+<lb />Put them in a crucible, &amp; first melt the copper
+<lb />well. And once it is well melted, put in the tin and mix
+<lb />together. Then cast in the mold, of white stone with no
+<lb />eyelets, &amp; anoint the mold with oil, &amp; let
+<lb />it be moderately warm. Then, having
+<lb />molded your mirror, you can polish it in this way.
+</ab>
+<ab>
+<lb />Set one of these in plaster in order that it holds firmly,
+<lb />&amp; then put the other one over it with thin sand in between,
+<lb />&amp; rub one against the other, whether it be concave or flat, &amp; thus you
+<lb />will polish two at once. And if you want to polish them on both sides,
+<lb />you only need to switch them, that is to say put the one that was
+<lb />polishing into the plaster &amp; the one that was in the
+<lb />plaster to polish. After having polished them with the
+<lb />arene you can smooth them with Venice tripoli, 
+<lb />which should not be sandy, &amp; next with
+<lb />putty. You polish with
+<lb />arene using water, but polishing with
+<lb />tripoli &amp; putty is done
+<lb />dry. Once polished, you can set it.
+</ab>
+<ab>
+<lb />Concave mirrors
+</ab>
+<ab>
+<lb />The concave mirror composed in the aforesaid form produces an
+<lb />endless number of pretty conceits which seem magic. If someone wants to see
+<lb />oneself from behind, it is necessary to place the concave
+<lb />mirror on the ground on its foot, &amp; let it be at a slant;
+<lb />next, look at it from one pace away. But if you
+<lb />look at it close up, it will represent you the right way up but
+<lb />with your face quite large &amp; the hairs of your
+<lb />beard as thick as
+</ab>
+<ab>
+<lb />
+</ab>
+
+<pb facs="#f013" />
+<ab>
+<lb />
+</ab>
+<ab>
+<lb />string &amp; will represent a nipple as large as a plate, and
+<lb />women can see the secret places that they do not
+<lb />want to show to surgeons. It casts the representation out of
+<lb />itself, and if you touch &lt;-the place-&gt; the eye of
+<lb />the representation with your finger, another finger
+<lb />will come against yours.
+</ab>
+<ab>
+<lb />You will make a light at night for someone quite far
+<lb />away, if you place the concave mirror behind a candle
+<lb />placed on the window. You will be able to read and write quite
+<lb />far from the candle if you place it behind the candle
+<lb />&amp; place &amp; turn the concavity toward you. If you put
+<lb />the mirror at the end of a table &amp; a
+<lb />candle on it, it will represent two lights on the
+<lb />table for you. To see what is happening on a street,
+<lb />shutter the window, whereby the more of it you can shut the
+<lb />better it will be. Make a hole at the lower one, as wide as your little
+<lb />finger, perfectly round, from one side to the other. Then
+<lb />place a sheet of paper on the window
+<lb />&amp; let the middle of the sheet be over the hole.
+<lb />Pierce the sheet in the same place as the hole &amp; the same
+<lb />size. After, place the concave face of the mirror toward the
+<lb />hole, &amp; it will represent to you all those who pass by in the
+<lb />street on the sheet of paper. Similarly with
+<lb />the pierced door of a closed room. You can make wavy ones
+<lb />&amp; triangular ones, in the fashion that Ptolemy describes, &amp;
+<lb />Archimedes. The concave one also sets fire to straw from
+<lb />quite far away, and lights a candle with the sun. Also, 
+<lb />it heats through the reverberation of fire.
+</ab>
+<ab>
+<lb />For bronzing in yellow and white
+</ab>
+<ab>
+<lb />Take looking-glass tin and melt it. On half a lb of
+<lb />this, put half an ounce of quicksilver, and remove it
+<lb />all at once from the fire &amp; grind it, and it will be like
+<lb />ash. &lt;-Grind-&gt; Wash it quite well in clean water.
+<lb />Next, grind it on marble &amp; temper it with water of
+<lb />&lt;-ret-&gt; hide glue. Next, apply to
+<lb />your wooden candlesticks &amp; any other work you like,
+<lb />&amp; burnish with the tooth. You can grind pin filings
+<lb />&amp; apply them with the said glue. 
+</ab>
+<ab>
+<lb />
+</ab>
+
+  </body>
       </text>
   </TEI>
