@@ -33,13 +33,13 @@ function processFile(filename, id) {
   let xmlStr = `<pb facs="#${id}" />\n`
 
   splitContents.forEach((section) => {
-    let sectionStr = '<ab>\n'
+    let sectionStr = `<div facs="#${id}"><ab>\n`
 
     section.split('\n').forEach((str) => {
       sectionStr += `<lb />${sanitize(str)}\n`
     })
 
-    sectionStr += '</ab>\n'
+    sectionStr += '</ab></div>\n'
 
     xmlStr += sectionStr
   })
