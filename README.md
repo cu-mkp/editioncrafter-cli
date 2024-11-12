@@ -32,7 +32,7 @@ The following commands are available to the EditionCrafter CLI. Note that you ma
 
 ```
 {
-    "targetPath": "myfile.xml",
+    "inputPath": "myfile.xml",
     "outputPath": ".",
     "baseUrl": "http://localhost:8080",
     "thumbnailWidth": 124,

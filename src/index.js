@@ -150,11 +150,28 @@ function displayHelp() {
   console.log('EditionCrafter responds to the following commands:')
   console.log('\tiiif:\tProcess the IIIF Manifest into a TEIDocument.')
   console.log('\t\tUsage: editioncrafter iiif [-i iiif_url] [-o output_path]\n')
+  console.log('\t\t Required parameters:')
+  console.log('\t\t\t-i iiif_url')
+  console.log('\t\t\t-o output_path')
+  console.log('\t\t Optional parameters:')
+  console.log('\t\t\t-t text_file_folder\n')
   console.log('\timages:\tProcess a list of images from a CSV file into a TEIDocument.')
   console.log('\t\tUsage: editioncrafter images [-i csv_path] [-o output_file]\n')
+  console.log('\t\tRequired parameters:')
+  console.log('\t\t\t-i csv_path')
+  console.log('\t\t\t-o output_file')
+  console.log('\t\tOptional parameters:')
+  console.log('\t\t\t-t text_file_folder\n')
   console.log('\tprocess:Process the TEI Document into a manifest, partials, and annotations.')
-  console.log('\t\tUsage: editioncrafter process [-i tei_file] [-o output_path] [-u base_url]\n')
-  console.log('\thelp:\tDisplays this help. ')
+  console.log('\t\tUsage: editioncrafter process [-i tei_file] [-o output_path]\n')
+  console.log('\t\tRequired parameters:')
+  console.log('\t\t\t-i tei_file')
+  console.log('\t\t\t-o output_path')
+  console.log('\t\tOptional parameters:')
+  console.log('\t\t\t-u base_url\n')
+  console.log('\thelp:\tDisplays this help.\n')
+  console.log('Options understood by all commands:')
+  console.log('\t-c or --config: Config file')
 }
 
 async function editionCrafterCLI() {
@@ -165,12 +182,7 @@ async function editionCrafterCLI() {
   else {
     try {
       await run(options)
-      if (options.mode === 'server') {
-        console.log('Edition Crafter started.')
-      }
-      else {
-        console.log('Edition Crafter finished.')
-      }
+      console.log('Edition Crafter finished.')
     }
     catch (err) {
       console.log(`${err}: ${err.stack}`)
