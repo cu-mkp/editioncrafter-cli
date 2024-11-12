@@ -13,9 +13,9 @@ function processTextFiles(dirPath) {
     xmls.push(processFile(`${path.join(dirPath, filename)}`, fileId))
   }
 
-  return `<body>
+  return `<body><div>
     ${xmls.join('\n')}
-  </body>`
+  </div></body>`
 }
 
 function sanitize(str) {
@@ -30,16 +30,17 @@ function sanitize(str) {
 function processFile(filename, id) {
   const contents = fs.readFileSync(filename).toString()
   const splitContents = contents.split(/\n{2,}/)
+
   let xmlStr = `<pb facs="#${id}" />\n`
 
   splitContents.forEach((section) => {
-    let sectionStr = `<div facs="#${id}"><ab>\n`
+    let sectionStr = `<ab>\n`
 
     section.split('\n').forEach((str) => {
       sectionStr += `<lb />${sanitize(str)}\n`
     })
 
-    sectionStr += '</ab></div>\n'
+    sectionStr += '</ab>\n'
 
     xmlStr += sectionStr
   })
