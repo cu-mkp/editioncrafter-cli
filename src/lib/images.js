@@ -1,4 +1,10 @@
-function getFacsString (sameAs, surfaceEls) {
+const defaultBody = `
+          <body>
+              <p>Modify xml:id as desired and replace this with your text.</p>
+          </body>
+`
+
+function getFacsString(sameAs, surfaceEls, body = defaultBody) {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <TEI xmlns="http://www.tei-c.org/ns/1.0">
       <teiHeader>
@@ -21,14 +27,12 @@ function getFacsString (sameAs, surfaceEls) {
           ${surfaceEls.join('')}
       </facsimile>
 
-      <text xml:id="transcription">
-          <body>
-              <p>Modify xml:id as desired and replace this with your text.</p>
-          </body>
+      <text xml:id="text">
+${body}
       </text>
   </TEI>`
 }
 
 module.exports = {
-  getFacsString
+  getFacsString,
 }
