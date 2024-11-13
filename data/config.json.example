@@ -6,6 +6,4 @@
     "inputPath": "",
     "outputPath": "",
     "baseUrl": "http://localhost:8080",
-    "thumbnailWidth": 124,
-    "thumbnailHeight": 192
 }

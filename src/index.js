@@ -93,9 +93,6 @@ function processArguments() {
   let options = parseOptions(args)
 
   if (options.mode === 'process') {
-    options.thumbnailHeight = 192
-    options.thumbnailWidth = 124
-
     if (!options.outputPath) {
       options.outputPath = '.'
     }
