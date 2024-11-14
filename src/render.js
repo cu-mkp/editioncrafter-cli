@@ -1,6 +1,7 @@
+import process from 'node:process'
 import structuredClone from '@ungap/structured-clone'
-import jsdom from 'jsdom'
 
+import jsdom from 'jsdom'
 import CETEI from './CETEI.js'
 import { buildPolygonSvg, buildSquareFragment } from './svg.js'
 import {
@@ -307,7 +308,29 @@ function parseSurfaces(doc, teiDocumentID) {
 }
 
 function validateTEIDoc(doc) {
-  // TODO needs to have exactly 1 facs. needs to be a valid xml doc
+  const numFacs = doc.querySelectorAll('facsimile').length
+
+  if (numFacs === 0) {
+    return 'Missing facsimile element.'
+  }
+
+  if (numFacs > 1) {
+    return 'Too many facsimile elements. There should be exactly one.'
+  }
+
+  const textEl = doc.querySelector('text')
+  const sourceDocEl = doc.querySelector('sourceDoc')
+
+  if (!textEl && !sourceDocEl) {
+    return 'The document must contain at least one text element and/or sourceDoc element.'
+  }
+
+  if (textEl) {
+    if (!textEl.querySelector('body > div')) {
+      return 'Text element must contain at least one div.'
+    }
+  }
+
   return 'ok'
 }
 
@@ -340,9 +363,13 @@ function renderResources(doc, htmlDoc) {
 function renderTEIDocument(xml, options) {
   const { baseUrl, teiDocumentID } = options
   const doc = new JSDOM(xml, { contentType: 'text/xml' }).window.document
+
   const status = validateTEIDoc(doc)
-  if (status !== 'ok')
-    return { error: status }
+
+  if (status !== 'ok') {
+    console.error(status)
+    process.exit(1)
+  }
 
   // render complete HTML
   const htmlDOM = new JSDOM()

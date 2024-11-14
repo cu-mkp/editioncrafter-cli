@@ -24,12 +24,7 @@ function processTEIDocument(options) {
   const xml = readFileSync(inputPath, 'utf8')
 
   const teiDoc = renderTEIDocument(xml, options)
-  if (teiDoc.error) {
-    console.log(teiDoc.error)
-  }
-  else {
-    serializeTEIDocument(teiDoc, outputPath)
-  }
+  serializeTEIDocument(teiDoc, outputPath)
 }
 
 async function run(options) {
