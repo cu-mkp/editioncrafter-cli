@@ -1,21 +1,27 @@
-const fs = require('node:fs')
-const path = require('node:path')
-const process = require('node:process')
-const version = require('../version')
+import { readFileSync } from 'node:fs'
+import { basename, join, resolve } from 'node:path'
+import { argv, cwd } from 'node:process'
+import { fileURLToPath } from 'node:url'
+import { marked } from 'marked'
 
-const { processIIIF } = require('./iiif')
-const { processImagesCsv } = require('./images')
-const { renderTEIDocument } = require('./render')
-const { serializeTEIDocument } = require('./serialize')
+import { markedTerminal } from 'marked-terminal'
+import { version } from '../version.js'
+
+import { processIIIF } from './iiif.js'
+import { processImagesCsv } from './images.js'
+import { renderTEIDocument } from './render.js'
+import { serializeTEIDocument } from './serialize.js'
+
+marked.use(markedTerminal())
 
 // For paths provided by the user
 function processUserPath(input_path) {
-  return path.resolve(process.cwd(), input_path)
+  return resolve(cwd(), input_path)
 }
 
 function processTEIDocument(options) {
   const { inputPath, outputPath } = options
-  const xml = fs.readFileSync(inputPath, 'utf8')
+  const xml = readFileSync(inputPath, 'utf8')
 
   const teiDoc = renderTEIDocument(xml, options)
   if (teiDoc.error) {
@@ -40,7 +46,7 @@ async function run(options) {
 
 function getResourceIDFromPath(inputPath) {
   if (inputPath.toLowerCase().endsWith('.xml')) {
-    return path.basename(inputPath, '.xml').trim()
+    return basename(inputPath, '.xml').trim()
   }
   else {
     return null
@@ -82,7 +88,7 @@ function parseOptions(args) {
 }
 
 function processArguments() {
-  const args = process.argv
+  const args = argv
   const optForHelp = { mode: 'help' }
 
   // Make sure the user has passed in at least one argument
@@ -105,8 +111,8 @@ function processArguments() {
     if (options.configPath) {
       const configPath = processUserPath(options.configPath)
       try {
-        fs.readFileSync(configPath)
-        options = { ...options, ...JSON.parse(fs.readFileSync(configPath)) }
+        readFileSync(configPath)
+        options = { ...options, ...JSON.parse(readFileSync(configPath)) }
       }
       catch {
         console.log(`Unable to parse config file: ${configPath}.`)
@@ -142,33 +148,8 @@ function processArguments() {
 }
 
 function displayHelp() {
-  console.log(`EditionCrafter v${version}\n`)
-  console.log(`Usage: editioncrafter <command> [parameters]\n`)
-  console.log('EditionCrafter responds to the following commands:')
-  console.log('\tiiif:\tProcess the IIIF Manifest into a TEIDocument.')
-  console.log('\t\tUsage: editioncrafter iiif [-i iiif_url] [-o output_path]\n')
-  console.log('\t\t Required parameters:')
-  console.log('\t\t\t-i iiif_url')
-  console.log('\t\t\t-o output_path')
-  console.log('\t\t Optional parameters:')
-  console.log('\t\t\t-t text_file_folder\n')
-  console.log('\timages:\tProcess a list of images from a CSV file into a TEIDocument.')
-  console.log('\t\tUsage: editioncrafter images [-i csv_path] [-o output_file]\n')
-  console.log('\t\tRequired parameters:')
-  console.log('\t\t\t-i csv_path')
-  console.log('\t\t\t-o output_file')
-  console.log('\t\tOptional parameters:')
-  console.log('\t\t\t-t text_file_folder\n')
-  console.log('\tprocess:Process the TEI Document into a manifest, partials, and annotations.')
-  console.log('\t\tUsage: editioncrafter process [-i tei_file] [-o output_path]\n')
-  console.log('\t\tRequired parameters:')
-  console.log('\t\t\t-i tei_file')
-  console.log('\t\t\t-o output_path')
-  console.log('\t\tOptional parameters:')
-  console.log('\t\t\t-u base_url\n')
-  console.log('\thelp:\tDisplays this help.\n')
-  console.log('Options understood by all commands:')
-  console.log('\t-c or --config: Config file')
+  const helpFile = readFileSync(fileURLToPath(join(import.meta.url, '..', '..', 'docs.md'))).toString()
+  console.log(marked.parse(helpFile))
 }
 
 async function editionCrafterCLI() {
@@ -187,4 +168,4 @@ async function editionCrafterCLI() {
   }
 }
 
-module.exports.editionCrafterCLI = editionCrafterCLI
+export default editionCrafterCLI

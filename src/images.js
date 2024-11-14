@@ -1,8 +1,8 @@
-const fs = require('node:fs')
-const { parse } = require('csv-parse')
-const probe = require('probe-image-size')
-const { getFacsString } = require('./lib/images')
-const { processTextFiles } = require('./text')
+import { createReadStream, writeFileSync } from 'node:fs'
+import { parse } from 'csv-parse'
+import probe from 'probe-image-size'
+import { getFacsString } from './lib/images.js'
+import { processTextFiles } from './text.js'
 
 async function processImagesCsv(options) {
   const surfaceEls = await readRows(options.inputPath)
@@ -13,7 +13,7 @@ async function processImagesCsv(options) {
 
   const teiString = getFacsString('', surfaceEls, bodyTei)
 
-  fs.writeFileSync(options.outputPath, teiString)
+  writeFileSync(options.outputPath, teiString)
 }
 
 // positions in the rows enumerated here for clarity
@@ -22,8 +22,7 @@ const LABEL_IDX = 1
 const ID_IDX = 2
 
 async function readRows(path) {
-  const rows = fs
-    .createReadStream(path)
+  const rows = createReadStream(path)
     .pipe(parse({
       from: 2, // skip header line
     }))
@@ -46,4 +45,5 @@ async function readRows(path) {
   return surfaceEls
 }
 
-module.exports.processImagesCsv = processImagesCsv
+const _processImagesCsv = processImagesCsv
+export { _processImagesCsv as processImagesCsv }

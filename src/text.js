@@ -1,16 +1,16 @@
-const fs = require('node:fs')
-const path = require('node:path')
+import { readdirSync, readFileSync } from 'node:fs'
+import { join } from 'node:path'
 
 function processTextFiles(dirPath) {
   const xmls = []
-  for (const filename of fs.readdirSync(dirPath)) {
+  for (const filename of readdirSync(dirPath)) {
     if (!filename.endsWith('.txt')) {
       continue
     }
 
     const fileId = filename.split('.')[0]
 
-    xmls.push(processFile(`${path.join(dirPath, filename)}`, fileId))
+    xmls.push(processFile(`${join(dirPath, filename)}`, fileId))
   }
 
   return `<body><div>
@@ -28,7 +28,7 @@ function sanitize(str) {
 }
 
 function processFile(filename, id) {
-  const contents = fs.readFileSync(filename).toString()
+  const contents = readFileSync(filename).toString()
   const splitContents = contents.split(/\n{2,}/)
 
   let xmlStr = `<pb facs="#${id}" />\n`
@@ -48,4 +48,5 @@ function processFile(filename, id) {
   return xmlStr
 }
 
-module.exports.processTextFiles = processTextFiles
+const _processTextFiles = processTextFiles
+export { _processTextFiles as processTextFiles }

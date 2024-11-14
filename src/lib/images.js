@@ -4,7 +4,7 @@ const defaultBody = `
           </body>
 `
 
-function getFacsString(sameAs, surfaceEls, body = defaultBody) {
+export function getFacsString(sameAs, surfaceEls, body = defaultBody) {
   return `<?xml version="1.0" encoding="UTF-8"?>
   <TEI xmlns="http://www.tei-c.org/ns/1.0">
       <teiHeader>
@@ -31,8 +31,4 @@ function getFacsString(sameAs, surfaceEls, body = defaultBody) {
 ${body}
       </text>
   </TEI>`
-}
-
-module.exports = {
-  getFacsString,
 }

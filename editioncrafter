@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-const { editionCrafterCLI } = require('./src/index');
+const editionCrafterCLI = require('./src/index.js');
 
 editionCrafterCLI();
