@@ -1,4 +1,5 @@
 import { writeFileSync } from 'node:fs'
+import process from 'node:process'
 import axios from 'axios'
 import { getFacsString } from './lib/images.js'
 import { processTextFiles } from './text.js'
@@ -37,6 +38,14 @@ function facsTemplate(facsData, textPath) {
   return getFacsString(sameAs, surfaceEls, bodyTei)
 };
 
+function validateManifest(contents) {
+  if (!contents['@context']) {
+    return 'Missing @context property.'
+  }
+
+  return 'ok'
+}
+
 // FUNCTION TO GET THE IIIF DATA FROM THE PROVIDED URL AND PASS IT TO THE APPROPRIATE PARSERS
 
 async function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID = 0) {
@@ -58,6 +67,13 @@ async function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID 
 // THESE FIVE FUNCTIONS TAKE IN THE MANIFEST DATA AND RETURN A JSON OBJECT WITH THE FACSIMILE DATA
 
 function parseIIIFPresentation(presentation, nextSurfaceID) {
+  const status = validateManifest(presentation)
+
+  if (status !== 'ok') {
+    console.error(`Manifest validation error: ${status}`)
+    process.exit(1)
+  }
+
   const context = presentation['@context']
   if (context.includes('http://iiif.io/api/presentation/2/context.json')) {
     return parsePresentation2(presentation, nextSurfaceID)
@@ -65,7 +81,7 @@ function parseIIIFPresentation(presentation, nextSurfaceID) {
   else if (context.includes('http://iiif.io/api/presentation/3/context.json')) {
     return parsePresentation3(presentation, nextSurfaceID)
   }
-  throw new Error('Expected IIIF Presentation API context 2.')
+  throw new Error('Unknown presentation context.')
 };
 
 function parsePresentation2(presentation, nextSurfaceID) {
