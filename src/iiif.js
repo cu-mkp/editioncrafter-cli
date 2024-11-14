@@ -129,17 +129,32 @@ function manifestToFacsimile3(manifestData, nextSurfaceID) {
   for (const canvas of canvases) {
     if (canvas.type !== 'Canvas')
       throw new Error('Expected a Canvas item.')
+
     const canvasURI = canvas.id
+
+    if (!canvas.items || canvas.items.length === 0) {
+      throw new Error('Missing items in canvas')
+    }
+
     const annotationPage = canvas.items[0]
+
     const { width: canvasWidth, height: canvasHeight } = canvas
-    if (!annotationPage || annotationPage.type !== 'AnnotationPage')
+
+    if (!annotationPage || annotationPage.type !== 'AnnotationPage') {
       throw new Error('Expected an Annotation Page item.')
+    }
+
     const annotations = annotationPage.items
     for (const annotation of annotations) {
       if (annotation.type !== 'Annotation')
         throw new Error('Expected an Annotation item.')
       if (annotation.motivation === 'painting' && annotation.body && annotation.body.type === 'Image') {
         const { body } = annotation
+
+        if (!body) {
+          throw new Error('Expected annotation to have a body.')
+        }
+
         // width and height might be on Annotation or the Canvas
         const width = Number.isNaN(body.width) ? canvasWidth : body.width
         const height = Number.isNaN(body.height) ? canvasHeight : body.height
@@ -157,6 +172,11 @@ function manifestToFacsimile3(manifestData, nextSurfaceID) {
         else {
           imageAPIURL = val('id', body)
         }
+
+        if (canvas.label) {
+          throw new Error('Expected canvas to have a label.')
+        }
+
         let localLabels = str(canvas.label)
         const id = generateOrdinalID('f', n)
         localLabels = !localLabels ? { none: [id] } : localLabels
