@@ -35,8 +35,6 @@ The following commands are available to the EditionCrafter CLI. Note that you ma
     "inputPath": "myfile.xml",
     "outputPath": ".",
     "baseUrl": "http://localhost:8080",
-    "thumbnailWidth": 124,
-    "thumbnailHeight": 192
 }
 ```
 

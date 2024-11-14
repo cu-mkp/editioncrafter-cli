@@ -144,7 +144,7 @@ function renderTextAnnotationPage(baseURI, canvasID, surface, apIndex) {
 }
 
 // Builds a painting annotation for the `items` array
-function buildItemAnnotation(canvas, surface, thumbnailWidth, thumbnailHeight) {
+function buildItemAnnotation(canvas, surface) {
   const annotation = structuredClone(annotationTemplate)
   const { imageURL, width, height } = surface
 
@@ -161,12 +161,6 @@ function buildItemAnnotation(canvas, surface, thumbnailWidth, thumbnailHeight) {
   if (surface.mimeType === 'application/json') {
     annotation.body.service = [{
       id: imageURL,
-      type: 'ImageService2',
-      profile: 'http://iiif.io/api/image/2/level2.json',
-    }]
-    annotation.body.thumbnail = [{
-      id: `${imageURL}/full/${thumbnailWidth},${thumbnailHeight}/0/default.jpg`,
-      format: 'image/jpeg',
       type: 'ImageService2',
       profile: 'http://iiif.io/api/image/2/level2.json',
     }]
@@ -219,7 +213,7 @@ function buildTagAnnotations(surface) {
   })
 }
 
-function renderManifest(manifestLabel, baseURI, surfaces, thumbnailWidth, thumbnailHeight, glossaryURL) {
+function renderManifest(manifestLabel, baseURI, surfaces, glossaryURL) {
   const manifest = structuredClone(manifestTemplate)
   manifest.id = `${baseURI}/iiif/manifest.json`
   manifest.label = { en: [manifestLabel] }
@@ -234,7 +228,7 @@ function renderManifest(manifestLabel, baseURI, surfaces, thumbnailWidth, thumbn
     canvas.label = { none: [label] }
     canvas.items[0].id = `${canvas.id}/annotationpage/0`
 
-    const itemAnnotation = buildItemAnnotation(canvas, surface, thumbnailWidth, thumbnailHeight)
+    const itemAnnotation = buildItemAnnotation(canvas, surface)
 
     canvas.items[0].items.push(itemAnnotation)
 
@@ -343,7 +337,7 @@ function renderResources(doc, htmlDoc) {
 }
 
 function renderTEIDocument(xml, options) {
-  const { baseUrl, teiDocumentID, thumbnailWidth, thumbnailHeight } = options
+  const { baseUrl, teiDocumentID } = options
   const doc = new JSDOM(xml, { contentType: 'text/xml' }).window.document
   const status = validateTEIDoc(doc)
   if (status !== 'ok')
@@ -363,7 +357,7 @@ function renderTEIDocument(xml, options) {
   const documentURL = `${baseUrl}${baseUrl !== '/' ? '/' : ''}${teiDocumentID}`
   // TODO temporary hardcode
   const glossaryURL = 'https://cu-mkp.github.io/editioncrafter-data/fr640_3r-3v-example/glossary.json'
-  const manifest = renderManifest(teiDocumentID, documentURL, surfaces, thumbnailWidth, thumbnailHeight, glossaryURL)
+  const manifest = renderManifest(teiDocumentID, documentURL, surfaces, glossaryURL)
 
   return {
     id: teiDocumentID,
