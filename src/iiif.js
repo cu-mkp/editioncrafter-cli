@@ -72,8 +72,7 @@ function parseIIIFPresentation(presentation, nextSurfaceID) {
   const status = validateManifest(presentation)
 
   if (status !== 'ok') {
-    console.error(`Manifest validation error: ${status}`)
-    process.exit(1)
+    throw new Error(`Manifest validation error: ${status}`)
   }
 
   const context = presentation['@context']
@@ -177,6 +176,7 @@ function manifestToFacsimile3(manifestData, nextSurfaceID) {
 
         let localLabels = str(canvas.label)
         const id = generateOrdinalID('f', n)
+
         localLabels = !localLabels ? { none: [id] } : localLabels
         surfaceIDs.push(id)
         n++ // page count
@@ -225,8 +225,18 @@ function manifestToFacsimile2(manifestData, nextSurfaceID) {
   for (const canvas of canvases) {
     const { images, width, height } = canvas
     const canvasURI = val('id', canvas)
+
+    if (!Array.isArray(images) || images.length === 0) {
+      throw new Error('Expected canvas to contain at least one image.')
+    }
+
     const image = images[0]
     const { resource } = image
+
+    if (!resource || !resource.service) {
+      throw new Error('Expected image resource to contain a service object.')
+    }
+
     const imageAPIURL = resource.service ? val('id', resource.service) : val('id', resource)
     const localLabels = str(canvas.label)
     const id = generateOrdinalID('f', n)
