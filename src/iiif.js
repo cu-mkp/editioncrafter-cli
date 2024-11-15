@@ -55,12 +55,14 @@ async function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID 
       const iiifTree = parseIIIFPresentation(resp.data, nextSurfaceID)
       onSuccess(iiifTree)
     }
-    catch (error) {
-      throw new Error(`Unable to parse IIIF manifest: '${error}`)
+    catch (e) {
+      console.error(`Unable to parse IIIF manifest: '${e.message}`)
+      process.exit(1)
     }
   }
-  catch {
-    throw new Error(`Unable to load IIIF manifest.`)
+  catch (e) {
+    console.error(`Unable to load IIIF manifest: ${e.message}`)
+    process.exit(1)
   }
 };
 
@@ -171,10 +173,6 @@ function manifestToFacsimile3(manifestData, nextSurfaceID) {
         }
         else {
           imageAPIURL = val('id', body)
-        }
-
-        if (canvas.label) {
-          throw new Error('Expected canvas to have a label.')
         }
 
         let localLabels = str(canvas.label)
@@ -400,12 +398,7 @@ function parseSeeAlso2(seeAlso) {
 }
 
 function parseFormat(rend) {
-  let format = rend.format === 'text/plain' ? 'text' : rend.format === 'application/tei+xml' ? 'tei' : null
-
-  if (!format && rend.profile === fromThePageTEIXML) {
-    format = 'tei'
-  }
-  return format
+  return rend.format === 'text/plain' ? 'text' : rend.format === 'application/tei+xml' ? 'tei' : null
 }
 
 function getLocalString(values, lang) {
