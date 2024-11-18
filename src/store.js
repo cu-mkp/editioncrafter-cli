@@ -1,12 +1,12 @@
-const fs = require('node:fs')
-const jsdom = require('jsdom')
-const { initArchivEngine } = require('./archivengine')
-const { getResources } = require('./archivengine/resource')
+import { readFileSync } from 'node:fs'
+import jsdom from 'jsdom'
+import { format } from 'prettier'
+import { initArchivEngine } from './archivengine.js'
+import { getResources } from './archivengine/resource.js'
+
+import { renderTEIDocument } from './render.js'
 
 const { JSDOM } = jsdom
-const prettier = require('prettier')
-
-const { renderTEIDocument } = require('./render')
 
 const teiDocuments = {}
 
@@ -14,7 +14,7 @@ const teiDocuments = {}
 function loadTEIDocuments(teiDocumentPaths, options) {
   for (const teiDocumentID of Object.keys(teiDocumentPaths)) {
     const teiDocumentPath = teiDocumentPaths[teiDocumentID]
-    const xml = fs.readFileSync(teiDocumentPath, 'utf8')
+    const xml = readFileSync(teiDocumentPath, 'utf8')
     const teiDoc = renderTEIDocument(xml, { teiDocumentID, ...options })
     teiDocuments[teiDoc.id] = teiDoc
   }
@@ -76,7 +76,7 @@ function processResources(resourceEntries, resourceID, renderOptions) {
 }
 
 function prettyXML(xml) {
-  return prettier.format(xml, { parser: 'html' })
+  return format(xml, { parser: 'html' })
 }
 
 function processIDMap(idMap) {
@@ -110,5 +110,7 @@ async function initStore(options) {
   }
 }
 
-module.exports.initStore = initStore
-module.exports.loadTEIDocument = loadTEIDocument
+const _initStore = initStore
+export { _initStore as initStore }
+const _loadTEIDocument = loadTEIDocument
+export { _loadTEIDocument as loadTEIDocument }

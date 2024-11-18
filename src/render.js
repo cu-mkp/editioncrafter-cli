@@ -1,15 +1,16 @@
-const jsdom = require('jsdom')
+import structuredClone from '@ungap/structured-clone'
+import jsdom from 'jsdom'
+
+import CETEI from './CETEI.js'
+import { buildPolygonSvg, buildSquareFragment } from './svg.js'
+import {
+  annotationPageTemplate,
+  annotationTemplate,
+  canvasTemplate,
+  manifestTemplate,
+} from './templates.js'
 
 const { JSDOM } = jsdom
-const { CETEI } = require('./CETEI')
-
-const { buildSquareFragment, buildPolygonSvg } = require('./svg')
-const annotationTemplate = require('./templates/annotation.json')
-const annotationPageTemplate = require('./templates/annotationPage.json')
-const canvasTemplate = require('./templates/canvas.json')
-const manifestTemplate = require('./templates/manifest.json')
-
-const structuredClone = require('@ungap/structured-clone').default
 
 // Profile ID for EditionCrafter text partials
 const textPartialResourceProfileID = 'https://github.com/cu-mkp/editioncrafter-project/text-partial-resource.md'
@@ -369,4 +370,5 @@ function renderTEIDocument(xml, options) {
   }
 }
 
-module.exports.renderTEIDocument = renderTEIDocument
+const _renderTEIDocument = renderTEIDocument
+export { _renderTEIDocument as renderTEIDocument }

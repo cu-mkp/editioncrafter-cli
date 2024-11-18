@@ -1,4 +1,4 @@
-const fs = require('node:fs')
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs'
 
 function writeResources(resources, teiDocPath) {
   for (const resourceID of Object.keys(resources)) {
@@ -6,19 +6,19 @@ function writeResources(resources, teiDocPath) {
     if (resource.xml) {
       const resourceDir = `${teiDocPath}/tei/${resourceID}`
       dirExists(resourceDir)
-      fs.writeFileSync(`${resourceDir}/index.xml`, resource.xml)
+      writeFileSync(`${resourceDir}/index.xml`, resource.xml)
     }
     if (resource.html) {
       const resourceDir = `${teiDocPath}/html/${resourceID}`
       dirExists(resourceDir)
-      fs.writeFileSync(`${resourceDir}/index.html`, resource.html)
+      writeFileSync(`${resourceDir}/index.html`, resource.html)
     }
   }
 }
 
 function writeManifest(manifest, teiDocPath) {
   const iiifPath = `${teiDocPath}/iiif/manifest.json`
-  fs.writeFileSync(iiifPath, manifest)
+  writeFileSync(iiifPath, manifest)
 }
 
 function writePartials(surfaces, teiDocPath) {
@@ -29,22 +29,22 @@ function writePartials(surfaces, teiDocPath) {
       const xml = xmls[id]
       dirExists(`${teiDocPath}/tei/${id}`)
       const xmlPath = `${teiDocPath}/tei/${id}/${surfaceID}.xml`
-      fs.writeFileSync(xmlPath, xml)
+      writeFileSync(xmlPath, xml)
     }
 
     for (const id of Object.keys(htmls)) {
       const html = htmls[id]
       dirExists(`${teiDocPath}/html/${id}`)
       const htmlPath = `${teiDocPath}/html/${id}/${surfaceID}.html`
-      fs.writeFileSync(htmlPath, html)
+      writeFileSync(htmlPath, html)
     }
   }
 }
 
 function dirExists(dir) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir)
-    if (!fs.existsSync(dir)) {
+  if (!existsSync(dir)) {
+    mkdirSync(dir)
+    if (!existsSync(dir)) {
       throw `ERROR: ${dir} not found and unable to create it.`
     }
   }
@@ -63,14 +63,15 @@ function serializeTEIDocument(teiDoc, outputPath) {
   const { html, xml, resources, manifest, surfaces } = teiDoc
 
   // render complete TEI
-  fs.writeFileSync(`${teiDocPath}/tei/index.xml`, xml)
+  writeFileSync(`${teiDocPath}/tei/index.xml`, xml)
 
   // render complete HTML
-  fs.writeFileSync(`${teiDocPath}/html/index.html`, html)
+  writeFileSync(`${teiDocPath}/html/index.html`, html)
 
   writeResources(resources, teiDocPath)
   writeManifest(manifest, teiDocPath)
   writePartials(surfaces, teiDocPath)
 }
 
-module.exports.serializeTEIDocument = serializeTEIDocument
+const _serializeTEIDocument = serializeTEIDocument
+export { _serializeTEIDocument as serializeTEIDocument }

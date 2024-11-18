@@ -1,7 +1,7 @@
-const fs = require('node:fs')
-const axios = require('axios')
-const { getFacsString } = require('./lib/images')
-const { processTextFiles } = require('./text')
+import { writeFileSync } from 'node:fs'
+import axios from 'axios'
+import { getFacsString } from './lib/images.js'
+import { processTextFiles } from './text.js'
 
 // THIS IS WHERE WE CREATE THE ACTUAL TEI DOCUMENT STRING FROM THE FACSIMILE JSON DATA
 
@@ -229,7 +229,7 @@ function manifestToFacsimile2(manifestData, nextSurfaceID) {
 async function processIIIF(options) {
   const onSuccess = (data) => {
     const teiString = facsTemplate(data, options.textPath)
-    fs.writeFileSync(options.outputPath, teiString)
+    writeFileSync(options.outputPath, teiString)
   }
   await importPresentationEndpoint(options.inputPath, onSuccess)
 };
@@ -421,4 +421,5 @@ function parseMetadata(manifestID, manifestLabel) {
   }
 }
 
-module.exports.processIIIF = processIIIF
+const _processIIIF = processIIIF
+export { _processIIIF as processIIIF }

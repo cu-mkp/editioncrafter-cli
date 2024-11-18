@@ -704,5 +704,4 @@ class CETEI {
   }
 }
 
-// EXPORTS /////////////
-module.exports.CETEI = CETEI
+export default CETEI
