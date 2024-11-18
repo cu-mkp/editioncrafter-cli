@@ -17,14 +17,14 @@ function facsTemplate(facsData, textPath) {
 
     if (type === 'iiif') {
       surfaceEls.push(
-        `<surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}" sameAs="${canvasURI}" >${labelEls}<graphic mimeType="application/json" url="${imageAPIURL}"/>${zoneEls}</surface>`,
+        `          <surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}" sameAs="${canvasURI}" >${labelEls}<graphic mimeType="application/json" url="${imageAPIURL}"/>${zoneEls}</surface>\n`,
       )
     }
     else {
       const ext = getExtensionForMIMEType(mimeType)
       const filename = `${id}.${ext}`
       surfaceEls.push(
-        `<surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}">${labelEls}<graphic sameAs="${resourceEntryID}" mimeType="${mimeType}" url="${filename}"/>${zoneEls}</surface>`,
+        `          <surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}">${labelEls}<graphic sameAs="${resourceEntryID}" mimeType="${mimeType}" url="${filename}"/>${zoneEls}</surface>\n`,
       )
     }
   }
@@ -124,6 +124,18 @@ function manifestToFacsimile3(manifestData, nextSurfaceID) {
   const manifestID = val('id', manifestData)
   const manifestLabel = str(manifestData.label)
 
+  if (!canvases || canvases.length === 0) {
+    throw new Error('Expected manifest to contain at least one canvas.')
+  }
+
+  if (!manifestLabel) {
+    throw new Error('Expected manifest to have a label.')
+  }
+
+  if (!manifestID) {
+    throw new Error('Expected manifest to have an ID.')
+  }
+
   const surfaceIDs = []
   const surfaces = []
   let n = nextSurfaceID
@@ -214,8 +226,24 @@ function manifestToFacsimile2(manifestData, nextSurfaceID) {
   const manifestID = val('id', manifestData)
   const manifestLabel = str(manifestData.label)
 
+  if (!sequences || sequences.length === 0) {
+    throw new Error('Expected manifest to contain at least one sequence.')
+  }
+
+  if (!manifestLabel) {
+    throw new Error('Expected manifest to have a label.')
+  }
+
+  if (!manifestID) {
+    throw new Error('Expected manifest to have an ID.')
+  }
+
   const sequence = sequences[0]
   const { canvases } = sequence
+
+  if (!canvases || canvases.length === 0) {
+    throw new Error('Expected sequence to contain at least one canvas.')
+  }
 
   const texts = sequence.rendering ? gatherRenderings2(sequence.rendering) : []
 
