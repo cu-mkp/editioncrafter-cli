@@ -1,4 +1,5 @@
 import { writeFileSync } from 'node:fs'
+import process from 'node:process'
 import axios from 'axios'
 import { getFacsString } from './lib/images.js'
 import { processTextFiles } from './text.js'
@@ -16,14 +17,14 @@ function facsTemplate(facsData, textPath) {
 
     if (type === 'iiif') {
       surfaceEls.push(
-        `<surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}" sameAs="${canvasURI}" >${labelEls}<graphic mimeType="application/json" url="${imageAPIURL}"/>${zoneEls}</surface>`,
+        `          <surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}" sameAs="${canvasURI}" >${labelEls}<graphic mimeType="application/json" url="${imageAPIURL}"/>${zoneEls}</surface>\n`,
       )
     }
     else {
       const ext = getExtensionForMIMEType(mimeType)
       const filename = `${id}.${ext}`
       surfaceEls.push(
-        `<surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}">${labelEls}<graphic sameAs="${resourceEntryID}" mimeType="${mimeType}" url="${filename}"/>${zoneEls}</surface>`,
+        `          <surface xml:id="${id}" ulx="0" uly="0" lrx="${width}" lry="${height}">${labelEls}<graphic sameAs="${resourceEntryID}" mimeType="${mimeType}" url="${filename}"/>${zoneEls}</surface>\n`,
       )
     }
   }
@@ -37,6 +38,14 @@ function facsTemplate(facsData, textPath) {
   return getFacsString(sameAs, surfaceEls, bodyTei)
 };
 
+function validateManifest(contents) {
+  if (!contents['@context']) {
+    return 'Missing @context property.'
+  }
+
+  return 'ok'
+}
+
 // FUNCTION TO GET THE IIIF DATA FROM THE PROVIDED URL AND PASS IT TO THE APPROPRIATE PARSERS
 
 async function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID = 0) {
@@ -46,18 +55,26 @@ async function importPresentationEndpoint(manifestURL, onSuccess, nextSurfaceID 
       const iiifTree = parseIIIFPresentation(resp.data, nextSurfaceID)
       onSuccess(iiifTree)
     }
-    catch (error) {
-      throw new Error(`Unable to parse IIIF manifest: '${error}`)
+    catch (e) {
+      console.error(`Unable to parse IIIF manifest: '${e.message}`)
+      process.exit(1)
     }
   }
-  catch {
-    throw new Error(`Unable to load IIIF manifest.`)
+  catch (e) {
+    console.error(`Unable to load IIIF manifest: ${e.message}`)
+    process.exit(1)
   }
 };
 
 // THESE FIVE FUNCTIONS TAKE IN THE MANIFEST DATA AND RETURN A JSON OBJECT WITH THE FACSIMILE DATA
 
 function parseIIIFPresentation(presentation, nextSurfaceID) {
+  const status = validateManifest(presentation)
+
+  if (status !== 'ok') {
+    throw new Error(`Manifest validation error: ${status}`)
+  }
+
   const context = presentation['@context']
   if (context.includes('http://iiif.io/api/presentation/2/context.json')) {
     return parsePresentation2(presentation, nextSurfaceID)
@@ -65,7 +82,7 @@ function parseIIIFPresentation(presentation, nextSurfaceID) {
   else if (context.includes('http://iiif.io/api/presentation/3/context.json')) {
     return parsePresentation3(presentation, nextSurfaceID)
   }
-  throw new Error('Expected IIIF Presentation API context 2.')
+  throw new Error('Unknown presentation context.')
 };
 
 function parsePresentation2(presentation, nextSurfaceID) {
@@ -107,23 +124,50 @@ function manifestToFacsimile3(manifestData, nextSurfaceID) {
   const manifestID = val('id', manifestData)
   const manifestLabel = str(manifestData.label)
 
+  if (!canvases || canvases.length === 0) {
+    throw new Error('Expected manifest to contain at least one canvas.')
+  }
+
+  if (!manifestLabel) {
+    throw new Error('Expected manifest to have a label.')
+  }
+
+  if (!manifestID) {
+    throw new Error('Expected manifest to have an ID.')
+  }
+
   const surfaceIDs = []
   const surfaces = []
   let n = nextSurfaceID
   for (const canvas of canvases) {
     if (canvas.type !== 'Canvas')
       throw new Error('Expected a Canvas item.')
+
     const canvasURI = canvas.id
+
+    if (!canvas.items || canvas.items.length === 0) {
+      throw new Error('Missing items in canvas')
+    }
+
     const annotationPage = canvas.items[0]
+
     const { width: canvasWidth, height: canvasHeight } = canvas
-    if (!annotationPage || annotationPage.type !== 'AnnotationPage')
+
+    if (!annotationPage || annotationPage.type !== 'AnnotationPage') {
       throw new Error('Expected an Annotation Page item.')
+    }
+
     const annotations = annotationPage.items
     for (const annotation of annotations) {
       if (annotation.type !== 'Annotation')
         throw new Error('Expected an Annotation item.')
       if (annotation.motivation === 'painting' && annotation.body && annotation.body.type === 'Image') {
         const { body } = annotation
+
+        if (!body) {
+          throw new Error('Expected annotation to have a body.')
+        }
+
         // width and height might be on Annotation or the Canvas
         const width = Number.isNaN(body.width) ? canvasWidth : body.width
         const height = Number.isNaN(body.height) ? canvasHeight : body.height
@@ -141,8 +185,10 @@ function manifestToFacsimile3(manifestData, nextSurfaceID) {
         else {
           imageAPIURL = val('id', body)
         }
+
         let localLabels = str(canvas.label)
         const id = generateOrdinalID('f', n)
+
         localLabels = !localLabels ? { none: [id] } : localLabels
         surfaceIDs.push(id)
         n++ // page count
@@ -180,8 +226,24 @@ function manifestToFacsimile2(manifestData, nextSurfaceID) {
   const manifestID = val('id', manifestData)
   const manifestLabel = str(manifestData.label)
 
+  if (!sequences || sequences.length === 0) {
+    throw new Error('Expected manifest to contain at least one sequence.')
+  }
+
+  if (!manifestLabel) {
+    throw new Error('Expected manifest to have a label.')
+  }
+
+  if (!manifestID) {
+    throw new Error('Expected manifest to have an ID.')
+  }
+
   const sequence = sequences[0]
   const { canvases } = sequence
+
+  if (!canvases || canvases.length === 0) {
+    throw new Error('Expected sequence to contain at least one canvas.')
+  }
 
   const texts = sequence.rendering ? gatherRenderings2(sequence.rendering) : []
 
@@ -191,8 +253,18 @@ function manifestToFacsimile2(manifestData, nextSurfaceID) {
   for (const canvas of canvases) {
     const { images, width, height } = canvas
     const canvasURI = val('id', canvas)
+
+    if (!Array.isArray(images) || images.length === 0) {
+      throw new Error('Expected canvas to contain at least one image.')
+    }
+
     const image = images[0]
     const { resource } = image
+
+    if (!resource || !resource.service) {
+      throw new Error('Expected image resource to contain a service object.')
+    }
+
     const imageAPIURL = resource.service ? val('id', resource.service) : val('id', resource)
     const localLabels = str(canvas.label)
     const id = generateOrdinalID('f', n)
@@ -364,12 +436,7 @@ function parseSeeAlso2(seeAlso) {
 }
 
 function parseFormat(rend) {
-  let format = rend.format === 'text/plain' ? 'text' : rend.format === 'application/tei+xml' ? 'tei' : null
-
-  if (!format && rend.profile === fromThePageTEIXML) {
-    format = 'tei'
-  }
-  return format
+  return rend.format === 'text/plain' ? 'text' : rend.format === 'application/tei+xml' ? 'tei' : null
 }
 
 function getLocalString(values, lang) {

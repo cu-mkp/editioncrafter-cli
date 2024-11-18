@@ -1,6 +1,8 @@
 const defaultBody = `
           <body>
+            <div>
               <p>Modify xml:id as desired and replace this with your text.</p>
+            </div>
           </body>
 `
 
