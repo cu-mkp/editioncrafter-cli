@@ -53,11 +53,11 @@ export function parseOptions(args, requiredArgs) {
 
     const match = optionInfo.find(opt => opt.abbrev === argName || opt.long === argName)
 
-    if (!match) {
-      console.error(`Unknown option: ${argName}`)
+    if (match) {
+      options[match.key] = value
     }
     else {
-      options[match.key] = value
+      console.error(`Unknown option: ${argName}`)
     }
   }
 
