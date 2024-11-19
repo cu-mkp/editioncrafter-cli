@@ -14,16 +14,29 @@ function getHelpText() {
     .toString()
     .replace('# EditionCrafter', `# EditionCrafter ${version}`)
 
-  return marked.parse(contents)
+  return contents
 }
 
 export function displayFullHelp() {
   const text = getHelpText()
-  console.log(text)
+  const parsed = marked.parse(text)
+  console.log(parsed)
 }
 
-export function displayTargetedHelp(command, param) {
+export function displayTargetedHelp(command, params) {
   const text = getHelpText()
 
-  console.log(text)
+  const split = text.split('\n### ')
+
+  const commandSection = split.find(section => section.startsWith(`\`${command}\``))
+
+  if (!commandSection) {
+    return console.log(marked.parse(text))
+  }
+
+  // Log top notice in cyan to be more noticeable.
+  console.log(`\x1B[36mMissing required parameters: ${params.join(', ')}\n`)
+
+  // Reset to normal colors for the help text
+  console.log(`\x1B[0m### ${marked.parse(commandSection)}`)
 }

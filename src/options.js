@@ -48,20 +48,32 @@ export function parseOptions(args, requiredArgs) {
   // skip the first three args
   // (Node, EC itself, and the name of the script)
   for (let i = 3; i < args.length - 1; i = i + 2) {
+    const argName = args[i]
     const value = args[i + 1]
 
-    const match = optionInfo.find(opt => opt.abbrev === value || opt.long === value)
+    const match = optionInfo.find(opt => opt.abbrev === argName || opt.long === argName)
 
     if (!match) {
-      console.error(`Unknown option: ${value}`)
+      console.error(`Unknown option: ${argName}`)
     }
-
-    options[match.key] = value
+    else {
+      options[match.key] = value
+    }
   }
 
-  const missingArgs = requiredArgs
-    ? requiredArgs.filter(name => !options[name])
-    : []
+  const missingArgs = []
+
+  if (requiredArgs) {
+    requiredArgs.forEach((arg) => {
+      if (!options[arg]) {
+        const match = optionInfo.find(opt => opt.key === arg)
+
+        if (match) {
+          missingArgs.push(match.abbrev)
+        }
+      }
+    })
+  }
 
   if (missingArgs.length > 0) {
     displayTargetedHelp(mode, missingArgs)

@@ -1,4 +1,4 @@
-# EditionCrafter Help
+# EditionCrafter
 
 Usage: editioncrafter \<command\> [parameters]
 
