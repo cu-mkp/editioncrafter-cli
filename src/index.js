@@ -1,18 +1,13 @@
 import { readFileSync } from 'node:fs'
-import { basename, join, resolve } from 'node:path'
-import { argv, cwd } from 'node:process'
-import { fileURLToPath } from 'node:url'
-import { marked } from 'marked'
+import { basename, resolve } from 'node:path'
+import { argv, cwd, exit } from 'node:process'
 
-import { markedTerminal } from 'marked-terminal'
-import { version } from '../version.js'
-
+import { displayFullHelp } from './help.js'
 import { processIIIF } from './iiif.js'
 import { processImagesCsv } from './images.js'
+import { parseOptions } from './options.js'
 import { renderTEIDocument } from './render.js'
 import { serializeTEIDocument } from './serialize.js'
-
-marked.use(markedTerminal())
 
 // For paths provided by the user
 function processUserPath(input_path) {
@@ -48,40 +43,6 @@ function getResourceIDFromPath(inputPath) {
   }
 }
 
-function parseOptions(args) {
-  const options = {
-    configPath: null,
-    textPath: null,
-    outputPath: null,
-    inputPath: null,
-    baseUrl: null,
-    mode: args[2],
-  }
-
-  // skip the first three args
-  // (Node, EC itself, and the name of the script)
-  for (let i = 3; i < args.length - 1; i = i + 2) {
-    const value = args[i + 1]
-    if (args[i] === '-c' || args[i] === '--config') {
-      options.configPath = value
-    }
-    else if (args[i] === '-t' || args[i] === '--text') {
-      options.textPath = value
-    }
-    else if (args[i] === '-o' || args[i] === '--output') {
-      options.outputPath = value
-    }
-    else if (args[i] === '-i' || args[i] === '--input') {
-      options.inputPath = value
-    }
-    else if (args[i] === '-u' || args[i] === '--base-url') {
-      options.baseUrl = value
-    }
-  }
-
-  return options
-}
-
 function processArguments() {
   const args = argv
   const optForHelp = { mode: 'help' }
@@ -91,9 +52,11 @@ function processArguments() {
   if (args.length < 3)
     return optForHelp
 
-  let options = parseOptions(args)
+  const mode = args[2]
 
-  if (options.mode === 'process') {
+  if (mode === 'process') {
+    let options = parseOptions(args, ['inputPath'])
+
     if (!options.outputPath) {
       options.outputPath = '.'
     }
@@ -110,8 +73,8 @@ function processArguments() {
         options = { ...options, ...JSON.parse(readFileSync(configPath)) }
       }
       catch {
-        console.log(`Unable to parse config file: ${configPath}.`)
-        return optForHelp
+        console.error(`Unable to parse config file: ${configPath}.`)
+        exit(1)
       }
     }
 
@@ -122,35 +85,24 @@ function processArguments() {
     options.teiDocumentID = getResourceIDFromPath(options.inputPath)
     return options
   }
-  else if (options.mode === 'iiif') {
-    if (!options.inputPath || !options.outputPath) {
-      return optForHelp
-    }
+  else if (mode === 'iiif') {
+    const options = parseOptions(args, ['inputPath', 'outputPath'])
 
     options.outputPath = processUserPath(options.outputPath)
 
     return options
   }
-  else if (options.mode === 'images') {
-    if (!options.inputPath || !options.outputPath) {
-      return optForHelp
-    }
-
-    return options
+  else if (mode === 'images') {
+    return parseOptions(args, ['inputPath', 'outputPath'])
   }
 
   return optForHelp
 }
 
-function displayHelp() {
-  const helpFile = readFileSync(fileURLToPath(join(import.meta.url, '..', '..', 'docs.md'))).toString()
-  console.log(marked.parse(helpFile))
-}
-
 async function editionCrafterCLI() {
   const options = processArguments()
   if (options.mode === 'help') {
-    displayHelp()
+    displayFullHelp()
   }
   else {
     try {

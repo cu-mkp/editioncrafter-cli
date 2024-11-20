@@ -1,4 +1,4 @@
-# EditionCrafter Help
+# EditionCrafter
 
 Usage: editioncrafter \<command\> [parameters]
 
@@ -8,7 +8,7 @@ EditionCrafter responds to the following commands:
 
 ### `iiif`
 
-Process the IIIF Manifest into a TEIDocument.
+Process the IIIF Manifest into a TEI Document.
 
 Usage: `editioncrafter iiif [-i iiif_url] [-o output_path]`
 
@@ -22,7 +22,7 @@ Usage: `editioncrafter iiif [-i iiif_url] [-o output_path]`
 
 ### `images`
 
-Process a list of images from a CSV file into a TEIDocument.
+Process a list of images from a CSV file into a TEI Document.
 
 Usage: `editioncrafter images [-i csv_path] [-o output_file]`
 
@@ -36,7 +36,7 @@ Optional parameters:
 
 ### `process`
 
-Process the TEI Document into a manifest, partials, and annotations.
+Process the TEI Document into a manifest, partials, and annotations. These can then be used by the EditionCrafter viewer.
 
 Usage: `editioncrafter process [-i tei_file] [-o output_path]`
 
