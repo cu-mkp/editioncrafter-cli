@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { basename, resolve } from 'node:path'
 import { argv, cwd, exit } from 'node:process'
 
@@ -16,6 +16,12 @@ function processUserPath(input_path) {
 
 function processTEIDocument(options) {
   const { inputPath, outputPath } = options
+
+  if (!existsSync(inputPath)) {
+    console.error(`File not found: ${inputPath}`)
+    exit(1)
+  }
+
   const xml = readFileSync(inputPath, 'utf8')
 
   const teiDoc = renderTEIDocument(xml, options)
@@ -56,6 +62,11 @@ function processArguments() {
 
   if (mode === 'process') {
     let options = parseOptions(args, ['inputPath'])
+
+    if (!options.inputPath.endsWith('.xml')) {
+      console.error('Error: Input must be an XML document.')
+      exit(1)
+    }
 
     if (!options.outputPath) {
       options.outputPath = '.'

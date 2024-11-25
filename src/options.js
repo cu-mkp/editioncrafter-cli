@@ -80,5 +80,7 @@ export function parseOptions(args, requiredArgs) {
     exit(1)
   }
 
+  options.mode = mode
+
   return options
 }
