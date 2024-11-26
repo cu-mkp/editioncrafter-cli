@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { basename, resolve } from 'node:path'
 import { argv, cwd, exit } from 'node:process'
 
+import createDatabase from './db/index.js'
 import { displayFullHelp } from './help.js'
 import { processIIIF } from './iiif.js'
 import { processImagesCsv } from './images.js'
@@ -37,6 +38,9 @@ async function run(options) {
   }
   else if (options.mode === 'images') {
     await processImagesCsv(options)
+  }
+  else if (options.mode === 'database') {
+    await createDatabase(options)
   }
 }
 
@@ -105,6 +109,21 @@ function processArguments() {
   }
   else if (mode === 'images') {
     return parseOptions(args, ['inputPath', 'outputPath'])
+  }
+  else if (mode === 'database') {
+    const options = parseOptions(args, ['inputPath', 'outputPath'])
+
+    if (!existsSync(options.inputPath)) {
+      console.error('Input path doesn\'t exist.')
+      exit(1)
+    }
+
+    if (!options.outputPath.endsWith('.sqlite')) {
+      console.error('Database path must have a .sqlite file extension.')
+      exit(1)
+    }
+
+    return options
   }
 
   return optForHelp
