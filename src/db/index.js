@@ -127,15 +127,11 @@ function parseCategories(db, el, taxonomyId, parentCatId) {
       categoryId = lastInsertRowid
     }
 
-    parseCategories(db, el, taxonomyId, categoryId)
+    const childCategories = cat.querySelectorAll(':scope > category')
 
-    // const childCategories = cat.querySelectorAll(':scope > category')
-
-    // if (childCategories.length > 0) {
-    //   for (const childCat of childCategories) {
-    //     parseCategories(db, childCat, taxonomyId, categoryId)
-    //   }
-    // }
+    if (childCategories.length > 0) {
+      parseCategories(db, cat, taxonomyId, categoryId)
+    }
   }
 }
 
