@@ -4,7 +4,7 @@
           <fileDesc>
               <titleStmt>
                   <title>
-                      <!-- Your Title Here -->
+                      Taxonomy Example
                   </title>
               </titleStmt>
               <publicationStmt>
@@ -180,7 +180,7 @@
 <lb />Calendrier des bergiers
 </ab>
 <ab>
-<lb />Grammaire italiene
+<lb /><seg ana="#tax.b.a6">Grammaire italiene</seg>
 </ab>
 <ab>
 <lb />Arithmetique of Savonne
@@ -328,7 +328,7 @@
 </ab>
 <ab>
 <lb />          
-<lb />[List of books]
+<lb /><seg ana="#tax.b.d1">[List of books]</seg>
 </ab>
 <ab>
 <lb />Aquatilium animalium historiæ, Hypolito
@@ -519,7 +519,7 @@
 <lb />Varnish for panels
 </ab>
 <ab>
-<lb />Take a lb of Venice turpentine &amp; heat
+<lb />Take a lb of <seg ana="#tax.b.d2">Venice turpentine</seg> &amp; heat
 <lb />it in a pot until it simmers, and put in half a lb of
 <lb />the turpentine oil of the whitest you can find, and stir it
 <lb />together well on a charcoal fire and take it off immediately. And
