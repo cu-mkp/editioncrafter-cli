@@ -163,15 +163,15 @@ function parseCategories(db, el, taxonomyId, parentCatId) {
   }
 }
 
-function parseLayers(db, doc) {
+function parseLayers(db, doc, documentId) {
   const layers = doc.querySelectorAll('text, sourceDoc')
 
   for (const layer of layers) {
     const xmlId = layer.getAttribute('xml:id')
 
     const { lastInsertRowid } = db
-      .prepare('INSERT INTO layers (xml_id) VALUES (?)')
-      .run(xmlId)
+      .prepare('INSERT INTO layers (xml_id, document_id) VALUES (?, ?)')
+      .run(xmlId, documentId)
 
     parseTaggedElements(db, layer, lastInsertRowid)
   }
@@ -186,11 +186,11 @@ function parseTaggedElements(db, layerEl, layerId) {
       // remove the # in front of it
       .slice(1)
 
-    const res = db
+    const tagLookup = db
       .prepare('SELECT id FROM tags WHERE tags.xml_id = ?')
       .get(tagXmlId)
 
-    const tagDbId = res.id
+    const tagDbId = tagLookup.id
 
     const name = el.textContent
     const type = el.nodeName
