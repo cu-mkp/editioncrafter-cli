@@ -36,21 +36,24 @@ function populateTables(db) {
       name STRING,
       xml_id STRING
     );
-    CREATE TABLE categories (
+    CREATE TABLE tags (
       id INTEGER PRIMARY KEY,
       name STRING,
       xml_id STRING,
-      parent_id INTEGER REFERENCES categories(id),
+      parent_id INTEGER REFERENCES tags(id),
       taxonomy_id INTEGER REFERENCES taxonomies(id)
     );
     CREATE TABLE elements (
       id INTEGER PRIMARY KEY,
       name STRING,
-      xml_id STRING,
       type STRING,
-      category_id INTEGER REFERENCES categories(id),
       layer_id INTEGER REFERENCES layers(id),
       surface_id INTEGER REFERENCES surfaces(id)
+    );
+    CREATE TABLE elements_tags (
+      id INTEGER PRIMARY KEY,
+      element_id INTEGER REFERENCES elements(id),
+      tag_id INTEGER REFERENCES tags(id)
     );`,
   )
 }
@@ -81,9 +84,6 @@ async function parseXml(db, path) {
 
   const documentId = parseDocument(db, xml)
 
-  parseSurfaces(db, xml, documentId)
-  parseLayers(db, xml, documentId)
-
   for (const tax of taxonomies) {
     const xmlId = tax.getAttribute('xml:id')
     const biblEl = tax.querySelector('bibl')
@@ -101,6 +101,9 @@ async function parseXml(db, path) {
 
     parseCategories(db, tax, lastInsertRowid)
   }
+
+  parseSurfaces(db, xml, documentId)
+  parseLayers(db, xml, documentId)
 }
 
 function parseDocument(db, xml) {
@@ -139,14 +142,14 @@ function parseCategories(db, el, taxonomyId, parentCatId) {
 
     if (parentCatId) {
       const { lastInsertRowid } = db
-        .prepare('INSERT INTO categories (name, xml_id, taxonomy_id, parent_id) VALUES (?, ?, ?, ?)')
+        .prepare('INSERT INTO tags (name, xml_id, taxonomy_id, parent_id) VALUES (?, ?, ?, ?)')
         .run(name, xmlId, taxonomyId, parentCatId)
 
       categoryId = lastInsertRowid
     }
     else {
       const { lastInsertRowid } = db
-        .prepare('INSERT INTO categories (name, xml_id, taxonomy_id) VALUES (?, ?, ?)')
+        .prepare('INSERT INTO tags (name, xml_id, taxonomy_id) VALUES (?, ?, ?)')
         .run(name, xmlId, taxonomyId)
 
       categoryId = lastInsertRowid
@@ -176,6 +179,30 @@ function parseLayers(db, doc) {
 
 function parseTaggedElements(db, layerEl, layerId) {
   const taggedElements = layerEl.querySelectorAll('[ana]')
+
+  for (const el of taggedElements) {
+    const tagXmlId = el
+      .getAttribute('ana')
+      // remove the # in front of it
+      .slice(1)
+
+    const res = db
+      .prepare('SELECT id FROM tags WHERE tags.xml_id = ?')
+      .get(tagXmlId)
+
+    const tagDbId = res.id
+
+    const name = el.textContent
+    const type = el.nodeName
+
+    const { lastInsertRowid } = db
+      .prepare('INSERT INTO elements (name, type, layer_id) VALUES (?, ?, ?)')
+      .run(name, type, layerId)
+
+    db
+      .prepare('INSERT INTO elements_tags (element_id, tag_id) VALUES (?, ?)')
+      .run(lastInsertRowid, tagDbId)
+  }
 }
 
 function parseSurfaces(db, xml, documentId) {
