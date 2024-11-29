@@ -10,6 +10,7 @@ import jsdom from 'jsdom'
 // we should refactor this to move away from the
 // third-party better-sqlite3 package.
 import Database from 'better-sqlite3'
+import { scrubTree } from '../render.js'
 
 const { JSDOM } = jsdom
 
@@ -173,12 +174,64 @@ function parseLayers(db, doc, documentId) {
       .prepare('INSERT INTO layers (xml_id, document_id) VALUES (?, ?)')
       .run(xmlId, documentId)
 
-    parseTaggedElements(db, layer, lastInsertRowid)
+    const pbEls = layer.querySelectorAll('pb')
+
+    parsePbs(db, pbEls, layer, lastInsertRowid)
   }
 }
 
-function parseTaggedElements(db, layerEl, layerId) {
-  const taggedElements = layerEl.querySelectorAll('[ana]')
+function parsePbs(db, pbEls, layerEl, layerDbId) {
+  for (const pb of pbEls) {
+    const surfaceXmlId = pb.getAttribute('facs')
+
+    if (!surfaceXmlId) {
+      continue
+    }
+
+    const surfaceLookup = db
+      .prepare('SELECT id FROM surfaces WHERE surfaces.xml_id = ?')
+      .get(surfaceXmlId.slice(1))
+
+    const surfaceDbId = surfaceLookup.id
+
+    if (!surfaceDbId) {
+      console.log(`<pb> element refers to ${surfaceXmlId}, which does not exist.`)
+      continue
+    }
+
+    const contents = extractPb(layerEl, surfaceXmlId)
+    const contentsXml = new JSDOM(contents, { contentType: 'text/xml' }).window.document
+    parseTaggedElements(db, contentsXml, layerDbId, surfaceDbId)
+  }
+}
+
+function extractPb(layerEl, surfaceID) {
+  const pbElCount = layerEl.querySelectorAll('pb').length
+
+  for (let i = 0; i < pbElCount; i++) {
+    // since this function mutates the XML, we need to clone the
+    // layer element each time
+    const layerClone = new JSDOM(layerEl.outerHTML, { contentType: 'text/xml' }).window.document
+
+    const pbEls = layerClone.querySelectorAll('pb')
+    const pbEl = pbEls[i]
+    const pbSurfaceID = pbEl.getAttribute('facs')
+
+    if (pbSurfaceID && pbSurfaceID === surfaceID) {
+      const nextPbEl = pbEls[i + 1]
+      scrubTree(pbEl, 'prev')
+      if (nextPbEl) {
+        scrubTree(nextPbEl, 'next')
+        nextPbEl.parentNode.removeChild(nextPbEl)
+      }
+      return layerClone.outerHTML
+    }
+  }
+  return null
+}
+
+function parseTaggedElements(db, surfaceContents, layerId, surfaceId) {
+  const taggedElements = surfaceContents.querySelectorAll('[ana]')
 
   for (const el of taggedElements) {
     const tagXmlId = el
@@ -196,8 +249,8 @@ function parseTaggedElements(db, layerEl, layerId) {
     const type = el.nodeName
 
     const { lastInsertRowid } = db
-      .prepare('INSERT INTO elements (name, type, layer_id) VALUES (?, ?, ?)')
-      .run(name, type, layerId)
+      .prepare('INSERT INTO elements (name, type, layer_id, surface_id) VALUES (?, ?, ?, ?)')
+      .run(name, type, layerId, surfaceId)
 
     db
       .prepare('INSERT INTO elements_tags (element_id, tag_id) VALUES (?, ?)')
