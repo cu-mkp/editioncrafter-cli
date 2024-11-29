@@ -44,7 +44,7 @@ async function run(options) {
   }
 }
 
-function getResourceIDFromPath(inputPath) {
+export function getResourceIDFromPath(inputPath) {
   if (inputPath.toLowerCase().endsWith('.xml')) {
     return basename(inputPath, '.xml').trim()
   }
