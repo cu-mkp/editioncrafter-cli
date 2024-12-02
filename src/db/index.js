@@ -200,8 +200,7 @@ function parsePbs(db, pbEls, layerEl, layerDbId) {
     }
 
     const contents = extractPb(layerEl, surfaceXmlId)
-    const contentsXml = new JSDOM(contents, { contentType: 'text/xml' }).window.document
-    parseTaggedElements(db, contentsXml, layerDbId, surfaceDbId)
+    parseTaggedElements(db, contents, layerDbId, surfaceDbId)
   }
 }
 
@@ -224,7 +223,7 @@ function extractPb(layerEl, surfaceID) {
         scrubTree(nextPbEl, 'next')
         nextPbEl.parentNode.removeChild(nextPbEl)
       }
-      return layerClone.outerHTML
+      return layerClone
     }
   }
   return null
