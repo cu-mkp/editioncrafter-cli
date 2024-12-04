@@ -14,7 +14,8 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "bump-version": "genversion --esm version.js"
+    "bump-version": "genversion --esm version.js",
+    "prepublishOnly": "npm run bump-version"
   },
   "dependencies": {
     "@ungap/structured-clone": "^1.2.0",
