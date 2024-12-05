@@ -1,10 +1,11 @@
-const { login } = require('./auth')
-const { getIDMap } = require('./idmap')
+import { login } from './auth.js'
+import { getIDMap } from './idmap.js'
 
 async function initArchivEngine(archivEngineURL, username, password, projectID) {
-    const { authToken } = await login( archivEngineURL, username, password)
-    const idMap = await getIDMap( archivEngineURL, authToken, projectID)
-    return { authToken, idMap }
+  const { authToken } = await login(archivEngineURL, username, password)
+  const idMap = await getIDMap(archivEngineURL, authToken, projectID)
+  return { authToken, idMap }
 }
 
-module.exports.initArchivEngine = initArchivEngine
+const _initArchivEngine = initArchivEngine
+export { _initArchivEngine as initArchivEngine }

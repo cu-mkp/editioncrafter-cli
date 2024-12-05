@@ -3,3 +3,5 @@ public/
 *.log
 .DS_Store
 data/config.json
+out/*
+out.xml
