@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from 'node:fs'
 import { basename, resolve } from 'node:path'
 import { argv, cwd, exit } from 'node:process'
 
-import createDatabase from './db/index.js'
+import createDatabase from './db.js'
 import { displayFullHelp } from './help.js'
 import { processIIIF } from './iiif.js'
 import { processImagesCsv } from './images.js'

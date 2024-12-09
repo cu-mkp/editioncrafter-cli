@@ -10,7 +10,7 @@ import jsdom from 'jsdom'
 // we should refactor this to move away from the
 // third-party better-sqlite3 package.
 import Database from 'better-sqlite3'
-import { scrubTree } from '../render.js'
+import { scrubTree } from './render.js'
 
 const { JSDOM } = jsdom
 
@@ -41,17 +41,16 @@ function populateTables(db) {
       id INTEGER PRIMARY KEY,
       name STRING,
       xml_id STRING,
-      parent_id INTEGER REFERENCES tags(id),
       taxonomy_id INTEGER REFERENCES taxonomies(id)
     );
     CREATE TABLE elements (
       id INTEGER PRIMARY KEY,
-      name STRING,
+      name STRING NULL,
       type STRING,
       layer_id INTEGER REFERENCES layers(id),
       surface_id INTEGER REFERENCES surfaces(id)
     );
-    CREATE TABLE elements_tags (
+    CREATE TABLE taggings (
       id INTEGER PRIMARY KEY,
       element_id INTEGER REFERENCES elements(id),
       tag_id INTEGER REFERENCES tags(id)
@@ -100,7 +99,7 @@ async function parseXml(db, path) {
       .prepare(`INSERT INTO taxonomies (name, xml_id) VALUES (?, ?)`)
       .run(name, xmlId)
 
-    parseCategories(db, tax, lastInsertRowid)
+    parseTaxonomy(db, tax, lastInsertRowid)
   }
 
   parseSurfaces(db, xml, documentId)
@@ -125,7 +124,7 @@ function parseDocument(db, xml) {
   return lastInsertRowid
 }
 
-function parseCategories(db, el, taxonomyId, parentCatId) {
+function parseTaxonomy(db, el, taxonomyId) {
   const categories = el.querySelectorAll(':scope > category')
 
   for (const cat of categories) {
@@ -139,27 +138,14 @@ function parseCategories(db, el, taxonomyId, parentCatId) {
 
     const name = desc.textContent
 
-    let categoryId
-
-    if (parentCatId) {
-      const { lastInsertRowid } = db
-        .prepare('INSERT INTO tags (name, xml_id, taxonomy_id, parent_id) VALUES (?, ?, ?, ?)')
-        .run(name, xmlId, taxonomyId, parentCatId)
-
-      categoryId = lastInsertRowid
-    }
-    else {
-      const { lastInsertRowid } = db
-        .prepare('INSERT INTO tags (name, xml_id, taxonomy_id) VALUES (?, ?, ?)')
-        .run(name, xmlId, taxonomyId)
-
-      categoryId = lastInsertRowid
-    }
+    db
+      .prepare('INSERT INTO tags (name, xml_id, taxonomy_id) VALUES (?, ?, ?)')
+      .run(name, xmlId, taxonomyId)
 
     const childCategories = cat.querySelectorAll(':scope > category')
 
     if (childCategories.length > 0) {
-      parseCategories(db, cat, taxonomyId, categoryId)
+      console.warn(`Nested category found under ${name}. EditionCrafter does not support nested categories, so this will be skipped.`)
     }
   }
 }
@@ -230,7 +216,7 @@ function extractPb(layerEl, surfaceID) {
 }
 
 function parseTaggedElements(db, surfaceContents, layerId, surfaceId) {
-  const taggedElements = surfaceContents.querySelectorAll('[ana]')
+  const taggedElements = surfaceContents.querySelectorAll('seg[ana], div[ana]')
 
   for (const el of taggedElements) {
     const tagXmlId = el
@@ -244,7 +230,7 @@ function parseTaggedElements(db, surfaceContents, layerId, surfaceId) {
 
     const tagDbId = tagLookup.id
 
-    const name = el.textContent
+    const name = getElementName(el)
     const type = el.nodeName
 
     const { lastInsertRowid } = db
@@ -252,9 +238,23 @@ function parseTaggedElements(db, surfaceContents, layerId, surfaceId) {
       .run(name, type, layerId, surfaceId)
 
     db
-      .prepare('INSERT INTO elements_tags (element_id, tag_id) VALUES (?, ?)')
+      .prepare('INSERT INTO taggings (element_id, tag_id) VALUES (?, ?)')
       .run(lastInsertRowid, tagDbId)
   }
+}
+
+function getElementName(el) {
+  if (el.nodeName === 'seg') {
+    return el.textContent
+  }
+
+  const headEl = el.querySelector(':scope > head')
+
+  if (headEl) {
+    return headEl.textContent
+  }
+
+  return null
 }
 
 function parseSurfaces(db, xml, documentId) {
