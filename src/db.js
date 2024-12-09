@@ -48,7 +48,8 @@ function populateTables(db) {
       name STRING NULL,
       type STRING,
       layer_id INTEGER REFERENCES layers(id),
-      surface_id INTEGER REFERENCES surfaces(id)
+      surface_id INTEGER REFERENCES surfaces(id),
+      parent_id INTEGER REFERENCES elements(id)
     );
     CREATE TABLE taggings (
       id INTEGER PRIMARY KEY,
@@ -186,7 +187,7 @@ function parsePbs(db, pbEls, layerEl, layerDbId) {
     }
 
     const contents = extractPb(layerEl, surfaceXmlId)
-    parseTaggedElements(db, contents, layerDbId, surfaceDbId)
+    parseTaggedDivs(db, contents, layerDbId, surfaceDbId)
   }
 }
 
@@ -215,31 +216,62 @@ function extractPb(layerEl, surfaceID) {
   return null
 }
 
-function parseTaggedElements(db, surfaceContents, layerId, surfaceId) {
-  const taggedElements = surfaceContents.querySelectorAll('seg[ana], div[ana]')
+function ingestTaggedElement(db, el, type, layerId, surfaceId, parentId) {
+  const name = getElementName(el)
 
-  for (const el of taggedElements) {
-    const tagXmlId = el
-      .getAttribute('ana')
-      // remove the # in front of it
-      .slice(1)
+  let elementDbId
 
+  if (parentId) {
+    const { lastInsertRowid } = db
+      .prepare('INSERT INTO elements (name, type, layer_id, surface_id, parent_id) VALUES (?, ?, ?, ?, ?)')
+      .run(name, type, layerId, surfaceId, parentId)
+
+    elementDbId = lastInsertRowid
+  }
+  else {
+    const { lastInsertRowid } = db
+      .prepare('INSERT INTO elements (name, type, layer_id, surface_id) VALUES (?, ?, ?, ?)')
+      .run(name, type, layerId, surfaceId)
+
+    elementDbId = lastInsertRowid
+  }
+
+  const tagXmlIds = el
+    .getAttribute('ana')
+    .split(' ')
+    // remove the # before each ID
+    .map(str => str.slice(1))
+
+  for (const tagXmlId of tagXmlIds) {
     const tagLookup = db
       .prepare('SELECT id FROM tags WHERE tags.xml_id = ?')
       .get(tagXmlId)
 
     const tagDbId = tagLookup.id
 
-    const name = getElementName(el)
-    const type = el.nodeName
-
-    const { lastInsertRowid } = db
-      .prepare('INSERT INTO elements (name, type, layer_id, surface_id) VALUES (?, ?, ?, ?)')
-      .run(name, type, layerId, surfaceId)
-
     db
       .prepare('INSERT INTO taggings (element_id, tag_id) VALUES (?, ?)')
-      .run(lastInsertRowid, tagDbId)
+      .run(elementDbId, tagDbId)
+  }
+
+  return elementDbId
+}
+
+function parseTaggedSegs(db, div, divId, layerId, surfaceId) {
+  const taggedSegs = div.querySelectorAll('seg[ana]')
+
+  for (const seg of taggedSegs) {
+    ingestTaggedElement(db, seg, 'seg', layerId, surfaceId, divId)
+  }
+}
+
+function parseTaggedDivs(db, surfaceContents, layerId, surfaceId) {
+  const taggedDivs = surfaceContents.querySelectorAll('div[ana]')
+
+  for (const div of taggedDivs) {
+    const divId = ingestTaggedElement(db, div, 'div', layerId, surfaceId)
+
+    parseTaggedSegs(db, div, divId, layerId, surfaceId)
   }
 }
 
