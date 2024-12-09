@@ -5,3 +5,5 @@ public/
 data/config.json
 out/*
 out.xml
+*.sqlite
+!data/example.sqlite
