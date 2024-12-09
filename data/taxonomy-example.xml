@@ -48,6 +48,9 @@
                   <catDesc>Periodicals and tracts</catDesc>
                   </category>
                 </category>
+                <category xml:id="food">
+                  <catDesc>Food</catDesc>
+                </category>
                 </taxonomy>
             </classDecl>
           </encodingDesc>
@@ -161,6 +164,8 @@
 <ab>
 <lb />Osorius
 </ab>
+<div ana="#tax.b.a">
+<head>I'm a named div</head>
 <ab>
 <lb />Eupolemus, historicus gentilis
 <lb />qui de rebus Davidis &amp; Salomonis
@@ -172,6 +177,7 @@
 <lb />          
 <lb />mons{ieur}
 </ab>
+</div>
 <ab>
 <lb />- Cathalogue des
 <lb />villes
@@ -180,7 +186,7 @@
 <lb />Calendrier des bergiers
 </ab>
 <ab>
-<lb /><seg ana="#tax.b.a6">Grammaire italiene</seg>
+<lb /><seg ana="#tax.b.d">Grammaire italiene</seg>
 </ab>
 <ab>
 <lb />Arithmetique of Savonne
@@ -192,7 +198,7 @@
 <lb />Questions aeigmatiques
 </ab>
 <ab>
-<lb />Des præceptes d’agriculture
+<lb />Des præceptes <seg ana="#food">d’agriculture</seg>
 </ab>
 <ab>
 <lb />+ Le secret des finances à
@@ -247,9 +253,11 @@
 <ab>
 <lb />Nonius
 </ab>
+<div ana="#food">
 <ab>
 <lb />Magius, Miscellanea
 </ab>
+</div>
 <ab>
 <lb />Pollux, Onomasticon
 </ab>
@@ -328,7 +336,7 @@
 </ab>
 <ab>
 <lb />          
-<lb /><seg ana="#tax.b.d1">[List of books]</seg>
+<lb /><seg ana="#food">[List of books]</seg>
 </ab>
 <ab>
 <lb />Aquatilium animalium historiæ, Hypolito
@@ -519,7 +527,7 @@
 <lb />Varnish for panels
 </ab>
 <ab>
-<lb />Take a lb of <seg ana="#tax.b.d2">Venice turpentine</seg> &amp; heat
+<lb />Take a lb of <seg ana="#tax.b.d">Venice turpentine</seg> &amp; heat
 <lb />it in a pot until it simmers, and put in half a lb of
 <lb />the turpentine oil of the whitest you can find, and stir it
 <lb />together well on a charcoal fire and take it off immediately. And
