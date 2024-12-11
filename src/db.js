@@ -90,7 +90,7 @@ async function parseXml(db, path) {
     const biblEl = tax.querySelector('bibl')
 
     if (!biblEl) {
-      console.error(`${xmlId} does not have a name (a <catDesc> element) and will be skipped.`)
+      console.error(`Taxonomy ${xmlId} does not have a name (a <bibl> element) and will be skipped.`)
       continue
     }
 
@@ -133,7 +133,7 @@ function parseTaxonomy(db, el, taxonomyId) {
     const desc = cat.querySelector('catDesc')
 
     if (!desc) {
-      console.error(`Category ${xmlId} does not have a name (a <catDesc> element) and will be skipped.`)
+      console.error(`Category ${xmlId} does not have a name (which should be contained in a <catDesc> element) and will be skipped.`)
       continue
     }
 
@@ -247,7 +247,12 @@ function ingestTaggedElement(db, el, type, layerId, surfaceId, parentId) {
       .prepare('SELECT id FROM tags WHERE tags.xml_id = ?')
       .get(tagXmlId)
 
-    const tagDbId = tagLookup.id
+    const tagDbId = tagLookup?.id
+
+    if (!tagDbId) {
+      console.log(`Tag #${tagXmlId} not found in taxonomy element.`)
+      continue
+    }
 
     db
       .prepare('INSERT INTO taggings (element_id, tag_id) VALUES (?, ?)')
