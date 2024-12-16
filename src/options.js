@@ -35,13 +35,15 @@ const optionInfo = [
 ]
 
 export function parseOptions(args, requiredArgs) {
+  const mode = args[2]
+
   const options = {
     configPath: null,
     textPath: null,
     outputPath: null,
     inputPath: null,
     baseUrl: null,
-    mode: args[2],
+    mode,
   }
 
   // skip the first three args
