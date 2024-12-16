@@ -48,6 +48,16 @@ Optional parameters:
 * -u base_url
 * -c: Config file
 
+### `database`
+
+Process the TEI document into a SQLite file containing a directory of categories and tags. This can be used with the Record List component from the EditionCrafter viewer package, or it can be browsed directly with a SQLite viewer.
+
+Usage: `editioncrafter database [-i tei_file] [-o output_path]`
+
+Required parameters:
+* -i tei_file
+* -o output_path (must end in .sqlite)
+
 ### help
 
 Displays this help.
