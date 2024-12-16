@@ -285,6 +285,10 @@ function getElementName(el) {
     return el.textContent
   }
 
+  if (el.nodeName === 'zone') {
+    return el.getAttribute('xml:id')
+  }
+
   const headEl = el.querySelector(':scope > head')
 
   if (headEl) {
@@ -294,25 +298,47 @@ function getElementName(el) {
   return null
 }
 
+function parseZones(db, surface, layerId, surfaceId) {
+  const taggedZones = surface.querySelectorAll('zone[ana]')
+
+  for (const zone of taggedZones) {
+    ingestTaggedElement(db, zone, 'zone', layerId, surfaceId)
+  }
+}
+
 function parseSurfaces(db, xml, documentId) {
-  const surfaces = xml.querySelectorAll('surface')
+  const facsimiles = xml.querySelectorAll('facsimile')
 
-  for (let i = 0; i < surfaces.length; i++) {
-    const surface = surfaces[i]
-    const xmlId = surface.getAttribute('xml:id')
+  for (const facsimile of facsimiles) {
+    const facsXmlId = facsimile.getAttribute('xml:id')
 
-    const labelEl = surface.querySelector('label')
+    if (facsXmlId) {
+      const layerResult = db
+        .prepare('INSERT INTO layers (xml_id, document_id) VALUES (?, ?)')
+        .run(facsXmlId, documentId)
 
-    if (!labelEl) {
-      console.error(`Surface ${xmlId} does not have a name (a <label> element) and will be skipped.`)
-      continue
+      const surfaces = xml.querySelectorAll('surface')
+
+      for (let i = 0; i < surfaces.length; i++) {
+        const surface = surfaces[i]
+        const xmlId = surface.getAttribute('xml:id')
+
+        const labelEl = surface.querySelector('label')
+
+        if (!labelEl) {
+          console.error(`Surface ${xmlId} does not have a name (a <label> element) and will be skipped.`)
+          continue
+        }
+
+        const name = labelEl.textContent
+
+        const surfaceResult = db
+          .prepare('INSERT INTO surfaces (name, xml_id, document_id, position) VALUES (?, ?, ?, ?)')
+          .run(name, xmlId, documentId, i)
+
+        parseZones(db, surface, layerResult.lastInsertRowid, surfaceResult.lastInsertRowid)
+      }
     }
-
-    const name = labelEl.textContent
-
-    db
-      .prepare('INSERT INTO surfaces (name, xml_id, document_id, position) VALUES (?, ?, ?, ?)')
-      .run(name, xmlId, documentId, i)
   }
 }
 
