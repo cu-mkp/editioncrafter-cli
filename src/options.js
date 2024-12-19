@@ -35,15 +35,16 @@ const optionInfo = [
 ]
 
 export function parseOptions(args, requiredArgs) {
+  const mode = args[2]
+
   const options = {
     configPath: null,
     textPath: null,
     outputPath: null,
     inputPath: null,
     baseUrl: null,
+    mode,
   }
-
-  const mode = args[2]
 
   // skip the first three args
   // (Node, EC itself, and the name of the script)
@@ -76,7 +77,7 @@ export function parseOptions(args, requiredArgs) {
   }
 
   if (missingArgs.length > 0) {
-    displayTargetedHelp(mode, missingArgs)
+    displayTargetedHelp(options.mode, missingArgs)
     exit(1)
   }
 
