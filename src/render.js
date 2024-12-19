@@ -30,7 +30,7 @@ function convertToHTML(xml) {
   return null
 }
 
-function scrubTree(el, direction) {
+export function scrubTree(el, direction) {
   let nextEl = direction === 'prev' ? el.previousSibling : el.nextSibling
   while (nextEl) {
     const nextNextEl = direction === 'prev' ? nextEl.previousSibling : nextEl.nextSibling
