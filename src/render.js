@@ -211,6 +211,16 @@ function buildTagAnnotations(surface) {
       console.log('Missing one or more position properties for ', annotation.id)
     }
 
+    zone.tags.forEach((tag) => {
+      annotation.body.push({
+        type: 'TextualBody',
+        purpose: 'classifying',
+        format: 'text/plain',
+        value: tag,
+        motivation: 'classifying',
+      })
+    })
+
     return annotation
   })
 }
@@ -287,6 +297,11 @@ function parseSurfaces(doc, teiDocumentID) {
       surface.zones = []
 
       for (const zoneEl of zoneEls) {
+        const ana = zoneEl.getAttribute('ana')
+        const tags = ana
+          ? ana.split(' ')
+          : []
+
         surface.zones.push({
           id: zoneEl.getAttribute('xml:id'),
           ulx: zoneEl.getAttribute('ulx'),
@@ -294,6 +309,7 @@ function parseSurfaces(doc, teiDocumentID) {
           lrx: zoneEl.getAttribute('lrx'),
           lry: zoneEl.getAttribute('lry'),
           points: zoneEl.getAttribute('points'),
+          tags,
         })
       }
     }
