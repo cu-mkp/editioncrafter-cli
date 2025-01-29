@@ -376,7 +376,7 @@ function renderResources(doc, htmlDoc) {
   return resources
 }
 
-function renderTEIDocument(xml, options) {
+export function renderTEIDocument(xml, options) {
   const { baseUrl, teiDocumentID } = options
   const doc = new JSDOM(xml, { contentType: 'text/xml' }).window.document
 
@@ -412,6 +412,3 @@ function renderTEIDocument(xml, options) {
     surfaces,
   }
 }
-
-const _renderTEIDocument = renderTEIDocument
-export { _renderTEIDocument as renderTEIDocument }
