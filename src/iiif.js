@@ -169,8 +169,8 @@ function manifestToFacsimile3(manifestData, nextSurfaceID) {
         }
 
         // width and height might be on Annotation or the Canvas
-        const width = Number.isNaN(body.width) ? canvasWidth : body.width
-        const height = Number.isNaN(body.height) ? canvasHeight : body.height
+        const width = body.width === null || body.width === undefined || Number.isNaN(body.width) ? canvasWidth : body.width
+        const height = body.height === null || body.height === undefined || Number.isNaN(body.height) ? canvasHeight : body.height
 
         let imageAPIURL
         if (body.service) {
