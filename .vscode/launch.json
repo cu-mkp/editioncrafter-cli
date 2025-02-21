@@ -7,12 +7,12 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Test Locally",
+      "name": "Test Process",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/editioncrafter",
-      "args": ["process", "data/fr640_3r-3v-example.xml", "public"]
+      "args": ["process", "-i", "data/bb-ms.xml", "-o", "public"]
     },
     {
       "type": "node",
@@ -22,7 +22,7 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/editioncrafter",
-      "args": ["process", "data/FHL_007548705_ISLETA_BAPTISMS_1.xml", "public"]
+      "args": ["process", "-i", "data/FHL_007548705_ISLETA_BAPTISMS_1.xml", "-o", "public"]
     },
     {
       "type": "node",
@@ -32,7 +32,7 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/editioncrafter",
-      "args": ["process", "data/fr640_3r-3v-example.xml", "public", "http://localhost:5000"]
+      "args": ["process", "-i", "data/fr640_3r-3v-example.xml", "-o", "public", "-u", "http://localhost:5000"]
     },
     {
       "type": "node",
@@ -42,17 +42,7 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/editioncrafter",
-      "args": ["process", "data/fr640_3r-3v-example.xml", "public", "https://cu-mkp.github.io/editioncrafter-data"]
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "EditionCrafter Server Mode",
-      "skipFiles": [
-        "<node_internals>/**"
-      ],
-      "program": "${workspaceFolder}/editioncrafter",
-      "args": ["server", "-c", "data/config.json"]
+      "args": ["process", "-i", "data/fr640_3r-3v-example.xml", "-o", "public", "-u", "https://cu-mkp.github.io/editioncrafter-data"]
     }
   ]
 }
