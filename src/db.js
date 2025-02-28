@@ -71,7 +71,9 @@ async function createDatabase(options) {
 
   populateTables(db)
 
-  await parseXml(db, options.inputPath)
+  for await (const path of options.inputPath) {
+    await parseXml(db, path)
+  }
 
   process.on('exit', () => db.close())
 }
