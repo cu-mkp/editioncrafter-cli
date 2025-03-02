@@ -11,6 +11,7 @@ import jsdom from 'jsdom'
 // third-party better-sqlite3 package.
 import Database from 'better-sqlite3'
 import { scrubTree } from './render.js'
+import { getPathBasename } from './parse-path.js'
 
 const { JSDOM } = jsdom
 
@@ -18,6 +19,7 @@ function populateTables(db) {
   db.exec(`
     CREATE TABLE documents (
       id INTEGER PRIMARY KEY,
+      local_id STRING,
       name STRING
     );
     CREATE TABLE surfaces (
@@ -82,10 +84,11 @@ async function parseXml(db, path) {
   const xmlFile = fs.readFileSync(path).toString()
 
   const xml = new JSDOM(xmlFile, { contentType: 'text/xml' }).window.document
+  const localID = getPathBasename(path)
 
   const taxonomies = xml.querySelectorAll('taxonomy')
 
-  const documentId = parseDocument(db, xml)
+  const documentId = parseDocument(db, localID, xml)
 
   for (const tax of taxonomies) {
     const xmlId = tax.getAttribute('xml:id')
@@ -109,7 +112,7 @@ async function parseXml(db, path) {
   parseLayers(db, xml, documentId)
 }
 
-function parseDocument(db, xml) {
+function parseDocument(db, localID, xml) {
   const titleEl = xml.querySelector('teiHeader > fileDesc > titleStmt > title')
   const name = titleEl?.textContent
     ? titleEl.textContent.trim()
@@ -121,8 +124,8 @@ function parseDocument(db, xml) {
   }
 
   const { lastInsertRowid } = db
-    .prepare('INSERT INTO documents (name) VALUES (?)')
-    .run(name)
+    .prepare('INSERT INTO documents (name, local_id) VALUES (?,?)')
+    .run(name,localID)
 
   return lastInsertRowid
 }
