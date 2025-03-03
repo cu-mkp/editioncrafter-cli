@@ -25,6 +25,7 @@ function populateTables(db) {
     CREATE TABLE surfaces (
       id INTEGER PRIMARY KEY,
       xml_id STRING,
+      image_url STRING,
       name STRING,
       position INTEGER,
       document_id INTEGER REFERENCES documents(id)
@@ -337,9 +338,18 @@ function parseSurfaces(db, xml, documentId) {
 
         const name = labelEl.textContent
 
+        const graphicEl = surface.querySelector('graphic')
+
+        if (!graphicEl) {
+          console.error(`Surface ${xmlId} does not have a image URL (a <graphic> element with url attribute) and will be skipped.`)
+          continue
+        }
+
+        const imageURL = graphicEl.getAttribute('url')
+
         const surfaceResult = db
-          .prepare('INSERT INTO surfaces (name, xml_id, document_id, position) VALUES (?, ?, ?, ?)')
-          .run(name, xmlId, documentId, i)
+          .prepare('INSERT INTO surfaces (name, xml_id, image_url, document_id, position) VALUES (?, ?, ?, ?, ?)')
+          .run(name, xmlId, imageURL, documentId, i)
 
         parseZones(db, surface, layerResult.lastInsertRowid, surfaceResult.lastInsertRowid)
       }
