@@ -26,6 +26,9 @@ function populateTables(db) {
       id INTEGER PRIMARY KEY,
       xml_id STRING,
       image_url STRING,
+      width INTEGER,
+      height INTEGER,
+      image_type STRING,
       name STRING,
       position INTEGER,
       document_id INTEGER REFERENCES documents(id)
@@ -328,6 +331,8 @@ function parseSurfaces(db, xml, documentId) {
       for (let i = 0; i < surfaces.length; i++) {
         const surface = surfaces[i]
         const xmlId = surface.getAttribute('xml:id')
+        const width = surface.getAttribute('lrx')
+        const height = surface.getAttribute('lry')
 
         const labelEl = surface.querySelector('label')
 
@@ -346,10 +351,12 @@ function parseSurfaces(db, xml, documentId) {
         }
 
         const imageURL = graphicEl.getAttribute('url')
+        const mimeType = graphicEl.getAttribute('mimeType')
+        const imageType = mimeType == "application/json" ? 'iiif' : 'raster'
 
         const surfaceResult = db
-          .prepare('INSERT INTO surfaces (name, xml_id, image_url, document_id, position) VALUES (?, ?, ?, ?, ?)')
-          .run(name, xmlId, imageURL, documentId, i)
+          .prepare('INSERT INTO surfaces (name, xml_id, image_url, width, height, image_type, document_id, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?)')
+          .run(name, xmlId, imageURL, width, height, imageType, documentId, i)
 
         parseZones(db, surface, layerResult.lastInsertRowid, surfaceResult.lastInsertRowid)
       }
