@@ -67,6 +67,11 @@ function processArguments() {
   if (mode === 'process') {
     let options = parseOptions(args, ['inputPath'])
 
+    if (Array.isArray(options.inputPath)) {
+      console.error('Error: The process command only accepts one input path.')
+      exit(1)
+    }
+
     if (!options.inputPath.endsWith('.xml')) {
       console.error('Error: Input must be an XML document.')
       exit(1)
@@ -103,20 +108,38 @@ function processArguments() {
   else if (mode === 'iiif') {
     const options = parseOptions(args, ['inputPath', 'outputPath'])
 
+    if (Array.isArray(options.inputPath)) {
+      console.error('Error: The iiif command only accepts one input path.')
+      exit(1)
+    }
+
     options.outputPath = processUserPath(options.outputPath)
 
     return options
   }
   else if (mode === 'images') {
-    return parseOptions(args, ['inputPath', 'outputPath'])
+    const options = parseOptions(args, ['inputPath', 'outputPath'])
+
+    if (Array.isArray(options.inputPath)) {
+      console.error('Error: The images command only accepts one input path.')
+      exit(1)
+    }
+
+    return options
   }
   else if (mode === 'database') {
     const options = parseOptions(args, ['inputPath', 'outputPath'])
 
-    if (!existsSync(options.inputPath)) {
-      console.error('Input path doesn\'t exist.')
-      exit(1)
+    if (typeof options.inputPath === 'string') {
+      options.inputPath = [options.inputPath]
     }
+
+    options.inputPath.forEach((path) => {
+      if (!existsSync(path)) {
+        console.error(`Input path ${path} doesn\'t exist.`)
+        exit(1)
+      }
+    })
 
     if (!options.outputPath.endsWith('.sqlite')) {
       console.error('Database path must have a .sqlite file extension.')

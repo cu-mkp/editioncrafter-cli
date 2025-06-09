@@ -50,12 +50,20 @@ Optional parameters:
 
 ### `database`
 
-Process the TEI document into a SQLite file containing a directory of categories and tags. This can be used with the Record List component from the EditionCrafter viewer package, or it can be browsed directly with a SQLite viewer.
+Process one or more TEI documents into a SQLite file containing a directory of categories and tags. This can be used with the Record List component from the EditionCrafter viewer package, or it can be browsed directly with a SQLite viewer.
 
-Usage: `editioncrafter database [-i tei_file] [-o output_path]`
+Usage: `editioncrafter database [-i tei_file(s)] [-o output_path]`
+
+You can pass as many TEI documents as you want by writing them all after the `-i`. For example:
+
+`editioncrafter database -i data/my_first_doc.xml data/my_second_doc.xml -o output_folder`
+
+If you want to pass an entire folder full of TEI documents to `database`, you can use the `*` wildcard shorthand:
+
+`editioncrafter database -i data/* -o output_folder`
 
 Required parameters:
-* -i tei_file
+* -i tei_file(s)
 * -o output_path (must end in .sqlite)
 
 ### help

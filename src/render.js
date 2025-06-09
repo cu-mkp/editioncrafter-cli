@@ -211,6 +211,16 @@ function buildTagAnnotations(surface) {
       console.log('Missing one or more position properties for ', annotation.id)
     }
 
+    zone.tags.forEach((tag) => {
+      annotation.body.push({
+        type: 'TextualBody',
+        purpose: 'classifying',
+        format: 'text/plain',
+        value: tag,
+        motivation: 'classifying',
+      })
+    })
+
     return annotation
   })
 }
@@ -287,6 +297,11 @@ function parseSurfaces(doc, teiDocumentID) {
       surface.zones = []
 
       for (const zoneEl of zoneEls) {
+        const ana = zoneEl.getAttribute('ana')
+        const tags = ana
+          ? ana.split(' ')
+          : []
+
         surface.zones.push({
           id: zoneEl.getAttribute('xml:id'),
           ulx: zoneEl.getAttribute('ulx'),
@@ -294,6 +309,7 @@ function parseSurfaces(doc, teiDocumentID) {
           lrx: zoneEl.getAttribute('lrx'),
           lry: zoneEl.getAttribute('lry'),
           points: zoneEl.getAttribute('points'),
+          tags,
         })
       }
     }
@@ -360,7 +376,7 @@ function renderResources(doc, htmlDoc) {
   return resources
 }
 
-function renderTEIDocument(xml, options) {
+export function renderTEIDocument(xml, options) {
   const { baseUrl, teiDocumentID } = options
   const doc = new JSDOM(xml, { contentType: 'text/xml' }).window.document
 
@@ -396,6 +412,3 @@ function renderTEIDocument(xml, options) {
     surfaces,
   }
 }
-
-const _renderTEIDocument = renderTEIDocument
-export { _renderTEIDocument as renderTEIDocument }

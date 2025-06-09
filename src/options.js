@@ -26,6 +26,7 @@ const optionInfo = [
     abbrev: '-i',
     long: '--input',
     key: 'inputPath',
+    multiple: true,
   },
   {
     abbrev: '-u',
@@ -46,19 +47,38 @@ export function parseOptions(args, requiredArgs) {
     mode,
   }
 
+  let currentArg = null
+
   // skip the first three args
   // (Node, EC itself, and the name of the script)
-  for (let i = 3; i < args.length - 1; i = i + 2) {
-    const argName = args[i]
-    const value = args[i + 1]
-
-    const match = optionInfo.find(opt => opt.abbrev === argName || opt.long === argName)
-
-    if (match) {
-      options[match.key] = value
+  for (let i = 3; i < args.length; i++) {
+    if (args[i].startsWith('-')) {
+      const argMatch = optionInfo.find(opt => opt.abbrev === args[i] || opt.long === args[i])
+      if (argMatch) {
+        currentArg = argMatch
+      }
+    }
+    else if (currentArg) {
+      if (options[currentArg.key]) {
+        if (currentArg.multiple) {
+          if (Array.isArray(options[currentArg.key])) {
+            options[currentArg.key].push(args[i])
+          }
+          else {
+            options[currentArg.key] = [options[currentArg.key], args[i]]
+          }
+        }
+        else {
+          console.error(`${currentArg.key} does not support multiple values.`)
+          exit(1)
+        }
+      }
+      else {
+        options[currentArg.key] = args[i]
+      }
     }
     else {
-      console.error(`Unknown option: ${argName}`)
+      console.error(`Unknown option: ${args[i]}`)
     }
   }
 
