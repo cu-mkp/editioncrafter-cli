@@ -1,4 +1,5 @@
 # editioncrafter-cli
+[![DOI](https://zenodo.org/badge/607722189.svg)](https://doi.org/10.5281/zenodo.16755974)
 
 This is the command line tool to take a TEI XML file and turn it into a IIIF Manifest and the necessary Web Annotations to display the text in EditionCrafter.
 
