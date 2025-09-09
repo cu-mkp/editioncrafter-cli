@@ -10,8 +10,8 @@ import jsdom from 'jsdom'
 // we should refactor this to move away from the
 // third-party better-sqlite3 package.
 import Database from 'better-sqlite3'
-import { scrubTree } from './render.js'
 import { getPathBasename } from './parse-path.js'
+import { scrubTree } from './render.js'
 
 const { JSDOM } = jsdom
 
@@ -41,13 +41,20 @@ function populateTables(db) {
     CREATE TABLE taxonomies (
       id INTEGER PRIMARY KEY,
       name STRING,
-      xml_id STRING
+      xml_id STRING UNIQUE,
+      is_surface BOOLEAN
+    );
+    CREATE TABLE document_taggings (
+      id INTEGER PRIMARY KEY,
+      document INTEGER REFERENCES documents(id),
+      tag INTEGER REFERENCES tags(id)
     );
     CREATE TABLE tags (
       id INTEGER PRIMARY KEY,
       name STRING,
       xml_id STRING,
-      taxonomy_id INTEGER REFERENCES taxonomies(id)
+      taxonomy_id INTEGER REFERENCES taxonomies(id),
+      UNIQUE(xml_id, taxonomy_id)
     );
     CREATE TABLE elements (
       id INTEGER PRIMARY KEY,
@@ -77,6 +84,17 @@ async function createDatabase(options) {
 
   populateTables(db)
 
+  // author, publisher, languages, and locations are encoded in the TEI differently from other categories, so let's
+  // just add those rows to the taxonomies table now
+
+  const seedTaxonomies = db.prepare('INSERT INTO taxonomies (name, xml_id) VALUES (?,?)')
+
+  // for the current use case in ODT we're excluding the author field; ideally this should be configurable?
+  // seedTaxonomies.run('Author', 'author')
+  seedTaxonomies.run('Publisher', 'publisher')
+  seedTaxonomies.run('Languages', 'languages')
+  seedTaxonomies.run('Locations', 'locations')
+
   for await (const path of options.inputPath) {
     await parseXml(db, path)
   }
@@ -86,7 +104,6 @@ async function createDatabase(options) {
 
 async function parseXml(db, path) {
   const xmlFile = fs.readFileSync(path).toString()
-
   const xml = new JSDOM(xmlFile, { contentType: 'text/xml' }).window.document
   const localID = getPathBasename(path)
 
@@ -105,11 +122,13 @@ async function parseXml(db, path) {
 
     const name = biblEl.textContent
 
-    const { lastInsertRowid } = db
-      .prepare(`INSERT INTO taxonomies (name, xml_id) VALUES (?, ?)`)
+    db
+      .prepare(`INSERT INTO taxonomies (name, xml_id, is_surface) VALUES (?, ?, true) ON CONFLICT DO NOTHING`)
       .run(name, xmlId)
 
-    parseTaxonomy(db, tax, lastInsertRowid)
+    const { id } = db.prepare('SELECT id FROM taxonomies WHERE xml_id = ?').get(xmlId)
+
+    parseTaxonomy(db, tax, id)
   }
 
   parseSurfaces(db, xml, documentId)
@@ -129,7 +148,97 @@ function parseDocument(db, localID, xml) {
 
   const { lastInsertRowid } = db
     .prepare('INSERT INTO documents (name, local_id) VALUES (?,?)')
-    .run(name,localID)
+    .run(name, localID)
+
+  // prepare some common db statements
+
+  const getTag = db.prepare('SELECT id FROM tags WHERE xml_id = ? AND taxonomy_id = ?')
+  const getTax = db.prepare('SELECT id FROM taxonomies WHERE xml_id = ?')
+  const insertDocTag = db.prepare('INSERT INTO document_taggings (document, tag) VALUES (?,?)')
+  const insertTag = db.prepare('INSERT INTO tags (name, xml_id, taxonomy_id) VALUES (?,?,?) ON CONFLICT DO NOTHING')
+  const insertTax = db.prepare('INSERT INTO taxonomies (name, xml_id) VALUES (?,?) ON CONFLICT DO NOTHING')
+
+  // get document languages
+  const languages = xml.querySelectorAll('teiHeader > profileDesc > langUsage > language')
+  if (languages && languages.length) {
+    for (const lang of languages) {
+      const code = lang.getAttribute('ident')
+      const languageTax = getTax.get('languages')
+      insertTag.run(lang.textContent, code, languageTax.id)
+      const { id } = getTag.get(code, languageTax.id)
+      insertDocTag.run(lastInsertRowid, id)
+    }
+  }
+
+  // get document agents
+  const agents = xml.querySelectorAll('teiHeader > fileDesc > titleStmt > respStmt')
+  if (agents && agents.length) {
+    for (const agent of agents) {
+      const role = agent.querySelector('resp')
+      const person = agent.querySelector('name')
+
+      if (!role) {
+        console.error(`Document ${localID} has an agent with no defined role. Please add a role for all agents.`)
+        continue
+      }
+      if (!person) {
+        console.error(`Document ${localID} has an agent with no defined name. Please add a name for all agents.`)
+        continue
+      }
+
+      insertTax.run(role.textContent.replaceAll('\n', ' ').replaceAll('\t', ''), role.getAttribute('sameAs'))
+      const roleRow = getTax.get(role.getAttribute('sameAs'))
+      insertTag.run(person.textContent.replaceAll('\n', ' ').replaceAll('\t', ''), person.getAttribute('sameAs'), roleRow.id)
+
+      const agentId = getTag.get(person.getAttribute('sameAs'), roleRow.id)
+
+      insertDocTag.run(lastInsertRowid, agentId.id)
+    }
+  }
+  // deal with authors
+  // const authors = xml.querySelectorAll('teiHeader > fileDesc > titleStmt > author')
+  // if (authors && authors.length) {
+  //   const { id } = getTax.get('author')
+  //   for (const auth of authors) {
+  //     insertTag.run(auth.textContent.replaceAll('\n', ' ').replaceAll('\t', ''), auth.getAttribute('sameAs'), id)
+  //     const agentId = getTag.get(auth.getAttribute('sameAs'), id)
+  //     insertDocTag.run(lastInsertRowid, agentId.id)
+  //   }
+  // }
+
+  // deal with publishers
+  const publishers = xml.querySelectorAll('teiHeader > fileDesc > publicationStmt > publisher')
+  if (publishers && publishers.length) {
+    const { id } = getTax.get('publisher')
+    for (const pub of publishers) {
+      insertTag.run(pub.textContent.replaceAll('\n', ' ').replaceAll('\t', ''), pub.getAttribute('sameAs'), id)
+      const agentId = getTag.get(pub.getAttribute('sameAs'), id)
+      insertDocTag.run(lastInsertRowid, agentId.id)
+    }
+  }
+
+  // deal with cities
+  const locations = xml.querySelectorAll('teiHeader > fileDesc > publicationStmt > pubPlace')
+  if (locations && locations.length) {
+    const { id } = getTax.get('locations')
+    for (const loc of locations) {
+      insertTag.run(loc.textContent.replaceAll('\n', ' ').replaceAll('\t', ''), loc.getAttribute('sameAs'), id)
+      const locId = getTag.get(loc.getAttribute('sameAs'), id)
+      insertDocTag.run(lastInsertRowid, locId.id)
+    }
+  }
+
+  // deal with keywords
+  const keywords = xml.querySelectorAll('teiHeader > profileDesc > textClass > keywords > term')
+  if (keywords && keywords.length) {
+    for (const term of keywords) {
+      insertTax.run(term.getAttribute('type'), term.getAttribute('type'))
+      const { id } = getTax.get(term.getAttribute('type'))
+      insertTag.run(term.textContent.replaceAll('\n', ' ').replaceAll('\t', ''), term.getAttribute('sameAs'), id)
+      const tagId = getTag.get(term.getAttribute('sameAs'), id)
+      insertDocTag.run(lastInsertRowid, tagId.id)
+    }
+  }
 
   return lastInsertRowid
 }
@@ -149,7 +258,7 @@ function parseTaxonomy(db, el, taxonomyId) {
     const name = desc.textContent
 
     db
-      .prepare('INSERT INTO tags (name, xml_id, taxonomy_id) VALUES (?, ?, ?)')
+      .prepare('INSERT INTO tags (name, xml_id, taxonomy_id) VALUES (?, ?, ?) ON CONFLICT DO NOTHING')
       .run(name, xmlId, taxonomyId)
 
     const childCategories = cat.querySelectorAll(':scope > category')
@@ -352,7 +461,7 @@ function parseSurfaces(db, xml, documentId) {
 
         const imageURL = graphicEl.getAttribute('url')
         const mimeType = graphicEl.getAttribute('mimeType')
-        const imageType = mimeType == "application/json" ? 'iiif' : 'raster'
+        const imageType = mimeType === 'application/json' ? 'iiif' : 'raster'
 
         const surfaceResult = db
           .prepare('INSERT INTO surfaces (name, xml_id, image_url, width, height, image_type, document_id, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?)')
