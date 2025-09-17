@@ -383,7 +383,7 @@ export function renderTEIDocument(xml, options) {
   const status = validateTEIDoc(doc)
 
   if (status !== 'ok') {
-    console.error(status)
+    console.error(`Error processing ${teiDocumentID}: ${status}`)
     process.exit(1)
   }
 
