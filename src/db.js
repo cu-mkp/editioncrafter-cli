@@ -79,6 +79,12 @@ async function createDatabase(options) {
 
   const db = new Database(options.outputPath)
 
+  // if we were passed a folder, get a list of the files; otherwise we'll just iterate over the provided paths
+  let allFiles = options.inputPath
+  if (options.inputFolder) {
+    allFiles = fs.readdirSync(options.inputFolder).filter(f => (f.toLowerCase().endsWith('.xml'))).map(f => (`${options.inputFolder}/${f}`))
+  }
+
   // the better-sqlite3 docs suggest this line for better performance
   db.pragma('journal_mode = WAL')
 
@@ -95,17 +101,23 @@ async function createDatabase(options) {
   seedTaxonomies.run('Languages', 'languages')
   seedTaxonomies.run('Locations', 'locations')
 
-  for await (const path of options.inputPath) {
-    await parseXml(db, path)
+  for await (const path of allFiles) {
+    try {
+      await parseXml(db, path)
+    }
+    catch (error) {
+      console.error(`Error processing ${getPathBasename(path)}: ${error}`)
+    }
   }
 
   process.on('exit', () => db.close())
 }
 
 async function parseXml(db, path) {
+  const localID = getPathBasename(path)
+  console.log(`Processing file ${localID}...`)
   const xmlFile = fs.readFileSync(path).toString()
   const xml = new JSDOM(xmlFile, { contentType: 'text/xml' }).window.document
-  const localID = getPathBasename(path)
 
   const taxonomies = xml.querySelectorAll('taxonomy')
 
@@ -130,7 +142,6 @@ async function parseXml(db, path) {
 
     parseTaxonomy(db, tax, id)
   }
-
   parseSurfaces(db, xml, documentId)
   parseLayers(db, xml, documentId)
 }
@@ -244,11 +255,18 @@ function parseDocument(db, localID, xml) {
 }
 
 function parseTaxonomy(db, el, taxonomyId) {
-  const categories = el.querySelectorAll(':scope > category')
+  // for nested taxonomies, we're only going to take the leaves for now
+  const categories = el.querySelectorAll('category')
 
   for (const cat of categories) {
+    const childCategories = cat.querySelectorAll(':scope > category')
     const xmlId = cat.getAttribute('xml:id')
     const desc = cat.querySelector('catDesc')
+
+    // if this category has children, skip it
+    if (childCategories.length) {
+      continue
+    }
 
     if (!desc) {
       console.error(`Category ${xmlId} does not have a name (which should be contained in a <catDesc> element) and will be skipped.`)
@@ -260,12 +278,6 @@ function parseTaxonomy(db, el, taxonomyId) {
     db
       .prepare('INSERT INTO tags (name, xml_id, taxonomy_id) VALUES (?, ?, ?) ON CONFLICT DO NOTHING')
       .run(name, xmlId, taxonomyId)
-
-    const childCategories = cat.querySelectorAll(':scope > category')
-
-    if (childCategories.length > 0) {
-      console.warn(`Nested category found under ${name}. EditionCrafter does not support nested categories, so this will be skipped.`)
-    }
   }
 }
 

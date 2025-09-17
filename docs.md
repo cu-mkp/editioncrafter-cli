@@ -36,12 +36,12 @@ Optional parameters:
 
 ### `process`
 
-Process the TEI Document into a manifest, partials, and annotations. These can then be used by the EditionCrafter viewer.
+Process the TEI Document(s) into a manifest, partials, and annotations. These can then be used by the EditionCrafter viewer. Requires EITHER an input file or an input folder.
 
-Usage: `editioncrafter process [-i tei_file] [-o output_path]`
+Usage: `editioncrafter process [-i tei_file] [-o output_path]` OR `editioncrafter process [-f tei_folder] [-o output_path]`
 
 Required parameters:
-* -i tei_file
+* -i tei_file OR -f tei_folder
 * -o output_path
 
 Optional parameters:
@@ -52,18 +52,14 @@ Optional parameters:
 
 Process one or more TEI documents into a SQLite file containing a directory of categories and tags. This can be used with the Record List component from the EditionCrafter viewer package, or it can be browsed directly with a SQLite viewer.
 
-Usage: `editioncrafter database [-i tei_file(s)] [-o output_path]`
+Usage: `editioncrafter database [-i tei_file(s)] [-o output_path]` OR `editioncrafter database [-f tei_folder] [-o output_path]`
 
 You can pass as many TEI documents as you want by writing them all after the `-i`. For example:
 
 `editioncrafter database -i data/my_first_doc.xml data/my_second_doc.xml -o output_folder`
 
-If you want to pass an entire folder full of TEI documents to `database`, you can use the `*` wildcard shorthand:
-
-`editioncrafter database -i data/* -o output_folder`
-
 Required parameters:
-* -i tei_file(s)
+* -i tei_file(s) OR -f tei_folder
 * -o output_path (must end in .sqlite)
 
 ### help
