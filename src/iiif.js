@@ -1,4 +1,4 @@
-import { writeFileSync } from 'node:fs'
+import { readdirSync, writeFileSync } from 'node:fs'
 import process from 'node:process'
 import axios from 'axios'
 import { getFacsString } from './lib/images.js'
@@ -303,7 +303,13 @@ async function processIIIF(options) {
     const teiString = facsTemplate(data, options.textPath)
     writeFileSync(options.outputPath, teiString)
   }
-  await importPresentationEndpoint(options.inputPath, onSuccess)
+  // if we were passed a folder, get the files from it
+  let allFiles = options.inputPath
+  if (options.inputFolder) {
+    allFiles = readdirSync(options.inputFolder)
+  }
+  console.log(allFiles)
+  await importPresentationEndpoint(allFiles, onSuccess)
 };
 
 // VARIOUS HELPER FUNCTIONS
