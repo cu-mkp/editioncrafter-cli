@@ -1,4 +1,4 @@
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { basename, resolve } from 'node:path'
 import { argv, cwd, exit } from 'node:process'
 
@@ -16,17 +16,35 @@ function processUserPath(input_path) {
 }
 
 function processTEIDocument(options) {
-  const { inputPath, outputPath } = options
+  const { inputPath, outputPath, inputFolder } = options
 
-  if (!existsSync(inputPath)) {
+  if (inputPath && !existsSync(inputPath)) {
     console.error(`File not found: ${inputPath}`)
     exit(1)
   }
 
-  const xml = readFileSync(inputPath, 'utf8')
+  if (inputFolder && !existsSync(inputFolder)) {
+    console.error(`Folder not found: ${inputFolder}`)
+    exit(1)
+  }
 
-  const teiDoc = renderTEIDocument(xml, options)
-  serializeTEIDocument(teiDoc, outputPath)
+  if (inputFolder) {
+    const files = readdirSync(inputFolder)
+    for (const file of files) {
+      if (file.toLowerCase().endsWith('.xml')) {
+        const path = `${inputFolder}/${file}`
+        const xml = readFileSync(path, 'utf8')
+        const teiDoc = renderTEIDocument(xml, { ...options, teiDocumentID: getResourceIDFromPath(path) })
+        serializeTEIDocument(teiDoc, outputPath)
+      }
+    }
+  }
+  else {
+    const xml = readFileSync(inputPath, 'utf8')
+
+    const teiDoc = renderTEIDocument(xml, options)
+    serializeTEIDocument(teiDoc, outputPath)
+  }
 }
 
 async function run(options) {
@@ -65,14 +83,19 @@ function processArguments() {
   const mode = args[2]
 
   if (mode === 'process') {
-    let options = parseOptions(args, ['inputPath'])
+    let options = parseOptions(args)
 
-    if (Array.isArray(options.inputPath)) {
+    if (!options.inputPath && !options.inputFolder) {
+      console.error('Error: You must provide either an input file or folder.')
+      exit(1)
+    }
+
+    if (options.inputPath && Array.isArray(options.inputPath)) {
       console.error('Error: The process command only accepts one input path.')
       exit(1)
     }
 
-    if (!options.inputPath.endsWith('.xml')) {
+    if (options.inputPath && !options.inputPath.endsWith('.xml')) {
       console.error('Error: Input must be an XML document.')
       exit(1)
     }
@@ -99,10 +122,16 @@ function processArguments() {
     }
 
     // parse command line params
-    options.inputPath = processUserPath(options.inputPath)
+    if (options.inputPath) {
+      options.inputPath = processUserPath(options.inputPath)
+    }
     options.outputPath = processUserPath(options.outputPath)
-
-    options.teiDocumentID = getResourceIDFromPath(options.inputPath)
+    if (options.inputFolder) {
+      options.inputFolder = processUserPath(options.inputFolder)
+    }
+    if (options.inputPath) {
+      options.teiDocumentID = getResourceIDFromPath(options.inputPath)
+    }
     return options
   }
   else if (mode === 'iiif') {
@@ -128,18 +157,28 @@ function processArguments() {
     return options
   }
   else if (mode === 'database') {
-    const options = parseOptions(args, ['inputPath', 'outputPath'])
+    const options = parseOptions(args, ['outputPath'])
 
-    if (typeof options.inputPath === 'string') {
+    if (!options.inputPath && !options.inputFolder) {
+      console.error('Error: You must provide an input filepath or folder.')
+    }
+
+    if (options.inputPath && typeof options.inputPath === 'string') {
       options.inputPath = [options.inputPath]
     }
 
-    options.inputPath.forEach((path) => {
-      if (!existsSync(path)) {
-        console.error(`Input path ${path} doesn\'t exist.`)
-        exit(1)
-      }
-    })
+    if (options.inputFolder && !existsSync(options.inputFolder)) {
+      console.error('Error: Input folder not found.')
+    }
+
+    if (options.inputPath) {
+      options.inputPath.forEach((path) => {
+        if (!existsSync(path)) {
+          console.error(`Input path ${path} doesn\'t exist.`)
+          exit(1)
+        }
+      })
+    }
 
     if (!options.outputPath.endsWith('.sqlite')) {
       console.error('Database path must have a .sqlite file extension.')

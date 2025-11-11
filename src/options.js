@@ -13,11 +13,6 @@ const optionInfo = [
     key: 'textPath',
   },
   {
-    abbrev: '-c',
-    long: '--config',
-    key: 'configPath',
-  },
-  {
     abbrev: '-o',
     long: '--ouput',
     key: 'outputPath',
@@ -27,6 +22,11 @@ const optionInfo = [
     long: '--input',
     key: 'inputPath',
     multiple: true,
+  },
+  {
+    abbrev: '-f',
+    long: '--folder',
+    key: 'inputFolder',
   },
   {
     abbrev: '-u',
@@ -43,6 +43,7 @@ export function parseOptions(args, requiredArgs) {
     textPath: null,
     outputPath: null,
     inputPath: null,
+    inputFolder: null,
     baseUrl: null,
     mode,
   }

@@ -7,12 +7,12 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Test Process",
+      "name": "Test DB",
       "skipFiles": [
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/editioncrafter",
-      "args": ["process", "-i", "data/bb-ms.xml", "-o", "public"]
+      "args": ["database", "-i", "data/odt/caryatidum_tagged.xml", "data/odt/grotisch_fur_alle_kunstler_tagged.xml", "-o", "public/odt.sqlite"]
     },
     {
       "type": "node",
