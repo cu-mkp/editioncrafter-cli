@@ -369,24 +369,26 @@ function ingestTaggedElement(db, el, type, layerId, surfaceId, parentId) {
   const tagXmlIds = el
     .getAttribute('ana')
     .split(' ')
-    // remove the # before each ID
-    .map(str => str.slice(1))
+    // remove the # before each ID, if present
+    .map(str => str?.replace('#', ''))
 
   for (const tagXmlId of tagXmlIds) {
-    const tagLookup = db
-      .prepare('SELECT id FROM tags WHERE tags.xml_id = ?')
-      .get(tagXmlId)
+    if (tagXmlId && tagXmlId.length) {
+      const tagLookup = db
+        .prepare('SELECT id FROM tags WHERE tags.xml_id = ?')
+        .get(tagXmlId)
 
-    const tagDbId = tagLookup?.id
+      const tagDbId = tagLookup?.id
 
-    if (!tagDbId) {
-      console.log(`Tag #${tagXmlId} not found in taxonomy element.`)
-      continue
+      if (!tagDbId) {
+        console.log(`Tag #${tagXmlId} not found in taxonomy element.`)
+        continue
+      }
+
+      db
+        .prepare('INSERT INTO taggings (element_id, tag_id) VALUES (?, ?)')
+        .run(elementDbId, tagDbId)
     }
-
-    db
-      .prepare('INSERT INTO taggings (element_id, tag_id) VALUES (?, ?)')
-      .run(elementDbId, tagDbId)
   }
 
   return elementDbId
