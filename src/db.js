@@ -44,6 +44,13 @@ function populateTables(db) {
       xml_id STRING UNIQUE,
       is_surface BOOLEAN
     );
+    CREATE TABLE categories (
+      id INTEGER PRIMARY KEY,
+      name STRING,
+      taxonomy_id INTEGER REFERENCES taxonomies(id),
+      parent_category_id INTEGER REFERENCES categories(id),
+      UNIQUE(name, taxonomy_id, parent_category_id)
+    );
     CREATE TABLE document_taggings (
       id INTEGER PRIMARY KEY,
       document INTEGER REFERENCES documents(id),
@@ -54,6 +61,7 @@ function populateTables(db) {
       name STRING,
       xml_id STRING,
       taxonomy_id INTEGER REFERENCES taxonomies(id),
+      parent_category_id INTEGER REFERENCES categories(id),
       UNIQUE(xml_id, taxonomy_id)
     );
     CREATE TABLE elements (
@@ -254,9 +262,9 @@ function parseDocument(db, localID, xml) {
   return lastInsertRowid
 }
 
-function parseTaxonomy(db, el, taxonomyId) {
-  // for nested taxonomies, we're only going to take the leaves for now
-  const categories = el.querySelectorAll('category')
+function parseTaxonomy(db, el, taxonomyId, parentId = null) {
+  // first we'll look only at the top level categories
+  const categories = el.querySelectorAll(':scope > category')
 
   for (const cat of categories) {
     const childCategories = cat.querySelectorAll(':scope > category')
@@ -274,10 +282,24 @@ function parseTaxonomy(db, el, taxonomyId) {
     }
 
     const name = desc.textContent
+    // if this category has children, add it to the `category` table and then parse the children
+    if (childCategories.length) {
+      db
+        .prepare('INSERT INTO categories (name, taxonomy_id, parent_category_id) VALUES (?, ?, ?) ON CONFLICT DO NOTHING')
+        .run(name, taxonomyId, parentId)
 
+      const { id } = parentId
+        ? db.prepare('SELECT id FROM categories WHERE name = ? AND taxonomy_id = ? AND parent_category_id = ?').get(name, taxonomyId, parentId)
+        : db.prepare('SELECT id FROM categories WHERE name = ? AND taxonomy_id = ? AND parent_category_id IS NULL').get(name, taxonomyId)
+
+      parseTaxonomy(db, cat, taxonomyId, id)
+      continue
+    }
+
+    // if this category is a leaf, we'll go ahead and insert it into the `tags` table
     db
-      .prepare('INSERT INTO tags (name, xml_id, taxonomy_id) VALUES (?, ?, ?) ON CONFLICT DO NOTHING')
-      .run(name, xmlId, taxonomyId)
+      .prepare('INSERT INTO tags (name, xml_id, taxonomy_id, parent_category_id) VALUES (?, ?, ?, ?) ON CONFLICT DO NOTHING')
+      .run(name, xmlId, taxonomyId, parentId)
   }
 }
 
